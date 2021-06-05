@@ -14,10 +14,23 @@ namespace PSPro
         [STAThread]
         static void Main()
         {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+           try 
+            {
+                if (Environment.OSVersion.Version.Major >= 6)
+                    SetProcessDPIAware();
+            }
+            catch(Exception e) 
+            {
+                Console.WriteLine(e.Message);
+                // ignore
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new View.LoginForm());
         }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
     }
 }
