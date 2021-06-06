@@ -81,6 +81,7 @@
     <EmbeddedResource Include="View\NewComplaintForm.resx">
       <DependentUpon>NewComplaintForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\PSPro.Model.OfficerComboBox.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
