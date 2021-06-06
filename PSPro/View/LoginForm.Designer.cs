@@ -38,7 +38,7 @@ namespace PSPro.View
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(150, 46);
             this.loginButton.TabIndex = 0;
-            this.loginButton.Text = "button1";
+            this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
