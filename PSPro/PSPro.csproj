@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="View - Copy\" />
+    <Compile Remove="View - Copy\**" />
+    <EmbeddedResource Remove="View - Copy\**" />
+    <None Remove="View - Copy\**" />
   </ItemGroup>
 
   <ItemGroup>
