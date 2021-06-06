@@ -67,7 +67,7 @@ namespace PSPro.View
             this.FirstNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FirstNameTextBox.Location = new System.Drawing.Point(19, 77);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
-            this.FirstNameTextBox.Size = new System.Drawing.Size(308, 39);
+            this.FirstNameTextBox.Size = new System.Drawing.Size(407, 39);
             this.FirstNameTextBox.TabIndex = 0;
             // 
             // FirstNameLabel
@@ -237,16 +237,16 @@ namespace PSPro.View
             // LastNameTextBox
             // 
             this.LastNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LastNameTextBox.Location = new System.Drawing.Point(342, 77);
+            this.LastNameTextBox.Location = new System.Drawing.Point(454, 77);
             this.LastNameTextBox.Name = "LastNameTextBox";
-            this.LastNameTextBox.Size = new System.Drawing.Size(308, 39);
+            this.LastNameTextBox.Size = new System.Drawing.Size(423, 39);
             this.LastNameTextBox.TabIndex = 2;
             // 
             // LastNameLabel
             // 
             this.LastNameLabel.AutoSize = true;
             this.LastNameLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LastNameLabel.Location = new System.Drawing.Point(342, 42);
+            this.LastNameLabel.Location = new System.Drawing.Point(454, 42);
             this.LastNameLabel.Name = "LastNameLabel";
             this.LastNameLabel.Size = new System.Drawing.Size(126, 32);
             this.LastNameLabel.TabIndex = 3;
@@ -294,16 +294,16 @@ namespace PSPro.View
             "Excessive Force",
             "Officer Safety Violation",
             "Other Policy Violation"});
-            this.AllegationComboBox.Location = new System.Drawing.Point(502, 591);
+            this.AllegationComboBox.Location = new System.Drawing.Point(466, 591);
             this.AllegationComboBox.Name = "AllegationComboBox";
-            this.AllegationComboBox.Size = new System.Drawing.Size(387, 39);
+            this.AllegationComboBox.Size = new System.Drawing.Size(423, 39);
             this.AllegationComboBox.TabIndex = 23;
             // 
             // AllegationLabel
             // 
             this.AllegationLabel.AutoSize = true;
             this.AllegationLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AllegationLabel.Location = new System.Drawing.Point(502, 556);
+            this.AllegationLabel.Location = new System.Drawing.Point(466, 556);
             this.AllegationLabel.Name = "AllegationLabel";
             this.AllegationLabel.Size = new System.Drawing.Size(122, 32);
             this.AllegationLabel.TabIndex = 22;
