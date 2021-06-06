@@ -44,11 +44,11 @@ namespace PSPro.View
             this.CityLabel = new System.Windows.Forms.Label();
             this.Address2TextBox = new System.Windows.Forms.TextBox();
             this.Address2Label = new System.Windows.Forms.Label();
-            this.SearchCitizenButton = new System.Windows.Forms.Button();
             this.Address1TextBox = new System.Windows.Forms.TextBox();
             this.Address1Label = new System.Windows.Forms.Label();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.LastNameLabel = new System.Windows.Forms.Label();
+            this.SearchCitizenButton = new System.Windows.Forms.Button();
             this.OfficerComboBox = new System.Windows.Forms.ComboBox();
             this.OfficerLabel = new System.Windows.Forms.Label();
             this.AllegationComboBox = new System.Windows.Forms.ComboBox();
@@ -216,16 +216,6 @@ namespace PSPro.View
             this.Address2Label.TabIndex = 8;
             this.Address2Label.Text = "Address 2";
             // 
-            // SearchCitizenButton
-            // 
-            this.SearchCitizenButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SearchCitizenButton.Location = new System.Drawing.Point(687, 61);
-            this.SearchCitizenButton.Name = "SearchCitizenButton";
-            this.SearchCitizenButton.Size = new System.Drawing.Size(216, 39);
-            this.SearchCitizenButton.TabIndex = 6;
-            this.SearchCitizenButton.Text = "Search for Citizen";
-            this.SearchCitizenButton.UseVisualStyleBackColor = true;
-            // 
             // Address1TextBox
             // 
             this.Address1TextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -262,6 +252,16 @@ namespace PSPro.View
             this.LastNameLabel.TabIndex = 3;
             this.LastNameLabel.Text = "Last Name";
             // 
+            // SearchCitizenButton
+            // 
+            this.SearchCitizenButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SearchCitizenButton.Location = new System.Drawing.Point(687, 61);
+            this.SearchCitizenButton.Name = "SearchCitizenButton";
+            this.SearchCitizenButton.Size = new System.Drawing.Size(216, 39);
+            this.SearchCitizenButton.TabIndex = 6;
+            this.SearchCitizenButton.Text = "Search for Citizen";
+            this.SearchCitizenButton.UseVisualStyleBackColor = true;
+            // 
             // OfficerComboBox
             // 
             this.OfficerComboBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -285,6 +285,16 @@ namespace PSPro.View
             // 
             this.AllegationComboBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AllegationComboBox.FormattingEnabled = true;
+            this.AllegationComboBox.Items.AddRange(new object[] {
+            "Select Allegation",
+            "Conduct Unbecoming",
+            "Courtesy Complaint",
+            "Dangerous Driving",
+            "Derelict of Duty",
+            "Ethics Violation",
+            "Excessive Force",
+            "Officer Safety Violation",
+            "Other Policy Violation"});
             this.AllegationComboBox.Location = new System.Drawing.Point(502, 591);
             this.AllegationComboBox.Name = "AllegationComboBox";
             this.AllegationComboBox.Size = new System.Drawing.Size(387, 39);
