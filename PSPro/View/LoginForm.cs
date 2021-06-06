@@ -14,5 +14,10 @@ namespace PSPro.View
         {
             InitializeComponent();
         }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

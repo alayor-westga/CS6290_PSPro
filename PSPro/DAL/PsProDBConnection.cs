@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Data.SqlClient;
 
 namespace PSPro.DAL
 {
@@ -15,9 +13,13 @@ namespace PSPro.DAL
         /// <returns>A SQL connection</returns>
         public static SqlConnection GetConnection()
         {
-            string connectionString =
-                "Server=tcp:pspro.database.windows.net,1433;Initial Catalog=pspro;Persist Security Info=False;User ID=winforms;Password=Winf0rms;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            SqlConnection connection = new SqlConnection(connectionString);
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+                builder.DataSource = "tcp:pspro.database.windows.net"; 
+                builder.UserID = "winforms";            
+                builder.Password = "Winf0rms";     
+                builder.InitialCatalog = "pspro";
+
+            SqlConnection connection = new SqlConnection(builder.ConnectionString);
             return connection;
         }
     }
