@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace PSPro.DAL
@@ -27,11 +28,12 @@ namespace PSPro.DAL
             {
                 connection.Open();
                 string storedProcedure = "GetSupervisorByUserNameAndPassword";
-                using (SqlCommand selectCommand = new SqlCommand(storedProcedure, connection))
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
                 {
-                    selectCommand.Parameters.AddWithValue("@UserName", username);
-                    selectCommand.Parameters.AddWithValue("@Password", password);
-                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@UserName", username);
+                    command.Parameters.AddWithValue("@Password", password);
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
                         
                     }
