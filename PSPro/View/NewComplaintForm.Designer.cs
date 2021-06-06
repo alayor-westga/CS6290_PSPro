@@ -32,23 +32,23 @@ namespace PSPro.View
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.CitizenInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
+            this.PhoneNumberLabel = new System.Windows.Forms.Label();
+            this.EmailTextBox = new System.Windows.Forms.TextBox();
+            this.EmailLabel = new System.Windows.Forms.Label();
+            this.StateComboBox = new System.Windows.Forms.ComboBox();
+            this.ZipCodeTextBox = new System.Windows.Forms.TextBox();
+            this.ZipCodeLabel = new System.Windows.Forms.Label();
+            this.StateLabel = new System.Windows.Forms.Label();
+            this.CityTextBox = new System.Windows.Forms.TextBox();
+            this.CityLabel = new System.Windows.Forms.Label();
+            this.Address2TextBox = new System.Windows.Forms.TextBox();
+            this.Address2Label = new System.Windows.Forms.Label();
             this.SearchCitizenButton = new System.Windows.Forms.Button();
             this.Address1TextBox = new System.Windows.Forms.TextBox();
             this.Address1Label = new System.Windows.Forms.Label();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.LastNameLabel = new System.Windows.Forms.Label();
-            this.Address2TextBox = new System.Windows.Forms.TextBox();
-            this.Address2Label = new System.Windows.Forms.Label();
-            this.CityTextBox = new System.Windows.Forms.TextBox();
-            this.CityLabel = new System.Windows.Forms.Label();
-            this.StateLabel = new System.Windows.Forms.Label();
-            this.ZipCodeTextBox = new System.Windows.Forms.TextBox();
-            this.ZipCodeLabel = new System.Windows.Forms.Label();
-            this.StateComboBox = new System.Windows.Forms.ComboBox();
-            this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
-            this.PhoneNumberLabel = new System.Windows.Forms.Label();
-            this.EmailTextBox = new System.Windows.Forms.TextBox();
-            this.EmailLabel = new System.Windows.Forms.Label();
             this.OfficerComboBox = new System.Windows.Forms.ComboBox();
             this.OfficerLabel = new System.Windows.Forms.Label();
             this.AllegationComboBox = new System.Windows.Forms.ComboBox();
@@ -109,6 +109,114 @@ namespace PSPro.View
             this.CitizenInfoGroupBox.TabStop = false;
             this.CitizenInfoGroupBox.Text = "Citizen";
             // 
+            // PhoneNumberTextBox
+            // 
+            this.PhoneNumberTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(19, 408);
+            this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
+            this.PhoneNumberTextBox.Size = new System.Drawing.Size(374, 39);
+            this.PhoneNumberTextBox.TabIndex = 18;
+            // 
+            // PhoneNumberLabel
+            // 
+            this.PhoneNumberLabel.AutoSize = true;
+            this.PhoneNumberLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PhoneNumberLabel.Location = new System.Drawing.Point(19, 373);
+            this.PhoneNumberLabel.Name = "PhoneNumberLabel";
+            this.PhoneNumberLabel.Size = new System.Drawing.Size(177, 32);
+            this.PhoneNumberLabel.TabIndex = 19;
+            this.PhoneNumberLabel.Text = "Phone Number";
+            // 
+            // EmailTextBox
+            // 
+            this.EmailTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EmailTextBox.Location = new System.Drawing.Point(410, 408);
+            this.EmailTextBox.Name = "EmailTextBox";
+            this.EmailTextBox.Size = new System.Drawing.Size(467, 39);
+            this.EmailTextBox.TabIndex = 16;
+            // 
+            // EmailLabel
+            // 
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EmailLabel.Location = new System.Drawing.Point(410, 373);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(162, 32);
+            this.EmailLabel.TabIndex = 17;
+            this.EmailLabel.Text = "Email Address";
+            // 
+            // StateComboBox
+            // 
+            this.StateComboBox.FormattingEnabled = true;
+            this.StateComboBox.Location = new System.Drawing.Point(342, 325);
+            this.StateComboBox.Name = "StateComboBox";
+            this.StateComboBox.Size = new System.Drawing.Size(260, 39);
+            this.StateComboBox.TabIndex = 15;
+            // 
+            // ZipCodeTextBox
+            // 
+            this.ZipCodeTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ZipCodeTextBox.Location = new System.Drawing.Point(617, 325);
+            this.ZipCodeTextBox.Name = "ZipCodeTextBox";
+            this.ZipCodeTextBox.Size = new System.Drawing.Size(260, 39);
+            this.ZipCodeTextBox.TabIndex = 13;
+            // 
+            // ZipCodeLabel
+            // 
+            this.ZipCodeLabel.AutoSize = true;
+            this.ZipCodeLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ZipCodeLabel.Location = new System.Drawing.Point(617, 290);
+            this.ZipCodeLabel.Name = "ZipCodeLabel";
+            this.ZipCodeLabel.Size = new System.Drawing.Size(104, 32);
+            this.ZipCodeLabel.TabIndex = 14;
+            this.ZipCodeLabel.Text = "ZipCode";
+            // 
+            // StateLabel
+            // 
+            this.StateLabel.AutoSize = true;
+            this.StateLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.StateLabel.Location = new System.Drawing.Point(342, 290);
+            this.StateLabel.Name = "StateLabel";
+            this.StateLabel.Size = new System.Drawing.Size(67, 32);
+            this.StateLabel.TabIndex = 12;
+            this.StateLabel.Text = "State";
+            // 
+            // CityTextBox
+            // 
+            this.CityTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CityTextBox.Location = new System.Drawing.Point(19, 325);
+            this.CityTextBox.Name = "CityTextBox";
+            this.CityTextBox.Size = new System.Drawing.Size(308, 39);
+            this.CityTextBox.TabIndex = 9;
+            // 
+            // CityLabel
+            // 
+            this.CityLabel.AutoSize = true;
+            this.CityLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CityLabel.Location = new System.Drawing.Point(19, 290);
+            this.CityLabel.Name = "CityLabel";
+            this.CityLabel.Size = new System.Drawing.Size(55, 32);
+            this.CityLabel.TabIndex = 10;
+            this.CityLabel.Text = "City";
+            // 
+            // Address2TextBox
+            // 
+            this.Address2TextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Address2TextBox.Location = new System.Drawing.Point(19, 244);
+            this.Address2TextBox.Name = "Address2TextBox";
+            this.Address2TextBox.Size = new System.Drawing.Size(858, 39);
+            this.Address2TextBox.TabIndex = 7;
+            // 
+            // Address2Label
+            // 
+            this.Address2Label.AutoSize = true;
+            this.Address2Label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Address2Label.Location = new System.Drawing.Point(19, 208);
+            this.Address2Label.Name = "Address2Label";
+            this.Address2Label.Size = new System.Drawing.Size(118, 32);
+            this.Address2Label.TabIndex = 8;
+            this.Address2Label.Text = "Address 2";
+            // 
             // SearchCitizenButton
             // 
             this.SearchCitizenButton.Location = new System.Drawing.Point(661, 76);
@@ -153,114 +261,6 @@ namespace PSPro.View
             this.LastNameLabel.Size = new System.Drawing.Size(126, 32);
             this.LastNameLabel.TabIndex = 3;
             this.LastNameLabel.Text = "Last Name";
-            // 
-            // Address2TextBox
-            // 
-            this.Address2TextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Address2TextBox.Location = new System.Drawing.Point(19, 244);
-            this.Address2TextBox.Name = "Address2TextBox";
-            this.Address2TextBox.Size = new System.Drawing.Size(858, 39);
-            this.Address2TextBox.TabIndex = 7;
-            // 
-            // Address2Label
-            // 
-            this.Address2Label.AutoSize = true;
-            this.Address2Label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Address2Label.Location = new System.Drawing.Point(19, 208);
-            this.Address2Label.Name = "Address2Label";
-            this.Address2Label.Size = new System.Drawing.Size(118, 32);
-            this.Address2Label.TabIndex = 8;
-            this.Address2Label.Text = "Address 2";
-            // 
-            // CityTextBox
-            // 
-            this.CityTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CityTextBox.Location = new System.Drawing.Point(19, 325);
-            this.CityTextBox.Name = "CityTextBox";
-            this.CityTextBox.Size = new System.Drawing.Size(308, 39);
-            this.CityTextBox.TabIndex = 9;
-            // 
-            // CityLabel
-            // 
-            this.CityLabel.AutoSize = true;
-            this.CityLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CityLabel.Location = new System.Drawing.Point(19, 290);
-            this.CityLabel.Name = "CityLabel";
-            this.CityLabel.Size = new System.Drawing.Size(55, 32);
-            this.CityLabel.TabIndex = 10;
-            this.CityLabel.Text = "City";
-            // 
-            // StateLabel
-            // 
-            this.StateLabel.AutoSize = true;
-            this.StateLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.StateLabel.Location = new System.Drawing.Point(342, 290);
-            this.StateLabel.Name = "StateLabel";
-            this.StateLabel.Size = new System.Drawing.Size(67, 32);
-            this.StateLabel.TabIndex = 12;
-            this.StateLabel.Text = "State";
-            // 
-            // ZipCodeTextBox
-            // 
-            this.ZipCodeTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ZipCodeTextBox.Location = new System.Drawing.Point(617, 325);
-            this.ZipCodeTextBox.Name = "ZipCodeTextBox";
-            this.ZipCodeTextBox.Size = new System.Drawing.Size(260, 39);
-            this.ZipCodeTextBox.TabIndex = 13;
-            // 
-            // ZipCodeLabel
-            // 
-            this.ZipCodeLabel.AutoSize = true;
-            this.ZipCodeLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ZipCodeLabel.Location = new System.Drawing.Point(617, 290);
-            this.ZipCodeLabel.Name = "ZipCodeLabel";
-            this.ZipCodeLabel.Size = new System.Drawing.Size(104, 32);
-            this.ZipCodeLabel.TabIndex = 14;
-            this.ZipCodeLabel.Text = "ZipCode";
-            // 
-            // StateComboBox
-            // 
-            this.StateComboBox.FormattingEnabled = true;
-            this.StateComboBox.Location = new System.Drawing.Point(342, 325);
-            this.StateComboBox.Name = "StateComboBox";
-            this.StateComboBox.Size = new System.Drawing.Size(260, 39);
-            this.StateComboBox.TabIndex = 15;
-            // 
-            // PhoneNumberTextBox
-            // 
-            this.PhoneNumberTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(19, 408);
-            this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
-            this.PhoneNumberTextBox.Size = new System.Drawing.Size(374, 39);
-            this.PhoneNumberTextBox.TabIndex = 18;
-            // 
-            // PhoneNumberLabel
-            // 
-            this.PhoneNumberLabel.AutoSize = true;
-            this.PhoneNumberLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PhoneNumberLabel.Location = new System.Drawing.Point(19, 373);
-            this.PhoneNumberLabel.Name = "PhoneNumberLabel";
-            this.PhoneNumberLabel.Size = new System.Drawing.Size(177, 32);
-            this.PhoneNumberLabel.TabIndex = 19;
-            this.PhoneNumberLabel.Text = "Phone Number";
-            // 
-            // EmailTextBox
-            // 
-            this.EmailTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EmailTextBox.Location = new System.Drawing.Point(410, 408);
-            this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(467, 39);
-            this.EmailTextBox.TabIndex = 16;
-            // 
-            // EmailLabel
-            // 
-            this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EmailLabel.Location = new System.Drawing.Point(410, 373);
-            this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(162, 32);
-            this.EmailLabel.TabIndex = 17;
-            this.EmailLabel.Text = "Email Address";
             // 
             // OfficerComboBox
             // 
@@ -374,9 +374,10 @@ namespace PSPro.View
             this.Controls.Add(this.OfficerComboBox);
             this.Controls.Add(this.OfficerLabel);
             this.Controls.Add(this.CitizenInfoGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "NewComplaintForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "New Complaint";
+            this.Text = "PSPro - Supervisor - File a Complaint";
             this.CitizenInfoGroupBox.ResumeLayout(false);
             this.CitizenInfoGroupBox.PerformLayout();
             this.ResumeLayout(false);
