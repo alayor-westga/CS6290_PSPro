@@ -65,7 +65,7 @@ namespace PSPro.View
             // FirstNameTextBox
             // 
             this.FirstNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FirstNameTextBox.Location = new System.Drawing.Point(19, 76);
+            this.FirstNameTextBox.Location = new System.Drawing.Point(19, 77);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.Size = new System.Drawing.Size(308, 39);
             this.FirstNameTextBox.TabIndex = 0;
@@ -74,7 +74,7 @@ namespace PSPro.View
             // 
             this.FirstNameLabel.AutoSize = true;
             this.FirstNameLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FirstNameLabel.Location = new System.Drawing.Point(19, 41);
+            this.FirstNameLabel.Location = new System.Drawing.Point(19, 42);
             this.FirstNameLabel.Name = "FirstNameLabel";
             this.FirstNameLabel.Size = new System.Drawing.Size(129, 32);
             this.FirstNameLabel.TabIndex = 1;
@@ -94,7 +94,6 @@ namespace PSPro.View
             this.CitizenInfoGroupBox.Controls.Add(this.CityLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.Address2TextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.Address2Label);
-            this.CitizenInfoGroupBox.Controls.Add(this.SearchCitizenButton);
             this.CitizenInfoGroupBox.Controls.Add(this.Address1TextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.Address1Label);
             this.CitizenInfoGroupBox.Controls.Add(this.LastNameTextBox);
@@ -102,17 +101,17 @@ namespace PSPro.View
             this.CitizenInfoGroupBox.Controls.Add(this.FirstNameTextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.FirstNameLabel);
             this.CitizenInfoGroupBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CitizenInfoGroupBox.Location = new System.Drawing.Point(12, 54);
+            this.CitizenInfoGroupBox.Location = new System.Drawing.Point(12, 106);
             this.CitizenInfoGroupBox.Name = "CitizenInfoGroupBox";
-            this.CitizenInfoGroupBox.Size = new System.Drawing.Size(897, 469);
+            this.CitizenInfoGroupBox.Size = new System.Drawing.Size(897, 447);
             this.CitizenInfoGroupBox.TabIndex = 2;
             this.CitizenInfoGroupBox.TabStop = false;
-            this.CitizenInfoGroupBox.Text = "Citizen";
+            this.CitizenInfoGroupBox.Text = "Enter Citizen Information";
             // 
             // PhoneNumberTextBox
             // 
             this.PhoneNumberTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(19, 408);
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(19, 394);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(374, 39);
             this.PhoneNumberTextBox.TabIndex = 18;
@@ -121,7 +120,7 @@ namespace PSPro.View
             // 
             this.PhoneNumberLabel.AutoSize = true;
             this.PhoneNumberLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PhoneNumberLabel.Location = new System.Drawing.Point(19, 373);
+            this.PhoneNumberLabel.Location = new System.Drawing.Point(19, 359);
             this.PhoneNumberLabel.Name = "PhoneNumberLabel";
             this.PhoneNumberLabel.Size = new System.Drawing.Size(177, 32);
             this.PhoneNumberLabel.TabIndex = 19;
@@ -130,7 +129,7 @@ namespace PSPro.View
             // EmailTextBox
             // 
             this.EmailTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EmailTextBox.Location = new System.Drawing.Point(410, 408);
+            this.EmailTextBox.Location = new System.Drawing.Point(410, 394);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(467, 39);
             this.EmailTextBox.TabIndex = 16;
@@ -139,7 +138,7 @@ namespace PSPro.View
             // 
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EmailLabel.Location = new System.Drawing.Point(410, 373);
+            this.EmailLabel.Location = new System.Drawing.Point(410, 359);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(162, 32);
             this.EmailLabel.TabIndex = 17;
@@ -148,7 +147,7 @@ namespace PSPro.View
             // StateComboBox
             // 
             this.StateComboBox.FormattingEnabled = true;
-            this.StateComboBox.Location = new System.Drawing.Point(342, 325);
+            this.StateComboBox.Location = new System.Drawing.Point(342, 315);
             this.StateComboBox.Name = "StateComboBox";
             this.StateComboBox.Size = new System.Drawing.Size(260, 39);
             this.StateComboBox.TabIndex = 15;
@@ -156,7 +155,7 @@ namespace PSPro.View
             // ZipCodeTextBox
             // 
             this.ZipCodeTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ZipCodeTextBox.Location = new System.Drawing.Point(617, 325);
+            this.ZipCodeTextBox.Location = new System.Drawing.Point(617, 315);
             this.ZipCodeTextBox.Name = "ZipCodeTextBox";
             this.ZipCodeTextBox.Size = new System.Drawing.Size(260, 39);
             this.ZipCodeTextBox.TabIndex = 13;
@@ -165,7 +164,7 @@ namespace PSPro.View
             // 
             this.ZipCodeLabel.AutoSize = true;
             this.ZipCodeLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ZipCodeLabel.Location = new System.Drawing.Point(617, 290);
+            this.ZipCodeLabel.Location = new System.Drawing.Point(617, 280);
             this.ZipCodeLabel.Name = "ZipCodeLabel";
             this.ZipCodeLabel.Size = new System.Drawing.Size(104, 32);
             this.ZipCodeLabel.TabIndex = 14;
@@ -175,7 +174,7 @@ namespace PSPro.View
             // 
             this.StateLabel.AutoSize = true;
             this.StateLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.StateLabel.Location = new System.Drawing.Point(342, 290);
+            this.StateLabel.Location = new System.Drawing.Point(342, 280);
             this.StateLabel.Name = "StateLabel";
             this.StateLabel.Size = new System.Drawing.Size(67, 32);
             this.StateLabel.TabIndex = 12;
@@ -184,7 +183,7 @@ namespace PSPro.View
             // CityTextBox
             // 
             this.CityTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CityTextBox.Location = new System.Drawing.Point(19, 325);
+            this.CityTextBox.Location = new System.Drawing.Point(19, 315);
             this.CityTextBox.Name = "CityTextBox";
             this.CityTextBox.Size = new System.Drawing.Size(308, 39);
             this.CityTextBox.TabIndex = 9;
@@ -193,7 +192,7 @@ namespace PSPro.View
             // 
             this.CityLabel.AutoSize = true;
             this.CityLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CityLabel.Location = new System.Drawing.Point(19, 290);
+            this.CityLabel.Location = new System.Drawing.Point(19, 280);
             this.CityLabel.Name = "CityLabel";
             this.CityLabel.Size = new System.Drawing.Size(55, 32);
             this.CityLabel.TabIndex = 10;
@@ -202,7 +201,7 @@ namespace PSPro.View
             // Address2TextBox
             // 
             this.Address2TextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Address2TextBox.Location = new System.Drawing.Point(19, 244);
+            this.Address2TextBox.Location = new System.Drawing.Point(19, 238);
             this.Address2TextBox.Name = "Address2TextBox";
             this.Address2TextBox.Size = new System.Drawing.Size(858, 39);
             this.Address2TextBox.TabIndex = 7;
@@ -211,7 +210,7 @@ namespace PSPro.View
             // 
             this.Address2Label.AutoSize = true;
             this.Address2Label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Address2Label.Location = new System.Drawing.Point(19, 208);
+            this.Address2Label.Location = new System.Drawing.Point(19, 202);
             this.Address2Label.Name = "Address2Label";
             this.Address2Label.Size = new System.Drawing.Size(118, 32);
             this.Address2Label.TabIndex = 8;
@@ -219,9 +218,10 @@ namespace PSPro.View
             // 
             // SearchCitizenButton
             // 
-            this.SearchCitizenButton.Location = new System.Drawing.Point(661, 76);
+            this.SearchCitizenButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SearchCitizenButton.Location = new System.Drawing.Point(687, 61);
             this.SearchCitizenButton.Name = "SearchCitizenButton";
-            this.SearchCitizenButton.Size = new System.Drawing.Size(216, 38);
+            this.SearchCitizenButton.Size = new System.Drawing.Size(216, 39);
             this.SearchCitizenButton.TabIndex = 6;
             this.SearchCitizenButton.Text = "Search for Citizen";
             this.SearchCitizenButton.UseVisualStyleBackColor = true;
@@ -229,7 +229,7 @@ namespace PSPro.View
             // Address1TextBox
             // 
             this.Address1TextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Address1TextBox.Location = new System.Drawing.Point(19, 159);
+            this.Address1TextBox.Location = new System.Drawing.Point(19, 157);
             this.Address1TextBox.Name = "Address1TextBox";
             this.Address1TextBox.Size = new System.Drawing.Size(858, 39);
             this.Address1TextBox.TabIndex = 4;
@@ -238,7 +238,7 @@ namespace PSPro.View
             // 
             this.Address1Label.AutoSize = true;
             this.Address1Label.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Address1Label.Location = new System.Drawing.Point(19, 124);
+            this.Address1Label.Location = new System.Drawing.Point(19, 122);
             this.Address1Label.Name = "Address1Label";
             this.Address1Label.Size = new System.Drawing.Size(118, 32);
             this.Address1Label.TabIndex = 5;
@@ -247,7 +247,7 @@ namespace PSPro.View
             // LastNameTextBox
             // 
             this.LastNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LastNameTextBox.Location = new System.Drawing.Point(342, 76);
+            this.LastNameTextBox.Location = new System.Drawing.Point(342, 77);
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(308, 39);
             this.LastNameTextBox.TabIndex = 2;
@@ -256,7 +256,7 @@ namespace PSPro.View
             // 
             this.LastNameLabel.AutoSize = true;
             this.LastNameLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LastNameLabel.Location = new System.Drawing.Point(342, 41);
+            this.LastNameLabel.Location = new System.Drawing.Point(342, 42);
             this.LastNameLabel.Name = "LastNameLabel";
             this.LastNameLabel.Size = new System.Drawing.Size(126, 32);
             this.LastNameLabel.TabIndex = 3;
@@ -266,7 +266,7 @@ namespace PSPro.View
             // 
             this.OfficerComboBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OfficerComboBox.FormattingEnabled = true;
-            this.OfficerComboBox.Location = new System.Drawing.Point(31, 576);
+            this.OfficerComboBox.Location = new System.Drawing.Point(31, 591);
             this.OfficerComboBox.Name = "OfficerComboBox";
             this.OfficerComboBox.Size = new System.Drawing.Size(407, 39);
             this.OfficerComboBox.TabIndex = 21;
@@ -275,7 +275,7 @@ namespace PSPro.View
             // 
             this.OfficerLabel.AutoSize = true;
             this.OfficerLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.OfficerLabel.Location = new System.Drawing.Point(31, 541);
+            this.OfficerLabel.Location = new System.Drawing.Point(31, 556);
             this.OfficerLabel.Name = "OfficerLabel";
             this.OfficerLabel.Size = new System.Drawing.Size(86, 32);
             this.OfficerLabel.TabIndex = 20;
@@ -285,7 +285,7 @@ namespace PSPro.View
             // 
             this.AllegationComboBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AllegationComboBox.FormattingEnabled = true;
-            this.AllegationComboBox.Location = new System.Drawing.Point(502, 576);
+            this.AllegationComboBox.Location = new System.Drawing.Point(502, 591);
             this.AllegationComboBox.Name = "AllegationComboBox";
             this.AllegationComboBox.Size = new System.Drawing.Size(387, 39);
             this.AllegationComboBox.TabIndex = 23;
@@ -294,7 +294,7 @@ namespace PSPro.View
             // 
             this.AllegationLabel.AutoSize = true;
             this.AllegationLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AllegationLabel.Location = new System.Drawing.Point(502, 541);
+            this.AllegationLabel.Location = new System.Drawing.Point(502, 556);
             this.AllegationLabel.Name = "AllegationLabel";
             this.AllegationLabel.Size = new System.Drawing.Size(122, 32);
             this.AllegationLabel.TabIndex = 22;
@@ -374,6 +374,7 @@ namespace PSPro.View
             this.Controls.Add(this.OfficerComboBox);
             this.Controls.Add(this.OfficerLabel);
             this.Controls.Add(this.CitizenInfoGroupBox);
+            this.Controls.Add(this.SearchCitizenButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "NewComplaintForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
