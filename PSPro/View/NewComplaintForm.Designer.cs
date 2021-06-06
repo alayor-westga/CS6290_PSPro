@@ -286,7 +286,6 @@ namespace PSPro.View
             this.AllegationComboBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AllegationComboBox.FormattingEnabled = true;
             this.AllegationComboBox.Items.AddRange(new object[] {
-            "Select Allegation",
             "Conduct Unbecoming",
             "Courtesy Complaint",
             "Dangerous Driving",
