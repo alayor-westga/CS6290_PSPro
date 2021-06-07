@@ -21,5 +21,20 @@ namespace PSPro.Controller
         {
             return this.supervisorSource.GetOfficersForComboBox();
         }
+
+        internal void AddComplaint(Complaint complaint)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int AddCitizen(Citizen citizen)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int ReturnCitizenID(object citizen)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -51,6 +51,7 @@
     <Compile Include="DAL\PsProDBConnection.cs" />
     <Compile Include="DAL\SupervisorDAL.cs" />
     <Compile Include="Model\Citizen.cs" />
+    <Compile Include="Model\Complaint.cs" />
     <Compile Include="Model\OfficerComboBox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

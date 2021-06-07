@@ -14,12 +14,16 @@ namespace PSPro.View
     {
         private readonly LoginController loginController;
         private readonly SupervisorController supervisorController;
+        private Complaint complaint;
+        private Citizen citizen;
 
         public NewComplaintForm()
         {
             InitializeComponent();
-            loginController = new LoginController();
-            supervisorController = new SupervisorController();
+            this.loginController = new LoginController();
+            this.supervisorController = new SupervisorController();
+            this.complaint = new Complaint();
+            this.citizen = new Citizen();
             this.PopulateOfficerComboBox();
         }
 
@@ -37,6 +41,76 @@ namespace PSPro.View
                 return;
             }
             this.OfficerComboBox.SelectedIndex = -1;
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+           
+            if (this.CitizenIDTextBox.Text == null)
+            {
+                this.AddCitizen();
+                this.complaint.CitizenID = ReturnCitizenID();
+            }
+            else
+            {
+                this.complaint.CitizenID = Int32.Parse(this.CitizenIDTextBox.Text);
+            }
+           
+            this.complaint.OfficerID = Int32.Parse(this.OfficerComboBox.ValueMember);
+            this.complaint.SupervisorID = 3333; // placeholder                     
+            this.complaint.Allegation = this.AllegationComboBox.Text;
+            this.complaint.Summary = this.ComplaintSummaryTextBox.Text;
+          
+            try
+            {
+                this.supervisorController.AddComplaint(complaint);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message,
+                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private int ReturnCitizenID()
+        {
+            try
+            {
+                int citizenID = this.supervisorController.ReturnCitizenID(this.citizen.Email);
+                return citizenID;
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message,
+                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+          
+        }
+
+        private void AddCitizen()
+        {
+            this.citizen.FirstName = FirstNameTextBox.Text;
+            this.citizen.LastName = LastNameTextBox.Text;
+            this.citizen.Address1 = Address1TextBox.Text;
+            this.citizen.Address2 = Address2TextBox.Text;
+            this.citizen.City = CityTextBox.Text;
+            this.citizen.State = StateComboBox.Text;
+            this.citizen.ZipCode = ZipCodeTextBox.Text;
+            this.citizen.Phone = PhoneNumberTextBox.Text;
+            this.citizen.Email = EmailTextBox.Text;
+           
+            try
+            {
+                this.supervisorController.AddCitizen(citizen);               
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message,
+                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
     }
 }

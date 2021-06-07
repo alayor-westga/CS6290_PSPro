@@ -33,6 +33,8 @@ namespace PSPro.View
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.CitizenInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.CitizenIDLabel = new System.Windows.Forms.Label();
+            this.CitizenIDTextBox = new System.Windows.Forms.TextBox();
             this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.PhoneNumberLabel = new System.Windows.Forms.Label();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
@@ -55,7 +57,7 @@ namespace PSPro.View
             this.OfficerLabel = new System.Windows.Forms.Label();
             this.AllegationComboBox = new System.Windows.Forms.ComboBox();
             this.AllegationLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ComplaintSummaryTextBox = new System.Windows.Forms.TextBox();
             this.ComplaintSummaryLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.LogoutLinkLabel = new System.Windows.Forms.LinkLabel();
@@ -71,7 +73,7 @@ namespace PSPro.View
             this.FirstNameTextBox.Location = new System.Drawing.Point(19, 77);
             this.FirstNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
-            this.FirstNameTextBox.Size = new System.Drawing.Size(407, 39);
+            this.FirstNameTextBox.Size = new System.Drawing.Size(321, 39);
             this.FirstNameTextBox.TabIndex = 0;
             // 
             // FirstNameLabel
@@ -86,6 +88,8 @@ namespace PSPro.View
             // 
             // CitizenInfoGroupBox
             // 
+            this.CitizenInfoGroupBox.Controls.Add(this.CitizenIDLabel);
+            this.CitizenInfoGroupBox.Controls.Add(this.CitizenIDTextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.PhoneNumberTextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.PhoneNumberLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.EmailTextBox);
@@ -113,6 +117,26 @@ namespace PSPro.View
             this.CitizenInfoGroupBox.TabIndex = 2;
             this.CitizenInfoGroupBox.TabStop = false;
             this.CitizenInfoGroupBox.Text = "Enter Citizen Information";
+            // 
+            // CitizenIDLabel
+            // 
+            this.CitizenIDLabel.AutoSize = true;
+            this.CitizenIDLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.CitizenIDLabel.Location = new System.Drawing.Point(692, 43);
+            this.CitizenIDLabel.Name = "CitizenIDLabel";
+            this.CitizenIDLabel.Size = new System.Drawing.Size(111, 32);
+            this.CitizenIDLabel.TabIndex = 21;
+            this.CitizenIDLabel.Text = "CitizenID";
+            // 
+            // CitizenIDTextBox
+            // 
+            this.CitizenIDTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.CitizenIDTextBox.Location = new System.Drawing.Point(689, 77);
+            this.CitizenIDTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CitizenIDTextBox.Name = "CitizenIDTextBox";
+            this.CitizenIDTextBox.ReadOnly = true;
+            this.CitizenIDTextBox.Size = new System.Drawing.Size(188, 39);
+            this.CitizenIDTextBox.TabIndex = 20;
             // 
             // PhoneNumberTextBox
             // 
@@ -250,17 +274,17 @@ namespace PSPro.View
             // LastNameTextBox
             // 
             this.LastNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.LastNameTextBox.Location = new System.Drawing.Point(454, 77);
+            this.LastNameTextBox.Location = new System.Drawing.Point(351, 77);
             this.LastNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LastNameTextBox.Name = "LastNameTextBox";
-            this.LastNameTextBox.Size = new System.Drawing.Size(423, 39);
+            this.LastNameTextBox.Size = new System.Drawing.Size(321, 39);
             this.LastNameTextBox.TabIndex = 2;
             // 
             // LastNameLabel
             // 
             this.LastNameLabel.AutoSize = true;
             this.LastNameLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.LastNameLabel.Location = new System.Drawing.Point(454, 43);
+            this.LastNameLabel.Location = new System.Drawing.Point(357, 43);
             this.LastNameLabel.Name = "LastNameLabel";
             this.LastNameLabel.Size = new System.Drawing.Size(127, 32);
             this.LastNameLabel.TabIndex = 3;
@@ -335,15 +359,15 @@ namespace PSPro.View
             this.AllegationLabel.TabIndex = 22;
             this.AllegationLabel.Text = "Allegation";
             // 
-            // textBox1
+            // ComplaintSummaryTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.textBox1.Location = new System.Drawing.Point(31, 631);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(858, 121);
-            this.textBox1.TabIndex = 20;
+            this.ComplaintSummaryTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.ComplaintSummaryTextBox.Location = new System.Drawing.Point(31, 631);
+            this.ComplaintSummaryTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ComplaintSummaryTextBox.Multiline = true;
+            this.ComplaintSummaryTextBox.Name = "ComplaintSummaryTextBox";
+            this.ComplaintSummaryTextBox.Size = new System.Drawing.Size(858, 121);
+            this.ComplaintSummaryTextBox.TabIndex = 20;
             // 
             // ComplaintSummaryLabel
             // 
@@ -365,6 +389,7 @@ namespace PSPro.View
             this.SaveButton.TabIndex = 20;
             this.SaveButton.Text = "Save Complaint";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // LogoutLinkLabel
             // 
@@ -404,7 +429,7 @@ namespace PSPro.View
             this.Controls.Add(this.WelcomeLabel);
             this.Controls.Add(this.LogoutLinkLabel);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ComplaintSummaryTextBox);
             this.Controls.Add(this.AllegationComboBox);
             this.Controls.Add(this.ComplaintSummaryLabel);
             this.Controls.Add(this.AllegationLabel);
@@ -451,12 +476,14 @@ namespace PSPro.View
         private System.Windows.Forms.Label OfficerLabel;
         private System.Windows.Forms.ComboBox AllegationComboBox;
         private System.Windows.Forms.Label AllegationLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ComplaintSummaryTextBox;
         private System.Windows.Forms.Label ComplaintSummaryLabel;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.LinkLabel LogoutLinkLabel;
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Label SupervisorLabel;
         private System.Windows.Forms.BindingSource officerComboBoxBindingSource;
+        private System.Windows.Forms.Label CitizenIDLabel;
+        private System.Windows.Forms.TextBox CitizenIDTextBox;
     }
 }
