@@ -29,6 +29,7 @@ namespace PSPro.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.CitizenInfoGroupBox = new System.Windows.Forms.GroupBox();
@@ -59,7 +60,9 @@ namespace PSPro.View
             this.LogoutLinkLabel = new System.Windows.Forms.LinkLabel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.SupervisorLabel = new System.Windows.Forms.Label();
+            this.officerComboBoxBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CitizenInfoGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // FirstNameTextBox
@@ -276,6 +279,8 @@ namespace PSPro.View
             // 
             // OfficerComboBox
             // 
+            this.OfficerComboBox.DataSource = this.officerComboBoxBindingSource;
+            this.OfficerComboBox.DisplayMember = "DisplayName";
             this.OfficerComboBox.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.OfficerComboBox.FormattingEnabled = true;
             this.OfficerComboBox.Location = new System.Drawing.Point(31, 556);
@@ -283,6 +288,7 @@ namespace PSPro.View
             this.OfficerComboBox.Name = "OfficerComboBox";
             this.OfficerComboBox.Size = new System.Drawing.Size(407, 39);
             this.OfficerComboBox.TabIndex = 21;
+            this.OfficerComboBox.ValueMember = "PersonnelID";
             // 
             // OfficerLabel
             // 
@@ -383,6 +389,10 @@ namespace PSPro.View
             this.SupervisorLabel.Size = new System.Drawing.Size(475, 29);
             this.SupervisorLabel.TabIndex = 26;
             // 
+            // officerComboBoxBindingSource
+            // 
+            this.officerComboBoxBindingSource.DataSource = typeof(PSPro.Model.OfficerComboBox);
+            // 
             // NewComplaintForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -407,6 +417,7 @@ namespace PSPro.View
             this.Text = "PSPro - Supervisor - File a Complaint";
             this.CitizenInfoGroupBox.ResumeLayout(false);
             this.CitizenInfoGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,5 +455,6 @@ namespace PSPro.View
         private System.Windows.Forms.LinkLabel LogoutLinkLabel;
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.Label SupervisorLabel;
+        private System.Windows.Forms.BindingSource officerComboBoxBindingSource;
     }
 }
