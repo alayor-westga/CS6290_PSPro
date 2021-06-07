@@ -12,9 +12,14 @@ namespace PSPro.Controller
     {
         private readonly SupervisorDAL supervisorSource;
 
-        internal List<OfficerComboBox> GetOfficersForComboBox()
+        public SupervisorController()
         {
-            return this.supervisorSource.GetOfficerForComboBox();
+            this.supervisorSource = new SupervisorDAL();
+        }
+
+        public List<OfficerComboBox> GetOfficersForComboBox()
+        {
+            return this.supervisorSource.GetOfficersForComboBox();
         }
     }
 }

@@ -19,12 +19,14 @@ namespace PSPro.View
         {
             InitializeComponent();
             loginController = new LoginController();
+            supervisorController = new SupervisorController();
             loginController.LoginAsSupervisor("user", "pass");
             this.PopulateOfficerComboBox();
         }
 
         private void PopulateOfficerComboBox()
         {
+           
             try
             {
                 List<OfficerComboBox> officers = this.supervisorController.GetOfficersForComboBox();
