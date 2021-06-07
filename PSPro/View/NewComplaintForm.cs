@@ -1,4 +1,5 @@
 ﻿using PSPro.Controller;
+using PSPro.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,19 +27,13 @@ namespace PSPro.View
         {
             try
             {
-                officers = this.supervisorController.GetOfficersForComboBox();
-                foreach (LabTest labTest in allLabTests)
+                List<OfficerComboBox> officers = this.supervisorController.GetOfficersForComboBox();
+                foreach (OfficerComboBox officer in officers)
                 {
-                    if (this.labTestController.GetSingleLabTestResult(labTest.LabTestCode, this.visit.AppointmentID) == null)
-                    {
-                        labTestsNotSelected.Add(labTest);
-                    }
+                        officers.Add(officer);
                 }
-                if (labTestsNotSelected.Count == 0)
-                {
-                    this.orderTestButton.Enabled = false;
-                }
-                this.labTestListBox.DataSource = labTestsNotSelected;
+                
+                this.OfficerComboBox.DataSource = officers;
             }
             catch (ArgumentException argumentException)
             {
