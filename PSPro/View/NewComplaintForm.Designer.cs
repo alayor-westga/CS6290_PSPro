@@ -51,6 +51,7 @@ namespace PSPro.View
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.SearchCitizenButton = new System.Windows.Forms.Button();
             this.OfficerComboBox = new System.Windows.Forms.ComboBox();
+            this.officerComboBoxBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.OfficerLabel = new System.Windows.Forms.Label();
             this.AllegationComboBox = new System.Windows.Forms.ComboBox();
             this.AllegationLabel = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@ namespace PSPro.View
             this.LogoutLinkLabel = new System.Windows.Forms.LinkLabel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.SupervisorLabel = new System.Windows.Forms.Label();
-            this.officerComboBoxBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CitizenInfoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -279,6 +279,8 @@ namespace PSPro.View
             // 
             // OfficerComboBox
             // 
+            this.OfficerComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.OfficerComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.OfficerComboBox.DataSource = this.officerComboBoxBindingSource;
             this.OfficerComboBox.DisplayMember = "DisplayName";
             this.OfficerComboBox.Font = new System.Drawing.Font("Segoe UI", 14F);
@@ -289,6 +291,10 @@ namespace PSPro.View
             this.OfficerComboBox.Size = new System.Drawing.Size(407, 39);
             this.OfficerComboBox.TabIndex = 21;
             this.OfficerComboBox.ValueMember = "PersonnelID";
+            // 
+            // officerComboBoxBindingSource
+            // 
+            this.officerComboBoxBindingSource.DataSource = typeof(PSPro.Model.OfficerComboBox);
             // 
             // OfficerLabel
             // 
@@ -388,10 +394,6 @@ namespace PSPro.View
             this.SupervisorLabel.Name = "SupervisorLabel";
             this.SupervisorLabel.Size = new System.Drawing.Size(475, 29);
             this.SupervisorLabel.TabIndex = 26;
-            // 
-            // officerComboBoxBindingSource
-            // 
-            this.officerComboBoxBindingSource.DataSource = typeof(PSPro.Model.OfficerComboBox);
             // 
             // NewComplaintForm
             // 

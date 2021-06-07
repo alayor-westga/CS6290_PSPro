@@ -40,6 +40,7 @@ namespace PSPro.View
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            this.OfficerComboBox.SelectedIndex = -1;
         }
     }
 }
