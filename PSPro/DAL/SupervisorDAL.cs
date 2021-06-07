@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PSPro.Model;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -40,5 +42,26 @@ namespace PSPro.DAL
                 }
             }
         }
+
+        /*
+        public List<OfficerComboBox> GetOfficerForComboBox()
+        {
+            List<OfficerComboBox> officers;
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "GetOfficersForComboBox";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;                 
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+                    }
+                }
+            }
+            return ;
+        }
+        */
     }
 }
