@@ -55,12 +55,17 @@ namespace PSPro.View
             {
                 this.complaint.CitizenID = Int32.Parse(this.CitizenIDTextBox.Text);
             }
-           
+
+            this.AddComplaint();          
+        }
+
+        private void AddComplaint()
+        {
             this.complaint.OfficerID = Int32.Parse(this.OfficerComboBox.ValueMember);
             this.complaint.SupervisorID = 3333; // placeholder                     
             this.complaint.Allegation = this.AllegationComboBox.Text;
             this.complaint.Summary = this.ComplaintSummaryTextBox.Text;
-          
+
             try
             {
                 this.supervisorController.AddComplaint(complaint);
