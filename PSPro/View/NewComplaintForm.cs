@@ -20,23 +20,19 @@ namespace PSPro.View
             InitializeComponent();
             loginController = new LoginController();
             supervisorController = new SupervisorController();
-            loginController.LoginAsSupervisor("user", "pass");
             this.PopulateOfficerComboBox();
         }
 
         private void PopulateOfficerComboBox()
-        {
-           
+        {         
             try
             {
-                List<OfficerComboBox> officers = this.supervisorController.GetOfficersForComboBox();
-                
-                
+                List<OfficerComboBox> officers = this.supervisorController.GetOfficersForComboBox();      
                 this.OfficerComboBox.DataSource = officers;
             }
-            catch (ArgumentException argumentException)
+            catch (Exception exception)
             {
-                MessageBox.Show(argumentException.Message,
+                MessageBox.Show(exception.Message,
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
