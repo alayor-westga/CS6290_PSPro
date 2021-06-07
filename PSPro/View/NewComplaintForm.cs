@@ -30,10 +30,7 @@ namespace PSPro.View
             try
             {
                 List<OfficerComboBox> officers = this.supervisorController.GetOfficersForComboBox();
-                foreach (OfficerComboBox officer in officers)
-                {
-                        officers.Add(officer);
-                }
+                
                 
                 this.OfficerComboBox.DataSource = officers;
             }

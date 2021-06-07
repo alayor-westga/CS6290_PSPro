@@ -53,7 +53,7 @@ namespace PSPro.DAL
             using (SqlConnection connection = PsProDBConnection.GetConnection())
             {
                 connection.Open();
-                string storedProcedure = "GetOfficersForComboBox";
+                string storedProcedure = "GetAllOfficersForComboBox";
                 using (SqlCommand command = new SqlCommand(storedProcedure, connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
