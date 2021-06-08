@@ -4,11 +4,11 @@ using System.Text;
 
 namespace PSPro.Model
 {
-    public class Supervisor : Personnel
+    public class Administrator : Personnel
     {
 
         /// <summary>
-        /// Username for Supervisor object
+        /// Username for Administrator object
         /// </summary>
         public string UserName { get; set; }
     }

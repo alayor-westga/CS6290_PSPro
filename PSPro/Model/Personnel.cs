@@ -12,32 +12,32 @@ namespace PSPro.Model
         public int PersonelID { get; set; }
 
         /// <summary>
-        /// First Name for Citizen object
+        /// First Name for Personnel object
         /// </summary>
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Last Name for Citizen object
+        /// Last Name for Personnel object
         /// </summary>
         public string LastName { get; set;  }
 
         /// <summary>
-        /// Gender for Citizen object
+        /// Gender for Personnel object
         /// </summary>
         public string Gender { get; set;  }
 
         /// <summary>
-        /// Hire date for Citizen object
+        /// Hire date for Personnel object
         /// </summary>
         public string HireDate { get; set;  }
 
         /// <summary>
-        /// Birth date for Citizen object
+        /// Birth date for Personnel object
         /// </summary>
         public string BirthDate { get; set;  }
 
         /// <summary>
-        /// Assignment for Citizen object
+        /// Assignment for Personnel object
         /// </summary>
         public string Assignment { get; set;  }
 
