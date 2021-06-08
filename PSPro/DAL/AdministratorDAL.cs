@@ -15,7 +15,7 @@ namespace PSPro.DAL
         /// <param name="username">The administrator's username.</param>
         /// <param name="password">The administrator's password.</param>
         /// <returns>The administrator if found. Null otherwise.</returns>
-        public Administrator GetByUserNameAndPassword(string username, string password)
+        virtual public Administrator GetByUserNameAndPassword(string username, string password)
         {
             if (String.IsNullOrWhiteSpace(username))
             {

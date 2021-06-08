@@ -14,7 +14,7 @@ namespace PSPro.Controller
         private readonly SupervisorDAL supervisorDAL;
         private readonly InvestigatorDAL investigatorDAL;
         private readonly AdministratorDAL administratorDAL;
-        public static User user;
+        private static User user;
 
         /// <summary>
         /// It creates a LoginController object.

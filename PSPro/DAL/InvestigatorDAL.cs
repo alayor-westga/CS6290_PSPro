@@ -15,7 +15,7 @@ namespace PSPro.DAL
         /// <param name="username">The investigator's username.</param>
         /// <param name="password">The investigator's password.</param>
         /// <returns>The investigator if found. Null otherwise.</returns>
-        public Investigator GetByUserNameAndPassword(string username, string password)
+        virtual public Investigator GetByUserNameAndPassword(string username, string password)
         {
             if (String.IsNullOrWhiteSpace(username))
             {

@@ -60,7 +60,7 @@ namespace PSPro.DAL
         /// This method will retrieve all officers from the database
         /// </summary>
         /// <returns>A List of OfficerComboBox objects</returns>
-        public List<OfficerComboBox> GetOfficersForComboBox()
+        virtual public List<OfficerComboBox> GetOfficersForComboBox()
         {
             List<OfficerComboBox> officerList = new List<OfficerComboBox>();
             using (SqlConnection connection = PsProDBConnection.GetConnection())
@@ -88,7 +88,7 @@ namespace PSPro.DAL
             return officerList;
         }
 
-        public void AddCitizen(Citizen citizen)
+        virtual public void AddCitizen(Citizen citizen)
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
             {
