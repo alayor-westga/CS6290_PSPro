@@ -53,6 +53,8 @@
     <Compile Include="Model\Citizen.cs" />
     <Compile Include="Model\Complaint.cs" />
     <Compile Include="Model\OfficerComboBox.cs" />
+    <Compile Include="Model\Personnel.cs" />
+    <Compile Include="Model\Supervisor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\LoginForm.cs">

@@ -4,8 +4,9 @@ CREATE PROCEDURE GetSupervisorByUserNameAndPassword @UserName varchar, @Password
 AS
 SET NOCOUNT ON;
 
-SELECT *
-FROM Supervisors 
+SELECT p.first_name, p.last_name
+FROM Supervisors s
+	INNER JOIN Personnel p ON (p.personnel_id = s.personnel_id)
 WHERE username = @UserName AND password = @Password;
 GO
 GRANT EXECUTE ON GetSupervisorByUserNameAndPassword 

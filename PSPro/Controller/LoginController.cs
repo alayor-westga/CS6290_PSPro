@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using PSPro.DAL;
+using PSPro.Model;
 
 namespace PSPro.Controller
 {
@@ -11,6 +12,7 @@ namespace PSPro.Controller
     public class LoginController
     {
         private readonly SupervisorDAL supervisorDAL;
+        public static Personnel loggedInUser;
 
         /// <summary>
         /// It creates a LoginController object.
@@ -27,7 +29,9 @@ namespace PSPro.Controller
 
         public void Login(string username, string password)
         {
-            supervisorDAL.GetByUserNameAndPassword(username, password);
+            if (username.StartsWith("s")) {
+                loggedInUser = supervisorDAL.GetByUserNameAndPassword(username, password);
+            }
         }
     }
 }
