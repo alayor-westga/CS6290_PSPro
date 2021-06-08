@@ -21,7 +21,7 @@ namespace PSPro.View
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            loginController.LoginAsSupervisor("user", "pass");    
+            loginController.Login(usernameTextBox.Text, passwordTextBox.Text);    
         }
     }
 }

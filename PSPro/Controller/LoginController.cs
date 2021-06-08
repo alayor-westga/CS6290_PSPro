@@ -25,7 +25,7 @@ namespace PSPro.Controller
             return false;
         }
 
-        public void LoginAsSupervisor(string username, string password)
+        public void Login(string username, string password)
         {
             supervisorDAL.GetByUserNameAndPassword(username, password);
         }
