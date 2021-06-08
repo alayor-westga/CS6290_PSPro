@@ -15,7 +15,7 @@ namespace PSPro.DAL
         /// <param name="username">The supervisor's username.</param>
         /// <param name="password">The supervisor's password.</param>
         /// <returns>The supervisor if found. Null otherwise.</returns>
-        public Supervisor GetByUserNameAndPassword(string username, string password)
+        virtual public Supervisor GetByUserNameAndPassword(string username, string password)
         {
             if (String.IsNullOrWhiteSpace(username))
             {

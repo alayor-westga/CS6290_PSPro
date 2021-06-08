@@ -26,6 +26,19 @@ namespace PSPro.Controller
             administratorDAL = new AdministratorDAL();
         }
 
+        /// <summary>
+        /// It creates a LoginController injecting dependencies.
+        /// </summary>
+        public LoginController(
+            SupervisorDAL supervisorDAL, 
+            InvestigatorDAL investigatorDAL, 
+            AdministratorDAL administratorDAL)
+        {
+            this.supervisorDAL = supervisorDAL;
+            this.investigatorDAL = investigatorDAL;
+            this.administratorDAL = administratorDAL;
+        }
+
         public static User GetUser()
         {
             return LoginController.user;
