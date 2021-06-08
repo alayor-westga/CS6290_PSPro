@@ -7,7 +7,8 @@ SET NOCOUNT ON;
 SELECT p.personnel_id, p.first_name, p.last_name
 FROM Supervisors s
 	INNER JOIN Personnel p ON (p.personnel_id = s.personnel_id)
-WHERE s.username = @UserName AND s.password = @Password;
+WHERE s.username = @UserName COLLATE Latin1_General_CS_AS 
+	AND s.password = HASHBYTES('SHA2_512', @Password+CAST(username AS NVARCHAR(36)));
 GO
 GRANT EXECUTE ON GetSupervisorByUserNameAndPassword 
     TO winforms;  
