@@ -12,6 +12,8 @@ namespace PSPro.Controller
     public class LoginController
     {
         private readonly SupervisorDAL supervisorDAL;
+        private readonly InvestigatorDAL investigatorDAL;
+        private readonly AdministratorDAL administratorDAL;
         public static User user;
 
         /// <summary>
@@ -20,6 +22,8 @@ namespace PSPro.Controller
         public LoginController()
         {
             supervisorDAL = new SupervisorDAL();
+            investigatorDAL = new InvestigatorDAL();
+            administratorDAL = new AdministratorDAL();
         }
         
         public bool IsLoggedIn()
@@ -36,9 +40,17 @@ namespace PSPro.Controller
         {
             Personnel personnel = null;
             UserRole role = UserRole.Unknown;
-            if (username.StartsWith("s")) {
+            if (username.StartsWith("s-")) {
                 personnel = (Personnel)supervisorDAL.GetByUserNameAndPassword(username, password);
                 role = UserRole.Supervisor;
+            }
+            if (username.StartsWith("i-")) {
+                personnel = (Personnel)investigatorDAL.GetByUserNameAndPassword(username, password);
+                role = UserRole.Investigator;
+            }
+            if (username.StartsWith("a-")) {
+                personnel = (Personnel)administratorDAL.GetByUserNameAndPassword(username, password);
+                role = UserRole.Administrator;
             }
             if (personnel == null)
             {
