@@ -27,6 +27,11 @@ namespace PSPro.Controller
             return false;
         }
 
+        public static User GetUser()
+        {
+            return LoginController.user;
+        }
+
         public bool Login(string username, string password)
         {
             if (username.StartsWith("s")) {

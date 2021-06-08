@@ -26,7 +26,17 @@ namespace PSPro.View
             this.supervisorController = new SupervisorController();
             this.complaint = new Complaint();
             this.citizen = new Citizen();
+            ShowUserName();
             this.PopulateOfficerComboBox();
+        }
+
+        /// <summary>
+        /// It renders the username.
+        /// </summary>
+        private void ShowUserName()
+        {
+            User user = LoginController.GetUser();
+            SupervisorLabel.Text = user.FullName + " (" + user.UserName + ")";
         }
 
         private void PopulateOfficerComboBox()
