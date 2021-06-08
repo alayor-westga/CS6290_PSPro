@@ -9,7 +9,7 @@ namespace PSPro.Model
     /// The Role of a user.
     /// </summary>
     public enum UserRole {
-        Supervisor, Investigator, Administrator
+        Supervisor, Investigator, Administrator, Unknown
     }
 
     /// <summary>

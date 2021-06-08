@@ -34,22 +34,24 @@ namespace PSPro.Controller
 
         public bool Login(string username, string password)
         {
+            Personnel personnel = null;
+            UserRole role = UserRole.Unknown;
             if (username.StartsWith("s")) {
-                Supervisor supervisor = supervisorDAL.GetByUserNameAndPassword(username, password);
-                if (supervisor == null)
-                {
-                    return false;
-                }
-                user = new User()
-                {
-                    UserId = supervisor.PersonelID,
-                    UserName = username,
-                    FullName = supervisor.FullName,
-                    Role = UserRole.Supervisor
-                };
-                return true;
+                personnel = (Personnel)supervisorDAL.GetByUserNameAndPassword(username, password);
+                role = UserRole.Supervisor;
             }
-            return false;
+            if (personnel == null)
+            {
+                return false;
+            }
+            user = new User()
+            {
+                UserId = personnel.PersonelID,
+                UserName = username,
+                FullName = personnel.FullName,
+                Role = role
+            };
+            return true;
         }
     }
 }
