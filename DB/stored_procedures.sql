@@ -34,8 +34,7 @@ GO
 
 DROP PROCEDURE IF EXISTS AddIncident;
 GO
-CREATE PROCEDURE AddIncident 
-	@citizen_id int, 
+CREATE PROCEDURE AddIncident  
 	@first_name varchar, 
 	@last_name varchar, 
 	@address1 varchar, 
@@ -48,8 +47,8 @@ CREATE PROCEDURE AddIncident
 AS
 SET NOCOUNT ON;
 
-INSERT Citizens (citizen_id, first_name, last_name, address1, address2, city, state, zipcode, phone, email)
-VALUES (@citizen_id, @first_name, @last_name, @address1, @address2, @city, @state, @zipcode, @phone, @email)
+INSERT Citizens (first_name, last_name, address1, address2, city, state, zipcode, phone, email)
+VALUES (@first_name, @last_name, @address1, @address2, @city, @state, @zipcode, @phone, @email)
 GO
 GRANT EXECUTE ON AddIncident 
     TO winforms;  
