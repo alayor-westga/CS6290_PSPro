@@ -25,11 +25,6 @@ namespace PSPro.Controller
             investigatorDAL = new InvestigatorDAL();
             administratorDAL = new AdministratorDAL();
         }
-        
-        public bool IsLoggedIn()
-        {
-            return false;
-        }
 
         public static User GetUser()
         {
