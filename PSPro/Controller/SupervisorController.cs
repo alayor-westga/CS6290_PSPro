@@ -27,12 +27,12 @@ namespace PSPro.Controller
             throw new NotImplementedException();
         }
 
-        internal int AddCitizen(Citizen citizen)
+        public void AddCitizen(Citizen citizen)
         {
-            throw new NotImplementedException();
+            this.supervisorSource.AddCitizen(citizen);
         }
 
-        internal int ReturnCitizenID(object citizen)
+        internal int ReturnCitizenID()
         {
             throw new NotImplementedException();
         }

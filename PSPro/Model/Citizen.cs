@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PSPro.Model
 {
-    class Citizen
+    public class Citizen
     {
         /// <summary>
         /// ID and PK for Citizen object

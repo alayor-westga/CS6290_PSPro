@@ -46,17 +46,17 @@ namespace PSPro.View
         private void SaveButton_Click(object sender, EventArgs e)
         {
            
-            if (this.CitizenIDTextBox.Text == null)
+            if (string.IsNullOrEmpty(this.CitizenIDTextBox.Text))
             {
                 this.AddCitizen();
-                this.complaint.CitizenID = ReturnCitizenID();
+                //this.complaint.CitizenID = ReturnCitizenID();
             }
             else
             {
                 this.complaint.CitizenID = Int32.Parse(this.CitizenIDTextBox.Text);
             }
 
-            this.AddComplaint();          
+            //this.AddComplaint();          
         }
 
         private void AddComplaint()
@@ -82,8 +82,7 @@ namespace PSPro.View
         {
             try
             {
-                int citizenID = this.supervisorController.ReturnCitizenID(this.citizen.Email);
-                return citizenID;
+                return this.supervisorController.ReturnCitizenID();
             }
             catch (Exception exception)
             {
@@ -108,7 +107,7 @@ namespace PSPro.View
            
             try
             {
-                this.supervisorController.AddCitizen(citizen);               
+                this.supervisorController.AddCitizen(this.citizen);               
             }
             catch (Exception exception)
             {

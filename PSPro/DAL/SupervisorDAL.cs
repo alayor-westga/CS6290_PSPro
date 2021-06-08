@@ -63,7 +63,7 @@ namespace PSPro.DAL
                         {
                             OfficerComboBox officer = new OfficerComboBox();
                             {
-                                officer.PersonnelID = Int32.Parse(reader["personnel_id"].ToString());
+                                officer.PersonnelID = (int)reader["personnel_id"];
                                 officer.FirstName = reader["first_name"].ToString();
                                 officer.LastName = reader["last_name"].ToString();
                             }
@@ -73,6 +73,29 @@ namespace PSPro.DAL
                 }
             }
             return officerList;
+        }
+
+        public void AddCitizen(Citizen citizen)
+        {
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "AddIncident";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@first_name", citizen.FirstName);
+                    command.Parameters.AddWithValue("@last_name", citizen.LastName);
+                    command.Parameters.AddWithValue("@address1", citizen.Address1);
+                    command.Parameters.AddWithValue("@address2", citizen.Address2);
+                    command.Parameters.AddWithValue("@city", citizen.City);
+                    command.Parameters.AddWithValue("@state", citizen.State);
+                    command.Parameters.AddWithValue("@zipcode", citizen.ZipCode);
+                    command.Parameters.AddWithValue("@phone", citizen.Phone);
+                    command.Parameters.AddWithValue("@email", citizen.Email);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
