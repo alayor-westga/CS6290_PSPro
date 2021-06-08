@@ -34,19 +34,18 @@ GO
 
 DROP PROCEDURE IF EXISTS AddIncident;
 GO
-CREATE PROCEDURE AddIncident  
-	@first_name varchar, 
-	@last_name varchar, 
-	@address1 varchar, 
-	@address2 varchar, 
-	@city varchar, 
+CREATE PROCEDURE AddIncident 
+	@first_name varchar(45), 
+	@last_name varchar(45), 
+	@address1 varchar(45), 
+	@address2 varchar(45), 
+	@city varchar(45), 
 	@state char(2), 
-	@zipcode varchar, 
-	@phone varchar, 
-	@email varchar
+	@zipcode varchar(10), 
+	@phone varchar(12), 
+	@email varchar(45)
 AS
 SET NOCOUNT ON;
-
 INSERT Citizens (first_name, last_name, address1, address2, city, state, zipcode, phone, email)
 VALUES (@first_name, @last_name, @address1, @address2, @city, @state, @zipcode, @phone, @email)
 GO
