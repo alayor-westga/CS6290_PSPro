@@ -1,13 +1,13 @@
 DROP PROCEDURE IF EXISTS GetSupervisorByUserNameAndPassword;
 GO
-CREATE PROCEDURE GetSupervisorByUserNameAndPassword @UserName varchar, @Password varchar
+CREATE PROCEDURE GetSupervisorByUserNameAndPassword @UserName varchar(45), @Password varchar(45)
 AS
 SET NOCOUNT ON;
 
-SELECT p.first_name, p.last_name
+SELECT p.personnel_id, p.first_name, p.last_name
 FROM Supervisors s
 	INNER JOIN Personnel p ON (p.personnel_id = s.personnel_id)
-WHERE username = @UserName AND password = @Password;
+WHERE s.username = @UserName AND s.password = @Password;
 GO
 GRANT EXECUTE ON GetSupervisorByUserNameAndPassword 
     TO winforms;  

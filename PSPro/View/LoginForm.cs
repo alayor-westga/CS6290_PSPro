@@ -21,7 +21,26 @@ namespace PSPro.View
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            loginController.Login(usernameTextBox.Text, passwordTextBox.Text);    
+            bool success = loginController.Login(userNameTextBox.Text, passwordTextBox.Text); 
+            if (success)
+            {
+                using (NewComplaintForm form = new NewComplaintForm(this))
+                {
+                    Hide();
+                    form.ShowDialog();
+                    userNameTextBox.Clear();
+                    passwordTextBox.Clear();
+                }
+            }   
+            else
+            {
+                errorMessageLabel.Text = "Invalid credentials";
+            }
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

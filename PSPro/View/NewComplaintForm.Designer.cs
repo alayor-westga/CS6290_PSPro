@@ -415,6 +415,7 @@ namespace PSPro.View
             this.LogoutLinkLabel.TabIndex = 24;
             this.LogoutLinkLabel.TabStop = true;
             this.LogoutLinkLabel.Text = "Logout";
+            this.LogoutLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLinkLabel_LinkClicked);
             // 
             // WelcomeLabel
             // 
@@ -460,6 +461,7 @@ namespace PSPro.View
             this.Name = "NewComplaintForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PSPro - Supervisor - File a Complaint";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewComplaintForm_FormClosed);
             this.CitizenInfoGroupBox.ResumeLayout(false);
             this.CitizenInfoGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).EndInit();

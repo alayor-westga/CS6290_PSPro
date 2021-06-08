@@ -41,6 +41,7 @@ namespace PSPro.DAL
                         {
                             Supervisor supervisor = new Supervisor()
                             {
+                                PersonelID = (int)reader["personnel_id"],
                                 FirstName = reader["first_name"].ToString(),
                                 LastName = reader["last_name"].ToString()
                             };

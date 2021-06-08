@@ -12,7 +12,7 @@ namespace PSPro.Controller
     public class LoginController
     {
         private readonly SupervisorDAL supervisorDAL;
-        public static Personnel loggedInUser;
+        public static User user;
 
         /// <summary>
         /// It creates a LoginController object.
@@ -27,11 +27,24 @@ namespace PSPro.Controller
             return false;
         }
 
-        public void Login(string username, string password)
+        public bool Login(string username, string password)
         {
             if (username.StartsWith("s")) {
-                loggedInUser = supervisorDAL.GetByUserNameAndPassword(username, password);
+                Supervisor supervisor = supervisorDAL.GetByUserNameAndPassword(username, password);
+                if (supervisor == null)
+                {
+                    return false;
+                }
+                user = new User()
+                {
+                    UserId = supervisor.PersonelID,
+                    UserName = username,
+                    FullName = supervisor.FullName,
+                    Role = UserRole.Supervisor
+                };
+                return true;
             }
+            return false;
         }
     }
 }

@@ -40,5 +40,15 @@ namespace PSPro.Model
         /// Assignment for Citizen object
         /// </summary>
         public string Assignment { get; set;  }
+
+        // <summary>
+        /// The full name of the clinic person.
+        /// </summary>
+        public string FullName { 
+            get 
+            {
+                return FirstName + " " + LastName;
+            }
+        }
     }
 }
