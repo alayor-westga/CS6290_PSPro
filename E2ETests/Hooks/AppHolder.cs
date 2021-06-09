@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TechTalk.SpecFlow;
+﻿using FlaUI.UIA2;
 using FlaUI.Core;
-using System.IO;
+using FlaUI.Core.AutomationElements;
 
 namespace E2ETests.Hooks
 {
     public class AppHolder
     {
         public Application app { get; set; }
+        public UIA2Automation automation { get; set; }
+        public Window window { get; set; }
     }
 }

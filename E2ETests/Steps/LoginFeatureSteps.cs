@@ -1,5 +1,4 @@
 ﻿using TechTalk.SpecFlow;
-using FlaUI.UIA2;
 using FlaUI.Core.AutomationElements;
 using E2ETests.Hooks;
 
@@ -18,12 +17,10 @@ namespace E2ETests.Steps
         [Given(@"username is empty")]
         public void GivenUsernameIsEmpty()
         {
-            using (var automation = new UIA2Automation())
-            {
-                var window = appHolder.app.GetMainWindow(automation);
-                var userNameTextBox = window.FindFirstDescendant(cf => cf.ByAutomationId("userNameTextBox")).AsTextBox();
-                userNameTextBox?.Enter("Hello");
-            }
+            appHolder.window
+                .FindFirstDescendant(cf => cf.ByAutomationId("userNameTextBox"))
+                .AsTextBox()
+                .Enter("Hello");
         }
         
         [Given(@"password is empty")]
@@ -35,12 +32,10 @@ namespace E2ETests.Steps
         [When(@"click on Login")]
         public void WhenClickOnLogin()
         {
-            using (var automation = new UIA2Automation())
-            {
-                var window = appHolder.app.GetMainWindow(automation);
-                var userNameTextBox = window.FindFirstDescendant(cf => cf.ByAutomationId("loginButton")).AsButton();
-                userNameTextBox?.Click();
-            }
+            appHolder.window
+                .FindFirstDescendant(cf => cf.ByAutomationId("loginButton"))
+                .AsButton()
+                .Click();
         }
         
         [Then(@"the message ""(.*)"" is shown")]
