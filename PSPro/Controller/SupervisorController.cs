@@ -16,6 +16,15 @@ namespace PSPro.Controller
             this.supervisorSource = new SupervisorDAL();
         }
 
+
+        /// <summary>
+        /// It creates a SupervisorController injecting dependencies.
+        /// </summary>
+        public SupervisorController(SupervisorDAL supervisorDAL)
+        {
+            this.supervisorSource = supervisorDAL;
+        }
+
         public List<OfficerComboBox> GetOfficersForComboBox()
         {
             return this.supervisorSource.GetOfficersForComboBox();
