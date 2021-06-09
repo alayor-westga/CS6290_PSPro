@@ -5,4 +5,4 @@ Scenario: Login with no username and password
 	Given username is empty
 	And password is empty
 	When click on Login
-	Then the message "Invalid Credentials" is shown
+	Then the message "Invalid credentials" is shown
