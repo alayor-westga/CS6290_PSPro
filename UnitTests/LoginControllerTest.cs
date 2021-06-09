@@ -51,9 +51,9 @@ namespace UnitTests
             bool success = loginController.Login("s-001", "1234");
             Assert.IsTrue(success);
             User user = LoginController.GetUser();
-            Assert.Equals("s-001", user.UserName);
-            Assert.Equals("John Williams", user.FullName);
-            Assert.Equals(UserRole.Supervisor, user.Role);
+            Assert.AreEqual("s-001", user.UserName);
+            Assert.AreEqual("John Williams", user.FullName);
+            Assert.AreEqual(UserRole.Supervisor, user.Role);
         }
         
         [TestMethod]
@@ -61,6 +61,8 @@ namespace UnitTests
         {
             bool success = loginController.Login("s-002", "1234");
             Assert.IsFalse(success);
+            User user = LoginController.GetUser();
+            Assert.IsNull(user);
         }
 
         [TestMethod]
@@ -68,6 +70,8 @@ namespace UnitTests
         {
             bool success = loginController.Login("s-001", "1233");
             Assert.IsFalse(success);
+            User user = LoginController.GetUser();
+            Assert.IsNull(user);
         }
     }
 }

@@ -62,6 +62,7 @@ namespace PSPro.Controller
             }
             if (personnel == null)
             {
+                user = null;
                 return false;
             }
             user = new User()
