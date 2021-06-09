@@ -73,5 +73,34 @@ namespace UnitTests
             User user = LoginController.GetUser();
             Assert.IsNull(user);
         }
+
+        [TestMethod]
+        public void TestLoginAsInvestigatorSuccessful()
+        {
+            bool success = loginController.Login("i-001", "1234");
+            Assert.IsTrue(success);
+            User user = LoginController.GetUser();
+            Assert.AreEqual("i-001", user.UserName);
+            Assert.AreEqual("Jose Perez", user.FullName);
+            Assert.AreEqual(UserRole.Investigator, user.Role);
+        }
+
+        [TestMethod]
+        public void TestLoginAsInvestigatorWrongUserName()
+        {
+            bool success = loginController.Login("i-002", "1234");
+            Assert.IsFalse(success);
+            User user = LoginController.GetUser();
+            Assert.IsNull(user);
+        }
+
+        [TestMethod]
+        public void TestLoginAsInvestigatorWrongPassword()
+        {
+            bool success = loginController.Login("i-001", "1233");
+            Assert.IsFalse(success);
+            User user = LoginController.GetUser();
+            Assert.IsNull(user);
+        }
     }
 }
