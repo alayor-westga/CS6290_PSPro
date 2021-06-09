@@ -1,6 +1,7 @@
 ﻿using TechTalk.SpecFlow;
 using FlaUI.Core.AutomationElements;
 using E2ETests.Hooks;
+using NUnit.Framework;
 
 namespace E2ETests.Steps
 {
@@ -20,13 +21,16 @@ namespace E2ETests.Steps
             appHolder.window
                 .FindFirstDescendant(cf => cf.ByAutomationId("userNameTextBox"))
                 .AsTextBox()
-                .Enter("Hello");
+                .Enter("");
         }
         
         [Given(@"password is empty")]
         public void GivenPasswordIsEmpty()
         {
-            ScenarioContext.Current.Pending();
+            appHolder.window
+                .FindFirstDescendant(cf => cf.ByAutomationId("passwordTextBox"))
+                .AsTextBox()
+                .Enter("");
         }
         
         [When(@"click on Login")]
@@ -39,9 +43,13 @@ namespace E2ETests.Steps
         }
         
         [Then(@"the message ""(.*)"" is shown")]
-        public void ThenTheMessageIsShown(string p0)
+        public void ThenTheMessageIsShown(string message)
         {
-            ScenarioContext.Current.Pending();
+            var errorMessage = appHolder.window
+                .FindFirstDescendant(cf => cf.ByAutomationId("errorMessageLabel"))
+                .AsLabel()
+                .Text;
+            Assert.AreEqual(message, errorMessage);
         }
     }
 }
