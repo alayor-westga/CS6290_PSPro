@@ -1,7 +1,6 @@
-﻿using System;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using FlaUI.UIA2;
-using FlaUI.Core;
+using FlaUI.Core.AutomationElements;
 using E2ETests.Hooks;
 
 namespace E2ETests.Steps
@@ -22,8 +21,8 @@ namespace E2ETests.Steps
             using (var automation = new UIA2Automation())
             {
                 var window = appHolder.app.GetMainWindow(automation);
-                var loginButton = window.FindFirstDescendant(cf => cf.ByText("Login"));
-                loginButton?.Click();
+                var userNameTextBox = window.FindFirstDescendant(cf => cf.ByAutomationId("userNameTextBox")).AsTextBox();
+                userNameTextBox?.Enter("Hello");
             }
         }
         
@@ -36,7 +35,12 @@ namespace E2ETests.Steps
         [When(@"click on Login")]
         public void WhenClickOnLogin()
         {
-            ScenarioContext.Current.Pending();
+            using (var automation = new UIA2Automation())
+            {
+                var window = appHolder.app.GetMainWindow(automation);
+                var userNameTextBox = window.FindFirstDescendant(cf => cf.ByAutomationId("loginButton")).AsButton();
+                userNameTextBox?.Click();
+            }
         }
         
         [Then(@"the message ""(.*)"" is shown")]
