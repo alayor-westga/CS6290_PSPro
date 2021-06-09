@@ -17,6 +17,7 @@ namespace PSPro.View
         private readonly SupervisorController supervisorController;
         private Complaint complaint;
         private Citizen citizen;
+        private User loggedInUser;
 
         public NewComplaintForm(Form loginForm)
         {
@@ -26,7 +27,8 @@ namespace PSPro.View
             this.supervisorController = new SupervisorController();
             this.complaint = new Complaint();
             this.citizen = new Citizen();
-            ShowUserName();
+            this.loggedInUser = new User();
+            this.ShowUserName();
             this.PopulateOfficerComboBox();
         }
 
@@ -35,8 +37,8 @@ namespace PSPro.View
         /// </summary>
         private void ShowUserName()
         {
-            User user = LoginController.GetUser();
-            SupervisorLabel.Text = user.FullName + " (" + user.UserName + ")";
+            this.loggedInUser = LoginController.GetUser();
+            this.SupervisorLabel.Text = this.loggedInUser.FullName + " (" + this.loggedInUser.UserName + ")";
         }
 
         private void PopulateOfficerComboBox()
@@ -76,7 +78,7 @@ namespace PSPro.View
         private void AddComplaint()
         {
             this.complaint.OfficerID = Int32.Parse(this.OfficerComboBox.ValueMember);
-            this.complaint.SupervisorID = 3333; // placeholder                     
+            this.complaint.SupervisorID = this.loggedInUser.UserId;                      
             this.complaint.Allegation = this.AllegationComboBox.Text;
             this.complaint.Summary = this.ComplaintSummaryTextBox.Text;
 
