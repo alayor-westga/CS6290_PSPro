@@ -1,26 +1,30 @@
 ﻿using System;
 using TechTalk.SpecFlow;
 using FlaUI.UIA2;
-using System.IO;
+using FlaUI.Core;
+using E2ETests.Hooks;
 
 namespace E2ETests.Steps
 {
     [Binding]
     public class LoginFeatureSteps
     {
+        private readonly AppHolder appHolder;
+
+        public LoginFeatureSteps(AppHolder appHolder)
+        {
+            this.appHolder = appHolder;
+        }
+
         [Given(@"username is empty")]
         public void GivenUsernameIsEmpty()
         {
-            string fileName = "PSPro.exe";
-            string path = Path.Combine(Environment.CurrentDirectory, @"..\..\..\..\PSPro\bin\Debug\", fileName);
-            var app = FlaUI.Core.Application.Launch(path);
             using (var automation = new UIA2Automation())
             {
-                var window = app.GetMainWindow(automation);
+                var window = appHolder.app.GetMainWindow(automation);
                 var loginButton = window.FindFirstDescendant(cf => cf.ByText("Login"));
                 loginButton?.Click();
             }
-            app.Close();
         }
         
         [Given(@"password is empty")]
