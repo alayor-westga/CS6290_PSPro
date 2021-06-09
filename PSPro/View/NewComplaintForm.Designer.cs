@@ -33,6 +33,7 @@ namespace PSPro.View
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.CitizenInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.FirstNameErrorLabel = new System.Windows.Forms.Label();
             this.CitizenIDLabel = new System.Windows.Forms.Label();
             this.CitizenIDTextBox = new System.Windows.Forms.TextBox();
             this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
@@ -63,7 +64,6 @@ namespace PSPro.View
             this.LogoutLinkLabel = new System.Windows.Forms.LinkLabel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.SupervisorLabel = new System.Windows.Forms.Label();
-            this.FirstNameErrorLabel = new System.Windows.Forms.Label();
             this.OfficerErrorLabel = new System.Windows.Forms.Label();
             this.AllegationErrorLabel = new System.Windows.Forms.Label();
             this.ComplaintSummaryErrorLabel = new System.Windows.Forms.Label();
@@ -122,6 +122,14 @@ namespace PSPro.View
             this.CitizenInfoGroupBox.TabIndex = 2;
             this.CitizenInfoGroupBox.TabStop = false;
             this.CitizenInfoGroupBox.Text = "Enter Citizen Information";
+            // 
+            // FirstNameErrorLabel
+            // 
+            this.FirstNameErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.FirstNameErrorLabel.Location = new System.Drawing.Point(155, 50);
+            this.FirstNameErrorLabel.Name = "FirstNameErrorLabel";
+            this.FirstNameErrorLabel.Size = new System.Drawing.Size(185, 22);
+            this.FirstNameErrorLabel.TabIndex = 22;
             // 
             // CitizenIDLabel
             // 
@@ -183,6 +191,7 @@ namespace PSPro.View
             // 
             // StateComboBox
             // 
+            this.StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StateComboBox.FormattingEnabled = true;
             this.StateComboBox.Location = new System.Drawing.Point(342, 302);
             this.StateComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -425,14 +434,6 @@ namespace PSPro.View
             this.SupervisorLabel.Name = "SupervisorLabel";
             this.SupervisorLabel.Size = new System.Drawing.Size(475, 29);
             this.SupervisorLabel.TabIndex = 26;
-            // 
-            // FirstNameErrorLabel
-            // 
-            this.FirstNameErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.FirstNameErrorLabel.Location = new System.Drawing.Point(155, 50);
-            this.FirstNameErrorLabel.Name = "FirstNameErrorLabel";
-            this.FirstNameErrorLabel.Size = new System.Drawing.Size(185, 22);
-            this.FirstNameErrorLabel.TabIndex = 22;
             // 
             // OfficerErrorLabel
             // 

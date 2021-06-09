@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -30,6 +31,25 @@ namespace PSPro.View
             this.loggedInUser = new User();
             this.ShowUserName();
             this.PopulateOfficerComboBox();
+            PopulateStateComboBox(this.StateComboBox);
+
+           
+        }
+
+        private static void PopulateStateComboBox(ComboBox cbo)
+        {
+            cbo.DataSource = Enum.GetValues(typeof(States))
+                .Cast<Enum>()
+                .Select(value => new
+                {
+                    (Attribute.GetCustomAttribute(value.GetType().GetField(value.ToString()),
+                    typeof(DescriptionAttribute)) as DescriptionAttribute).Description,
+                    value
+                })
+                .OrderBy(item => item.value)
+                .ToList();
+            cbo.DisplayMember = "Description";
+            cbo.ValueMember = "value";
         }
 
         /// <summary>
