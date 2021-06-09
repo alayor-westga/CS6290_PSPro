@@ -12,19 +12,31 @@ namespace PSPro.View
 {
     public partial class NewComplaintForm : Form
     {
+        private readonly Form loginForm;
         private readonly LoginController loginController;
         private readonly SupervisorController supervisorController;
         private Complaint complaint;
         private Citizen citizen;
 
-        public NewComplaintForm()
+        public NewComplaintForm(Form loginForm)
         {
             InitializeComponent();
+            this.loginForm = loginForm;
             this.loginController = new LoginController();
             this.supervisorController = new SupervisorController();
             this.complaint = new Complaint();
             this.citizen = new Citizen();
+            ShowUserName();
             this.PopulateOfficerComboBox();
+        }
+
+        /// <summary>
+        /// It renders the username.
+        /// </summary>
+        private void ShowUserName()
+        {
+            User user = LoginController.GetUser();
+            SupervisorLabel.Text = user.FullName + " (" + user.UserName + ")";
         }
 
         private void PopulateOfficerComboBox()
@@ -117,6 +129,17 @@ namespace PSPro.View
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void LogoutLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Hide();
+            loginForm.Show();
+        }
+
+        private void NewComplaintForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

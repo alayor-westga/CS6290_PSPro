@@ -1,8 +1,8 @@
-﻿using PSPro.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using PSPro.Model;
 
 namespace PSPro.DAL
 {
@@ -15,7 +15,7 @@ namespace PSPro.DAL
         /// <param name="username">The supervisor's username.</param>
         /// <param name="password">The supervisor's password.</param>
         /// <returns>The supervisor if found. Null otherwise.</returns>
-        public void GetByUserNameAndPassword(string username, string password)
+        virtual public Supervisor GetByUserNameAndPassword(string username, string password)
         {
             if (String.IsNullOrWhiteSpace(username))
             {
@@ -37,7 +37,20 @@ namespace PSPro.DAL
                     command.Parameters.AddWithValue("@Password", password);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        
+                        if (reader.Read())
+                        {
+                            Supervisor supervisor = new Supervisor()
+                            {
+                                PersonelID = (int)reader["personnel_id"],
+                                FirstName = reader["first_name"].ToString(),
+                                LastName = reader["last_name"].ToString()
+                            };
+                            return supervisor;
+                        }
+                        else
+                        {
+                            return null;
+                        }
                     }
                 }
             }
@@ -47,7 +60,7 @@ namespace PSPro.DAL
         /// This method will retrieve all officers from the database
         /// </summary>
         /// <returns>A List of OfficerComboBox objects</returns>
-        public List<OfficerComboBox> GetOfficersForComboBox()
+        virtual public List<OfficerComboBox> GetOfficersForComboBox()
         {
             List<OfficerComboBox> officerList = new List<OfficerComboBox>();
             using (SqlConnection connection = PsProDBConnection.GetConnection())
@@ -75,7 +88,7 @@ namespace PSPro.DAL
             return officerList;
         }
 
-        public void AddCitizen(Citizen citizen)
+        virtual public void AddCitizen(Citizen citizen)
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
             {

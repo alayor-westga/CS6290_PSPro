@@ -32,16 +32,17 @@ namespace PSPro.View
             this.loginButton = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.errorMessageLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // loginButton
             // 
             this.loginButton.AutoSize = true;
             this.loginButton.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(451, 269);
+            this.loginButton.Location = new System.Drawing.Point(451, 283);
             this.loginButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(138, 60);
@@ -70,13 +71,13 @@ namespace PSPro.View
             this.passwordLabel.TabIndex = 2;
             this.passwordLabel.Text = "Password";
             // 
-            // usernameTextBox
+            // userNameTextBox
             // 
-            this.usernameTextBox.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTextBox.Location = new System.Drawing.Point(217, 87);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(372, 57);
-            this.usernameTextBox.TabIndex = 3;
+            this.userNameTextBox.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameTextBox.Location = new System.Drawing.Point(217, 87);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(372, 57);
+            this.userNameTextBox.TabIndex = 3;
             // 
             // passwordTextBox
             // 
@@ -90,21 +91,32 @@ namespace PSPro.View
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Segoe Print", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(231, 9);
+            this.titleLabel.Font = new System.Drawing.Font("Verdana", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(231, 19);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(182, 75);
+            this.titleLabel.Size = new System.Drawing.Size(163, 52);
             this.titleLabel.TabIndex = 5;
             this.titleLabel.Text = "PS Pro";
+            // 
+            // errorMessageLabel
+            // 
+            this.errorMessageLabel.AutoSize = true;
+            this.errorMessageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorMessageLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.errorMessageLabel.Location = new System.Drawing.Point(351, 236);
+            this.errorMessageLabel.Name = "errorMessageLabel";
+            this.errorMessageLabel.Size = new System.Drawing.Size(0, 31);
+            this.errorMessageLabel.TabIndex = 6;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 352);
+            this.ClientSize = new System.Drawing.Size(638, 366);
+            this.Controls.Add(this.errorMessageLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.usernameTextBox);
+            this.Controls.Add(this.userNameTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.loginButton);
@@ -115,6 +127,7 @@ namespace PSPro.View
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,8 +138,9 @@ namespace PSPro.View
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Label passwordLabel;
-        private System.Windows.Forms.TextBox usernameTextBox;
+        private System.Windows.Forms.TextBox userNameTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Label errorMessageLabel;
     }
 }

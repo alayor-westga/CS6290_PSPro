@@ -1,19 +1,58 @@
+--GetSupervisorByUserNameAndPassword
 DROP PROCEDURE IF EXISTS GetSupervisorByUserNameAndPassword;
 GO
-CREATE PROCEDURE GetSupervisorByUserNameAndPassword @UserName varchar, @Password varchar
+CREATE PROCEDURE GetSupervisorByUserNameAndPassword @UserName varchar(45), @Password varchar(45)
 AS
 SET NOCOUNT ON;
 
-SELECT *
-FROM Supervisors 
-WHERE username = @UserName AND password = @Password;
+SELECT p.personnel_id, p.first_name, p.last_name
+FROM Supervisors s
+	INNER JOIN Personnel p ON (p.personnel_id = s.personnel_id)
+WHERE s.username = @UserName COLLATE Latin1_General_CS_AS 
+	AND s.password = HASHBYTES('SHA2_512', @Password+CAST(username AS NVARCHAR(36)));
 GO
 GRANT EXECUTE ON GetSupervisorByUserNameAndPassword 
     TO winforms;  
 GO 
 
 
+--GetInvestigatorByUserNameAndPassword
+DROP PROCEDURE IF EXISTS GetInvestigatorByUserNameAndPassword;
+GO
+CREATE PROCEDURE GetInvestigatorByUserNameAndPassword @UserName varchar(45), @Password varchar(45)
+AS
+SET NOCOUNT ON;
 
+SELECT p.personnel_id, p.first_name, p.last_name
+FROM Investigators s
+	INNER JOIN Personnel p ON (p.personnel_id = s.personnel_id)
+WHERE s.username = @UserName COLLATE Latin1_General_CS_AS 
+	AND s.password = HASHBYTES('SHA2_512', @Password+CAST(username AS NVARCHAR(36)));
+GO
+GRANT EXECUTE ON GetInvestigatorByUserNameAndPassword 
+    TO winforms;  
+GO 
+
+
+--GetAdministratorByUserNameAndPassword
+DROP PROCEDURE IF EXISTS GetAdministratorByUserNameAndPassword;
+GO
+CREATE PROCEDURE GetAdministratorByUserNameAndPassword @UserName varchar(45), @Password varchar(45)
+AS
+SET NOCOUNT ON;
+
+SELECT p.personnel_id, p.first_name, p.last_name
+FROM Administrators s
+	INNER JOIN Personnel p ON (p.personnel_id = s.personnel_id)
+WHERE s.username = @UserName COLLATE Latin1_General_CS_AS 
+	AND s.password = HASHBYTES('SHA2_512', @Password+CAST(username AS NVARCHAR(36)));
+GO
+GRANT EXECUTE ON GetAdministratorByUserNameAndPassword 
+    TO winforms;  
+GO 
+
+
+--GetAllOfficersForComboBox
 DROP PROCEDURE IF EXISTS GetAllOfficersForComboBox;
 GO
 CREATE PROCEDURE GetAllOfficersForComboBox
@@ -31,7 +70,7 @@ TO winforms;
 GO
 
 
-
+--AddIncident
 DROP PROCEDURE IF EXISTS AddIncident;
 GO
 CREATE PROCEDURE AddIncident 

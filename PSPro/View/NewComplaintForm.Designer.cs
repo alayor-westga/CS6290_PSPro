@@ -415,12 +415,13 @@ namespace PSPro.View
             this.LogoutLinkLabel.TabIndex = 24;
             this.LogoutLinkLabel.TabStop = true;
             this.LogoutLinkLabel.Text = "Logout";
+            this.LogoutLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLinkLabel_LinkClicked);
             // 
             // WelcomeLabel
             // 
             this.WelcomeLabel.AutoSize = true;
             this.WelcomeLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.WelcomeLabel.Location = new System.Drawing.Point(46, 19);
+            this.WelcomeLabel.Location = new System.Drawing.Point(46, 25);
             this.WelcomeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.WelcomeLabel.Name = "WelcomeLabel";
             this.WelcomeLabel.Size = new System.Drawing.Size(179, 51);
@@ -430,7 +431,7 @@ namespace PSPro.View
             // SupervisorLabel
             // 
             this.SupervisorLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.SupervisorLabel.Location = new System.Drawing.Point(208, 19);
+            this.SupervisorLabel.Location = new System.Drawing.Point(233, 25);
             this.SupervisorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SupervisorLabel.Name = "SupervisorLabel";
             this.SupervisorLabel.Size = new System.Drawing.Size(712, 45);
@@ -460,6 +461,7 @@ namespace PSPro.View
             this.Name = "NewComplaintForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PSPro - Supervisor - File a Complaint";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewComplaintForm_FormClosed);
             this.CitizenInfoGroupBox.ResumeLayout(false);
             this.CitizenInfoGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).EndInit();
