@@ -63,6 +63,10 @@ namespace PSPro.View
             this.LogoutLinkLabel = new System.Windows.Forms.LinkLabel();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.SupervisorLabel = new System.Windows.Forms.Label();
+            this.FirstNameErrorLabel = new System.Windows.Forms.Label();
+            this.OfficerErrorLabel = new System.Windows.Forms.Label();
+            this.AllegationErrorLabel = new System.Windows.Forms.Label();
+            this.ComplaintSummaryErrorLabel = new System.Windows.Forms.Label();
             this.CitizenInfoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +92,7 @@ namespace PSPro.View
             // 
             // CitizenInfoGroupBox
             // 
+            this.CitizenInfoGroupBox.Controls.Add(this.FirstNameErrorLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.CitizenIDLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.CitizenIDTextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.PhoneNumberTextBox);
@@ -416,16 +421,51 @@ namespace PSPro.View
             // SupervisorLabel
             // 
             this.SupervisorLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.SupervisorLabel.Location = new System.Drawing.Point(155, 16);
+            this.SupervisorLabel.Location = new System.Drawing.Point(147, 16);
             this.SupervisorLabel.Name = "SupervisorLabel";
             this.SupervisorLabel.Size = new System.Drawing.Size(475, 29);
             this.SupervisorLabel.TabIndex = 26;
+            // 
+            // FirstNameErrorLabel
+            // 
+            this.FirstNameErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.FirstNameErrorLabel.Location = new System.Drawing.Point(155, 50);
+            this.FirstNameErrorLabel.Name = "FirstNameErrorLabel";
+            this.FirstNameErrorLabel.Size = new System.Drawing.Size(185, 22);
+            this.FirstNameErrorLabel.TabIndex = 22;
+            // 
+            // OfficerErrorLabel
+            // 
+            this.OfficerErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.OfficerErrorLabel.Location = new System.Drawing.Point(124, 532);
+            this.OfficerErrorLabel.Name = "OfficerErrorLabel";
+            this.OfficerErrorLabel.Size = new System.Drawing.Size(185, 22);
+            this.OfficerErrorLabel.TabIndex = 23;
+            // 
+            // AllegationErrorLabel
+            // 
+            this.AllegationErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.AllegationErrorLabel.Location = new System.Drawing.Point(595, 532);
+            this.AllegationErrorLabel.Name = "AllegationErrorLabel";
+            this.AllegationErrorLabel.Size = new System.Drawing.Size(185, 22);
+            this.AllegationErrorLabel.TabIndex = 27;
+            // 
+            // ComplaintSummaryErrorLabel
+            // 
+            this.ComplaintSummaryErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComplaintSummaryErrorLabel.Location = new System.Drawing.Point(270, 607);
+            this.ComplaintSummaryErrorLabel.Name = "ComplaintSummaryErrorLabel";
+            this.ComplaintSummaryErrorLabel.Size = new System.Drawing.Size(185, 22);
+            this.ComplaintSummaryErrorLabel.TabIndex = 28;
             // 
             // NewComplaintForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 811);
+            this.ClientSize = new System.Drawing.Size(921, 814);
+            this.Controls.Add(this.ComplaintSummaryErrorLabel);
+            this.Controls.Add(this.AllegationErrorLabel);
+            this.Controls.Add(this.OfficerErrorLabel);
             this.Controls.Add(this.SupervisorLabel);
             this.Controls.Add(this.WelcomeLabel);
             this.Controls.Add(this.LogoutLinkLabel);
@@ -489,5 +529,9 @@ namespace PSPro.View
         private System.Windows.Forms.BindingSource officerComboBoxBindingSource;
         private System.Windows.Forms.Label CitizenIDLabel;
         private System.Windows.Forms.TextBox CitizenIDTextBox;
+        private System.Windows.Forms.Label FirstNameErrorLabel;
+        private System.Windows.Forms.Label OfficerErrorLabel;
+        private System.Windows.Forms.Label AllegationErrorLabel;
+        private System.Windows.Forms.Label ComplaintSummaryErrorLabel;
     }
 }
