@@ -50,6 +50,8 @@ namespace PSPro.View
             {
                 this.AddCitizen();
                 //this.complaint.CitizenID = ReturnCitizenID();
+
+                //AddCitizenAndComplaint (transaction??)
             }
             else
             {
