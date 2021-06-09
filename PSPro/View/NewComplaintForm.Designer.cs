@@ -33,6 +33,9 @@ namespace PSPro.View
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.CitizenInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.EmailErrorLabel = new System.Windows.Forms.Label();
+            this.PhoneNumberErrorLabel = new System.Windows.Forms.Label();
+            this.ZipCodeErrorLabel = new System.Windows.Forms.Label();
             this.FirstNameErrorLabel = new System.Windows.Forms.Label();
             this.CitizenIDLabel = new System.Windows.Forms.Label();
             this.CitizenIDTextBox = new System.Windows.Forms.TextBox();
@@ -67,9 +70,7 @@ namespace PSPro.View
             this.OfficerErrorLabel = new System.Windows.Forms.Label();
             this.AllegationErrorLabel = new System.Windows.Forms.Label();
             this.ComplaintSummaryErrorLabel = new System.Windows.Forms.Label();
-            this.ZipCodeErrorLabel = new System.Windows.Forms.Label();
-            this.PhoneNumberErrorLabel = new System.Windows.Forms.Label();
-            this.EmailErrorLabel = new System.Windows.Forms.Label();
+            this.RequiredFieldLabel = new System.Windows.Forms.Label();
             this.CitizenInfoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -89,9 +90,9 @@ namespace PSPro.View
             this.FirstNameLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.FirstNameLabel.Location = new System.Drawing.Point(19, 43);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(130, 32);
+            this.FirstNameLabel.Size = new System.Drawing.Size(140, 32);
             this.FirstNameLabel.TabIndex = 1;
-            this.FirstNameLabel.Text = "First Name";
+            this.FirstNameLabel.Text = "*First Name";
             // 
             // CitizenInfoGroupBox
             // 
@@ -129,10 +130,37 @@ namespace PSPro.View
             this.CitizenInfoGroupBox.TabStop = false;
             this.CitizenInfoGroupBox.Text = "Enter Citizen Information";
             // 
+            // EmailErrorLabel
+            // 
+            this.EmailErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.EmailErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.EmailErrorLabel.Location = new System.Drawing.Point(573, 351);
+            this.EmailErrorLabel.Name = "EmailErrorLabel";
+            this.EmailErrorLabel.Size = new System.Drawing.Size(304, 22);
+            this.EmailErrorLabel.TabIndex = 25;
+            // 
+            // PhoneNumberErrorLabel
+            // 
+            this.PhoneNumberErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.PhoneNumberErrorLabel.Location = new System.Drawing.Point(197, 351);
+            this.PhoneNumberErrorLabel.Name = "PhoneNumberErrorLabel";
+            this.PhoneNumberErrorLabel.Size = new System.Drawing.Size(196, 22);
+            this.PhoneNumberErrorLabel.TabIndex = 24;
+            // 
+            // ZipCodeErrorLabel
+            // 
+            this.ZipCodeErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ZipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
+            this.ZipCodeErrorLabel.Location = new System.Drawing.Point(671, 276);
+            this.ZipCodeErrorLabel.Name = "ZipCodeErrorLabel";
+            this.ZipCodeErrorLabel.Size = new System.Drawing.Size(220, 22);
+            this.ZipCodeErrorLabel.TabIndex = 23;
+            // 
             // FirstNameErrorLabel
             // 
             this.FirstNameErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.FirstNameErrorLabel.Location = new System.Drawing.Point(155, 50);
+            this.FirstNameErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.FirstNameErrorLabel.Location = new System.Drawing.Point(155, 51);
             this.FirstNameErrorLabel.Name = "FirstNameErrorLabel";
             this.FirstNameErrorLabel.Size = new System.Drawing.Size(185, 22);
             this.FirstNameErrorLabel.TabIndex = 22;
@@ -199,26 +227,26 @@ namespace PSPro.View
             // 
             this.StateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StateComboBox.FormattingEnabled = true;
-            this.StateComboBox.Location = new System.Drawing.Point(342, 302);
+            this.StateComboBox.Location = new System.Drawing.Point(325, 302);
             this.StateComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StateComboBox.Name = "StateComboBox";
-            this.StateComboBox.Size = new System.Drawing.Size(260, 39);
+            this.StateComboBox.Size = new System.Drawing.Size(238, 39);
             this.StateComboBox.TabIndex = 15;
             // 
             // ZipCodeTextBox
             // 
             this.ZipCodeTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.ZipCodeTextBox.Location = new System.Drawing.Point(617, 302);
+            this.ZipCodeTextBox.Location = new System.Drawing.Point(569, 302);
             this.ZipCodeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ZipCodeTextBox.Name = "ZipCodeTextBox";
-            this.ZipCodeTextBox.Size = new System.Drawing.Size(260, 39);
+            this.ZipCodeTextBox.Size = new System.Drawing.Size(308, 39);
             this.ZipCodeTextBox.TabIndex = 13;
             // 
             // ZipCodeLabel
             // 
             this.ZipCodeLabel.AutoSize = true;
             this.ZipCodeLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.ZipCodeLabel.Location = new System.Drawing.Point(620, 268);
+            this.ZipCodeLabel.Location = new System.Drawing.Point(575, 268);
             this.ZipCodeLabel.Name = "ZipCodeLabel";
             this.ZipCodeLabel.Size = new System.Drawing.Size(105, 32);
             this.ZipCodeLabel.TabIndex = 14;
@@ -228,7 +256,7 @@ namespace PSPro.View
             // 
             this.StateLabel.AutoSize = true;
             this.StateLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.StateLabel.Location = new System.Drawing.Point(345, 268);
+            this.StateLabel.Location = new System.Drawing.Point(325, 268);
             this.StateLabel.Name = "StateLabel";
             this.StateLabel.Size = new System.Drawing.Size(68, 32);
             this.StateLabel.TabIndex = 12;
@@ -240,7 +268,7 @@ namespace PSPro.View
             this.CityTextBox.Location = new System.Drawing.Point(19, 302);
             this.CityTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CityTextBox.Name = "CityTextBox";
-            this.CityTextBox.Size = new System.Drawing.Size(308, 39);
+            this.CityTextBox.Size = new System.Drawing.Size(300, 39);
             this.CityTextBox.TabIndex = 9;
             // 
             // CityLabel
@@ -346,9 +374,9 @@ namespace PSPro.View
             this.OfficerLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.OfficerLabel.Location = new System.Drawing.Point(31, 522);
             this.OfficerLabel.Name = "OfficerLabel";
-            this.OfficerLabel.Size = new System.Drawing.Size(87, 32);
+            this.OfficerLabel.Size = new System.Drawing.Size(97, 32);
             this.OfficerLabel.TabIndex = 20;
-            this.OfficerLabel.Text = "Officer";
+            this.OfficerLabel.Text = "*Officer";
             // 
             // AllegationComboBox
             // 
@@ -376,9 +404,9 @@ namespace PSPro.View
             this.AllegationLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.AllegationLabel.Location = new System.Drawing.Point(466, 522);
             this.AllegationLabel.Name = "AllegationLabel";
-            this.AllegationLabel.Size = new System.Drawing.Size(123, 32);
+            this.AllegationLabel.Size = new System.Drawing.Size(133, 32);
             this.AllegationLabel.TabIndex = 22;
-            this.AllegationLabel.Text = "Allegation";
+            this.AllegationLabel.Text = "*Allegation";
             // 
             // ComplaintSummaryTextBox
             // 
@@ -396,9 +424,9 @@ namespace PSPro.View
             this.ComplaintSummaryLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.ComplaintSummaryLabel.Location = new System.Drawing.Point(31, 597);
             this.ComplaintSummaryLabel.Name = "ComplaintSummaryLabel";
-            this.ComplaintSummaryLabel.Size = new System.Drawing.Size(233, 32);
+            this.ComplaintSummaryLabel.Size = new System.Drawing.Size(243, 32);
             this.ComplaintSummaryLabel.TabIndex = 21;
-            this.ComplaintSummaryLabel.Text = "Complaint Summary";
+            this.ComplaintSummaryLabel.Text = "*Complaint Summary";
             // 
             // SaveButton
             // 
@@ -445,56 +473,46 @@ namespace PSPro.View
             // OfficerErrorLabel
             // 
             this.OfficerErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.OfficerErrorLabel.Location = new System.Drawing.Point(124, 532);
+            this.OfficerErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.OfficerErrorLabel.Location = new System.Drawing.Point(118, 530);
             this.OfficerErrorLabel.Name = "OfficerErrorLabel";
-            this.OfficerErrorLabel.Size = new System.Drawing.Size(314, 22);
+            this.OfficerErrorLabel.Size = new System.Drawing.Size(320, 22);
             this.OfficerErrorLabel.TabIndex = 23;
             // 
             // AllegationErrorLabel
             // 
             this.AllegationErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.AllegationErrorLabel.Location = new System.Drawing.Point(595, 532);
+            this.AllegationErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.AllegationErrorLabel.Location = new System.Drawing.Point(589, 530);
             this.AllegationErrorLabel.Name = "AllegationErrorLabel";
-            this.AllegationErrorLabel.Size = new System.Drawing.Size(294, 22);
+            this.AllegationErrorLabel.Size = new System.Drawing.Size(300, 22);
             this.AllegationErrorLabel.TabIndex = 27;
             // 
             // ComplaintSummaryErrorLabel
             // 
             this.ComplaintSummaryErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ComplaintSummaryErrorLabel.Location = new System.Drawing.Point(270, 607);
+            this.ComplaintSummaryErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.ComplaintSummaryErrorLabel.Location = new System.Drawing.Point(264, 605);
             this.ComplaintSummaryErrorLabel.Name = "ComplaintSummaryErrorLabel";
-            this.ComplaintSummaryErrorLabel.Size = new System.Drawing.Size(619, 22);
+            this.ComplaintSummaryErrorLabel.Size = new System.Drawing.Size(625, 22);
             this.ComplaintSummaryErrorLabel.TabIndex = 28;
             // 
-            // ZipCodeErrorLabel
+            // RequiredFieldLabel
             // 
-            this.ZipCodeErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ZipCodeErrorLabel.Location = new System.Drawing.Point(731, 278);
-            this.ZipCodeErrorLabel.Name = "ZipCodeErrorLabel";
-            this.ZipCodeErrorLabel.Size = new System.Drawing.Size(160, 22);
-            this.ZipCodeErrorLabel.TabIndex = 23;
-            // 
-            // PhoneNumberErrorLabel
-            // 
-            this.PhoneNumberErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.PhoneNumberErrorLabel.Location = new System.Drawing.Point(203, 353);
-            this.PhoneNumberErrorLabel.Name = "PhoneNumberErrorLabel";
-            this.PhoneNumberErrorLabel.Size = new System.Drawing.Size(190, 22);
-            this.PhoneNumberErrorLabel.TabIndex = 24;
-            // 
-            // EmailErrorLabel
-            // 
-            this.EmailErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.EmailErrorLabel.Location = new System.Drawing.Point(579, 353);
-            this.EmailErrorLabel.Name = "EmailErrorLabel";
-            this.EmailErrorLabel.Size = new System.Drawing.Size(298, 22);
-            this.EmailErrorLabel.TabIndex = 25;
+            this.RequiredFieldLabel.AutoSize = true;
+            this.RequiredFieldLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RequiredFieldLabel.Location = new System.Drawing.Point(31, 765);
+            this.RequiredFieldLabel.Name = "RequiredFieldLabel";
+            this.RequiredFieldLabel.Size = new System.Drawing.Size(188, 32);
+            this.RequiredFieldLabel.TabIndex = 29;
+            this.RequiredFieldLabel.Text = "*Required Fields";
             // 
             // NewComplaintForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 814);
+            this.Controls.Add(this.RequiredFieldLabel);
             this.Controls.Add(this.ComplaintSummaryErrorLabel);
             this.Controls.Add(this.AllegationErrorLabel);
             this.Controls.Add(this.OfficerErrorLabel);
@@ -568,5 +586,6 @@ namespace PSPro.View
         private System.Windows.Forms.Label EmailErrorLabel;
         private System.Windows.Forms.Label PhoneNumberErrorLabel;
         private System.Windows.Forms.Label ZipCodeErrorLabel;
+        private System.Windows.Forms.Label RequiredFieldLabel;
     }
 }

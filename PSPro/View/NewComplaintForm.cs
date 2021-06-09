@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PSPro.View
@@ -29,6 +30,8 @@ namespace PSPro.View
             this.complaint = new Complaint();
             this.citizen = new Citizen();
             this.loggedInUser = new User();
+            this.PhoneNumberErrorLabel.Text = "###-###-####";
+            this.ZipCodeErrorLabel.Text = "##### or #####-####";
             this.ShowUserName();
             this.PopulateOfficerComboBox();
             PopulateStateComboBox(this.StateComboBox);
@@ -79,6 +82,7 @@ namespace PSPro.View
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            if (!this.ValidateFields()) return;
            
             if (string.IsNullOrEmpty(this.CitizenIDTextBox.Text))
             {
@@ -162,6 +166,68 @@ namespace PSPro.View
         private void NewComplaintForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private bool ValidateFields()
+        {
+            var isValid = true;
+            if (FirstNameTextBox.Text.Length == 0)
+            {
+                isValid = false;
+                FirstNameErrorLabel.Text = "Required Field";
+            }
+            else
+            {
+                FirstNameErrorLabel.Text = "";
+            }
+            Regex zipRegex = new Regex("[0-9]{5}(-[0-9]{4})?$");
+            if (!zipRegex.IsMatch(ZipCodeTextBox.Text) && ZipCodeTextBox.Text.Length != 0)
+            {
+                isValid = false;
+                ZipCodeErrorLabel.ForeColor = System.Drawing.Color.Red;
+            } 
+            else
+            {
+                ZipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
+            }
+            Regex phoneRegex = new Regex("[0-9]{3}-[0-9]{3}-[0-9]{4}");
+            if (!phoneRegex.IsMatch(PhoneNumberTextBox.Text) &&  !string.IsNullOrWhiteSpace(this.PhoneNumberTextBox.Text))
+            {
+                isValid = false;
+                PhoneNumberErrorLabel.ForeColor = System.Drawing.Color.Red;
+            } 
+            else
+            {
+                PhoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
+            }
+            if (OfficerComboBox.SelectedValue == null)
+            {
+                isValid = false;
+                OfficerErrorLabel.Text = "Select a Name From the Dropdown";
+            }
+            else
+            {
+                OfficerErrorLabel.Text = "";
+            }
+            if (string.IsNullOrEmpty(AllegationComboBox.Text))
+            {
+                isValid = false;
+                AllegationErrorLabel.Text = "Required Field";
+            }
+            else
+            {
+                AllegationErrorLabel.Text = "";
+            }
+            if (string.IsNullOrWhiteSpace(ComplaintSummaryTextBox.Text))
+            {
+                isValid = false;
+                ComplaintSummaryErrorLabel.Text = "Required Field";
+            }
+            else
+            {
+                ComplaintSummaryErrorLabel.Text = "";
+            }
+            return isValid;
         }
     }
 }
