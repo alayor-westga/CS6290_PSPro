@@ -91,3 +91,15 @@ GO
 GRANT EXECUTE ON AddIncident 
     TO winforms;  
 GO 
+
+--Get Last CitizenID
+DROP PROCEDURE IF EXISTS GetLastCitizenID;
+GO
+CREATE PROCEDURE GetLastCitizenID
+AS
+SET NOCOUNT ON;
+SELECT TOP 1 citizen_id FROM Citizens ORDER BY citizen_id DESC
+GO
+GRANT EXECUTE ON GetLastCitizenID 
+    TO winforms;  
+GO 
