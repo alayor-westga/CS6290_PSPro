@@ -104,7 +104,7 @@ namespace PSPro.View
 
                 try
                 {
-                    this.supervisorController.AddComplaint(this.citizen.CitizenID, this.complaint);
+                    this.supervisorController.AddComplaint(this.complaint);
                 }
                 catch (Exception exception)
                 {
@@ -117,20 +117,9 @@ namespace PSPro.View
         private void BindComplaintFieldsToComplaintObject()
         {
             this.complaint.SupervisorID = this.loggedInUser.UserId;
-            this.complaint.OfficerID = Int32.Parse(this.OfficerComboBox.ValueMember);
+            this.complaint.OfficerID = (int)this.OfficerComboBox.SelectedValue;
             this.complaint.Allegation = this.AllegationComboBox.Text;
-            this.complaint.Summary = this.ComplaintSummaryTextBox.Text;
-
-            try
-            {
-                this.supervisorController.AddComplaint(complaint);
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message,
-                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            this.complaint.Summary = this.ComplaintSummaryTextBox.Text;          
         }
         
         private void BindCitizenFieldsToCitizenObject()

@@ -88,7 +88,6 @@ namespace PSPro.DAL
             return officerList;
         }
 
-
         virtual public void AddComplaint(Complaint complaint)
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
@@ -155,13 +154,13 @@ namespace PSPro.DAL
         {
             command.Parameters.AddWithValue("@officers_personnel_id", complaint.OfficerID);
             command.Parameters.AddWithValue("@supervisors_personnel_id", complaint.SupervisorID);
-            command.Parameters.AddWithValue("@administrators_pesonnel_id", complaint.AdministratorID);
-            command.Parameters.AddWithValue("@date_created", complaint.DateCreated);
+           
+            //command.Parameters.Add("@date_created", SqlDbType.DateTime2).Value = "2002-09-09" ;
             command.Parameters.AddWithValue("@allegation_type", complaint.Allegation);
             command.Parameters.AddWithValue("@complaint_notes", complaint.Summary);
-            command.Parameters.AddWithValue("@disposition", complaint.Disposition);
-            command.Parameters.AddWithValue("@disposition_date", complaint.DispositionDate);
-            command.Parameters.AddWithValue("@discipline", complaint.Discipline);
+            //command.Parameters.AddWithValue("@disposition", complaint.Disposition);
+            //command.Parameters.AddWithValue("@disposition_date", complaint.DispositionDate);
+            //command.Parameters.AddWithValue("@discipline", complaint.Discipline);
             command.ExecuteNonQuery();
         }
 
