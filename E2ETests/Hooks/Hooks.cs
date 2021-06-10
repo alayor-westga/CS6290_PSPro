@@ -17,8 +17,8 @@ namespace E2ETests.Hooks
         {
             appHolder.app = Application.Launch(execPath);
             appHolder.automation = new UIA2Automation();
-            appHolder.window = appHolder.app.GetMainWindow(appHolder.automation);
-            appHolder.loginWindow = new LoginWindow(appHolder.window);
+            appHolder.loginWindow = new LoginWindow(appHolder);
+            appHolder.newComplaintWindow = new NewComplaintWindow(appHolder);
         }
 
         [AfterScenario]

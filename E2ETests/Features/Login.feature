@@ -11,4 +11,4 @@ Scenario: Login as supervisor
 	Given username is "s-001"
 	And password is "1234"
 	When click on Login
-	Then the title emessage "Kristin Hero (s-001)" is shown
+	Then the user full name "Kristin Hero (s-001)" is shown

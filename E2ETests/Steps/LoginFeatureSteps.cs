@@ -52,17 +52,11 @@ namespace E2ETests.Steps
             Assert.AreEqual(message, errorMessage);
         }
 
-        [Then(@"the title emessage ""(.*)"" is shown")]
+        [Then(@"the user full name ""(.*)"" is shown")]
         public void ThenTheTitleMessageIsShown(string message)
         {
-            var window = appHolder.automation.GetDesktop()
-                .FindFirstChild(cf => cf.ByProcessId(appHolder.app.ProcessId))
-                .AsWindow();
-            var titleMessage = window
-                .FindFirstDescendant(cf => cf.ByAutomationId("SupervisorLabel"))
-                .AsLabel()
-                .Text;
-            Assert.AreEqual(message, titleMessage);
+            var userFullName = appHolder.newComplaintWindow.GetUserFullName();
+            Assert.AreEqual(message, userFullName);
         }
     }
 }

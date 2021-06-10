@@ -153,7 +153,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("click on Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
- testRunner.Then("the title emessage \"Kristin Hero (s-001)\" is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the user full name \"Kristin Hero (s-001)\" is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
