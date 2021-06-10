@@ -2,6 +2,7 @@
 using FlaUI.Core.AutomationElements;
 using E2ETests.Hooks;
 using NUnit.Framework;
+using System.Threading;
 
 namespace E2ETests.Steps
 {
@@ -58,6 +59,8 @@ namespace E2ETests.Steps
                 .FindFirstDescendant(cf => cf.ByAutomationId("loginButton"))
                 .AsButton()
                 .Click();
+            Thread.Sleep(2000);
+            appHolder.window = appHolder.app.GetAllTopLevelWindows(appHolder.automation)[0];
         }
         
         [Then(@"the message ""(.*)"" is shown")]
@@ -68,6 +71,16 @@ namespace E2ETests.Steps
                 .AsLabel()
                 .Text;
             Assert.AreEqual(message, errorMessage);
+        }
+
+        [Then(@"the title emessage ""(.*)"" is shown")]
+        public void ThenTheTitleMessageIsShown(string message)
+        {
+            var titleMessage = appHolder.window
+                .FindFirstDescendant(cf => cf.ByAutomationId("SupervisorLabel"))
+                .AsLabel()
+                .Text;
+            Assert.AreEqual(message, titleMessage);
         }
     }
 }
