@@ -28,11 +28,12 @@ namespace UnitTests
         }
         
         [TestMethod]
-        public void TestAddCitizen()
+        public void TestAddCitizenAndComplaint()
         {
             Citizen citizen = new Citizen();
-            supervisorController.AddCitizen(citizen);
-            supervisorDAL.Verify(v => v.AddCitizen(citizen));
+            Complaint complaint = new Complaint();
+            supervisorController.AddCitizenAndComplaint(citizen, complaint);
+            supervisorDAL.Verify(v => v.AddCitizenAndComplaint(citizen, complaint));
         }
     }
 }

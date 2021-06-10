@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using TechTalk.SpecFlow;
 using System.IO;
 using FlaUI.Core;
 using FlaUI.UIA2;
+using E2ETests.Hooks.Windows;
 
 namespace E2ETests.Hooks
 {
@@ -19,6 +18,7 @@ namespace E2ETests.Hooks
             appHolder.app = Application.Launch(execPath);
             appHolder.automation = new UIA2Automation();
             appHolder.window = appHolder.app.GetMainWindow(appHolder.automation);
+            appHolder.loginWindow = new LoginWindow(appHolder.window);
         }
 
         [AfterScenario]

@@ -19,10 +19,7 @@ namespace E2ETests.Steps
         [Given(@"username is empty")]
         public void GivenUsernameIsEmpty()
         {
-            appHolder.window
-                .FindFirstDescendant(cf => cf.ByAutomationId("userNameTextBox"))
-                .AsTextBox()
-                .Enter("");
+            appHolder.loginWindow.setUserName("");
         }
 
         [Given(@"username is ""(.*)""")]
