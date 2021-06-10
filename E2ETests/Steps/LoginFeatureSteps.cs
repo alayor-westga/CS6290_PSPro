@@ -23,6 +23,15 @@ namespace E2ETests.Steps
                 .AsTextBox()
                 .Enter("");
         }
+
+        [Given(@"username is ""(.*)""")]
+        public void GivenUsernameIs(string username)
+        {
+            appHolder.window
+                .FindFirstDescendant(cf => cf.ByAutomationId("userNameTextBox"))
+                .AsTextBox()
+                .Enter(username);
+        }
         
         [Given(@"password is empty")]
         public void GivenPasswordIsEmpty()
@@ -31,6 +40,15 @@ namespace E2ETests.Steps
                 .FindFirstDescendant(cf => cf.ByAutomationId("passwordTextBox"))
                 .AsTextBox()
                 .Enter("");
+        }
+
+        [Given(@"password is ""(.*)""")]
+        public void GivenPasswordIs(string password)
+        {
+            appHolder.window
+                .FindFirstDescendant(cf => cf.ByAutomationId("passwordTextBox"))
+                .AsTextBox()
+                .Enter(password);
         }
         
         [When(@"click on Login")]
