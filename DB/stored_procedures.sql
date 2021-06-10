@@ -103,3 +103,52 @@ GO
 GRANT EXECUTE ON GetLastCitizenID 
     TO winforms;  
 GO 
+
+
+--Add Complaint
+DROP PROCEDURE IF EXISTS AddComplaint;
+GO
+CREATE PROCEDURE AddComplaint 
+	@citizen_id int,
+	@officers_personnel_id int, 
+	@supervisors_personnel_id int, 
+	@investigators_personnel_id int, 
+	@administrators_pesonnel_id int, 
+	@date_created datetime, 
+	@allegation_type varchar(45), 
+	@complaint_notes text, 
+	@dispostion varchar(25), 
+	@disposition_date date, 
+	@discipline varchar(45)
+AS
+SET NOCOUNT ON;
+INSERT Complaints	(
+						citizen_id, 
+						officers_personnel_id, 
+						supervisors_personnel_id, 
+						investigators_personnel_id, 
+						administrators_personnel_id, 
+						date_created, 
+						allegation_type, 
+						complaint_notes, 
+						disposition, 
+						disposition_date, 
+						discipline
+					)
+VALUES (
+			@citizen_id,
+			@officers_personnel_id, 
+			@supervisors_personnel_id, 
+			@investigators_personnel_id, 
+			@administrators_pesonnel_id, 
+			@date_created, 
+			@allegation_type, 
+			@complaint_notes, 
+			@dispostion, 
+			@disposition_date, 
+			@discipline
+		)
+GO
+GRANT EXECUTE ON AddComplaint 
+    TO winforms;  
+GO 
