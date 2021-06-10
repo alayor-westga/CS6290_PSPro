@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSPro.Model
 {
-    class Complaint
+    public class Complaint
     {
        
         public int CitizenID { get; set; }

@@ -88,27 +88,101 @@ namespace PSPro.DAL
             return officerList;
         }
 
-        virtual public void AddCitizen(Citizen citizen)
+
+        virtual public void AddComplaint(Complaint complaint)
+        {
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();               
+                string storedProcedureAddIncident = "AddComplaint";             
+                using (SqlCommand command = new SqlCommand(storedProcedureAddIncident, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@citizen_id", complaint.CitizenID);
+                    this.AddComplaintDetails(command, complaint);
+                }                                                    
+            }
+        }
+
+        virtual public void AddCitizenAndComplaint(Citizen citizen, Complaint complaint)
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
             {
                 connection.Open();
-                string storedProcedure = "AddIncident";
-                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                SqlTransaction transaction = connection.BeginTransaction();
+                string storedProcedureAddIncident = "AddCitizen";
+                try
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@first_name", citizen.FirstName);
-                    command.Parameters.AddWithValue("@last_name", citizen.LastName);
-                    command.Parameters.AddWithValue("@address1", citizen.Address1);
-                    command.Parameters.AddWithValue("@address2", citizen.Address2);
-                    command.Parameters.AddWithValue("@city", citizen.City);
-                    command.Parameters.AddWithValue("@state", citizen.State);
-                    command.Parameters.AddWithValue("@zipcode", citizen.ZipCode);
-                    command.Parameters.AddWithValue("@phone", citizen.Phone);
-                    command.Parameters.AddWithValue("@email", citizen.Email);
-                    command.ExecuteNonQuery();
+                    using (SqlCommand command = new SqlCommand(storedProcedureAddIncident, connection, transaction))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@first_name", citizen.FirstName);
+                        command.Parameters.AddWithValue("@last_name", citizen.LastName);
+                        command.Parameters.AddWithValue("@address1", citizen.Address1);
+                        command.Parameters.AddWithValue("@address2", citizen.Address2);
+                        command.Parameters.AddWithValue("@city", citizen.City);
+                        command.Parameters.AddWithValue("@state", citizen.State);
+                        command.Parameters.AddWithValue("@zipcode", citizen.ZipCode);
+                        command.Parameters.AddWithValue("@phone", citizen.Phone);
+                        command.Parameters.AddWithValue("@email", citizen.Email);
+                        command.ExecuteNonQuery();
+                    }
+                    int citizenID = this.GetLastCitizenID(connection, transaction);
+                    this.AddComplaintWithNewCitizenID(connection, transaction, citizenID, complaint);
+                    transaction.Commit();
+                }
+                catch(Exception exception)
+                {
+                    transaction.Rollback();
+                    throw exception;
                 }
             }
+        }
+
+        private void AddComplaintWithNewCitizenID(SqlConnection connection, SqlTransaction transaction, int citizenID, Complaint complaint)
+        {
+            string storedProcedureAddComplaint = "AddComplaint";
+            
+                using (SqlCommand command = new SqlCommand(storedProcedureAddComplaint, connection, transaction))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@citizen_id", citizenID);
+                    this.AddComplaintDetails(command, complaint);                  
+                }
+            }
+
+        private void AddComplaintDetails(SqlCommand command, Complaint complaint)
+        {
+            command.Parameters.AddWithValue("@officers_personnel_id", complaint.OfficerID);
+            command.Parameters.AddWithValue("@supervisors_personnel_id", complaint.SupervisorID);
+            command.Parameters.AddWithValue("@administrators_pesonnel_id", complaint.AdministratorID);
+            command.Parameters.AddWithValue("@date_created", complaint.DateCreated);
+            command.Parameters.AddWithValue("@allegation_type", complaint.Allegation);
+            command.Parameters.AddWithValue("@complaint_notes", complaint.Summary);
+            command.Parameters.AddWithValue("@disposition", complaint.Disposition);
+            command.Parameters.AddWithValue("@disposition_date", complaint.DispositionDate);
+            command.Parameters.AddWithValue("@discipline", complaint.Discipline);
+            command.ExecuteNonQuery();
+        }
+
+        private int GetLastCitizenID(SqlConnection connection, SqlTransaction transaction)
+        {
+            int lastCitizenID = 0;
+            string storedProcedure = "GetLastCitizenID";
+
+            using (SqlCommand selectCommand = new SqlCommand(storedProcedure, connection, transaction))
+            {
+                selectCommand.CommandType = CommandType.StoredProcedure;
+                using (SqlDataReader reader = selectCommand.ExecuteReader(CommandBehavior.SingleRow))
+
+                {
+                    while (reader.Read())
+                    {
+                       lastCitizenID = (int)reader["citizen_id"];
+                    }
+                }
+            }
+            return lastCitizenID;
         }
     }
 }
