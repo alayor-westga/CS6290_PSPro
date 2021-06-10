@@ -2,7 +2,6 @@
 using FlaUI.Core.AutomationElements;
 using E2ETests.Hooks;
 using NUnit.Framework;
-using System.Threading;
 
 namespace E2ETests.Steps
 {
@@ -25,38 +24,25 @@ namespace E2ETests.Steps
         [Given(@"username is ""(.*)""")]
         public void GivenUsernameIs(string username)
         {
-            appHolder.window
-                .FindFirstDescendant(cf => cf.ByAutomationId("userNameTextBox"))
-                .AsTextBox()
-                .Enter(username);
+            appHolder.loginWindow.setUserName(username);
         }
         
         [Given(@"password is empty")]
         public void GivenPasswordIsEmpty()
         {
-            appHolder.window
-                .FindFirstDescendant(cf => cf.ByAutomationId("passwordTextBox"))
-                .AsTextBox()
-                .Enter("");
+            appHolder.loginWindow.setPassword("");
         }
 
         [Given(@"password is ""(.*)""")]
         public void GivenPasswordIs(string password)
         {
-            appHolder.window
-                .FindFirstDescendant(cf => cf.ByAutomationId("passwordTextBox"))
-                .AsTextBox()
-                .Enter(password);
+            appHolder.loginWindow.setPassword(password);
         }
         
         [When(@"click on Login")]
         public void WhenClickOnLogin()
         {
-            appHolder.window
-                .FindFirstDescendant(cf => cf.ByAutomationId("loginButton"))
-                .AsButton()
-                .Click();
-            Thread.Sleep(2000);
+            appHolder.loginWindow.login();
         }
         
         [Then(@"the message ""(.*)"" is shown")]

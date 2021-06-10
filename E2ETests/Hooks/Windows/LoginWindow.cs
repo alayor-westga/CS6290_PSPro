@@ -1,4 +1,5 @@
-﻿    using FlaUI.Core.AutomationElements;
+﻿using FlaUI.Core.AutomationElements;
+using System.Threading;
 
 namespace E2ETests.Hooks.Windows
 {
@@ -16,6 +17,23 @@ namespace E2ETests.Hooks.Windows
                 .FindFirstDescendant(cf => cf.ByAutomationId("userNameTextBox"))
                 .AsTextBox()
                 .Enter(username);
+        }
+
+        public void setPassword(string password) 
+        {
+            window
+                .FindFirstDescendant(cf => cf.ByAutomationId("passwordTextBox"))
+                .AsTextBox()
+                .Enter(password);
+        }
+
+        public void login() 
+        {
+            window
+                .FindFirstDescendant(cf => cf.ByAutomationId("loginButton"))
+                .AsButton()
+                .Click();
+            Thread.Sleep(2000);
         }
     }
 }
