@@ -18,40 +18,37 @@ namespace E2ETests.Steps
         [Given(@"username is empty")]
         public void GivenUsernameIsEmpty()
         {
-            appHolder.loginWindow.setUserName("");
+            appHolder.loginWindow.SetUserName("");
         }
 
         [Given(@"username is ""(.*)""")]
         public void GivenUsernameIs(string username)
         {
-            appHolder.loginWindow.setUserName(username);
+            appHolder.loginWindow.SetUserName(username);
         }
         
         [Given(@"password is empty")]
         public void GivenPasswordIsEmpty()
         {
-            appHolder.loginWindow.setPassword("");
+            appHolder.loginWindow.SetPassword("");
         }
 
         [Given(@"password is ""(.*)""")]
         public void GivenPasswordIs(string password)
         {
-            appHolder.loginWindow.setPassword(password);
+            appHolder.loginWindow.SetPassword(password);
         }
         
         [When(@"click on Login")]
         public void WhenClickOnLogin()
         {
-            appHolder.loginWindow.login();
+            appHolder.loginWindow.Login();
         }
         
         [Then(@"the message ""(.*)"" is shown")]
         public void ThenTheMessageIsShown(string message)
         {
-            var errorMessage = appHolder.window
-                .FindFirstDescendant(cf => cf.ByAutomationId("errorMessageLabel"))
-                .AsLabel()
-                .Text;
+            var errorMessage = appHolder.loginWindow.GetErrorMessageLabel();
             Assert.AreEqual(message, errorMessage);
         }
 

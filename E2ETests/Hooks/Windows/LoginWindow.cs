@@ -11,7 +11,7 @@ namespace E2ETests.Hooks.Windows
             this.window = window;
         }
 
-        public void setUserName(string username) 
+        public void SetUserName(string username) 
         {
             window
                 .FindFirstDescendant(cf => cf.ByAutomationId("userNameTextBox"))
@@ -19,7 +19,7 @@ namespace E2ETests.Hooks.Windows
                 .Enter(username);
         }
 
-        public void setPassword(string password) 
+        public void SetPassword(string password) 
         {
             window
                 .FindFirstDescendant(cf => cf.ByAutomationId("passwordTextBox"))
@@ -27,13 +27,21 @@ namespace E2ETests.Hooks.Windows
                 .Enter(password);
         }
 
-        public void login() 
+        public void Login() 
         {
             window
                 .FindFirstDescendant(cf => cf.ByAutomationId("loginButton"))
                 .AsButton()
                 .Click();
             Thread.Sleep(2000);
+        }
+
+        public string GetErrorMessageLabel() 
+        {
+            return window
+                .FindFirstDescendant(cf => cf.ByAutomationId("errorMessageLabel"))
+                .AsLabel()
+                .Text;
         }
     }
 }
