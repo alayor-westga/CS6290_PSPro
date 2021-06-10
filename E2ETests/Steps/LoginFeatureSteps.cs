@@ -60,7 +60,6 @@ namespace E2ETests.Steps
                 .AsButton()
                 .Click();
             Thread.Sleep(2000);
-            appHolder.window = appHolder.app.GetAllTopLevelWindows(appHolder.automation)[0];
         }
         
         [Then(@"the message ""(.*)"" is shown")]
@@ -76,7 +75,10 @@ namespace E2ETests.Steps
         [Then(@"the title emessage ""(.*)"" is shown")]
         public void ThenTheTitleMessageIsShown(string message)
         {
-            var titleMessage = appHolder.window
+            var window = appHolder.automation.GetDesktop()
+                .FindFirstChild(cf => cf.ByProcessId(appHolder.app.ProcessId))
+                .AsWindow();
+            var titleMessage = window
                 .FindFirstDescendant(cf => cf.ByAutomationId("SupervisorLabel"))
                 .AsLabel()
                 .Text;
