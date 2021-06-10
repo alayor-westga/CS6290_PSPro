@@ -70,10 +70,10 @@ TO winforms;
 GO
 
 
---AddIncident
-DROP PROCEDURE IF EXISTS AddIncident;
+--AddCitizen
+DROP PROCEDURE IF EXISTS AddCitizen;
 GO
-CREATE PROCEDURE AddIncident 
+CREATE PROCEDURE AddCitizen 
 	@first_name varchar(45), 
 	@last_name varchar(45), 
 	@address1 varchar(45), 
@@ -88,7 +88,7 @@ SET NOCOUNT ON;
 INSERT Citizens (first_name, last_name, address1, address2, city, state, zipcode, phone, email)
 VALUES (@first_name, @last_name, @address1, @address2, @city, @state, @zipcode, @phone, @email)
 GO
-GRANT EXECUTE ON AddIncident 
+GRANT EXECUTE ON AddCitizen 
     TO winforms;  
 GO 
 
