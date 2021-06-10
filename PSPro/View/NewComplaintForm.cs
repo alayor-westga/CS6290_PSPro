@@ -34,9 +34,7 @@ namespace PSPro.View
             this.ZipCodeErrorLabel.Text = "##### or #####-####";
             this.ShowUserName();
             this.PopulateOfficerComboBox();
-            PopulateStateComboBox(this.StateComboBox);
-
-           
+            PopulateStateComboBox(this.StateComboBox);           
         }
 
         private static void PopulateStateComboBox(ComboBox cbo)
@@ -86,23 +84,40 @@ namespace PSPro.View
            
             if (string.IsNullOrEmpty(this.CitizenIDTextBox.Text))
             {
-                this.AddCitizen();
-                //this.complaint.CitizenID = ReturnCitizenID();
+                this.BindCitizenFieldsToCitizenObject();
+                this.BindComplaintFieldsToComplaintObject();
 
-                //AddCitizenAndComplaint (transaction??)
+                try
+                {
+                    this.supervisorController.AddCitizenAndComplaint(this.citizen, this.complaint);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message,
+                            "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);               
+                }
             }
             else
             {
                 this.complaint.CitizenID = Int32.Parse(this.CitizenIDTextBox.Text);
-            }
+                this.BindComplaintFieldsToComplaintObject();
 
-            //this.AddComplaint();          
+                try
+                {
+                    this.supervisorController.AddComplaint(this.citizen.CitizenID, this.complaint);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message,
+                            "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }           
+            }                 
         }
 
-        private void AddComplaint()
+        private void BindComplaintFieldsToComplaintObject()
         {
+            this.complaint.SupervisorID = this.loggedInUser.UserId;
             this.complaint.OfficerID = Int32.Parse(this.OfficerComboBox.ValueMember);
-            this.complaint.SupervisorID = this.loggedInUser.UserId;                      
             this.complaint.Allegation = this.AllegationComboBox.Text;
             this.complaint.Summary = this.ComplaintSummaryTextBox.Text;
 
@@ -117,23 +132,8 @@ namespace PSPro.View
                 return;
             }
         }
-
-        private int ReturnCitizenID()
-        {
-            try
-            {
-                return this.supervisorController.ReturnCitizenID();
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message,
-                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 0;
-            }
-          
-        }
-
-        private void AddCitizen()
+        
+        private void BindCitizenFieldsToCitizenObject()
         {
             this.citizen.FirstName = FirstNameTextBox.Text;
             this.citizen.LastName = LastNameTextBox.Text;
@@ -144,17 +144,6 @@ namespace PSPro.View
             this.citizen.ZipCode = ZipCodeTextBox.Text;
             this.citizen.Phone = PhoneNumberTextBox.Text;
             this.citizen.Email = EmailTextBox.Text;
-           
-            try
-            {
-                this.supervisorController.AddCitizen(this.citizen);               
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message,
-                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
         }
 
         private void LogoutLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
