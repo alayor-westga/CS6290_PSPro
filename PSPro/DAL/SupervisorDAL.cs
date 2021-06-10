@@ -154,13 +154,8 @@ namespace PSPro.DAL
         {
             command.Parameters.AddWithValue("@officers_personnel_id", complaint.OfficerID);
             command.Parameters.AddWithValue("@supervisors_personnel_id", complaint.SupervisorID);
-           
-            //command.Parameters.Add("@date_created", SqlDbType.DateTime2).Value = "2002-09-09" ;
             command.Parameters.AddWithValue("@allegation_type", complaint.Allegation);
-            command.Parameters.AddWithValue("@complaint_notes", complaint.Summary);
-            //command.Parameters.AddWithValue("@disposition", complaint.Disposition);
-            //command.Parameters.AddWithValue("@disposition_date", complaint.DispositionDate);
-            //command.Parameters.AddWithValue("@discipline", complaint.Discipline);
+            command.Parameters.AddWithValue("@complaint_notes", complaint.Summary);         
             command.ExecuteNonQuery();
         }
 
