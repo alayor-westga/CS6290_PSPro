@@ -94,7 +94,8 @@ namespace PSPro.View
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.Message,
-                            "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);               
+                            "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
             else
@@ -110,8 +111,36 @@ namespace PSPro.View
                 {
                     MessageBox.Show(exception.Message,
                             "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }           
-            }                 
+            }
+
+            this.ClearForm();
+            MessageBox.Show("Complaint Successfully\nAdded to Database.",
+                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
+        }
+
+        private void ClearForm()
+        {
+            this.FirstNameTextBox.Text = "";
+            this.LastNameTextBox.Text = "";
+            this.Address1TextBox.Text = "";
+            this.Address2TextBox.Text = "";
+            this.CityTextBox.Text = "";
+            this.StateComboBox.Text = "";
+            this.ZipCodeTextBox.Text = "";
+            this.PhoneNumberTextBox.Text = "";
+            this.EmailTextBox.Text = "";
+            this.OfficerComboBox.SelectedIndex = -1;
+            this.AllegationComboBox.SelectedIndex = -1;
+            this.ComplaintSummaryTextBox.Text = "";
+            this.FirstNameErrorLabel.Text = "";
+            this.ZipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
+            this.PhoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
+            this.OfficerErrorLabel.Text = "";
+            this.AllegationErrorLabel.Text = "";
+            this.ComplaintSummaryErrorLabel.Text = "";
         }
 
         private void BindComplaintFieldsToComplaintObject()
