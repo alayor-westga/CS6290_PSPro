@@ -103,7 +103,7 @@ namespace PSPro.View
                 this.complaint.CitizenID = Int32.Parse(this.citizenIDTextBox.Text); //may not need this - the form may already be populated
                 if (this.CheckForChangesMadeToCitizenFields())
                 {
-                    //this.UpdateCitizen();
+                    //this.UpdateCitizen(); - need to implement the code in the DAL and the controller
                 }
                 this.BindComplaintFieldsToComplaintObject();
 
