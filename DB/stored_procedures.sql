@@ -246,6 +246,43 @@ AddAdministrator
 TO winforms;
 GO
 
+--AddOfficer
+DROP PROCEDURE IF EXISTS AddOfficer;
+GO
+CREATE PROCEDURE AddOfficer
+	@user_name varchar(45), 
+	@password varchar(200), 
+	@first_name varchar(45), 
+	@last_name varchar(45), 
+	@gender char(1), 
+	@hire_date date, 
+	@birthdate date, 
+	@assignment varchar(45)
+AS
+SET NOCOUNT ON;
+	DECLARE @ID table (ID int)
+    DECLARE @personnel_id INT;
+
+    INSERT INTO Personnel
+	OUTPUT INSERTED.personnel_id into @ID
+	VALUES (
+		@first_name,
+		@last_name,
+		@gender,
+		@hire_date,
+		@birthdate,
+		@assignment
+	)
+	SELECT @personnel_id = ID FROM @ID
+	INSERT INTO Officers
+	VALUES (
+		@personnel_id
+	)
+GO
+GRANT EXECUTE ON
+AddOfficer
+TO winforms;
+GO
 
 --GetCitizen
 DROP PROCEDURE IF EXISTS GetCitizen;

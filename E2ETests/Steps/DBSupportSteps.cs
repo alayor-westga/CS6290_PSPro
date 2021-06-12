@@ -14,7 +14,8 @@ namespace E2ETests.Steps
         {
             { "supervisor", "AddSupervisor" },
             { "investigator", "AddInvestigator" },
-            { "administrator", "AddAdministrator" }
+            { "administrator", "AddAdministrator" },
+            { "officer", "AddOfficer" }
         };
 
         [Given(@"personnel exists on the DB with this info")]
