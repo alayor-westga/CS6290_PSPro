@@ -126,10 +126,10 @@ GRANT EXECUTE ON AddComplaint
     TO winforms;  
 GO 
 
---AddPersonnel
-DROP PROCEDURE IF EXISTS AddPersonnel;
+--AddSupervisor
+DROP PROCEDURE IF EXISTS AddSupervisor;
 GO
-CREATE PROCEDURE AddPersonnel
+CREATE PROCEDURE AddSupervisor
 	@user_name varchar(45), 
 	@password varchar(200), 
 	@first_name varchar(45), 
@@ -140,8 +140,11 @@ CREATE PROCEDURE AddPersonnel
 	@assignment varchar(45)
 AS
 SET NOCOUNT ON;
+	DECLARE @ID table (ID int)
+    DECLARE @personnel_id INT;
 
     INSERT INTO Personnel
+	OUTPUT INSERTED.personnel_id into @ID
 	VALUES (
 		@first_name,
 		@last_name,
@@ -150,8 +153,15 @@ SET NOCOUNT ON;
 		@birthdate,
 		@assignment
 	)
+	SELECT @personnel_id = ID FROM @ID
+	INSERT INTO Supervisors
+	VALUES (
+		@personnel_id,
+		@user_name, 
+		HASHBYTES('SHA2_512', @password+CAST(@user_name AS NVARCHAR(36)))
+	)
 GO
 GRANT EXECUTE ON
-AddPersonnel
+AddSupervisor
 TO winforms;
 GO
