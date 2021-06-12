@@ -45,28 +45,28 @@ namespace E2ETests.Hooks.Windows
                 .AsLabel()
                 .Text;
         }
-        public void SetCitizenFirstName(string firstName)
+        public void EnterCitizenFirstName(string firstName)
         {
             setCitizenField("firstNameTextBox", firstName);
         }
 
-        public void SetCitizenLastName(string lastName)
+        public void EnterCitizenLastName(string lastName)
         {
             setCitizenField("lastNameTextBox", lastName);
         }
-        public void SetCitizenAddress1(string address1)
+        public void EnterCitizenAddress1(string address1)
         {
             setCitizenField("address1TextBox", address1);
         }
-        public void SetCitizenAddress2(string address2)
+        public void EnterCitizenAddress2(string address2)
         {
             setCitizenField("address2TextBox", address2);
         }
-        public void SetCitizenCity(string city)
+        public void EnterCitizenCity(string city)
         {
             setCitizenField("cityTextBox", city);
         }
-        public void SetCitizenState(string state)
+        public void SelectCitizenState(string state)
         {
             context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("stateComboBox"))
@@ -74,16 +74,16 @@ namespace E2ETests.Hooks.Windows
                 .Select(state);
         }
 
-        public void SetCitizenZipCode(string zipCode)
+        public void EnterCitizenZipCode(string zipCode)
         {
             setCitizenField("zipCodeTextBox", zipCode);
         }
 
-        public void SetCitizenPhoneNumber(string phoneNumber)
+        public void EnterCitizenPhoneNumber(string phoneNumber)
         {
             setCitizenField("phoneNumberTextBox", phoneNumber);
         }
-        public void SetCitizenEmailAddress(string email)
+        public void EnterCitizenEmailAddress(string email)
         {
             setCitizenField("emailTextBox", email);
         }
@@ -101,6 +101,14 @@ namespace E2ETests.Hooks.Windows
                 .FindFirstDescendant(cf => cf.ByAutomationId("SaveButton"))
                 .AsButton()
                 .Click();
+        }
+
+        public void SelectOfficer(string officer)
+        {
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("officerComboBox"))
+                .AsComboBox()
+                .Select(officer);
         }
     }
 }

@@ -17,25 +17,25 @@ namespace E2ETests.Steps
         [Given(@"username is empty")]
         public void GivenUsernameIsEmpty()
         {
-            context.loginWindow.SetUserName("");
+            context.loginWindow.EnterUserName("");
         }
 
         [Given(@"username is ""(.*)""")]
         public void GivenUsernameIs(string username)
         {
-            context.loginWindow.SetUserName(username);
+            context.loginWindow.EnterUserName(username);
         }
         
         [Given(@"password is empty")]
         public void GivenPasswordIsEmpty()
         {
-            context.loginWindow.SetPassword("");
+            context.loginWindow.EnterPassword("");
         }
 
         [Given(@"password is ""(.*)""")]
         public void GivenPasswordIs(string password)
         {
-            context.loginWindow.SetPassword(password);
+            context.loginWindow.EnterPassword(password);
         }
         
         [When(@"click on Login")]
@@ -61,8 +61,8 @@ namespace E2ETests.Steps
         [Given(@"supervisor ""(.*)"" logs in with password ""(.*)""")]
         public void SupervisorLogsIn(string username, string password)
         {
-            context.loginWindow.SetUserName(username);
-            context.loginWindow.SetPassword(password);
+            context.loginWindow.EnterUserName(username);
+            context.loginWindow.EnterPassword(password);
             context.loginWindow.Login();
         }
     }

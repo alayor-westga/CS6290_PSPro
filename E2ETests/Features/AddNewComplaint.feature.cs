@@ -217,6 +217,9 @@ this.FeatureBackground();
 #line 19
     testRunner.Given("this citizen info is entered", ((string)(null)), table2, "Given ");
 #line hidden
+#line 22
+    testRunner.And("the officer \"Cer, Offi\" is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
