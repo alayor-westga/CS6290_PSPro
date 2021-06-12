@@ -18,6 +18,34 @@ namespace E2ETests.Hooks.Windows
                 .AsLabel()
                 .Text;
         }
+        public string GetFirstNameErrorLabel() 
+        {
+            return context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("firstNameErrorLabel"))
+                .AsLabel()
+                .Text;
+        }
+        public string GetOfficerErrorLabel() 
+        {
+            return context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("officerErrorLabel"))
+                .AsLabel()
+                .Text;
+        }
+        public string GetAllegationErrorLabel() 
+        {
+            return context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("allegationErrorLabel"))
+                .AsLabel()
+                .Text;
+        }
+        public string GetComplaintSummaryErrorLabel() 
+        {
+            return context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("complaintSummaryErrorLabel"))
+                .AsLabel()
+                .Text;
+        }
         public void Save() 
         {
             context.GetWindow()

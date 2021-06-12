@@ -9,3 +9,7 @@ Background:
 
 Scenario: Add new complaint with empty information 
 	When click on Save
+    Then the first name field is labeled as required
+    And the officer field is labeled as required
+    And the allegation field is labeled as required
+    And the complaint summary field is labeled as required

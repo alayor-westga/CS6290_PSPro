@@ -138,6 +138,18 @@ this.FeatureBackground();
 #line 11
  testRunner.When("click on Save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 12
+    testRunner.Then("the first name field is labeled as required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 13
+    testRunner.And("the officer field is labeled as required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+    testRunner.And("the allegation field is labeled as required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+    testRunner.And("the complaint summary field is labeled as required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
