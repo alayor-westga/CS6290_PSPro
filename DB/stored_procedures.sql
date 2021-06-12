@@ -245,3 +245,20 @@ GRANT EXECUTE ON
 AddAdministrator
 TO winforms;
 GO
+
+
+--GetCitizen
+DROP PROCEDURE IF EXISTS GetCitizen;
+GO
+CREATE PROCEDURE GetCitizen 
+	@citizen_id int		
+AS
+SET NOCOUNT ON;
+
+SELECT citizen_id, first_name, last_name, address1, address2, city, state, zipcode, phone, email
+FROM Citizens
+WHERE citizen_id = @citizen_id
+
+GRANT EXECUTE ON GetCitizen 
+    TO winforms;  
+GO 
