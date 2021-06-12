@@ -77,14 +77,48 @@ namespace E2ETests.Features
         {
 #line 4
 #line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "type",
+                        "username",
+                        "password",
+                        "first_name",
+                        "last_name",
+                        "gender",
+                        "hiredate",
+                        "birthdate",
+                        "assignment"});
+            table1.AddRow(new string[] {
+                        "\"supervisor\"",
+                        "\"s-001\"",
+                        "\"4567\"",
+                        "\"Super\"",
+                        "\"Visor\"",
+                        "\"M\"",
+                        "\"2000-01-01\"",
+                        "\"1970-01-01\"",
+                        "\"assigment1\""});
+            table1.AddRow(new string[] {
+                        "\"investigator\"",
+                        "\"i-001\"",
+                        "\"4567\"",
+                        "\"Investi\"",
+                        "\"Gator\"",
+                        "\"F\"",
+                        "\"2001-01-01\"",
+                        "\"1988-01-01\"",
+                        "\"assigment1\""});
+            table1.AddRow(new string[] {
+                        "\"administrator\"",
+                        "\"a-001\"",
+                        "\"4567\"",
+                        "\"Admin\"",
+                        "\"Istrator\"",
+                        "\"M\"",
+                        "\"2016-01-01\"",
+                        "\"1992-01-01\"",
+                        "\"assigment1\""});
 #line 5
-    testRunner.Given("supervisor with username \"s-001\" and password \"4567\" exists on the DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 6
-    testRunner.And("investigator with username \"i-001\" and password \"4567\" exists on the DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 7
-    testRunner.And("administrator with username \"a-001\" and password \"4567\" exists on the DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Given("personnel exists on the DB with this info", ((string)(null)), table1, "Given ");
 #line hidden
         }
         
@@ -95,7 +129,7 @@ namespace E2ETests.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login with no username and password", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 9
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -118,16 +152,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 10
+#line 12
  testRunner.Given("username is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 11
+#line 13
  testRunner.And("password is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 12
+#line 14
  testRunner.When("click on Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 15
  testRunner.Then("the message \"Invalid credentials\" is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -141,7 +175,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login as supervisor", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 15
+#line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -164,16 +198,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 16
+#line 18
  testRunner.Given("username is \"s-001\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 17
+#line 19
  testRunner.And("password is \"1234\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 18
+#line 20
  testRunner.When("click on Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
+#line 21
  testRunner.Then("the user full name \"Kristin Hero (s-001)\" is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -187,7 +221,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login as investigator", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+#line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -210,16 +244,16 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 22
+#line 24
  testRunner.Given("username is \"i-001\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
+#line 25
  testRunner.And("password is \"1234\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 26
  testRunner.When("click on Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 25
+#line 27
  testRunner.Then("the user full name \"Derek Frost (i-001)\" is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

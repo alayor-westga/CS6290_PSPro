@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 
-namespace PSPro.DAL
+namespace E2ETests.Drivers
 {
     /// <summary>
     /// Get a connection object. 

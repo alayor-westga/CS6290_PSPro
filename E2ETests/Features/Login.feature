@@ -2,9 +2,11 @@
 	Login into the app
 
 Background:
-    Given supervisor with username "s-001" and password "4567" exists on the DB
-    And investigator with username "i-001" and password "4567" exists on the DB
-    And administrator with username "a-001" and password "4567" exists on the DB
+    Given personnel exists on the DB with this info
+	|type|username|password|first_name|last_name|gender|hiredate|birthdate|assignment|
+	|"supervisor"|"s-001"|"4567"|"Super"|"Visor"|"M"|"2000-01-01"|"1970-01-01"|"assigment1"|
+	|"investigator"|"i-001"|"4567"|"Investi"|"Gator"|"F"|"2001-01-01"|"1988-01-01"|"assigment1"|
+	|"administrator"|"a-001"|"4567"|"Admin"|"Istrator"|"M"|"2016-01-01"|"1992-01-01"|"assigment1"|
 
 Scenario: Login with no username and password
 	Given username is empty

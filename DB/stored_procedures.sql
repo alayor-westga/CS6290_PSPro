@@ -125,3 +125,33 @@ GO
 GRANT EXECUTE ON AddComplaint 
     TO winforms;  
 GO 
+
+--AddPersonnel
+DROP PROCEDURE IF EXISTS AddPersonnel;
+GO
+CREATE PROCEDURE AddPersonnel
+	@user_name varchar(45), 
+	@password varchar(200), 
+	@first_name varchar(45), 
+	@last_name varchar(45), 
+	@gender char(1), 
+	@hire_date date, 
+	@birthdate date, 
+	@assignment varchar(45)
+AS
+SET NOCOUNT ON;
+
+    INSERT INTO Personnel
+	VALUES (
+		@first_name,
+		@last_name,
+		@gender,
+		@hire_date,
+		@birthdate,
+		@assignment
+	)
+GO
+GRANT EXECUTE ON
+AddPersonnel
+TO winforms;
+GO

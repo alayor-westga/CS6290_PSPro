@@ -1,27 +1,33 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using TechTalk.SpecFlow;
+using E2ETests.Drivers;
 
 namespace E2ETests.Steps
 {
     [Binding]
     public class DBSupportSteps
     {
-        [Given(@"supervisor with username ""(.*)"" and password ""(.*)"" exists on the DB")]
-        public void GivenSupervisorWithUsernameAndPasswordExistsOnTheDB(string username, int password)
+        [Given(@"personnel exists on the DB with this info")]
+        public void GivenPersonnelExistsOnTheDBWithThisInfo(Table table)
         {
-            ScenarioContext.Current.Pending();
+
         }
-        
-        [Given(@"investigator with username ""(.*)"" and password ""(.*)"" exists on the DB")]
-        public void GivenInvestigatorWithUsernameAndPasswordExistsOnTheDB(string username, int password)
+
+        private void AddPersonnel()
         {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Given(@"administrator with username ""(.*)"" and password ""(.*)"" exists on the DB")]
-        public void GivenAdministratorWithUsernameAndPasswordExistsOnTheDB(string username, int password)
-        {
-            ScenarioContext.Current.Pending();
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedureAddIncident = "AddPersonnel";
+                using (SqlCommand command = new SqlCommand(storedProcedureAddIncident, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@citizen_id", "");
+                    command.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
