@@ -13,3 +13,8 @@ Scenario: Add new complaint with empty information
     And the officer field is labeled as required
     And the allegation field is labeled as required
     And the complaint summary field is labeled as required
+
+Scenario: Add new complaint successfully
+    Given this citizen info is entered
+    |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|
+	|Citi|Zen|123 Main St.||San Jose|CA|89900|5555555555|citizen@example.com|

@@ -47,5 +47,12 @@ namespace E2ETests.Steps
             var errorLabel = context.newComplaintWindow.GetComplaintSummaryErrorLabel();
             Assert.AreEqual(errorLabel, "Required Field");
         }
+
+        [Given(@"this citizen info is entered")]
+        public void GivenThisCitizenInfoIsEntered(Table table)
+        {
+            var citizenRaw = table.Rows[0];
+            context.newComplaintWindow.SetCitizenFirstName(citizenRaw[0]);
+        }
     }
 }

@@ -46,6 +46,13 @@ namespace E2ETests.Hooks.Windows
                 .AsLabel()
                 .Text;
         }
+        public void SetCitizenFirstName(string firstName) 
+        {
+               context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("firstNameTextBox"))
+                .AsTextBox()
+                .Enter(firstName);
+        }
         public void Save() 
         {
             context.GetWindow()

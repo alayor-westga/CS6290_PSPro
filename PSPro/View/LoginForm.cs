@@ -19,7 +19,7 @@ namespace PSPro.View
             loginController = new LoginController();
             if (Program.Env != Program.Environments.PROD)
             {
-                this.Text += " (" + Program.Env + " env)";
+                this.Text += " (" + Program.Env + ")";
             }
         }
 
