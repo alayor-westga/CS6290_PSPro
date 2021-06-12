@@ -100,7 +100,7 @@ namespace PSPro.View
             }
             else
             {
-                this.complaint.CitizenID = Int32.Parse(this.CitizenIDTextBox.Text);
+                this.complaint.CitizenID = Int32.Parse(this.CitizenIDTextBox.Text); //may not need this - the form may already be populated
                 if (this.CheckForChangesMadeToCitizenFields())
                 {
                     this.UpdateCitizen();
@@ -178,7 +178,8 @@ namespace PSPro.View
 
         private void GetCitizenFromDB()
         {
-            this.citizen = this.supervisorController.GetCitizen(this.citizen.CitizenID.ToString());
+            this.citizen = this.supervisorController.GetCitizen(this.citizen.CitizenID);
+            //this.citizen = this.supervisorController.GetCitizen(this.CitizenIDTextBox.Text);
         }
 
         private bool CheckForChangesMadeToCitizenFields()
