@@ -299,3 +299,58 @@ WHERE citizen_id = @citizen_id
 GRANT EXECUTE ON GetCitizen 
     TO winforms;  
 GO 
+
+
+--UpdateCitizen
+DROP PROCEDURE IF EXISTS UpdateCitizen;
+GO
+CREATE PROCEDURE UpdateCitizen 
+	@UpdatedFirstName varchar(45), 
+	@UpdatedLastName varchar(45), 
+	@UpdatedAddress1 varchar(45), 
+	@UpdatedAddress2 varchar(45), 
+	@UpdatedCity varchar(45), 
+	@UpdatedState char(2), 
+	@UpdatedZipcode varchar(10), 
+	@UpdatedPhone varchar(12), 
+	@UpdatedEmail varchar(45),
+
+	@CitizenID int,
+	@FirstName varchar(45), 
+	@LastName varchar(45), 
+	@Address1 varchar(45), 
+	@Address2 varchar(45), 
+	@City varchar(45), 
+	@State char(2), 
+	@Zipcode varchar(10), 
+	@Phone varchar(12), 
+	@Email varchar(45)
+AS
+SET NOCOUNT ON;
+
+UPDATE Citizens SET  
+                    first_name = @UpdatedFirstName,  
+                    last_name = @UpdatedLastName,  
+                    address1 = @UpdatedAddress1,  
+                    address2 = @Updatedaddress2,
+                    city = @UpdatedCity,
+                    state = @UpdatedState,
+                    zipcode = @UpdatedZipcode,
+                    phone = @UpdatedPhone, 
+                    email = @UpdatedEmail                 
+                WHERE citizen_id = @CitizenID 
+                    AND first_name = @FirstName  
+                    AND last_name = @LastName  
+                    AND address1 = @Address1  
+                    AND address2 = @Address2
+                    AND city = @City
+                    AND state = @State
+                    AND zipcode = @Zipcode
+                    AND phone = @Phone 
+                    AND email = @Email  
+
+GO
+GRANT EXECUTE ON UpdateCitizen 
+    TO winforms;  
+GO 
+ 
