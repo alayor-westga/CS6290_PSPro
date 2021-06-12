@@ -164,6 +164,7 @@ namespace PSPro.View
 
         private void PopulateCitizenFields()
         {
+            this.CitizenIDTextBox.Text = this.citizen.CitizenID.ToString();
             this.firstNameTextBox.Text = this.citizen.FirstName;
             this.lastNameTextBox.Text = this.citizen.LastName;
             this.address1TextBox.Text = this.citizen.Address1;
@@ -177,7 +178,7 @@ namespace PSPro.View
 
         private void GetCitizenFromDB()
         {
-            this.citizen = this.supervisorController.GetCitizen(this.CitizenIDTextBox.Text);
+            this.citizen = this.supervisorController.GetCitizen(this.citizen.CitizenID.ToString());
         }
 
         private bool CheckForChangesMadeToCitizenFields()
