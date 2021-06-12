@@ -16,18 +16,18 @@ Scenario: Login with no username and password
 
 Scenario: Login as supervisor
 	Given username is "s-001"
-	And password is "1234"
+	And password is "4567"
 	When click on Login
 	Then the user full name "Super Visor (s-001)" is shown
 
 Scenario: Login as investigator
 	Given username is "i-001"
-	And password is "1234"
+	And password is "4567"
 	When click on Login
 	Then the user full name "Investi Gator (i-001)" is shown
 
 Scenario: Login as administrator
 	Given username is "a-001"
-	And password is "1234"
+	And password is "4567"
 	When click on Login
-	Then the user full name "Admin Istrator (i-001)" is shown
+	Then the user full name "Admin Istrator (a-001)" is shown

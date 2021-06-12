@@ -4,6 +4,8 @@ using System.IO;
 using FlaUI.Core;
 using FlaUI.UIA2;
 using E2ETests.Hooks.Windows;
+using E2ETests.Drivers;
+using System.Data.SqlClient;
 
 namespace E2ETests.Hooks
 {
@@ -12,8 +14,14 @@ namespace E2ETests.Hooks
     {
         private static string execPath = Path.Combine(Environment.CurrentDirectory, @"..\..\..\..\PSPro\bin\Debug\", "PSPro.exe");
 
+        [BeforeTestRun]
+        public static void BeforeTestRun()
+        {
+            cleanUpDB();
+        }
+
         [BeforeScenario]
-        public static void BeforeTestRun(Context context)
+        public static void BeforeScenario(Context context)
         {
             context.app = Application.Launch(execPath, "e2e_tests");
             context.automation = new UIA2Automation();
@@ -22,10 +30,28 @@ namespace E2ETests.Hooks
         }
 
         [AfterScenario]
-        public static void AfterTestRun(Context context)
+        public static void AfterScenario(Context context)
         {
             context.app.Close();
             context.automation.Dispose();
+            cleanUpDB();
+        }
+
+        private static void cleanUpDB()
+        {
+             using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                var query = "" + 
+                "DELETE FROM Supervisors; " +
+                "DELETE FROM Investigators; " +
+                "DELETE FROM Administrators; " +
+                "DELETE FROM Personnel; DBCC CHECKIDENT ('Personnel', RESEED, 1);";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
