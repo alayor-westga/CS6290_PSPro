@@ -52,15 +52,22 @@ namespace E2ETests.Steps
         public void GivenThisCitizenInfoIsEntered(Table table)
         {
             var citizenRaw = table.Rows[0];
-            context.newComplaintWindow.SetCitizenFirstName(citizenRaw[0]);
-            context.newComplaintWindow.SetCitizenLastName(citizenRaw[1]);
-            context.newComplaintWindow.SetCitizenAddress1(citizenRaw[2]);
-            context.newComplaintWindow.SetCitizenAddress2(citizenRaw[3]);
-            context.newComplaintWindow.SetCitizenCity(citizenRaw[4]);
-            context.newComplaintWindow.SetCitizenState(citizenRaw[5]);
-            context.newComplaintWindow.SetCitizenZipCode(citizenRaw[6]);
-            context.newComplaintWindow.SetCitizenPhoneNumber(citizenRaw[7]);
-            context.newComplaintWindow.SetCitizenEmailAddress(citizenRaw[8]);
+            context.newComplaintWindow.EnterCitizenFirstName(citizenRaw[0]);
+            context.newComplaintWindow.EnterCitizenLastName(citizenRaw[1]);
+            context.newComplaintWindow.EnterCitizenAddress1(citizenRaw[2]);
+            context.newComplaintWindow.EnterCitizenAddress2(citizenRaw[3]);
+            context.newComplaintWindow.EnterCitizenCity(citizenRaw[4]);
+            context.newComplaintWindow.SelectCitizenState(citizenRaw[5]);
+            context.newComplaintWindow.EnterCitizenZipCode(citizenRaw[6]);
+            context.newComplaintWindow.EnterCitizenPhoneNumber(citizenRaw[7]);
+            context.newComplaintWindow.EnterCitizenEmailAddress(citizenRaw[8]);
         }
+
+        [Given(@"the officer ""(.*)"" is selected")]
+        public void GivenTheOfficerIsSelected(string officer)
+        {
+            context.newComplaintWindow.SelectOfficer(officer);
+        }
+
     }
 }

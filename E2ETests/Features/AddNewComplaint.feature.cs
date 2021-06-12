@@ -97,10 +97,20 @@ namespace E2ETests.Features
                         "2000-01-01",
                         "1970-01-01",
                         "assigment1"});
+            table1.AddRow(new string[] {
+                        "officer",
+                        "",
+                        "",
+                        "Offi",
+                        "Cer",
+                        "F",
+                        "2010-01-01",
+                        "1990-01-01",
+                        "assigment2"});
 #line 5
     testRunner.Given("personnel exists on the DB with this info", ((string)(null)), table1, "Given ");
 #line hidden
-#line 8
+#line 9
     testRunner.And("supervisor \"s-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
@@ -112,7 +122,7 @@ namespace E2ETests.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new complaint with empty information", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 10
+#line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -135,19 +145,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 11
+#line 12
  testRunner.When("click on Save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 12
+#line 13
     testRunner.Then("the first name field is labeled as required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 13
+#line 14
     testRunner.And("the officer field is labeled as required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 15
     testRunner.And("the allegation field is labeled as required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 15
+#line 16
     testRunner.And("the complaint summary field is labeled as required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -161,7 +171,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new complaint successfully", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 17
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -204,8 +214,11 @@ this.FeatureBackground();
                             "89900",
                             "5555555555",
                             "citizen@example.com"});
-#line 18
+#line 19
     testRunner.Given("this citizen info is entered", ((string)(null)), table2, "Given ");
+#line hidden
+#line 22
+    testRunner.And("the officer \"Cer, Offi\" is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

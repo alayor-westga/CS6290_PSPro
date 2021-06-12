@@ -11,7 +11,7 @@ namespace E2ETests.Hooks.Windows
             this.context = context;
         }
 
-        public void SetUserName(string username) 
+        public void EnterUserName(string username) 
         {
             context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("userNameTextBox"))
@@ -19,7 +19,7 @@ namespace E2ETests.Hooks.Windows
                 .Enter(username);
         }
 
-        public void SetPassword(string password) 
+        public void EnterPassword(string password) 
         {
             context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("passwordTextBox"))

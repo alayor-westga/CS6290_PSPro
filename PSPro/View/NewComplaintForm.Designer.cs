@@ -235,6 +235,7 @@ namespace PSPro.View
             // 
             this.stateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.stateComboBox.FormattingEnabled = true;
+            this.stateComboBox.IntegralHeight = false;
             this.stateComboBox.Location = new System.Drawing.Point(488, 472);
             this.stateComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.stateComboBox.Name = "stateComboBox";

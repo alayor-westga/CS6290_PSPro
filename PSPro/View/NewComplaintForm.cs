@@ -34,9 +34,10 @@ namespace PSPro.View
             this.zipCodeErrorLabel.Text = "##### or #####-####";
             this.ShowUserName();
             this.PopulateOfficerComboBox();
+            this.PopulateStateComboBox(this.stateComboBox);
         }
 
-        private static void PopulateStateComboBox(ComboBox cbo)
+        private void PopulateStateComboBox(ComboBox cbo)
         {
             cbo.DataSource = Enum.GetValues(typeof(States))
                 .Cast<Enum>()
