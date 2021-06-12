@@ -15,7 +15,7 @@ namespace E2ETests.Hooks
         [BeforeScenario]
         public static void BeforeTestRun(Context context)
         {
-            context.app = Application.Launch(execPath);
+            context.app = Application.Launch(execPath, "e2e_tests");
             context.automation = new UIA2Automation();
             context.loginWindow = new LoginWindow(context);
             context.newComplaintWindow = new NewComplaintWindow(context);

@@ -1,6 +1,11 @@
 ﻿Feature: LoginFeature
 	Login into the app
 
+Background:
+    Given supervisor with username "s-001" and password "4567" exists on the DB
+    And investigator with username "i-001" and password "4567" exists on the DB
+    And administrator with username "a-001" and password "4567" exists on the DB
+
 Scenario: Login with no username and password
 	Given username is empty
 	And password is empty
