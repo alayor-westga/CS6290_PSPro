@@ -58,5 +58,13 @@ namespace E2ETests.Steps
             var userFullName = context.newComplaintWindow.GetUserFullName();
             Assert.AreEqual(message, userFullName);
         }
+
+        [Given(@"supervisor ""(.*)"" logs in with password ""(.*)""")]
+        public void SupervisorLogsIn(string username, string password)
+        {
+            context.loginWindow.SetUserName(username);
+            context.loginWindow.SetPassword("");
+            context.loginWindow.Login();
+        }
     }
 }

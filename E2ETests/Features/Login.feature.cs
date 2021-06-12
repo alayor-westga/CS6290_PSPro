@@ -20,8 +20,8 @@ namespace E2ETests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.8.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("LoginFeature")]
-    public partial class LoginFeatureFeature
+    [NUnit.Framework.DescriptionAttribute("Login")]
+    public partial class LoginFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -35,7 +35,7 @@ namespace E2ETests.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "LoginFeature", "\tLogin into the app", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login", "\tLogin into the app", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,7 +77,7 @@ namespace E2ETests.Features
         {
 #line 4
 #line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "type",
                         "username",
                         "password",
@@ -87,7 +87,7 @@ namespace E2ETests.Features
                         "hiredate",
                         "birthdate",
                         "assignment"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "supervisor",
                         "s-001",
                         "4567",
@@ -97,7 +97,7 @@ namespace E2ETests.Features
                         "2000-01-01",
                         "1970-01-01",
                         "assigment1"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "investigator",
                         "i-001",
                         "4567",
@@ -107,7 +107,7 @@ namespace E2ETests.Features
                         "2001-01-01",
                         "1988-01-01",
                         "assigment1"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "administrator",
                         "a-001",
                         "4567",
@@ -118,7 +118,7 @@ namespace E2ETests.Features
                         "1992-01-01",
                         "assigment1"});
 #line 5
-    testRunner.Given("personnel exists on the DB with this info", ((string)(null)), table1, "Given ");
+    testRunner.Given("personnel exists on the DB with this info", ((string)(null)), table2, "Given ");
 #line hidden
         }
         

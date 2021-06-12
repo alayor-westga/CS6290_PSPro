@@ -1,4 +1,4 @@
-﻿Feature: LoginFeature
+﻿Feature: Login
 	Login into the app
 
 Background:
