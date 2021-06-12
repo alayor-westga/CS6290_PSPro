@@ -17,6 +17,10 @@ namespace PSPro.View
         {
             InitializeComponent();
             loginController = new LoginController();
+            if (Program.Env != Program.Environments.PROD)
+            {
+                this.Text += " (" + Program.Env + ")";
+            }
         }
 
         private void LoginButton_Click(object sender, EventArgs e)

@@ -11,6 +11,7 @@ namespace PSPro
         public enum Environments
         {
             PROD,
+            DEV,
             E2E_TESTS
         }
         private static Environments psProEnvironment = Environments.PROD;
@@ -24,9 +25,16 @@ namespace PSPro
         [STAThread]
         static void Main(string[] args)
         {
-            if (args.Length > 0 && args[0] == "e2e_tests")
+            if (args.Length > 0)
             {
-                psProEnvironment = Environments.E2E_TESTS;
+                if (args[0] == "e2e_tests")
+                {
+                    psProEnvironment = Environments.E2E_TESTS;
+                }
+                if (args[0] == "dev")
+                {
+                    psProEnvironment = Environments.DEV;
+                }
             }
             try
             {

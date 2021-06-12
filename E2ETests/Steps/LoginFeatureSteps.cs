@@ -1,5 +1,4 @@
 ﻿using TechTalk.SpecFlow;
-using FlaUI.Core.AutomationElements;
 using E2ETests.Hooks;
 using NUnit.Framework;
 
@@ -63,7 +62,7 @@ namespace E2ETests.Steps
         public void SupervisorLogsIn(string username, string password)
         {
             context.loginWindow.SetUserName(username);
-            context.loginWindow.SetPassword("");
+            context.loginWindow.SetPassword(password);
             context.loginWindow.Login();
         }
     }

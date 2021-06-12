@@ -34,7 +34,6 @@ namespace PSPro.View
             this.zipCodeErrorLabel.Text = "##### or #####-####";
             this.ShowUserName();
             this.PopulateOfficerComboBox();
-            PopulateStateComboBox(this.stateComboBox);
         }
 
         private static void PopulateStateComboBox(ComboBox cbo)
