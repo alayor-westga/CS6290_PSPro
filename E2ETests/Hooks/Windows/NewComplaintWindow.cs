@@ -18,5 +18,12 @@ namespace E2ETests.Hooks.Windows
                 .AsLabel()
                 .Text;
         }
+        public void Save() 
+        {
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("SaveButton"))
+                .AsButton()
+                .Click();
+        }
     }
 }
