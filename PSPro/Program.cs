@@ -6,20 +6,34 @@ using System.Windows.Forms;
 
 namespace PSPro
 {
-    static class Program
+    public static class Program
     {
+        public enum Environments
+        {
+            PROD,
+            E2E_TESTS
+        }
+        private static Environments psProEnvironment = Environments.PROD;
+        public static Environments Env
+        {
+            get { return psProEnvironment; }
+        }
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-           try 
+            if (args.Length > 0 && args[0] == "e2e_tests")
+            {
+                psProEnvironment = Environments.E2E_TESTS;
+            }
+            try
             {
                 if (Environment.OSVersion.Version.Major >= 6)
                     SetProcessDPIAware();
             }
-            catch(Exception e) 
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 // ignore

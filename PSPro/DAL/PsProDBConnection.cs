@@ -13,11 +13,16 @@ namespace PSPro.DAL
         /// <returns>A SQL connection</returns>
         public static SqlConnection GetConnection()
         {
+            string dbName = "pspro";
+            if (Program.Env == Program.Environments.E2E_TESTS) 
+            {
+                dbName = "pspro_e2e_tests";
+            }
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
                 builder.DataSource = "tcp:pspro.database.windows.net"; 
                 builder.UserID = "winforms";            
                 builder.Password = "Winf0rms";     
-                builder.InitialCatalog = "pspro";
+                builder.InitialCatalog = dbName;
 
             SqlConnection connection = new SqlConnection(builder.ConnectionString);
             return connection;
