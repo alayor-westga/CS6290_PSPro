@@ -13,19 +13,19 @@ namespace E2ETests.Hooks
         private static string execPath = Path.Combine(Environment.CurrentDirectory, @"..\..\..\..\PSPro\bin\Debug\", "PSPro.exe");
 
         [BeforeScenario]
-        public static void BeforeTestRun(AppHolder appHolder)
+        public static void BeforeTestRun(Context context)
         {
-            appHolder.app = Application.Launch(execPath, "e2e_tests");
-            appHolder.automation = new UIA2Automation();
-            appHolder.loginWindow = new LoginWindow(appHolder);
-            appHolder.newComplaintWindow = new NewComplaintWindow(appHolder);
+            context.app = Application.Launch(execPath);
+            context.automation = new UIA2Automation();
+            context.loginWindow = new LoginWindow(context);
+            context.newComplaintWindow = new NewComplaintWindow(context);
         }
 
         [AfterScenario]
-        public static void AfterTestRun(AppHolder appHolder)
+        public static void AfterTestRun(Context context)
         {
-            appHolder.app.Close();
-            appHolder.automation.Dispose();
+            context.app.Close();
+            context.automation.Dispose();
         }
     }
 }

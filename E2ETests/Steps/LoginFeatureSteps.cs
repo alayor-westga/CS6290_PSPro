@@ -8,54 +8,54 @@ namespace E2ETests.Steps
     [Binding]
     public class LoginFeatureSteps
     {
-        private readonly AppHolder appHolder;
+        private readonly Context context;
 
-        public LoginFeatureSteps(AppHolder appHolder)
+        public LoginFeatureSteps(Context context)
         {
-            this.appHolder = appHolder;
+            this.context = context;
         }
 
         [Given(@"username is empty")]
         public void GivenUsernameIsEmpty()
         {
-            appHolder.loginWindow.SetUserName("");
+            context.loginWindow.SetUserName("");
         }
 
         [Given(@"username is ""(.*)""")]
         public void GivenUsernameIs(string username)
         {
-            appHolder.loginWindow.SetUserName(username);
+            context.loginWindow.SetUserName(username);
         }
         
         [Given(@"password is empty")]
         public void GivenPasswordIsEmpty()
         {
-            appHolder.loginWindow.SetPassword("");
+            context.loginWindow.SetPassword("");
         }
 
         [Given(@"password is ""(.*)""")]
         public void GivenPasswordIs(string password)
         {
-            appHolder.loginWindow.SetPassword(password);
+            context.loginWindow.SetPassword(password);
         }
         
         [When(@"click on Login")]
         public void WhenClickOnLogin()
         {
-            appHolder.loginWindow.Login();
+            context.loginWindow.Login();
         }
         
         [Then(@"the message ""(.*)"" is shown")]
         public void ThenTheMessageIsShown(string message)
         {
-            var errorMessage = appHolder.loginWindow.GetErrorMessageLabel();
+            var errorMessage = context.loginWindow.GetErrorMessageLabel();
             Assert.AreEqual(message, errorMessage);
         }
 
         [Then(@"the user full name ""(.*)"" is shown")]
         public void ThenTheTitleMessageIsShown(string message)
         {
-            var userFullName = appHolder.newComplaintWindow.GetUserFullName();
+            var userFullName = context.newComplaintWindow.GetUserFullName();
             Assert.AreEqual(message, userFullName);
         }
     }

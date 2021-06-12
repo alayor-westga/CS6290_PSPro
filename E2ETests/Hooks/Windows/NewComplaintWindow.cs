@@ -5,15 +5,15 @@ namespace E2ETests.Hooks.Windows
 {
     public class NewComplaintWindow
     {
-        private readonly AppHolder appHolder;
-        public NewComplaintWindow(AppHolder appHolder) 
+        private readonly Context context;
+        public NewComplaintWindow(Context context) 
         {
-            this.appHolder = appHolder;
+            this.context = context;
         }
 
         public string GetUserFullName() 
         {
-            return appHolder.GetWindow()
+            return context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("SupervisorLabel"))
                 .AsLabel()
                 .Text;

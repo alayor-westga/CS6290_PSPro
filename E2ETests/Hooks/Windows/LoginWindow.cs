@@ -5,15 +5,15 @@ namespace E2ETests.Hooks.Windows
 {
     public class LoginWindow
     {
-        private readonly AppHolder appHolder;
-        public LoginWindow(AppHolder appHolder) 
+        private readonly Context context;
+        public LoginWindow(Context context) 
         {
-            this.appHolder = appHolder;
+            this.context = context;
         }
 
         public void SetUserName(string username) 
         {
-            appHolder.GetWindow()
+            context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("userNameTextBox"))
                 .AsTextBox()
                 .Enter(username);
@@ -21,7 +21,7 @@ namespace E2ETests.Hooks.Windows
 
         public void SetPassword(string password) 
         {
-            appHolder.GetWindow()
+            context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("passwordTextBox"))
                 .AsTextBox()
                 .Enter(password);
@@ -29,17 +29,17 @@ namespace E2ETests.Hooks.Windows
 
         public void Login() 
         {
-            appHolder.GetWindow()
+            context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("loginButton"))
                 .AsButton()
                 .Click();
             Thread.Sleep(2000);
-            appHolder.mustChangeWindow = true;
+            context.mustChangeWindow = true;
         }
 
         public string GetErrorMessageLabel() 
         {
-            return appHolder.GetWindow()
+            return context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("errorMessageLabel"))
                 .AsLabel()
                 .Text;

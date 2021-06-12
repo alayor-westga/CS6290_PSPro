@@ -5,7 +5,7 @@ using E2ETests.Hooks.Windows;
 
 namespace E2ETests.Hooks
 {
-    public class AppHolder //TODO: Rename to Context
+    public class Context
     {
         public bool mustChangeWindow { get; set; }
         public Application app { get; set; }
