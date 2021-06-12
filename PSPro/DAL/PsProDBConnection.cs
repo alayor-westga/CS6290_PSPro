@@ -23,7 +23,11 @@ namespace PSPro.DAL
                 connectionString = "Data Source=localhost;Initial Catalog=pspro_e2e_tests;" +
                 "Integrated Security=True";
             }
-
+            if (Program.Env == Program.Environments.DEV)
+            {
+                connectionString = "Data Source=localhost;Initial Catalog=pspro_dev;" +
+                "Integrated Security=True";
+            }
             SqlConnection connection = new SqlConnection(connectionString);
             return connection;
         }

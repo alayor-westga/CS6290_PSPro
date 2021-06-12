@@ -484,10 +484,10 @@ namespace PSPro.View
             // SupervisorLabel
             // 
             this.SupervisorLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.SupervisorLabel.Location = new System.Drawing.Point(208, 25);
+            this.SupervisorLabel.Location = new System.Drawing.Point(218, 25);
             this.SupervisorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SupervisorLabel.Name = "SupervisorLabel";
-            this.SupervisorLabel.Size = new System.Drawing.Size(712, 45);
+            this.SupervisorLabel.Size = new System.Drawing.Size(712, 51);
             this.SupervisorLabel.TabIndex = 26;
             // 
             // officerErrorLabel
