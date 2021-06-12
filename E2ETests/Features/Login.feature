@@ -12,3 +12,9 @@ Scenario: Login as supervisor
 	And password is "1234"
 	When click on Login
 	Then the user full name "Kristin Hero (s-001)" is shown
+
+Scenario: Login as investigator
+	Given username is "i-001"
+	And password is "1234"
+	When click on Login
+	Then the user full name "Derek Frost (i-001)" is shown
