@@ -56,6 +56,48 @@ namespace PSPro.DAL
             }
         }
 
+        public Citizen GetCitizen(int citizenID)
+        {
+            if (citizenID < 0)
+            {
+                throw new ArgumentException("patientID must not be negative");
+            }
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "GetCitizen";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@citizen_id", citizenID);
+                    using (SqlDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow))
+                    {
+                        if (reader.Read())
+                        {
+                            Citizen citizen = new Citizen()
+                            {
+                                CitizenID = (int)reader["citizen_id"],
+                                FirstName = reader["first_name"].ToString(),
+                                LastName = reader["last_name"].ToString(),
+                                Address1 = reader["address1"].ToString(),
+                                Address2 = reader["address2"].ToString(),
+                                City = reader["city"].ToString(),
+                                State = reader["state"].ToString(),
+                                ZipCode = reader["zipcode"].ToString(),
+                                Phone = reader["phone"].ToString(),
+                                Email = reader["email"].ToString(),
+                            };
+                            return citizen;
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// This method will retrieve all officers from the database
         /// </summary>

@@ -34,7 +34,7 @@ namespace PSPro.View
             this.zipCodeErrorLabel.Text = "##### or #####-####";
             this.ShowUserName();
             this.PopulateOfficerComboBox();
-            PopulateStateComboBox(this.stateComboBox);           
+            PopulateStateComboBox(this.stateComboBox);
         }
 
         private static void PopulateStateComboBox(ComboBox cbo)
@@ -82,7 +82,7 @@ namespace PSPro.View
         {
             if (!this.ValidateFields()) return;
            
-            if (string.IsNullOrEmpty(this.CitizenIDTextBox.Text))
+            if (string.IsNullOrEmpty(this.citizenIDTextBox.Text))
             {
                 this.BindCitizenFieldsToCitizenObject();
                 this.BindComplaintFieldsToComplaintObject();
@@ -100,10 +100,10 @@ namespace PSPro.View
             }
             else
             {
-                this.complaint.CitizenID = Int32.Parse(this.CitizenIDTextBox.Text);
+                this.complaint.CitizenID = Int32.Parse(this.citizenIDTextBox.Text); //may not need this - the form may already be populated
                 if (this.CheckForChangesMadeToCitizenFields())
                 {
-                    this.UpdateCitizen();
+                    //this.UpdateCitizen();
                 }
                 this.BindComplaintFieldsToComplaintObject();
 
@@ -164,6 +164,7 @@ namespace PSPro.View
 
         private void PopulateCitizenFields()
         {
+            this.citizenIDTextBox.Text = this.citizen.CitizenID.ToString();
             this.firstNameTextBox.Text = this.citizen.FirstName;
             this.lastNameTextBox.Text = this.citizen.LastName;
             this.address1TextBox.Text = this.citizen.Address1;
@@ -177,7 +178,8 @@ namespace PSPro.View
 
         private void GetCitizenFromDB()
         {
-            this.citizen = this.supervisorController.GetCitizen(this.CitizenIDTextBox.Text);
+            this.citizen = this.supervisorController.GetCitizen(this.citizen.CitizenID);
+            //this.citizen = this.supervisorController.GetCitizen(this.CitizenIDTextBox.Text);
         }
 
         private bool CheckForChangesMadeToCitizenFields()
@@ -200,6 +202,7 @@ namespace PSPro.View
 
         private void ClearForm()
         {
+            this.citizenIDTextBox.Text = "";
             this.firstNameTextBox.Text = "";
             this.lastNameTextBox.Text = "";
             this.address1TextBox.Text = "";

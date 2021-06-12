@@ -40,9 +40,13 @@ namespace PSPro.Controller
             this.supervisorSource.AddComplaint(complaint);
         }
 
-        internal Citizen GetCitizen(string text)
+        public Citizen GetCitizen(int citizenID)
         {
-            throw new NotImplementedException();
+            if (citizenID < 0)
+            {
+                throw new ArgumentException("The patientID must not be negative");
+            }
+            return supervisorSource.GetCitizen(citizenID);
         }
 
         internal bool UpdateCitizen(Citizen citizen, Citizen updatedCitizen)

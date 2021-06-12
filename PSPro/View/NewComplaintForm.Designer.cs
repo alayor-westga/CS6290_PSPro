@@ -38,7 +38,7 @@ namespace PSPro.View
             this.zipCodeErrorLabel = new System.Windows.Forms.Label();
             this.firstNameErrorLabel = new System.Windows.Forms.Label();
             this.CitizenIDLabel = new System.Windows.Forms.Label();
-            this.CitizenIDTextBox = new System.Windows.Forms.TextBox();
+            this.citizenIDTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.PhoneNumberLabel = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
@@ -101,7 +101,7 @@ namespace PSPro.View
             this.CitizenInfoGroupBox.Controls.Add(this.zipCodeErrorLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.firstNameErrorLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.CitizenIDLabel);
-            this.CitizenInfoGroupBox.Controls.Add(this.CitizenIDTextBox);
+            this.CitizenInfoGroupBox.Controls.Add(this.citizenIDTextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.phoneNumberTextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.PhoneNumberLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.emailTextBox);
@@ -177,13 +177,13 @@ namespace PSPro.View
             // 
             // CitizenIDTextBox
             // 
-            this.CitizenIDTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.CitizenIDTextBox.Location = new System.Drawing.Point(689, 77);
-            this.CitizenIDTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CitizenIDTextBox.Name = "CitizenIDTextBox";
-            this.CitizenIDTextBox.ReadOnly = true;
-            this.CitizenIDTextBox.Size = new System.Drawing.Size(188, 39);
-            this.CitizenIDTextBox.TabIndex = 20;
+            this.citizenIDTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.citizenIDTextBox.Location = new System.Drawing.Point(689, 77);
+            this.citizenIDTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.citizenIDTextBox.Name = "CitizenIDTextBox";
+            this.citizenIDTextBox.ReadOnly = true;
+            this.citizenIDTextBox.Size = new System.Drawing.Size(188, 39);
+            this.citizenIDTextBox.TabIndex = 20;
             // 
             // PhoneNumberTextBox
             // 
@@ -578,7 +578,7 @@ namespace PSPro.View
         private System.Windows.Forms.Label SupervisorLabel;
         private System.Windows.Forms.BindingSource officerComboBoxBindingSource;
         private System.Windows.Forms.Label CitizenIDLabel;
-        private System.Windows.Forms.TextBox CitizenIDTextBox;
+        private System.Windows.Forms.TextBox citizenIDTextBox;
         private System.Windows.Forms.Label firstNameErrorLabel;
         private System.Windows.Forms.Label officerErrorLabel;
         private System.Windows.Forms.Label allegationErrorLabel;
