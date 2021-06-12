@@ -1,5 +1,4 @@
 ﻿using FlaUI.Core.AutomationElements;
-using System.Threading;
 
 namespace E2ETests.Hooks.Windows
 {
@@ -69,7 +68,10 @@ namespace E2ETests.Hooks.Windows
         }
         public void SetCitizenState(string state)
         {
-            //TODO stateComboBox
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("stateComboBox"))
+                .AsComboBox()
+                .Select(state);
         }
 
         public void SetCitizenZipCode(string zipCode)

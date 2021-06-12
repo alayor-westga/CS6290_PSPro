@@ -200,7 +200,7 @@ this.FeatureBackground();
                             "123 Main St.",
                             "",
                             "San Jose",
-                            "CA",
+                            "California",
                             "89900",
                             "5555555555",
                             "citizen@example.com"});
