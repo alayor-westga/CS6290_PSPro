@@ -39,5 +39,15 @@ namespace PSPro.Controller
         {
             this.supervisorSource.AddComplaint(complaint);
         }
+
+        internal Citizen GetCitizen(string text)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal bool UpdateCitizen(Citizen citizen, Citizen updatedCitizen)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

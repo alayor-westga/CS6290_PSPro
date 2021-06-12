@@ -30,11 +30,11 @@ namespace PSPro.View
             this.complaint = new Complaint();
             this.citizen = new Citizen();
             this.loggedInUser = new User();
-            this.PhoneNumberErrorLabel.Text = "###-###-####";
-            this.ZipCodeErrorLabel.Text = "##### or #####-####";
+            this.phoneNumberErrorLabel.Text = "###-###-####";
+            this.zipCodeErrorLabel.Text = "##### or #####-####";
             this.ShowUserName();
             this.PopulateOfficerComboBox();
-            PopulateStateComboBox(this.StateComboBox);           
+            PopulateStateComboBox(this.stateComboBox);           
         }
 
         private static void PopulateStateComboBox(ComboBox cbo)
@@ -67,7 +67,7 @@ namespace PSPro.View
             try
             {
                 List<OfficerComboBox> officers = this.supervisorController.GetOfficersForComboBox();      
-                this.OfficerComboBox.DataSource = officers;
+                this.officerComboBox.DataSource = officers;
             }
             catch (Exception exception)
             {
@@ -75,7 +75,7 @@ namespace PSPro.View
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            this.OfficerComboBox.SelectedIndex = -1;
+            this.officerComboBox.SelectedIndex = -1;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -101,6 +101,10 @@ namespace PSPro.View
             else
             {
                 this.complaint.CitizenID = Int32.Parse(this.CitizenIDTextBox.Text);
+                if (this.CheckForChangesMadeToCitizenFields())
+                {
+                    this.UpdateCitizen();
+                }
                 this.BindComplaintFieldsToComplaintObject();
 
                 try
@@ -121,47 +125,120 @@ namespace PSPro.View
             return;
         }
 
+        private void UpdateCitizen()
+        {
+            if (!this.ValidateFields()) return;
+
+            Citizen updatedCitizen = new Citizen();
+            updatedCitizen.FirstName = this.firstNameTextBox.Text;
+            updatedCitizen.LastName = this.lastNameTextBox.Text;
+            updatedCitizen.Address1 = this.address1TextBox.Text;
+            updatedCitizen.Address2 = this.address2TextBox.Text;
+            updatedCitizen.City = this.cityTextBox.Text;
+            updatedCitizen.State = this.stateComboBox.SelectedValue.ToString();
+            updatedCitizen.ZipCode = this.zipCodeTextBox.Text;
+            updatedCitizen.Phone = this.phoneNumberTextBox.Text;
+            updatedCitizen.Email = this.emailTextBox.Text;
+
+            try
+            {
+                if (!this.supervisorController.UpdateCitizen(this.citizen, updatedCitizen))
+                {
+                    MessageBox.Show("This patient's information has been\nmodified since it has been retrieved."
+                    + "\n\nThe form has been updated to reflect those changes.",
+                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.GetCitizenFromDB();
+                    this.PopulateCitizenFields();
+                    return;
+                }
+                MessageBox.Show("The changes were successfully amended to the database.",
+                        "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (ArgumentException argumentException)
+            {
+                MessageBox.Show(argumentException.Message,
+                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PopulateCitizenFields()
+        {
+            this.firstNameTextBox.Text = this.citizen.FirstName;
+            this.lastNameTextBox.Text = this.citizen.LastName;
+            this.address1TextBox.Text = this.citizen.Address1;
+            this.address2TextBox.Text = this.citizen.Address2;
+            this.cityTextBox.Text = this.citizen.City;
+            this.stateComboBox.SelectedValue = Enum.Parse(typeof(States), citizen.State);
+            this.zipCodeTextBox.Text = this.citizen.ZipCode;
+            this.phoneNumberTextBox.Text = this.citizen.Phone;
+            this.emailTextBox.Text = this.citizen.Email;
+        }
+
+        private void GetCitizenFromDB()
+        {
+            this.citizen = this.supervisorController.GetCitizen(this.CitizenIDTextBox.Text);
+        }
+
+        private bool CheckForChangesMadeToCitizenFields()
+        {
+            if (this.citizen.FirstName  != this.firstNameTextBox.Text ||
+                this.citizen.LastName != this.lastNameTextBox.Text ||
+                this.citizen.Address1 != this.address1TextBox.Text ||
+                this.citizen.Address2 != this.address2TextBox.Text ||
+                this.citizen.City != this.cityTextBox.Text ||
+                this.citizen.State != this.stateComboBox.SelectedValue.ToString() ||
+                this.citizen.ZipCode != this.zipCodeTextBox.Text ||
+                this.citizen.Phone != this.phoneNumberTextBox.Text ||
+                this.citizen.Email != this.emailTextBox.Text
+                )
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void ClearForm()
         {
-            this.FirstNameTextBox.Text = "";
-            this.LastNameTextBox.Text = "";
-            this.Address1TextBox.Text = "";
-            this.Address2TextBox.Text = "";
-            this.CityTextBox.Text = "";
-            this.StateComboBox.Text = "";
-            this.ZipCodeTextBox.Text = "";
-            this.PhoneNumberTextBox.Text = "";
-            this.EmailTextBox.Text = "";
-            this.OfficerComboBox.SelectedIndex = -1;
-            this.AllegationComboBox.SelectedIndex = -1;
-            this.ComplaintSummaryTextBox.Text = "";
-            this.FirstNameErrorLabel.Text = "";
-            this.ZipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
-            this.PhoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
-            this.OfficerErrorLabel.Text = "";
-            this.AllegationErrorLabel.Text = "";
-            this.ComplaintSummaryErrorLabel.Text = "";
+            this.firstNameTextBox.Text = "";
+            this.lastNameTextBox.Text = "";
+            this.address1TextBox.Text = "";
+            this.address2TextBox.Text = "";
+            this.cityTextBox.Text = "";
+            this.stateComboBox.Text = "";
+            this.zipCodeTextBox.Text = "";
+            this.phoneNumberTextBox.Text = "";
+            this.emailTextBox.Text = "";
+            this.officerComboBox.SelectedIndex = -1;
+            this.allegationComboBox.SelectedIndex = -1;
+            this.complaintSummaryTextBox.Text = "";
+            this.firstNameErrorLabel.Text = "";
+            this.zipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
+            this.phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
+            this.officerErrorLabel.Text = "";
+            this.allegationErrorLabel.Text = "";
+            this.complaintSummaryErrorLabel.Text = "";
         }
 
         private void BindComplaintFieldsToComplaintObject()
         {
             this.complaint.SupervisorID = this.loggedInUser.UserId;
-            this.complaint.OfficerID = (int)this.OfficerComboBox.SelectedValue;
-            this.complaint.Allegation = this.AllegationComboBox.Text;
-            this.complaint.Summary = this.ComplaintSummaryTextBox.Text;          
+            this.complaint.OfficerID = (int)this.officerComboBox.SelectedValue;
+            this.complaint.Allegation = this.allegationComboBox.Text;
+            this.complaint.Summary = this.complaintSummaryTextBox.Text;          
         }
         
         private void BindCitizenFieldsToCitizenObject()
         {
-            this.citizen.FirstName = FirstNameTextBox.Text;
-            this.citizen.LastName = LastNameTextBox.Text;
-            this.citizen.Address1 = Address1TextBox.Text;
-            this.citizen.Address2 = Address2TextBox.Text;
-            this.citizen.City = CityTextBox.Text;
-            this.citizen.State = StateComboBox.Text;
-            this.citizen.ZipCode = ZipCodeTextBox.Text;
-            this.citizen.Phone = PhoneNumberTextBox.Text;
-            this.citizen.Email = EmailTextBox.Text;
+            this.citizen.FirstName = firstNameTextBox.Text;
+            this.citizen.LastName = lastNameTextBox.Text;
+            this.citizen.Address1 = address1TextBox.Text;
+            this.citizen.Address2 = address2TextBox.Text;
+            this.citizen.City = cityTextBox.Text;
+            this.citizen.State = stateComboBox.SelectedValue.ToString();
+            this.citizen.ZipCode = zipCodeTextBox.Text;
+            this.citizen.Phone = phoneNumberTextBox.Text;
+            this.citizen.Email = emailTextBox.Text;
         }
 
         private void LogoutLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -178,61 +255,61 @@ namespace PSPro.View
         private bool ValidateFields()
         {
             var isValid = true;
-            if (FirstNameTextBox.Text.Length == 0)
+            if (firstNameTextBox.Text.Length == 0)
             {
                 isValid = false;
-                FirstNameErrorLabel.Text = "Required Field";
+                firstNameErrorLabel.Text = "Required Field";
             }
             else
             {
-                FirstNameErrorLabel.Text = "";
+                firstNameErrorLabel.Text = "";
             }
             Regex zipRegex = new Regex("[0-9]{5}(-[0-9]{4})?$");
-            if (!zipRegex.IsMatch(ZipCodeTextBox.Text) && ZipCodeTextBox.Text.Length != 0)
+            if (!zipRegex.IsMatch(zipCodeTextBox.Text) && zipCodeTextBox.Text.Length != 0)
             {
                 isValid = false;
-                ZipCodeErrorLabel.ForeColor = System.Drawing.Color.Red;
+                zipCodeErrorLabel.ForeColor = System.Drawing.Color.Red;
             } 
             else
             {
-                ZipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
+                zipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
             }
             Regex phoneRegex = new Regex("[0-9]{3}-[0-9]{3}-[0-9]{4}");
-            if (!phoneRegex.IsMatch(PhoneNumberTextBox.Text) &&  !string.IsNullOrWhiteSpace(this.PhoneNumberTextBox.Text))
+            if (!phoneRegex.IsMatch(phoneNumberTextBox.Text) &&  !string.IsNullOrWhiteSpace(this.phoneNumberTextBox.Text))
             {
                 isValid = false;
-                PhoneNumberErrorLabel.ForeColor = System.Drawing.Color.Red;
+                phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Red;
             } 
             else
             {
-                PhoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
+                phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
             }
-            if (OfficerComboBox.SelectedValue == null)
+            if (officerComboBox.SelectedValue == null)
             {
                 isValid = false;
-                OfficerErrorLabel.Text = "Select a Name From the Dropdown";
+                officerErrorLabel.Text = "Select a Name From the Dropdown";
             }
             else
             {
-                OfficerErrorLabel.Text = "";
+                officerErrorLabel.Text = "";
             }
-            if (string.IsNullOrEmpty(AllegationComboBox.Text))
+            if (string.IsNullOrEmpty(allegationComboBox.Text))
             {
                 isValid = false;
-                AllegationErrorLabel.Text = "Required Field";
+                allegationErrorLabel.Text = "Required Field";
             }
             else
             {
-                AllegationErrorLabel.Text = "";
+                allegationErrorLabel.Text = "";
             }
-            if (string.IsNullOrWhiteSpace(ComplaintSummaryTextBox.Text))
+            if (string.IsNullOrWhiteSpace(complaintSummaryTextBox.Text))
             {
                 isValid = false;
-                ComplaintSummaryErrorLabel.Text = "Required Field";
+                complaintSummaryErrorLabel.Text = "Required Field";
             }
             else
             {
-                ComplaintSummaryErrorLabel.Text = "";
+                complaintSummaryErrorLabel.Text = "";
             }
             return isValid;
         }
