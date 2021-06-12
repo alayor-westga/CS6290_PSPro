@@ -88,35 +88,35 @@ namespace E2ETests.Features
                         "birthdate",
                         "assignment"});
             table1.AddRow(new string[] {
-                        "\"supervisor\"",
-                        "\"s-001\"",
-                        "\"4567\"",
-                        "\"Super\"",
-                        "\"Visor\"",
-                        "\"M\"",
-                        "\"2000-01-01\"",
-                        "\"1970-01-01\"",
-                        "\"assigment1\""});
+                        "supervisor",
+                        "s-001",
+                        "4567",
+                        "Super",
+                        "Visor",
+                        "M",
+                        "2000-01-01",
+                        "1970-01-01",
+                        "assigment1"});
             table1.AddRow(new string[] {
-                        "\"investigator\"",
-                        "\"i-001\"",
-                        "\"4567\"",
-                        "\"Investi\"",
-                        "\"Gator\"",
-                        "\"F\"",
-                        "\"2001-01-01\"",
-                        "\"1988-01-01\"",
-                        "\"assigment1\""});
+                        "investigator",
+                        "i-001",
+                        "4567",
+                        "Investi",
+                        "Gator",
+                        "F",
+                        "2001-01-01",
+                        "1988-01-01",
+                        "assigment1"});
             table1.AddRow(new string[] {
-                        "\"administrator\"",
-                        "\"a-001\"",
-                        "\"4567\"",
-                        "\"Admin\"",
-                        "\"Istrator\"",
-                        "\"M\"",
-                        "\"2016-01-01\"",
-                        "\"1992-01-01\"",
-                        "\"assigment1\""});
+                        "administrator",
+                        "a-001",
+                        "4567",
+                        "Admin",
+                        "Istrator",
+                        "M",
+                        "2016-01-01",
+                        "1992-01-01",
+                        "assigment1"});
 #line 5
     testRunner.Given("personnel exists on the DB with this info", ((string)(null)), table1, "Given ");
 #line hidden

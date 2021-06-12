@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using TechTalk.SpecFlow;
@@ -39,8 +40,8 @@ namespace E2ETests.Steps
                     command.Parameters.AddWithValue("@first_name", tableRow[3]);
                     command.Parameters.AddWithValue("@last_name", tableRow[4]);
                     command.Parameters.AddWithValue("@gender", tableRow[5]);
-                    command.Parameters.AddWithValue("@hire_date", tableRow[6]);
-                    command.Parameters.AddWithValue("@birthdate", tableRow[7]);
+                    command.Parameters.AddWithValue("@hire_date", DateTime.Parse(tableRow[6]));
+                    command.Parameters.AddWithValue("@birthdate", DateTime.Parse(tableRow[7]));
                     command.Parameters.AddWithValue("@assignment", tableRow[8]);
                     command.ExecuteNonQuery();
                 }

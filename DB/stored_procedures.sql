@@ -165,3 +165,83 @@ GRANT EXECUTE ON
 AddSupervisor
 TO winforms;
 GO
+
+--AddInvestigator
+DROP PROCEDURE IF EXISTS AddInvestigator;
+GO
+CREATE PROCEDURE AddInvestigator
+	@user_name varchar(45), 
+	@password varchar(200), 
+	@first_name varchar(45), 
+	@last_name varchar(45), 
+	@gender char(1), 
+	@hire_date date, 
+	@birthdate date, 
+	@assignment varchar(45)
+AS
+SET NOCOUNT ON;
+	DECLARE @ID table (ID int)
+    DECLARE @personnel_id INT;
+
+    INSERT INTO Personnel
+	OUTPUT INSERTED.personnel_id into @ID
+	VALUES (
+		@first_name,
+		@last_name,
+		@gender,
+		@hire_date,
+		@birthdate,
+		@assignment
+	)
+	SELECT @personnel_id = ID FROM @ID
+	INSERT INTO Investigators
+	VALUES (
+		@personnel_id,
+		@user_name, 
+		HASHBYTES('SHA2_512', @password+CAST(@user_name AS NVARCHAR(36)))
+	)
+GO
+GRANT EXECUTE ON
+AddInvestigator
+TO winforms;
+GO
+
+--AddAdministrator
+DROP PROCEDURE IF EXISTS AddAdministrator;
+GO
+CREATE PROCEDURE AddAdministrator
+	@user_name varchar(45), 
+	@password varchar(200), 
+	@first_name varchar(45), 
+	@last_name varchar(45), 
+	@gender char(1), 
+	@hire_date date, 
+	@birthdate date, 
+	@assignment varchar(45)
+AS
+SET NOCOUNT ON;
+	DECLARE @ID table (ID int)
+    DECLARE @personnel_id INT;
+
+    INSERT INTO Personnel
+	OUTPUT INSERTED.personnel_id into @ID
+	VALUES (
+		@first_name,
+		@last_name,
+		@gender,
+		@hire_date,
+		@birthdate,
+		@assignment
+	)
+	SELECT @personnel_id = ID FROM @ID
+	INSERT INTO Administrators
+	VALUES (
+		@personnel_id,
+		@user_name, 
+		HASHBYTES('SHA2_512', @password+CAST(@user_name AS NVARCHAR(36)))
+	)
+GO
+GRANT EXECUTE ON
+AddAdministrator
+TO winforms;
+GO

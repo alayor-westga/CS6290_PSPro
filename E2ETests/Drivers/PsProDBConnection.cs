@@ -13,13 +13,9 @@ namespace E2ETests.Drivers
         /// <returns>A SQL connection</returns>
         public static SqlConnection GetConnection()
         {
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "tcp:pspro.database.windows.net"; 
-                builder.UserID = "winforms";            
-                builder.Password = "Winf0rms";     
-                builder.InitialCatalog = "pspro_e2e_tests";
-
-            SqlConnection connection = new SqlConnection(builder.ConnectionString);
+            string connectionString = "Data Source=localhost;Initial Catalog=pspro_e2e_tests;" +
+                "Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
             return connection;
         }
     }

@@ -13,18 +13,18 @@ namespace PSPro.DAL
         /// <returns>A SQL connection</returns>
         public static SqlConnection GetConnection()
         {
-            string dbName = "pspro";
-            if (Program.Env == Program.Environments.E2E_TESTS) 
-            {
-                dbName = "pspro_e2e_tests";
-            }
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "tcp:pspro.database.windows.net"; 
-                builder.UserID = "winforms";            
-                builder.Password = "Winf0rms";     
-                builder.InitialCatalog = dbName;
+            string connectionString = "Server=tcp:pspro.database.windows.net,1433;" +
+            "Initial Catalog=pspro;Persist Security Info=False;User ID=adm1n;" +
+            "Password=Pa$$w0rd;MultipleActiveResultSets=False;Encrypt=True;" +
+            "TrustServerCertificate=False;Connection Timeout=30;";
 
-            SqlConnection connection = new SqlConnection(builder.ConnectionString);
+            if (Program.Env == Program.Environments.E2E_TESTS)
+            {
+                connectionString = "Data Source=localhost;Initial Catalog=pspro_e2e_tests;" +
+                "Integrated Security=True";
+            }
+
+            SqlConnection connection = new SqlConnection(connectionString);
             return connection;
         }
     }
