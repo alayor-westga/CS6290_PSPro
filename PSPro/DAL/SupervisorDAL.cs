@@ -56,6 +56,55 @@ namespace PSPro.DAL
             }
         }
 
+        public bool UpdateCitizen(Citizen citizen, Citizen updatedCitizen)
+        {
+            if (citizen == null)
+            {
+                throw new ArgumentNullException("citizen");
+            }
+            if (updatedCitizen == null)
+            {
+                throw new ArgumentNullException("updatedCitizen");
+            }
+            string storedProcedure = "UpdateCitizen";
+
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand updateCommand = new SqlCommand(storedProcedure, connection))
+                {
+                    updateCommand.CommandType = CommandType.StoredProcedure;
+                    updateCommand.Parameters.AddWithValue("@UpdatedFirstName", updatedCitizen.FirstName);
+                    updateCommand.Parameters.AddWithValue("@UpdatedLastName", updatedCitizen.LastName);
+                    updateCommand.Parameters.AddWithValue("@UpdatedAddress1", updatedCitizen.Address1);
+                    updateCommand.Parameters.AddWithValue("@UpdatedAddress2", updatedCitizen.Address2);
+                    updateCommand.Parameters.AddWithValue("@UpdatedCity", updatedCitizen.City);
+                    updateCommand.Parameters.AddWithValue("@UpdatedState", updatedCitizen.State);
+                    updateCommand.Parameters.AddWithValue("@UpdatedZipcode", updatedCitizen.ZipCode);
+                    updateCommand.Parameters.AddWithValue("@UpdatedPhone", updatedCitizen.Phone);
+                    updateCommand.Parameters.AddWithValue("@UpdatedEmail", updatedCitizen.Email);        
+
+                    updateCommand.Parameters.AddWithValue("@CitizenID", citizen.CitizenID);
+                    updateCommand.Parameters.AddWithValue("@FirstName", citizen.FirstName);
+                    updateCommand.Parameters.AddWithValue("@LastName", citizen.LastName);
+                    updateCommand.Parameters.AddWithValue("@Address1", citizen.Address1);
+                    updateCommand.Parameters.AddWithValue("@Address2", citizen.Address2);
+                    updateCommand.Parameters.AddWithValue("@City", citizen.City);
+                    updateCommand.Parameters.AddWithValue("@State", citizen.State);
+                    updateCommand.Parameters.AddWithValue("@Zipcode", citizen.ZipCode);
+                    updateCommand.Parameters.AddWithValue("@Phone", citizen.Phone);
+                    updateCommand.Parameters.AddWithValue("@UEmail", citizen.Email);
+
+                    int count = updateCommand.ExecuteNonQuery();
+                    if (count > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
+
         public Citizen GetCitizen(int citizenID)
         {
             if (citizenID < 0)

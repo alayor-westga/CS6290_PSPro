@@ -49,9 +49,17 @@ namespace PSPro.Controller
             return supervisorSource.GetCitizen(citizenID);
         }
 
-        internal bool UpdateCitizen(Citizen citizen, Citizen updatedCitizen)
+        public bool UpdateCitizen(Citizen citizen, Citizen updatedCitizen)
         {
-            throw new NotImplementedException();
+            if (citizen == null)
+            {
+                throw new ArgumentNullException("oldPatient");
+            }
+            if (updatedCitizen == null)
+            {
+                throw new ArgumentNullException("newPatient");
+            }
+            return supervisorSource.UpdateCitizen(citizen, updatedCitizen);
         }
     }
 }
