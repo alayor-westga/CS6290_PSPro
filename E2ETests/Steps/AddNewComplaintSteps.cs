@@ -53,6 +53,14 @@ namespace E2ETests.Steps
         {
             var citizenRaw = table.Rows[0];
             context.newComplaintWindow.SetCitizenFirstName(citizenRaw[0]);
+            context.newComplaintWindow.SetCitizenLastName(citizenRaw[1]);
+            context.newComplaintWindow.SetCitizenAddress1(citizenRaw[2]);
+            context.newComplaintWindow.SetCitizenAddress2(citizenRaw[3]);
+            context.newComplaintWindow.SetCitizenCity(citizenRaw[4]);
+            context.newComplaintWindow.SetCitizenState(citizenRaw[5]);
+            context.newComplaintWindow.SetCitizenZipCode(citizenRaw[6]);
+            context.newComplaintWindow.SetCitizenPhoneNumber(citizenRaw[7]);
+            context.newComplaintWindow.SetCitizenEmailAddress(citizenRaw[8]);
         }
     }
 }
