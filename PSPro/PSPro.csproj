@@ -75,6 +75,12 @@
     <Compile Include="View\NewComplaintForm.Designer.cs">
       <DependentUpon>NewComplaintForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SearchCitizenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SearchCitizenForm.Designer.cs">
+      <DependentUpon>SearchCitizenForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -90,6 +96,10 @@
     <EmbeddedResource Include="View\NewComplaintForm.resx">
       <DependentUpon>NewComplaintForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SearchCitizenForm.resx">
+      <DependentUpon>SearchCitizenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\PSPro.Model.Citizen.datasource" />
     <None Include="Properties\DataSources\PSPro.Model.OfficerComboBox.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
