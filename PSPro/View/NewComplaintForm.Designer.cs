@@ -130,12 +130,12 @@ namespace PSPro.View
             this.CitizenInfoGroupBox.TabStop = false;
             this.CitizenInfoGroupBox.Text = "Enter Citizen Information";
             // 
-            // EmailErrorLabel
+            // emailErrorLabel
             // 
             this.emailErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.emailErrorLabel.ForeColor = System.Drawing.Color.Red;
             this.emailErrorLabel.Location = new System.Drawing.Point(573, 351);
-            this.emailErrorLabel.Name = "EmailErrorLabel";
+            this.emailErrorLabel.Name = "emailErrorLabel";
             this.emailErrorLabel.Size = new System.Drawing.Size(304, 22);
             this.emailErrorLabel.TabIndex = 25;
             // 
@@ -146,6 +146,7 @@ namespace PSPro.View
             this.phoneNumberErrorLabel.Name = "phoneNumberErrorLabel";
             this.phoneNumberErrorLabel.Size = new System.Drawing.Size(196, 22);
             this.phoneNumberErrorLabel.TabIndex = 24;
+            this.phoneNumberErrorLabel.Text = "###-###-####";
             // 
             // zipCodeErrorLabel
             // 
@@ -153,8 +154,9 @@ namespace PSPro.View
             this.zipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
             this.zipCodeErrorLabel.Location = new System.Drawing.Point(689, 275);
             this.zipCodeErrorLabel.Name = "zipCodeErrorLabel";
-            this.zipCodeErrorLabel.Size = new System.Drawing.Size(187, 20);
+            this.zipCodeErrorLabel.Size = new System.Drawing.Size(202, 25);
             this.zipCodeErrorLabel.TabIndex = 23;
+            this.zipCodeErrorLabel.Text = "##### OR #####-####";
             // 
             // firstNameErrorLabel
             // 
@@ -352,6 +354,7 @@ namespace PSPro.View
             this.SearchCitizenButton.TabIndex = 13;
             this.SearchCitizenButton.Text = "Search for Citizen";
             this.SearchCitizenButton.UseVisualStyleBackColor = true;
+            this.SearchCitizenButton.Click += new System.EventHandler(this.SearchCitizenButton_Click);
             // 
             // officerComboBox
             // 

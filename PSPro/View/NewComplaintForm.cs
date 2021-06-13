@@ -31,8 +31,6 @@ namespace PSPro.View
             this.complaint = new Complaint();
             this.citizen = new Citizen();
             this.loggedInUser = new User();
-            this.phoneNumberErrorLabel.Text = "###-###-####";
-            this.zipCodeErrorLabel.Text = "##### or #####-####";
             this.ShowUserName();
             this.PopulateOfficerComboBox();
             this.PopulateStateComboBox(this.stateComboBox);
@@ -245,6 +243,15 @@ namespace PSPro.View
             this.citizen.Email = emailTextBox.Text;
         }
 
+        private void SearchCitizenButton_Click(object sender, EventArgs e)
+        {
+            using (SearchCitizenForm form = new SearchCitizenForm(this))
+            {
+                Hide();
+                form.ShowDialog();
+            }
+        }
+
         private void LogoutLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Hide();
@@ -344,5 +351,7 @@ namespace PSPro.View
                 return false;
             }
         }
+
+
     }
 }
