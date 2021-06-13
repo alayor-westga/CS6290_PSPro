@@ -61,7 +61,7 @@ namespace E2ETests.Steps
         [Then(@"the user full name ""(.*)"" is shown in the investigator dashboard window")]
         public void ThenUserFullNameIsShownInTheInvestigatorDashboardWindow(string message)
         {
-            var userFullName = context.newComplaintWindow.GetUserFullName();
+            var userFullName = context.investigatorDashboardWindow.GetUserFullName();
             Assert.AreEqual(message, userFullName);
         }
 

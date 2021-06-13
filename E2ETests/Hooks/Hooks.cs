@@ -27,6 +27,7 @@ namespace E2ETests.Hooks
             context.automation = new UIA2Automation();
             context.loginWindow = new LoginWindow(context);
             context.newComplaintWindow = new NewComplaintWindow(context);
+            context.investigatorDashboardWindow = new InvestigatorDashboardWindow(context);
         }
 
         [AfterScenario]
