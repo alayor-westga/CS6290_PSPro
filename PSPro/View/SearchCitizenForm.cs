@@ -100,11 +100,11 @@ namespace PSPro.View
 
         private void SelectCitizenButton_Click(object sender, EventArgs e)
         {
-            Citizen newCitizen = new Citizen();
-            newCitizen.CitizenID = 1000;
-            newCitizen.FirstName = "Mike";
-           
-
+            Citizen existingCitizen = new Citizen();
+            existingCitizen.CitizenID = 1000;
+            existingCitizen.FirstName = "Mike";
+            this.newComplaintForm.Show();
+            this.newComplaintForm.PopulateCitizenFieldsWithExistingCitizenInformation(existingCitizen);
             this.Hide();
         }
     }

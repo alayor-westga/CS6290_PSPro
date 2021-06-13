@@ -36,6 +36,12 @@ namespace PSPro.View
             this.PopulateStateComboBox(this.stateComboBox);
         }
 
+       public void PopulateCitizenFieldsWithExistingCitizenInformation(Citizen existingCitizen)
+        {
+            this.citizen = existingCitizen;
+            this.PopulateCitizenFields();
+        }
+
         private void PopulateStateComboBox(ComboBox cbo)
         {
             cbo.DataSource = Enum.GetValues(typeof(States))
@@ -169,7 +175,10 @@ namespace PSPro.View
             this.address1TextBox.Text = this.citizen.Address1;
             this.address2TextBox.Text = this.citizen.Address2;
             this.cityTextBox.Text = this.citizen.City;
-            this.stateComboBox.SelectedValue = Enum.Parse(typeof(States), citizen.State);
+            if (citizen.State != null)
+            {
+                this.stateComboBox.SelectedValue = Enum.Parse(typeof(States), citizen.State);
+            }
             this.zipCodeTextBox.Text = this.citizen.ZipCode;
             this.phoneNumberTextBox.Text = this.citizen.Phone;
             this.emailTextBox.Text = this.citizen.Email;
