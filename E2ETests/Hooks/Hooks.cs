@@ -43,6 +43,7 @@ namespace E2ETests.Hooks
             {
                 connection.Open();
                 var query = "" + 
+                "DELETE FROM Complaints;  DBCC CHECKIDENT ('Complaints', RESEED, 1);" +
                 "DELETE FROM Supervisors; " +
                 "DELETE FROM Investigators; " +
                 "DELETE FROM Administrators; " +

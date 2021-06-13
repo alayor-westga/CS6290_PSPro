@@ -1,4 +1,5 @@
 ﻿using FlaUI.Core.AutomationElements;
+using System.Threading;
 
 namespace E2ETests.Hooks.Windows
 {
@@ -95,12 +96,13 @@ namespace E2ETests.Hooks.Windows
                 .AsTextBox()
                 .Enter(value);
         }
-        public void Save()
+        public void ClickOnSave()
         {
             context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("SaveButton"))
                 .AsButton()
                 .Click();
+           Thread.Sleep(2000);
         }
 
         public void SelectOfficer(string officer)
@@ -117,6 +119,13 @@ namespace E2ETests.Hooks.Windows
                 .FindFirstDescendant(cf => cf.ByAutomationId("allegationComboBox"))
                 .AsComboBox()
                 .Select(allegation);
+        }
+        public void EnterComplaintSummary(string complaintSummary)
+        {
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("complaintSummaryTextBox"))
+                .AsTextBox()
+                .Enter(complaintSummary);
         }
     }
 }

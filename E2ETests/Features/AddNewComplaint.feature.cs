@@ -146,7 +146,7 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 12
- testRunner.When("click on Save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("click on save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 13
     testRunner.Then("the first name field is labeled as required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -212,7 +212,7 @@ this.FeatureBackground();
                             "San Jose",
                             "California",
                             "89900",
-                            "5555555555",
+                            "555-555-5555",
                             "citizen@example.com"});
 #line 19
     testRunner.Given("this citizen info is entered", ((string)(null)), table2, "Given ");
@@ -222,6 +222,12 @@ this.FeatureBackground();
 #line hidden
 #line 23
     testRunner.And("the allegation \"Ethics Violation\" is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 24
+    testRunner.And("the complaint summary is \"Complaint summary example\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 25
+    testRunner.When("click on save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
             this.ScenarioCleanup();

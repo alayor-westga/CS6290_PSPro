@@ -14,10 +14,10 @@ namespace E2ETests.Steps
             this.context = context;
         }
 
-        [When(@"click on Save")]
+        [When(@"click on save")]
         public void WhenClickOnSave()
         {
-            context.newComplaintWindow.Save();
+            context.newComplaintWindow.ClickOnSave();
         }
 
         [Then(@"the first name field is labeled as required")]
@@ -73,6 +73,12 @@ namespace E2ETests.Steps
         public void GivenTheAllegationIsSelected(string allegation)
         {
             context.newComplaintWindow.SelectAllegation(allegation);
+        }
+
+        [Given(@"the complaint summary is ""(.*)""")]
+        public void GivenTheComplaintSummaryIs(string complaintSummary)
+        {
+            context.newComplaintWindow.EnterComplaintSummary(complaintSummary);
         }
     }
 }

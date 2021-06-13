@@ -9,7 +9,7 @@ Background:
     And supervisor "s-001" logs in with password "4567"
 
 Scenario: Add new complaint with empty information 
-	When click on Save
+	When click on save
     Then the first name field is labeled as required
     And the officer field is labeled as required
     And the allegation field is labeled as required
@@ -18,6 +18,8 @@ Scenario: Add new complaint with empty information
 Scenario: Add new complaint successfully
     Given this citizen info is entered
     |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|
-	|Citi|Zen|123 Main St.||San Jose|California|89900|5555555555|citizen@example.com|
+	|Citi|Zen|123 Main St.||San Jose|California|89900|555-555-5555|citizen@example.com|
     And the officer "Cer, Offi" is selected
     And the allegation "Ethics Violation" is selected
+    And the complaint summary is "Complaint summary example"
+    When click on save
