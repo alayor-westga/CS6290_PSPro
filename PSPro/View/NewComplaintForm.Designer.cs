@@ -193,7 +193,7 @@ namespace PSPro.View
             this.phoneNumberTextBox.MaxLength = 12;
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(374, 39);
-            this.phoneNumberTextBox.TabIndex = 18;
+            this.phoneNumberTextBox.TabIndex = 7;
             // 
             // PhoneNumberLabel
             // 
@@ -233,7 +233,7 @@ namespace PSPro.View
             this.stateComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.stateComboBox.Name = "stateComboBox";
             this.stateComboBox.Size = new System.Drawing.Size(238, 39);
-            this.stateComboBox.TabIndex = 15;
+            this.stateComboBox.TabIndex = 5;
             // 
             // zipCodeTextBox
             // 
@@ -243,7 +243,7 @@ namespace PSPro.View
             this.zipCodeTextBox.MaxLength = 10;
             this.zipCodeTextBox.Name = "zipCodeTextBox";
             this.zipCodeTextBox.Size = new System.Drawing.Size(308, 39);
-            this.zipCodeTextBox.TabIndex = 13;
+            this.zipCodeTextBox.TabIndex = 6;
             // 
             // ZipCodeLabel
             // 
@@ -272,7 +272,7 @@ namespace PSPro.View
             this.cityTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cityTextBox.Name = "cityTextBox";
             this.cityTextBox.Size = new System.Drawing.Size(300, 39);
-            this.cityTextBox.TabIndex = 9;
+            this.cityTextBox.TabIndex = 4;
             // 
             // CityLabel
             // 
@@ -291,7 +291,7 @@ namespace PSPro.View
             this.address2TextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.address2TextBox.Name = "address2TextBox";
             this.address2TextBox.Size = new System.Drawing.Size(858, 39);
-            this.address2TextBox.TabIndex = 7;
+            this.address2TextBox.TabIndex = 3;
             // 
             // Address2Label
             // 
@@ -310,7 +310,7 @@ namespace PSPro.View
             this.address1TextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.address1TextBox.Name = "address1TextBox";
             this.address1TextBox.Size = new System.Drawing.Size(858, 39);
-            this.address1TextBox.TabIndex = 4;
+            this.address1TextBox.TabIndex = 2;
             // 
             // Address1Label
             // 
@@ -329,7 +329,7 @@ namespace PSPro.View
             this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(321, 39);
-            this.lastNameTextBox.TabIndex = 2;
+            this.lastNameTextBox.TabIndex = 1;
             // 
             // LastNameLabel
             // 
@@ -399,7 +399,7 @@ namespace PSPro.View
             this.allegationComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.allegationComboBox.Name = "allegationComboBox";
             this.allegationComboBox.Size = new System.Drawing.Size(423, 39);
-            this.allegationComboBox.TabIndex = 23;
+            this.allegationComboBox.TabIndex = 8;
             // 
             // AllegationLabel
             // 
@@ -419,7 +419,7 @@ namespace PSPro.View
             this.complaintSummaryTextBox.Multiline = true;
             this.complaintSummaryTextBox.Name = "complaintSummaryTextBox";
             this.complaintSummaryTextBox.Size = new System.Drawing.Size(858, 121);
-            this.complaintSummaryTextBox.TabIndex = 20;
+            this.complaintSummaryTextBox.TabIndex = 9;
             // 
             // ComplaintSummaryLabel
             // 
@@ -438,7 +438,7 @@ namespace PSPro.View
             this.SaveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(216, 38);
-            this.SaveButton.TabIndex = 20;
+            this.SaveButton.TabIndex = 10;
             this.SaveButton.Text = "Save Complaint";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
