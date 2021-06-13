@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -296,6 +297,16 @@ namespace PSPro.View
             {
                 officerErrorLabel.Text = "";
             }
+            if (!this.EmailIsValid())
+            {
+                isValid = false;
+                emailErrorLabel.Text = "Enter a valid email address";
+            }
+            else
+            {
+                this.emailErrorLabel.Text = "";
+            }
+         
             if (string.IsNullOrEmpty(allegationComboBox.Text))
             {
                 isValid = false;
@@ -315,6 +326,23 @@ namespace PSPro.View
                 complaintSummaryErrorLabel.Text = "";
             }
             return isValid;
+        }
+
+        private bool EmailIsValid()
+        {
+            if (string.IsNullOrWhiteSpace(this.emailTextBox.Text))
+            {
+                return true;
+            }
+            try
+            { 
+                MailAddress m = new MailAddress(this.emailTextBox.Text);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
         }
     }
 }

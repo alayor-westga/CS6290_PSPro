@@ -33,7 +33,7 @@ namespace PSPro.View
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.CitizenInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.EmailErrorLabel = new System.Windows.Forms.Label();
+            this.emailErrorLabel = new System.Windows.Forms.Label();
             this.phoneNumberErrorLabel = new System.Windows.Forms.Label();
             this.zipCodeErrorLabel = new System.Windows.Forms.Label();
             this.firstNameErrorLabel = new System.Windows.Forms.Label();
@@ -96,7 +96,7 @@ namespace PSPro.View
             // 
             // CitizenInfoGroupBox
             // 
-            this.CitizenInfoGroupBox.Controls.Add(this.EmailErrorLabel);
+            this.CitizenInfoGroupBox.Controls.Add(this.emailErrorLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.phoneNumberErrorLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.zipCodeErrorLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.firstNameErrorLabel);
@@ -132,12 +132,12 @@ namespace PSPro.View
             // 
             // EmailErrorLabel
             // 
-            this.EmailErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.EmailErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.EmailErrorLabel.Location = new System.Drawing.Point(573, 351);
-            this.EmailErrorLabel.Name = "EmailErrorLabel";
-            this.EmailErrorLabel.Size = new System.Drawing.Size(304, 22);
-            this.EmailErrorLabel.TabIndex = 25;
+            this.emailErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.emailErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.emailErrorLabel.Location = new System.Drawing.Point(573, 351);
+            this.emailErrorLabel.Name = "EmailErrorLabel";
+            this.emailErrorLabel.Size = new System.Drawing.Size(304, 22);
+            this.emailErrorLabel.TabIndex = 25;
             // 
             // phoneNumberErrorLabel
             // 
@@ -587,7 +587,7 @@ namespace PSPro.View
         private System.Windows.Forms.Label officerErrorLabel;
         private System.Windows.Forms.Label allegationErrorLabel;
         private System.Windows.Forms.Label complaintSummaryErrorLabel;
-        private System.Windows.Forms.Label EmailErrorLabel;
+        private System.Windows.Forms.Label emailErrorLabel;
         private System.Windows.Forms.Label phoneNumberErrorLabel;
         private System.Windows.Forms.Label zipCodeErrorLabel;
         private System.Windows.Forms.Label RequiredFieldLabel;
