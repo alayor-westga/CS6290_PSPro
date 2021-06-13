@@ -49,6 +49,10 @@ namespace PSPro.View
             this.CancelButton = new System.Windows.Forms.Button();
             this.SelectCitizenButton = new System.Windows.Forms.Button();
             this.searchResultsLabel = new System.Windows.Forms.Label();
+            this.emailErrorLabel = new System.Windows.Forms.Label();
+            this.phoneErrorLabel = new System.Windows.Forms.Label();
+            this.firstNameErrorLabel = new System.Windows.Forms.Label();
+            this.phoneFormatLabel = new System.Windows.Forms.Label();
             this.citizenIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +66,10 @@ namespace PSPro.View
             // 
             // searchGroupBox
             // 
+            this.searchGroupBox.Controls.Add(this.phoneFormatLabel);
+            this.searchGroupBox.Controls.Add(this.firstNameErrorLabel);
+            this.searchGroupBox.Controls.Add(this.phoneErrorLabel);
+            this.searchGroupBox.Controls.Add(this.emailErrorLabel);
             this.searchGroupBox.Controls.Add(this.CancelButton);
             this.searchGroupBox.Controls.Add(this.SearchButton);
             this.searchGroupBox.Controls.Add(this.phoneLabel);
@@ -78,7 +86,7 @@ namespace PSPro.View
             this.searchGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchGroupBox.Location = new System.Drawing.Point(12, 12);
             this.searchGroupBox.Name = "searchGroupBox";
-            this.searchGroupBox.Size = new System.Drawing.Size(924, 232);
+            this.searchGroupBox.Size = new System.Drawing.Size(924, 244);
             this.searchGroupBox.TabIndex = 0;
             this.searchGroupBox.TabStop = false;
             this.searchGroupBox.Text = "Select a Search Option";
@@ -86,7 +94,7 @@ namespace PSPro.View
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(27, 152);
+            this.lastNameLabel.Location = new System.Drawing.Point(27, 164);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(128, 29);
             this.lastNameLabel.TabIndex = 6;
@@ -94,7 +102,7 @@ namespace PSPro.View
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(32, 184);
+            this.lastNameTextBox.Location = new System.Drawing.Point(32, 196);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(276, 34);
             this.lastNameTextBox.TabIndex = 5;
@@ -184,7 +192,7 @@ namespace PSPro.View
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.citizenResultDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.citizenResultDataGridView.Location = new System.Drawing.Point(12, 279);
+            this.citizenResultDataGridView.Location = new System.Drawing.Point(12, 291);
             this.citizenResultDataGridView.MultiSelect = false;
             this.citizenResultDataGridView.Name = "citizenResultDataGridView";
             this.citizenResultDataGridView.ReadOnly = true;
@@ -216,9 +224,9 @@ namespace PSPro.View
             this.phoneLabel.AutoSize = true;
             this.phoneLabel.Location = new System.Drawing.Point(619, 74);
             this.phoneLabel.Name = "phoneLabel";
-            this.phoneLabel.Size = new System.Drawing.Size(176, 29);
+            this.phoneLabel.Size = new System.Drawing.Size(83, 29);
             this.phoneLabel.TabIndex = 10;
-            this.phoneLabel.Text = "Phone Number";
+            this.phoneLabel.Text = "Phone";
             // 
             // phoneTextBox
             // 
@@ -229,7 +237,7 @@ namespace PSPro.View
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(327, 184);
+            this.SearchButton.Location = new System.Drawing.Point(327, 196);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(276, 34);
             this.SearchButton.TabIndex = 11;
@@ -239,7 +247,7 @@ namespace PSPro.View
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(624, 184);
+            this.CancelButton.Location = new System.Drawing.Point(624, 196);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(276, 34);
             this.CancelButton.TabIndex = 12;
@@ -250,7 +258,7 @@ namespace PSPro.View
             // SelectCitizenButton
             // 
             this.SelectCitizenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectCitizenButton.Location = new System.Drawing.Point(739, 522);
+            this.SelectCitizenButton.Location = new System.Drawing.Point(751, 534);
             this.SelectCitizenButton.Name = "SelectCitizenButton";
             this.SelectCitizenButton.Size = new System.Drawing.Size(185, 37);
             this.SelectCitizenButton.TabIndex = 2;
@@ -262,11 +270,48 @@ namespace PSPro.View
             // 
             this.searchResultsLabel.AutoSize = true;
             this.searchResultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchResultsLabel.Location = new System.Drawing.Point(7, 247);
+            this.searchResultsLabel.Location = new System.Drawing.Point(7, 259);
             this.searchResultsLabel.Name = "searchResultsLabel";
             this.searchResultsLabel.Size = new System.Drawing.Size(254, 29);
             this.searchResultsLabel.TabIndex = 3;
             this.searchResultsLabel.Text = "Citizen Search Results";
+            // 
+            // emailErrorLabel
+            // 
+            this.emailErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.emailErrorLabel.Location = new System.Drawing.Point(327, 142);
+            this.emailErrorLabel.Name = "emailErrorLabel";
+            this.emailErrorLabel.Size = new System.Drawing.Size(276, 24);
+            this.emailErrorLabel.TabIndex = 13;
+            // 
+            // phoneErrorLabel
+            // 
+            this.phoneErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.phoneErrorLabel.Location = new System.Drawing.Point(621, 142);
+            this.phoneErrorLabel.Name = "phoneErrorLabel";
+            this.phoneErrorLabel.Size = new System.Drawing.Size(303, 24);
+            this.phoneErrorLabel.TabIndex = 14;
+            // 
+            // firstNameErrorLabel
+            // 
+            this.firstNameErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNameErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.firstNameErrorLabel.Location = new System.Drawing.Point(32, 142);
+            this.firstNameErrorLabel.Name = "firstNameErrorLabel";
+            this.firstNameErrorLabel.Size = new System.Drawing.Size(276, 24);
+            this.firstNameErrorLabel.TabIndex = 15;
+            // 
+            // phoneFormatLabel
+            // 
+            this.phoneFormatLabel.AutoSize = true;
+            this.phoneFormatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneFormatLabel.Location = new System.Drawing.Point(708, 80);
+            this.phoneFormatLabel.Name = "phoneFormatLabel";
+            this.phoneFormatLabel.Size = new System.Drawing.Size(111, 20);
+            this.phoneFormatLabel.TabIndex = 17;
+            this.phoneFormatLabel.Text = "###-###-####";
             // 
             // citizenIDDataGridViewTextBoxColumn
             // 
@@ -317,7 +362,7 @@ namespace PSPro.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 567);
+            this.ClientSize = new System.Drawing.Size(948, 583);
             this.Controls.Add(this.searchResultsLabel);
             this.Controls.Add(this.SelectCitizenButton);
             this.Controls.Add(this.citizenResultDataGridView);
@@ -361,5 +406,9 @@ namespace PSPro.View
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button SelectCitizenButton;
         private System.Windows.Forms.Label searchResultsLabel;
+        private System.Windows.Forms.Label emailErrorLabel;
+        private System.Windows.Forms.Label firstNameErrorLabel;
+        private System.Windows.Forms.Label phoneErrorLabel;
+        private System.Windows.Forms.Label phoneFormatLabel;
     }
 }
