@@ -69,5 +69,10 @@ namespace E2ETests.Steps
             context.newComplaintWindow.SelectOfficer(officer);
         }
 
+        [Given(@"the allegation ""(.*)"" is selected")]
+        public void GivenTheAllegationIsSelected(string allegation)
+        {
+            context.newComplaintWindow.SelectAllegation(allegation);
+        }
     }
 }

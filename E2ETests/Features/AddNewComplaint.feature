@@ -20,3 +20,4 @@ Scenario: Add new complaint successfully
     |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|
 	|Citi|Zen|123 Main St.||San Jose|California|89900|5555555555|citizen@example.com|
     And the officer "Cer, Offi" is selected
+    And the allegation "Ethics Violation" is selected

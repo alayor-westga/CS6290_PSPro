@@ -110,5 +110,13 @@ namespace E2ETests.Hooks.Windows
                 .AsComboBox()
                 .Select(officer);
         }
+
+        public void SelectAllegation(string allegation)
+        {
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("allegationComboBox"))
+                .AsComboBox()
+                .Select(allegation);
+        }
     }
 }
