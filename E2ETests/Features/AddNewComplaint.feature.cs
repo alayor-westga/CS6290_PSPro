@@ -229,6 +229,21 @@ this.FeatureBackground();
 #line 25
     testRunner.When("click on save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "supervisor_name",
+                            "citizen_name",
+                            "officer_name",
+                            "allegation_type",
+                            "complaint_notes"});
+                table3.AddRow(new string[] {
+                            "Super Visor",
+                            "Citi Zen",
+                            "Offi Cer",
+                            "Ethics Violation",
+                            "Complaint summary example"});
+#line 26
+    testRunner.Then("the complaint should be saved with this content", ((string)(null)), table3, "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

@@ -23,3 +23,6 @@ Scenario: Add new complaint successfully
     And the allegation "Ethics Violation" is selected
     And the complaint summary is "Complaint summary example"
     When click on save
+    Then the complaint should be saved with this content
+    |supervisor_name|citizen_name|officer_name|allegation_type|complaint_notes|
+    |Super Visor|Citi Zen|Offi Cer|Ethics Violation|Complaint summary example|
