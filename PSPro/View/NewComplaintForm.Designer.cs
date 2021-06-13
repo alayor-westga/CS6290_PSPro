@@ -183,7 +183,8 @@ namespace PSPro.View
             this.citizenIDTextBox.Name = "citizenIDTextBox";
             this.citizenIDTextBox.ReadOnly = true;
             this.citizenIDTextBox.Size = new System.Drawing.Size(188, 39);
-            this.citizenIDTextBox.TabIndex = 20;
+            this.citizenIDTextBox.TabIndex = 100;
+            this.citizenIDTextBox.TabStop = false;
             // 
             // phoneNumberTextBox
             // 
@@ -212,7 +213,7 @@ namespace PSPro.View
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(467, 39);
-            this.emailTextBox.TabIndex = 16;
+            this.emailTextBox.TabIndex = 8;
             // 
             // EmailLabel
             // 
@@ -348,7 +349,7 @@ namespace PSPro.View
             this.SearchCitizenButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SearchCitizenButton.Name = "SearchCitizenButton";
             this.SearchCitizenButton.Size = new System.Drawing.Size(216, 38);
-            this.SearchCitizenButton.TabIndex = 6;
+            this.SearchCitizenButton.TabIndex = 13;
             this.SearchCitizenButton.Text = "Search for Citizen";
             this.SearchCitizenButton.UseVisualStyleBackColor = true;
             // 
@@ -364,7 +365,7 @@ namespace PSPro.View
             this.officerComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.officerComboBox.Name = "officerComboBox";
             this.officerComboBox.Size = new System.Drawing.Size(407, 39);
-            this.officerComboBox.TabIndex = 21;
+            this.officerComboBox.TabIndex = 9;
             this.officerComboBox.ValueMember = "PersonnelID";
             // 
             // officerComboBoxBindingSource
@@ -399,7 +400,7 @@ namespace PSPro.View
             this.allegationComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.allegationComboBox.Name = "allegationComboBox";
             this.allegationComboBox.Size = new System.Drawing.Size(423, 39);
-            this.allegationComboBox.TabIndex = 8;
+            this.allegationComboBox.TabIndex = 10;
             // 
             // AllegationLabel
             // 
@@ -419,7 +420,7 @@ namespace PSPro.View
             this.complaintSummaryTextBox.Multiline = true;
             this.complaintSummaryTextBox.Name = "complaintSummaryTextBox";
             this.complaintSummaryTextBox.Size = new System.Drawing.Size(858, 121);
-            this.complaintSummaryTextBox.TabIndex = 9;
+            this.complaintSummaryTextBox.TabIndex = 11;
             // 
             // ComplaintSummaryLabel
             // 
@@ -438,7 +439,7 @@ namespace PSPro.View
             this.SaveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(216, 38);
-            this.SaveButton.TabIndex = 10;
+            this.SaveButton.TabIndex = 12;
             this.SaveButton.Text = "Save Complaint";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
