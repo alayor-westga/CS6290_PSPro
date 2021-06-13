@@ -1,9 +1,9 @@
 ﻿using FlaUI.UIA2;
 using FlaUI.Core;
 using FlaUI.Core.AutomationElements;
-using E2ETests.Hooks.Windows;
+using E2ETests.Model;
 
-namespace E2ETests.Hooks
+namespace E2ETests
 {
     public class Context
     {
