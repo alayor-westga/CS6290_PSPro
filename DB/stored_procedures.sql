@@ -305,6 +305,7 @@ GO
 DROP PROCEDURE IF EXISTS UpdateCitizen;
 GO
 CREATE PROCEDURE UpdateCitizen 
+	@RowCnt int OUTPUT,
 	@UpdatedFirstName varchar(45), 
 	@UpdatedLastName varchar(45), 
 	@UpdatedAddress1 varchar(45), 
@@ -348,7 +349,7 @@ UPDATE Citizens SET
                     AND zipcode = @Zipcode
                     AND phone = @Phone 
                     AND email = @Email  
-
+				SELECT @RowCnt = @@ROWCOUNT
 GO
 GRANT EXECUTE ON UpdateCitizen 
     TO winforms;  
