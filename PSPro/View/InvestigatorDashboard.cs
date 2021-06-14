@@ -29,5 +29,10 @@ namespace PSPro.View
             Hide();
             loginForm.Show();
         }
+
+        private void InvestigatorDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -31,12 +31,12 @@ namespace PSPro.UserControls
         {
             this.components = new System.ComponentModel.Container();
             this.complaintsDataGridView = new System.Windows.Forms.DataGridView();
-            this.complaintViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.complaintIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.officerFullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.citizenFullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dispositionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complaintViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.complaintsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaintViewBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -55,22 +55,20 @@ namespace PSPro.UserControls
             this.citizenFullNameDataGridViewTextBoxColumn,
             this.dispositionDataGridViewTextBoxColumn});
             this.complaintsDataGridView.DataSource = this.complaintViewBindingSource;
-            this.complaintsDataGridView.Location = new System.Drawing.Point(20, 116);
+            this.complaintsDataGridView.Location = new System.Drawing.Point(18, 124);
+            this.complaintsDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.complaintsDataGridView.Name = "complaintsDataGridView";
             this.complaintsDataGridView.ReadOnly = true;
             this.complaintsDataGridView.RowHeadersWidth = 82;
             this.complaintsDataGridView.RowTemplate.Height = 33;
-            this.complaintsDataGridView.Size = new System.Drawing.Size(1268, 494);
+            this.complaintsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.complaintsDataGridView.Size = new System.Drawing.Size(1258, 480);
             this.complaintsDataGridView.TabIndex = 0;
-            // 
-            // complaintViewBindingSource
-            // 
-            this.complaintViewBindingSource.DataSource = typeof(PSPro.Model.ComplaintView);
             // 
             // complaintIDDataGridViewTextBoxColumn
             // 
             this.complaintIDDataGridViewTextBoxColumn.DataPropertyName = "ComplaintID";
-            this.complaintIDDataGridViewTextBoxColumn.HeaderText = "ComplaintID";
+            this.complaintIDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.complaintIDDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.complaintIDDataGridViewTextBoxColumn.Name = "complaintIDDataGridViewTextBoxColumn";
             this.complaintIDDataGridViewTextBoxColumn.ReadOnly = true;
@@ -78,7 +76,7 @@ namespace PSPro.UserControls
             // dateCreatedDataGridViewTextBoxColumn
             // 
             this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "DateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "Date Created";
             this.dateCreatedDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
             this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
@@ -86,7 +84,7 @@ namespace PSPro.UserControls
             // officerFullNameDataGridViewTextBoxColumn
             // 
             this.officerFullNameDataGridViewTextBoxColumn.DataPropertyName = "OfficerFullName";
-            this.officerFullNameDataGridViewTextBoxColumn.HeaderText = "OfficerFullName";
+            this.officerFullNameDataGridViewTextBoxColumn.HeaderText = "Officer";
             this.officerFullNameDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.officerFullNameDataGridViewTextBoxColumn.Name = "officerFullNameDataGridViewTextBoxColumn";
             this.officerFullNameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -94,7 +92,7 @@ namespace PSPro.UserControls
             // citizenFullNameDataGridViewTextBoxColumn
             // 
             this.citizenFullNameDataGridViewTextBoxColumn.DataPropertyName = "CitizenFullName";
-            this.citizenFullNameDataGridViewTextBoxColumn.HeaderText = "CitizenFullName";
+            this.citizenFullNameDataGridViewTextBoxColumn.HeaderText = "Citizen";
             this.citizenFullNameDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.citizenFullNameDataGridViewTextBoxColumn.Name = "citizenFullNameDataGridViewTextBoxColumn";
             this.citizenFullNameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -107,13 +105,20 @@ namespace PSPro.UserControls
             this.dispositionDataGridViewTextBoxColumn.Name = "dispositionDataGridViewTextBoxColumn";
             this.dispositionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // complaintViewBindingSource
+            // 
+            this.complaintViewBindingSource.DataSource = typeof(PSPro.Model.ComplaintView);
+            // 
             // ComplaintList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 40F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.complaintsDataGridView);
+            this.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ComplaintList";
             this.Size = new System.Drawing.Size(1308, 718);
+            this.Load += new System.EventHandler(this.ComplaintList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.complaintsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaintViewBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -123,11 +128,11 @@ namespace PSPro.UserControls
         #endregion
 
         private System.Windows.Forms.DataGridView complaintsDataGridView;
+        private System.Windows.Forms.BindingSource complaintViewBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn complaintIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCreatedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn officerFullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn citizenFullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dispositionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource complaintViewBindingSource;
     }
 }

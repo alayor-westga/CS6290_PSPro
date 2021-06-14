@@ -10,12 +10,16 @@ namespace PSPro.UserControls
         {
             InitializeComponent();
             complaintController = new ComplaintController();
-            ShowAllActiveComplaints();
         }
 
         private void ShowAllActiveComplaints()
         {
             complaintsDataGridView.DataSource = complaintController.GetAllActiveComplaints();
+        }
+
+        private void ComplaintList_Load(object sender, System.EventArgs e)
+        {
+            ShowAllActiveComplaints();
         }
     }
 }
