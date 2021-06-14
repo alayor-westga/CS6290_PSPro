@@ -1,4 +1,5 @@
-﻿using PSPro.Model;
+﻿using PSPro.DAL;
+using PSPro.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,21 +8,23 @@ using System.Threading.Tasks;
 
 namespace PSPro.Controller
 {
-    class CitizenController
+    class CitizenController      
     {
-        public List<Citizen> searchByName(string text1, string text2)
+        CitizenDAL citizenSource = new CitizenDAL();
+
+        public List<Citizen> SearchByName(string firstName, string lastName)
         {
-            throw new NotImplementedException();
+            return this.citizenSource.SearchByName(firstName, lastName);
         }
 
-        public List<Citizen> searchByPhone(string text)
+        public List<Citizen> SearchByPhone(string phone)
         {
-            throw new NotImplementedException();
+            return this.citizenSource.SearchByPhone(phone);
         }
 
-        public List<Citizen> searchByEmail(string text)
+        public List<Citizen> SearchByEmail(string email)
         {
-            throw new NotImplementedException();
+            return this.citizenSource.SearchByEmail(email);
         }
     }
 }

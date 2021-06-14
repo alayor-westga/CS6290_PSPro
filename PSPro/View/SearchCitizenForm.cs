@@ -43,17 +43,17 @@ namespace PSPro.View
             if (this.FirstAndLastNameRadioButton.Checked)
             {
                 if (!this.ValidateFirstName()) return;
-                this.citizens = this.citizenController.searchByName(this.firstNameTextBox.Text, this.lastNameTextBox.Text);
+                this.citizens = this.citizenController.SearchByName(this.firstNameTextBox.Text, this.lastNameTextBox.Text);
             }
             if (this.PhoneRadioButton.Checked)
             {
                 if (!this.ValidatePhone()) return;
-                this.citizens = this.citizenController.searchByPhone(this.phoneTextBox.Text);
+                this.citizens = this.citizenController.SearchByPhone(this.phoneTextBox.Text);
             }
             if (this.EmailRadioButton.Checked)
             {
                 if (!this.ValidateEmail()) return;
-                this.citizens = this.citizenController.searchByEmail(this.emailTextBox.Text);
+                this.citizens = this.citizenController.SearchByEmail(this.emailTextBox.Text);
             }
         }
 
