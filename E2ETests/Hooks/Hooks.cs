@@ -3,7 +3,7 @@ using TechTalk.SpecFlow;
 using System.IO;
 using FlaUI.Core;
 using FlaUI.UIA2;
-using E2ETests.Model;
+using E2ETests.Windows;
 using E2ETests.Drivers;
 using System.Data.SqlClient;
 

@@ -1,7 +1,7 @@
 ﻿using FlaUI.Core.AutomationElements;
 using System.Threading;
 
-namespace E2ETests.Model
+namespace E2ETests.Windows
 {
     public class LoginWindow
     {

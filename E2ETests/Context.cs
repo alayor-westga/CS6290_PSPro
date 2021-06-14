@@ -1,7 +1,7 @@
 ﻿using FlaUI.UIA2;
 using FlaUI.Core;
 using FlaUI.Core.AutomationElements;
-using E2ETests.Model;
+using E2ETests.Windows;
 
 namespace E2ETests
 {
