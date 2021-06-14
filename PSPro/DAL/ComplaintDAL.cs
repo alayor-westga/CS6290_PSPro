@@ -10,7 +10,6 @@ namespace PSPro.DAL
     {
         virtual public List<ComplaintView> GetAllActiveComplaints()
         {
-            List<ComplaintView> complaintViewList = new List<ComplaintView>();
             using (SqlConnection connection = PsProDBConnection.GetConnection())
             {
                 connection.Open();
@@ -20,20 +19,44 @@ namespace PSPro.DAL
                     command.CommandType = CommandType.StoredProcedure;
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
-                        {
-                            ComplaintView complaintView = new ComplaintView();
-                            {
-                                complaintView.ComplaintID = int.Parse(reader["complaint_id"].ToString());
-                                complaintView.DateCreated = DateTime.Parse(reader["date_created"].ToString());
-                                complaintView.OfficerFullName = reader["officer_full_name"].ToString();
-                                complaintView.CitizenFullName = reader["citizen_full_name"].ToString();
-                                complaintView.Disposition = reader["disposition"].ToString();
-                            }
-                            complaintViewList.Add(complaintView);
-                        }
+                        return buildComplaintViewList(reader);
                     }
                 }
+            }
+        }
+
+        virtual public List<ComplaintView> GetActiveComplaintsByOfficer(int officerPersonelId)
+        {
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "GetActiveComplaintsByOfficer";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@officers_personnel_id", officerPersonelId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        return buildComplaintViewList(reader);
+                    }
+                }
+            }
+        }
+
+        private List<ComplaintView> buildComplaintViewList(SqlDataReader reader)
+        {
+            List<ComplaintView> complaintViewList = new List<ComplaintView>();
+            while (reader.Read())
+            {
+                ComplaintView complaintView = new ComplaintView();
+                {
+                    complaintView.ComplaintID = int.Parse(reader["complaint_id"].ToString());
+                    complaintView.DateCreated = DateTime.Parse(reader["date_created"].ToString());
+                    complaintView.OfficerFullName = reader["officer_full_name"].ToString();
+                    complaintView.CitizenFullName = reader["citizen_full_name"].ToString();
+                    complaintView.Disposition = reader["disposition"].ToString();
+                }
+                complaintViewList.Add(complaintView);
             }
             return complaintViewList;
         }
@@ -42,14 +65,14 @@ namespace PSPro.DAL
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
             {
-                connection.Open();               
-                string storedProcedureAddIncident = "AddComplaint";             
+                connection.Open();
+                string storedProcedureAddIncident = "AddComplaint";
                 using (SqlCommand command = new SqlCommand(storedProcedureAddIncident, connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@citizen_id", complaint.CitizenID);
                     this.AddComplaintDetails(command, complaint);
-                }                                                    
+                }
             }
         }
 
@@ -80,7 +103,7 @@ namespace PSPro.DAL
                     this.AddComplaintWithNewCitizenID(connection, transaction, citizenID, complaint);
                     transaction.Commit();
                 }
-                catch(Exception exception)
+                catch (Exception exception)
                 {
                     transaction.Rollback();
                     throw exception;
@@ -91,21 +114,21 @@ namespace PSPro.DAL
         private void AddComplaintWithNewCitizenID(SqlConnection connection, SqlTransaction transaction, int citizenID, Complaint complaint)
         {
             string storedProcedureAddComplaint = "AddComplaint";
-            
-                using (SqlCommand command = new SqlCommand(storedProcedureAddComplaint, connection, transaction))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@citizen_id", citizenID);
-                    this.AddComplaintDetails(command, complaint);                  
-                }
+
+            using (SqlCommand command = new SqlCommand(storedProcedureAddComplaint, connection, transaction))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@citizen_id", citizenID);
+                this.AddComplaintDetails(command, complaint);
             }
+        }
 
         private void AddComplaintDetails(SqlCommand command, Complaint complaint)
         {
             command.Parameters.AddWithValue("@officers_personnel_id", complaint.OfficerID);
             command.Parameters.AddWithValue("@supervisors_personnel_id", complaint.SupervisorID);
             command.Parameters.AddWithValue("@allegation_type", complaint.Allegation);
-            command.Parameters.AddWithValue("@complaint_notes", complaint.Summary);         
+            command.Parameters.AddWithValue("@complaint_notes", complaint.Summary);
             command.ExecuteNonQuery();
         }
 
@@ -122,7 +145,7 @@ namespace PSPro.DAL
                 {
                     while (reader.Read())
                     {
-                       lastCitizenID = (int)reader["citizen_id"];
+                        lastCitizenID = (int)reader["citizen_id"];
                     }
                 }
             }

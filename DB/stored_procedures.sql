@@ -377,3 +377,28 @@ GRANT EXECUTE ON
 GetAllActiveComplaints
 TO winforms;
 GO
+
+--GetActiveComplaintsByOfficer
+DROP PROCEDURE IF EXISTS GetActiveComplaintsByOfficer;
+GO
+CREATE PROCEDURE GetActiveComplaintsByOfficer
+	@officers_personnel_id int
+AS
+SET NOCOUNT ON;
+
+    SELECT 
+		co.complaint_id,
+		co.date_created,
+		CONCAT(o.first_name, ' ', o.last_name) AS officer_full_name,
+		CONCAT(c.first_name, ' ', c.last_name) AS citizen_full_name,
+		co.disposition
+	FROM Complaints co
+		INNER JOIN Personnel o ON (o.personnel_id = co.officers_personnel_id)
+		INNER JOIN Citizens c ON (c.citizen_id = co.citizen_id)
+	WHERE co.discipline IS NULL
+	AND o.personnel_id = @officers_personnel_id
+GO
+GRANT EXECUTE ON
+GetActiveComplaintsByOfficer
+TO winforms;
+GO

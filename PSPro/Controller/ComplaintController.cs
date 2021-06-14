@@ -6,11 +6,11 @@ using PSPro.Model;
 
 namespace PSPro.Controller
 {
-    public class ComplaintController    
+    public class ComplaintController
     {
         private readonly ComplaintDAL complaintSource;
 
-        public ComplaintController(): this(new ComplaintDAL()) {}
+        public ComplaintController() : this(new ComplaintDAL()) { }
 
         /// <summary>
         /// It creates a SupervisorController injecting dependencies.
@@ -23,6 +23,11 @@ namespace PSPro.Controller
         public List<ComplaintView> GetAllActiveComplaints()
         {
             return this.complaintSource.GetAllActiveComplaints();
+        }
+
+        public List<ComplaintView> GetActiveComplaintsByOfficer(int officerPersonelId)
+        {
+            return this.complaintSource.GetActiveComplaintsByOfficer(officerPersonelId);
         }
     }
 }
