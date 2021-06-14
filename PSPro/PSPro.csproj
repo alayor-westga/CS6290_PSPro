@@ -72,6 +72,12 @@
     <Compile Include="UserControls\ComplaintList.Designer.cs">
       <DependentUpon>ComplaintList.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AdministratorDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdministratorDashboard.Designer.cs">
+      <DependentUpon>AdministratorDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\InvestigatorDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\ComplaintList.resx">
       <DependentUpon>ComplaintList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdministratorDashboard.resx">
+      <DependentUpon>AdministratorDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\InvestigatorDashboard.resx">
       <DependentUpon>InvestigatorDashboard.cs</DependentUpon>

@@ -37,8 +37,11 @@ namespace PSPro.UserControls
 
         private void ComplaintList_Load(object sender, System.EventArgs e)
         {
-            ShowAllActiveComplaints();
-            PopulateOfficerComboBox();
+            if (!this.DesignMode)
+            {
+                ShowAllActiveComplaints();
+                PopulateOfficerComboBox();
+            }
         }
 
         private void PopulateOfficerComboBox()

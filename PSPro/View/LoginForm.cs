@@ -38,7 +38,7 @@ namespace PSPro.View
                         ShowWindow(new InvestigatorDashboard(this));
                         break;
                     case UserRole.Administrator:
-                        ShowWindow(new NewComplaintForm(this));
+                        ShowWindow(new AdministratorDashboard(this));
                         break;
                 }
             }
