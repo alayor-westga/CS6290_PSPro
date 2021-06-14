@@ -15,4 +15,7 @@ Background:
 
 
 Scenario: See active complaint
-	Given investigator "i-001" logs in with password "4567"
+	When investigator "i-001" logs in with password "4567"
+	Then investigator should see a complaint with this info
+	|officer|citizen|
+	|Offi Cer|Citi Zen|

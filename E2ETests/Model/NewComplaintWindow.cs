@@ -103,16 +103,17 @@ namespace E2ETests.Model
                 .FindFirstDescendant(cf => cf.ByAutomationId("SaveButton"))
                 .AsButton()
                 .Click();
-           Thread.Sleep(2000);
+            Thread.Sleep(2000);
         }
-        
+
         public void ClickOnLogout()
         {
             context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("LogoutLinkLabel"))
                 .AsButton()
                 .Click();
-           Thread.Sleep(2000);
+            Thread.Sleep(2000);
+            context.mustChangeWindow = true;
         }
 
         public void SelectOfficer(string officer)

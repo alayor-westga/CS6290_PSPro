@@ -188,7 +188,16 @@ this.ScenarioInitialize(scenarioInfo);
 this.FeatureBackground();
 #line hidden
 #line 18
- testRunner.Given("investigator \"i-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When("investigator \"i-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "officer",
+                            "citizen"});
+                table7.AddRow(new string[] {
+                            "Offi Cer",
+                            "Citi Zen"});
+#line 19
+ testRunner.Then("investigator should see a complaint with this info", ((string)(null)), table7, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

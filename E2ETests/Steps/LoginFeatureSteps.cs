@@ -80,8 +80,8 @@ namespace E2ETests.Steps
             context.loginWindow.Login();
         }
 
-        [Given(@"investigator ""(.*)"" logs in with password ""(.*)""")]
-        public void GivenInvestigatorLogsInWithPassword(string username, string password)
+        [When(@"investigator ""(.*)"" logs in with password ""(.*)""")]
+        public void WhenInvestigatorLogsInWithPassword(string username, string password)
         {
             context.loginWindow.EnterUserName(username);
             context.loginWindow.EnterPassword(password);
