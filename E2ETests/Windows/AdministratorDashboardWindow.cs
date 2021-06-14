@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using FlaUI.Core.AutomationElements;
-using System.Threading;
 
-namespace E2ETests.Model
+namespace E2ETests.Windows
 {
-    public class InvestigatorDashboardWindow
+    public class AdministratorDashboardWindow
     {
         private readonly Context context;
-        public InvestigatorDashboardWindow(Context context)
+        public AdministratorDashboardWindow(Context context)
         {
             this.context = context;
         }

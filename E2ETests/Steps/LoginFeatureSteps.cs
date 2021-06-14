@@ -1,5 +1,4 @@
 ﻿using TechTalk.SpecFlow;
-using E2ETests.Hooks;
 using NUnit.Framework;
 
 namespace E2ETests.Steps
@@ -88,5 +87,12 @@ namespace E2ETests.Steps
             context.loginWindow.Login();
         }
 
+        [When(@"administrator ""(.*)"" logs in with password ""(.*)""")]
+        public void WhenAdministratorLogsInWithPassword(string username, string password)
+        {
+            context.loginWindow.EnterUserName(username);
+            context.loginWindow.EnterPassword(password);
+            context.loginWindow.Login();
+        }
     }
 }
