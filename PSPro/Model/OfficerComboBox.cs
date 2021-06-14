@@ -30,7 +30,7 @@ namespace PSPro.Model
         {
             get
             {
-                return LastName + ", " + FirstName;
+                return FirstName + " " + LastName;
             }
         }
 

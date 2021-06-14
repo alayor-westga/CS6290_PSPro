@@ -37,8 +37,12 @@ namespace PSPro.UserControls
             this.citizenFullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dispositionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.complaintViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.officerComboBox = new System.Windows.Forms.ComboBox();
+            this.officerComboBoxBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.officerLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.complaintsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaintViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // complaintsDataGridView
@@ -109,10 +113,37 @@ namespace PSPro.UserControls
             // 
             this.complaintViewBindingSource.DataSource = typeof(PSPro.Model.ComplaintView);
             // 
+            // officerComboBox
+            // 
+            this.officerComboBox.DataSource = this.officerComboBoxBindingSource;
+            this.officerComboBox.DisplayMember = "DisplayName";
+            this.officerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.officerComboBox.FormattingEnabled = true;
+            this.officerComboBox.Location = new System.Drawing.Point(176, 49);
+            this.officerComboBox.Name = "officerComboBox";
+            this.officerComboBox.Size = new System.Drawing.Size(365, 48);
+            this.officerComboBox.TabIndex = 1;
+            this.officerComboBox.ValueMember = "PersonnelID";
+            // 
+            // officerComboBoxBindingSource
+            // 
+            this.officerComboBoxBindingSource.DataSource = typeof(PSPro.Model.OfficerComboBox);
+            // 
+            // officerLabel
+            // 
+            this.officerLabel.AutoSize = true;
+            this.officerLabel.Location = new System.Drawing.Point(45, 52);
+            this.officerLabel.Name = "officerLabel";
+            this.officerLabel.Size = new System.Drawing.Size(102, 40);
+            this.officerLabel.TabIndex = 2;
+            this.officerLabel.Text = "Officer";
+            // 
             // ComplaintList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 40F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.officerLabel);
+            this.Controls.Add(this.officerComboBox);
             this.Controls.Add(this.complaintsDataGridView);
             this.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -121,7 +152,9 @@ namespace PSPro.UserControls
             this.Load += new System.EventHandler(this.ComplaintList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.complaintsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaintViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -134,5 +167,8 @@ namespace PSPro.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn officerFullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn citizenFullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dispositionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox officerComboBox;
+        private System.Windows.Forms.Label officerLabel;
+        private System.Windows.Forms.BindingSource officerComboBoxBindingSource;
     }
 }
