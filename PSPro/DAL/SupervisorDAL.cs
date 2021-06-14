@@ -96,14 +96,11 @@ namespace PSPro.DAL
                     updateCommand.Parameters.AddWithValue("@Phone", citizen.Phone);
                     updateCommand.Parameters.AddWithValue("@Email", citizen.Email);
 
-                    SqlParameter rowCount = new SqlParameter();
-                    rowCount.ParameterName = "@RowCnt";
-                    rowCount.SqlDbType = SqlDbType.Int;
-                    
-                    SqlParameter returnParameter = updateCommand.Parameters.Add(rowCount);
-                    returnParameter.Direction = ParameterDirection.ReturnValue;
+                    SqlParameter returnValue = new SqlParameter("@RowCnt", SqlDbType.Int);
+                    returnValue.Direction = ParameterDirection.Output;
+                    updateCommand.Parameters.Add(returnValue);
                     updateCommand.ExecuteNonQuery();
-                    int numberOfRowsAffected = (int)returnParameter.Value;
+                    int numberOfRowsAffected = (int) updateCommand.Parameters["@RowCnt"].Value;
                     if (numberOfRowsAffected > 0)
                         return true;
                     else
