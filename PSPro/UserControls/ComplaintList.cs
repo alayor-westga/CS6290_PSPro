@@ -19,7 +19,20 @@ namespace PSPro.UserControls
 
         private void ShowAllActiveComplaints()
         {
-            complaintsDataGridView.DataSource = complaintController.GetAllActiveComplaints();
+            if (this.officerComboBox.SelectedValue == null)
+            {
+                complaintsDataGridView.DataSource = complaintController.GetAllActiveComplaints();
+                return;
+            }
+            int officerId =(int) this.officerComboBox.SelectedValue;
+            if (officerId > -1)
+            {
+                complaintsDataGridView.DataSource = complaintController.GetActiveComplaintsByOfficer(officerId);
+            } 
+            else
+            {
+                complaintsDataGridView.DataSource = complaintController.GetAllActiveComplaints();
+            }
         }
 
         private void ComplaintList_Load(object sender, System.EventArgs e)
@@ -46,6 +59,11 @@ namespace PSPro.UserControls
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void officerComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShowAllActiveComplaints();
         }
     }
 }

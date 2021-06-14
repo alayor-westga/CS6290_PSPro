@@ -124,6 +124,7 @@ namespace PSPro.UserControls
             this.officerComboBox.Size = new System.Drawing.Size(365, 48);
             this.officerComboBox.TabIndex = 1;
             this.officerComboBox.ValueMember = "PersonnelID";
+            this.officerComboBox.SelectedIndexChanged += new System.EventHandler(this.officerComboBox_SelectedIndexChanged);
             // 
             // officerComboBoxBindingSource
             // 
