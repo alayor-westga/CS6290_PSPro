@@ -48,9 +48,8 @@ namespace UnitTests
         [TestMethod]
         public void TestLoginAsSupervisorSuccessful()
         {
-            bool success = loginController.Login("s-001", "1234");
-            Assert.IsTrue(success);
-            User user = LoginController.GetUser();
+            User user = loginController.Login("s-001", "1234");
+            Assert.IsNotNull(user);
             Assert.AreEqual("s-001", user.UserName);
             Assert.AreEqual("John Williams", user.FullName);
             Assert.AreEqual(UserRole.Supervisor, user.Role);
@@ -59,27 +58,24 @@ namespace UnitTests
         [TestMethod]
         public void TestLoginAsSupervisorWrongUserName()
         {
-            bool success = loginController.Login("s-002", "1234");
-            Assert.IsFalse(success);
-            User user = LoginController.GetUser();
+            User user = loginController.Login("s-002", "1234");
             Assert.IsNull(user);
+            Assert.IsNull(LoginController.GetUser());
         }
 
         [TestMethod]
         public void TestLoginAsSupervisorWrongPassword()
         {
-            bool success = loginController.Login("s-001", "1233");
-            Assert.IsFalse(success);
-            User user = LoginController.GetUser();
+            User user = loginController.Login("s-001", "1233");
             Assert.IsNull(user);
+            Assert.IsNull(LoginController.GetUser());
         }
 
         [TestMethod]
         public void TestLoginAsInvestigatorSuccessful()
         {
-            bool success = loginController.Login("i-001", "1234");
-            Assert.IsTrue(success);
-            User user = LoginController.GetUser();
+            User user = loginController.Login("i-001", "1234");
+            Assert.IsNotNull(user);
             Assert.AreEqual("i-001", user.UserName);
             Assert.AreEqual("Jose Perez", user.FullName);
             Assert.AreEqual(UserRole.Investigator, user.Role);
@@ -88,19 +84,17 @@ namespace UnitTests
         [TestMethod]
         public void TestLoginAsInvestigatorWrongUserName()
         {
-            bool success = loginController.Login("i-002", "1234");
-            Assert.IsFalse(success);
-            User user = LoginController.GetUser();
+            User user = loginController.Login("i-002", "1234");
             Assert.IsNull(user);
+            Assert.IsNull(LoginController.GetUser());
         }
 
         [TestMethod]
         public void TestLoginAsInvestigatorWrongPassword()
         {
-            bool success = loginController.Login("i-001", "1233");
-            Assert.IsFalse(success);
-            User user = LoginController.GetUser();
+            User user = loginController.Login("i-001", "1233");
             Assert.IsNull(user);
+            Assert.IsNull(LoginController.GetUser());
         }
     }
 }

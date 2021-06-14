@@ -63,6 +63,12 @@
     <Compile Include="Model\USStates.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ComplaintList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ComplaintList.Designer.cs">
+      <DependentUpon>ComplaintList.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\InvestigatorDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\ComplaintList.resx">
+      <DependentUpon>ComplaintList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\InvestigatorDashboard.resx">
       <DependentUpon>InvestigatorDashboard.cs</DependentUpon>
     </EmbeddedResource>

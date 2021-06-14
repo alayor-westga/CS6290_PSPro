@@ -6,16 +6,11 @@ using PSPro.Model;
 
 namespace PSPro.Controller
 {
-    
-    public class SupervisorController    
+    public class SupervisorController
     {
         private readonly SupervisorDAL supervisorSource;
 
-        public SupervisorController()
-        {
-            this.supervisorSource = new SupervisorDAL();
-        }
-
+        public SupervisorController() : this(new SupervisorDAL()) {}
 
         /// <summary>
         /// It creates a SupervisorController injecting dependencies.
@@ -35,7 +30,7 @@ namespace PSPro.Controller
             this.supervisorSource.AddCitizenAndComplaint(citizen, complaint);
         }
 
-       public void AddComplaint(Complaint complaint)
+        public void AddComplaint(Complaint complaint)
         {
             this.supervisorSource.AddComplaint(complaint);
         }

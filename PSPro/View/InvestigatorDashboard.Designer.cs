@@ -32,6 +32,10 @@ namespace PSPro.View
             this.userFullNameLabel = new System.Windows.Forms.Label();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.LogoutLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.complaintListTabControl = new System.Windows.Forms.TabControl();
+            this.complaintListTabPage = new System.Windows.Forms.TabPage();
+            this.manageComplaintTabPage = new System.Windows.Forms.TabPage();
+            this.complaintListTabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // userFullNameLabel
@@ -67,11 +71,42 @@ namespace PSPro.View
             this.LogoutLinkLabel.Text = "Logout";
             this.LogoutLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLinkLabel_LinkClicked);
             // 
+            // complaintListTabControl
+            // 
+            this.complaintListTabControl.Controls.Add(this.complaintListTabPage);
+            this.complaintListTabControl.Controls.Add(this.manageComplaintTabPage);
+            this.complaintListTabControl.Location = new System.Drawing.Point(-3, 98);
+            this.complaintListTabControl.Name = "complaintListTabControl";
+            this.complaintListTabControl.SelectedIndex = 0;
+            this.complaintListTabControl.Size = new System.Drawing.Size(1324, 790);
+            this.complaintListTabControl.TabIndex = 30;
+            // 
+            // complaintListTabPage
+            // 
+            this.complaintListTabPage.Location = new System.Drawing.Point(8, 64);
+            this.complaintListTabPage.Name = "complaintListTabPage";
+            this.complaintListTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.complaintListTabPage.Size = new System.Drawing.Size(1308, 718);
+            this.complaintListTabPage.TabIndex = 0;
+            this.complaintListTabPage.Text = "Complaint List";
+            this.complaintListTabPage.UseVisualStyleBackColor = true;
+            // 
+            // manageComplaintTabPage
+            // 
+            this.manageComplaintTabPage.Location = new System.Drawing.Point(8, 64);
+            this.manageComplaintTabPage.Name = "manageComplaintTabPage";
+            this.manageComplaintTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.manageComplaintTabPage.Size = new System.Drawing.Size(1308, 718);
+            this.manageComplaintTabPage.TabIndex = 1;
+            this.manageComplaintTabPage.Text = "Manage Complaint";
+            this.manageComplaintTabPage.UseVisualStyleBackColor = true;
+            // 
             // InvestigatorDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 50F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1333, 900);
+            this.Controls.Add(this.complaintListTabControl);
             this.Controls.Add(this.userFullNameLabel);
             this.Controls.Add(this.WelcomeLabel);
             this.Controls.Add(this.LogoutLinkLabel);
@@ -83,6 +118,7 @@ namespace PSPro.View
             this.Name = "InvestigatorDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PsPro - Investigator - Complaints";
+            this.complaintListTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,5 +129,8 @@ namespace PSPro.View
         private System.Windows.Forms.Label userFullNameLabel;
         private System.Windows.Forms.Label WelcomeLabel;
         private System.Windows.Forms.LinkLabel LogoutLinkLabel;
+        private System.Windows.Forms.TabControl complaintListTabControl;
+        private System.Windows.Forms.TabPage complaintListTabPage;
+        private System.Windows.Forms.TabPage manageComplaintTabPage;
     }
 }
