@@ -46,15 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ComplaintController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\SupervisorController.cs" />
     <Compile Include="DAL\AdministratorDAL.cs" />
+    <Compile Include="DAL\ComplaintDAL.cs" />
     <Compile Include="DAL\InvestigatorDAL.cs" />
     <Compile Include="DAL\PsProDBConnection.cs" />
     <Compile Include="DAL\SupervisorDAL.cs" />
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Citizen.cs" />
     <Compile Include="Model\Complaint.cs" />
+    <Compile Include="Model\ComplaintView.cs" />
     <Compile Include="Model\Investigator.cs" />
     <Compile Include="Model\OfficerComboBox.cs" />
     <Compile Include="Model\Personnel.cs" />

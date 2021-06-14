@@ -25,13 +25,13 @@ namespace PSPro.DAL
                             ComplaintView complaintView = new ComplaintView();
                             {
                                 complaintView.ComplaintID = int.Parse(reader["complaint_id"].ToString());
-                                complaintView.DateCreated = reader["date_created"].ToString();
+                                complaintView.DateCreated = DateTime.Parse(reader["date_created"].ToString());
                                 complaintView.OfficerFullName = reader["officer_full_name"].ToString();
                                 complaintView.CitizenFullName = reader["citizen_full_name"].ToString();
                                 complaintView.Disposition = reader["disposition"].ToString();
                                 complaintView.Discipline = reader["discipline"].ToString();
                             }
-                            complaintViewList.Add(officer);
+                            complaintViewList.Add(complaintView);
                         }
                     }
                 }

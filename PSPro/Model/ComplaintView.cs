@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PSPro.Model
 {
@@ -10,7 +6,7 @@ namespace PSPro.Model
     {
         public int ComplaintID { get; set; }
        
-        public Date DateCreated { get; set; }
+        public DateTime DateCreated { get; set; }
        
         public string OfficerFullName { get; set; }
 
