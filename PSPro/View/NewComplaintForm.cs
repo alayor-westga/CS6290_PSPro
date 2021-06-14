@@ -20,6 +20,7 @@ namespace PSPro.View
         private readonly SupervisorController supervisorController;
         private Complaint complaint;
         private Citizen citizen;
+        private Citizen updatedCitizen;
         private User loggedInUser;
 
         public NewComplaintForm(Form loginForm)
@@ -30,6 +31,7 @@ namespace PSPro.View
             this.supervisorController = new SupervisorController();
             this.complaint = new Complaint();
             this.citizen = new Citizen();
+            this.updatedCitizen = new Citizen();
             this.loggedInUser = new User();
             this.ShowUserName();
             this.PopulateOfficerComboBox();
@@ -105,66 +107,68 @@ namespace PSPro.View
             }
             else
             {
-                this.complaint.CitizenID = Int32.Parse(this.citizenIDTextBox.Text); //may not need this - the form may already be populated
+                this.complaint.CitizenID = Int32.Parse(this.citizenIDTextBox.Text); 
                 if (this.CheckForChangesMadeToCitizenFields())
                 {
-                    this.UpdateCitizen(); 
+                    if (!this.UpdateCitizen())
+                    {
+                        return;
+                    } 
                 }
                 this.BindComplaintFieldsToComplaintObject();
 
                 try
                 {
                     this.supervisorController.AddComplaint(this.complaint);
+                    this.ClearForm();
+                    MessageBox.Show("Complaint Successfully\nAdded to Database.",
+                        "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception exception)
                 {
                     MessageBox.Show(exception.Message,
                             "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
                 }           
-            }
-
-            this.ClearForm();
-            MessageBox.Show("Complaint Successfully\nAdded to Database.",
-                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            return;
+            }         
         }
 
-        private void UpdateCitizen()
+        private bool UpdateCitizen()
         {
-            if (!this.ValidateFields()) return;
-
-            Citizen updatedCitizen = new Citizen();
-            updatedCitizen.FirstName = this.firstNameTextBox.Text;
-            updatedCitizen.LastName = this.lastNameTextBox.Text;
-            updatedCitizen.Address1 = this.address1TextBox.Text;
-            updatedCitizen.Address2 = this.address2TextBox.Text;
-            updatedCitizen.City = this.cityTextBox.Text;
-            updatedCitizen.State = this.stateComboBox.SelectedValue.ToString();
-            updatedCitizen.ZipCode = this.zipCodeTextBox.Text;
-            updatedCitizen.Phone = this.phoneNumberTextBox.Text;
-            updatedCitizen.Email = this.emailTextBox.Text;
+            if (!this.ValidateFields()) return false;
+            
+            this.updatedCitizen.FirstName = this.firstNameTextBox.Text;
+            this.updatedCitizen.LastName = this.lastNameTextBox.Text;
+            this.updatedCitizen.Address1 = this.address1TextBox.Text;
+            this.updatedCitizen.Address2 = this.address2TextBox.Text;
+            this.updatedCitizen.City = this.cityTextBox.Text;
+            this.updatedCitizen.State = this.stateComboBox.SelectedValue.ToString();
+            this.updatedCitizen.ZipCode = this.zipCodeTextBox.Text;
+            this.updatedCitizen.Phone = this.phoneNumberTextBox.Text;
+            this.updatedCitizen.Email = this.emailTextBox.Text;
 
             try
-            {
-                if (!this.supervisorController.UpdateCitizen(this.citizen, updatedCitizen))
+            {               
+                if (this.supervisorController.UpdateCitizen(this.citizen, updatedCitizen))
+                {
+                    return true;
+                }
+                else
                 {
                     MessageBox.Show("This patient's information has been\nmodified since it has been retrieved."
                     + "\n\nThe form has been updated to reflect those changes.",
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.GetCitizenFromDB();
                     this.PopulateCitizenFields();
-                    return;
+                    return false;                   
                 }
-                MessageBox.Show("The changes were successfully amended to the database.",
-                        "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
             catch (ArgumentException argumentException)
             {
                 MessageBox.Show(argumentException.Message,
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
+            
         }
 
         private void PopulateCitizenFields()
@@ -175,7 +179,7 @@ namespace PSPro.View
             this.address1TextBox.Text = this.citizen.Address1;
             this.address2TextBox.Text = this.citizen.Address2;
             this.cityTextBox.Text = this.citizen.City;
-            if (citizen.State != null)
+            if (!string.IsNullOrWhiteSpace(citizen.State))
             {
                 this.stateComboBox.SelectedValue = Enum.Parse(typeof(States), citizen.State);
             }
@@ -192,15 +196,19 @@ namespace PSPro.View
 
         private bool CheckForChangesMadeToCitizenFields()
         {
-            if (this.citizen.FirstName  != this.firstNameTextBox.Text ||
-                this.citizen.LastName != this.lastNameTextBox.Text ||
-                this.citizen.Address1 != this.address1TextBox.Text ||
-                this.citizen.Address2 != this.address2TextBox.Text ||
-                this.citizen.City != this.cityTextBox.Text ||
-                this.citizen.State != this.stateComboBox.SelectedValue.ToString() ||
-                this.citizen.ZipCode != this.zipCodeTextBox.Text ||
-                this.citizen.Phone != this.phoneNumberTextBox.Text ||
-                this.citizen.Email != this.emailTextBox.Text
+            //Console.WriteLine(this.citizen.LastName.Equals(this.lastNameTextBox.Text));
+       
+            Console.WriteLine("object: " + this.citizen.State);
+            Console.WriteLine("box: " + this.stateComboBox.Text);
+            if (this.citizen.FirstName == this.firstNameTextBox.Text &&
+                this.citizen.LastName == this.lastNameTextBox.Text &&
+                this.citizen.Address1 == this.address1TextBox.Text &&
+                this.citizen.Address2 == this.address2TextBox.Text &&
+                this.citizen.City == this.cityTextBox.Text &&
+                (this.citizen.State == this.stateComboBox.SelectedValue.ToString() || (string.IsNullOrWhiteSpace(this.citizen.State) && this.stateComboBox.SelectedIndex == 0))  &&
+                this.citizen.ZipCode == this.zipCodeTextBox.Text &&
+                this.citizen.Phone == this.phoneNumberTextBox.Text &&
+                this.citizen.Email == this.emailTextBox.Text
                 )
             {
                 return false;

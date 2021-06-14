@@ -1,4 +1,5 @@
-﻿using PSPro.Model;
+﻿using PSPro.Controller;
+using PSPro.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -165,8 +166,9 @@ namespace PSPro.View
         private void SelectCitizenButton_Click(object sender, EventArgs e)
         {
             Citizen existingCitizen = new Citizen();
-            existingCitizen.CitizenID = 1000;
-            existingCitizen.FirstName = "Mike";
+            SupervisorController controller = new SupervisorController();
+            existingCitizen = controller.GetCitizen(5059);
+
             this.newComplaintForm.Show();
             this.newComplaintForm.PopulateCitizenFieldsWithExistingCitizenInformation(existingCitizen);
             this.Hide();

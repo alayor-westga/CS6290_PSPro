@@ -94,10 +94,17 @@ namespace PSPro.DAL
                     updateCommand.Parameters.AddWithValue("@State", citizen.State);
                     updateCommand.Parameters.AddWithValue("@Zipcode", citizen.ZipCode);
                     updateCommand.Parameters.AddWithValue("@Phone", citizen.Phone);
-                    updateCommand.Parameters.AddWithValue("@UEmail", citizen.Email);
+                    updateCommand.Parameters.AddWithValue("@Email", citizen.Email);
 
-                    int count = updateCommand.ExecuteNonQuery();
-                    if (count > 0)
+                    SqlParameter rowCount = new SqlParameter();
+                    rowCount.ParameterName = "@RowCnt";
+                    rowCount.SqlDbType = SqlDbType.Int;
+                    
+                    SqlParameter returnParameter = updateCommand.Parameters.Add(rowCount);
+                    returnParameter.Direction = ParameterDirection.ReturnValue;
+                    updateCommand.ExecuteNonQuery();
+                    int numberOfRowsAffected = (int)returnParameter.Value;
+                    if (numberOfRowsAffected > 0)
                         return true;
                     else
                         return false;
