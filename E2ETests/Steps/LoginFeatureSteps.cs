@@ -51,10 +51,17 @@ namespace E2ETests.Steps
             Assert.AreEqual(message, errorMessage);
         }
 
-        [Then(@"the user full name ""(.*)"" is shown")]
-        public void ThenTheTitleMessageIsShown(string message)
+        [Then(@"the user full name ""(.*)"" is shown in the new complaint window")]
+        public void ThenUserFullNameIsShownInTheNewComplaintWindow(string message)
         {
             var userFullName = context.newComplaintWindow.GetUserFullName();
+            Assert.AreEqual(message, userFullName);
+        }
+
+        [Then(@"the user full name ""(.*)"" is shown in the investigator dashboard window")]
+        public void ThenUserFullNameIsShownInTheInvestigatorDashboardWindow(string message)
+        {
+            var userFullName = context.investigatorDashboardWindow.GetUserFullName();
             Assert.AreEqual(message, userFullName);
         }
 

@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using TechTalk.SpecFlow;
-using E2ETests.Hooks;
 using NUnit.Framework;
-using System.Data;
 using System.Data.SqlClient;
 using E2ETests.Drivers;
 
@@ -90,11 +88,11 @@ namespace E2ETests.Steps
         {
             var expectedComplaint = table.Rows[0];
             Dictionary<string, string> complaint = GetComplaint();
-            Assert.AreEqual(complaint.GetValueOrDefault("supervisor_name"), expectedComplaint[0]);
-            Assert.AreEqual(complaint.GetValueOrDefault("citizen_name"), expectedComplaint[1]);
-            Assert.AreEqual(complaint.GetValueOrDefault("officer_name"), expectedComplaint[2]);
-            Assert.AreEqual(complaint.GetValueOrDefault("allegation_type"), expectedComplaint[3]);
-            Assert.AreEqual(complaint.GetValueOrDefault("complaint_notes"), expectedComplaint[4]);
+            Assert.AreEqual(expectedComplaint[0], complaint.GetValueOrDefault("supervisor_name"));
+            Assert.AreEqual(expectedComplaint[1], complaint.GetValueOrDefault("citizen_name"));
+            Assert.AreEqual(expectedComplaint[2], complaint.GetValueOrDefault("officer_name"));
+            Assert.AreEqual(expectedComplaint[3], complaint.GetValueOrDefault("allegation_type"));
+            Assert.True(complaint.GetValueOrDefault("complaint_notes").Contains(expectedComplaint[4]));
         }
 
 
