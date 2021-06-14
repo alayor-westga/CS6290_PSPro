@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using PSPro.Controller;
 
 namespace PSPro.UserControls
 {
     public partial class ComplaintList : UserControl
     {
+        private readonly ComplaintController complaintController;
         public ComplaintList()
         {
             InitializeComponent();
+            complaintController = new ComplaintController();
+            ShowAllActiveComplaints();
+        }
+
+        private void ShowAllActiveComplaints()
+        {
+            complaintsDataGridView.DataSource = complaintController.GetAllActiveComplaints();
         }
     }
 }

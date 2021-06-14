@@ -13,7 +13,5 @@ namespace PSPro.Model
         public string CitizenFullName { get; set; }
 
         public string Disposition { get; set; }
-
-        public string Discipline { get; set; }
     }
 }

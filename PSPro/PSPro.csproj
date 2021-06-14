@@ -121,6 +121,7 @@
       <DependentUpon>SearchCitizenForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\PSPro.Model.Citizen.datasource" />
+    <None Include="Properties\DataSources\PSPro.Model.ComplaintView.datasource" />
     <None Include="Properties\DataSources\PSPro.Model.OfficerComboBox.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

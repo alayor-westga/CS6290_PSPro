@@ -29,7 +29,6 @@ namespace PSPro.DAL
                                 complaintView.OfficerFullName = reader["officer_full_name"].ToString();
                                 complaintView.CitizenFullName = reader["citizen_full_name"].ToString();
                                 complaintView.Disposition = reader["disposition"].ToString();
-                                complaintView.Discipline = reader["discipline"].ToString();
                             }
                             complaintViewList.Add(complaintView);
                         }

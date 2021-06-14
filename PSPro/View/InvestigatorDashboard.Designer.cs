@@ -35,7 +35,9 @@ namespace PSPro.View
             this.complaintListTabControl = new System.Windows.Forms.TabControl();
             this.complaintListTabPage = new System.Windows.Forms.TabPage();
             this.manageComplaintTabPage = new System.Windows.Forms.TabPage();
+            this.complaintList1 = new PSPro.UserControls.ComplaintList();
             this.complaintListTabControl.SuspendLayout();
+            this.complaintListTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // userFullNameLabel
@@ -83,6 +85,7 @@ namespace PSPro.View
             // 
             // complaintListTabPage
             // 
+            this.complaintListTabPage.Controls.Add(this.complaintList1);
             this.complaintListTabPage.Location = new System.Drawing.Point(8, 64);
             this.complaintListTabPage.Name = "complaintListTabPage";
             this.complaintListTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -100,6 +103,15 @@ namespace PSPro.View
             this.manageComplaintTabPage.TabIndex = 1;
             this.manageComplaintTabPage.Text = "Manage Complaint";
             this.manageComplaintTabPage.UseVisualStyleBackColor = true;
+            // 
+            // complaintList1
+            // 
+            this.complaintList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.complaintList1.Location = new System.Drawing.Point(3, 3);
+            this.complaintList1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.complaintList1.Name = "complaintList1";
+            this.complaintList1.Size = new System.Drawing.Size(1302, 712);
+            this.complaintList1.TabIndex = 0;
             // 
             // InvestigatorDashboard
             // 
@@ -119,6 +131,7 @@ namespace PSPro.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PsPro - Investigator - Complaints";
             this.complaintListTabControl.ResumeLayout(false);
+            this.complaintListTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +145,6 @@ namespace PSPro.View
         private System.Windows.Forms.TabControl complaintListTabControl;
         private System.Windows.Forms.TabPage complaintListTabPage;
         private System.Windows.Forms.TabPage manageComplaintTabPage;
+        private UserControls.ComplaintList complaintList1;
     }
 }
