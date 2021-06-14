@@ -96,10 +96,20 @@ namespace E2ETests.Model
                 .AsTextBox()
                 .Enter(value);
         }
+
         public void ClickOnSave()
         {
             context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("SaveButton"))
+                .AsButton()
+                .Click();
+           Thread.Sleep(2000);
+        }
+        
+        public void ClickOnLogout()
+        {
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("LogoutLinkLabel"))
                 .AsButton()
                 .Click();
            Thread.Sleep(2000);

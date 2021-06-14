@@ -95,7 +95,6 @@ namespace E2ETests.Steps
             Assert.True(complaint.GetValueOrDefault("complaint_notes").Contains(expectedComplaint[4]));
         }
 
-
         private Dictionary<string, string> GetComplaint()
         {
             Dictionary<string, string> complaint = new Dictionary<string, string>();
@@ -109,7 +108,7 @@ namespace E2ETests.Steps
                 "   CONCAT(o.first_name, ' ', o.last_name) AS officer_name, " +
                 "   co.allegation_type, " +
                 "   co.complaint_notes " +
-                " FROM Complaints co" + 
+                " FROM Complaints co" +
                 "   INNER JOIN Personnel s ON (s.personnel_id = co.supervisors_personnel_id)" +
                 "   INNER JOIN Citizens ci ON (ci.citizen_id = co.citizen_id)" +
                 "   INNER JOIN Personnel o ON (o.personnel_id = co.officers_personnel_id);";
@@ -131,5 +130,32 @@ namespace E2ETests.Steps
             }
             return complaint;
         }
+
+        [Given(@"a complaint with this info is created")]
+        public void GivenAComplaintWithThisInfoIsCreated(Table table)
+        {
+            var complaintToAdd = table.Rows[0];
+            context.newComplaintWindow.EnterCitizenFirstName(complaintToAdd[0]);
+            context.newComplaintWindow.EnterCitizenLastName(complaintToAdd[1]);
+            context.newComplaintWindow.EnterCitizenAddress1(complaintToAdd[2]);
+            context.newComplaintWindow.EnterCitizenAddress2(complaintToAdd[3]);
+            context.newComplaintWindow.EnterCitizenCity(complaintToAdd[4]);
+            context.newComplaintWindow.SelectCitizenState(complaintToAdd[5]);
+            context.newComplaintWindow.EnterCitizenZipCode(complaintToAdd[6]);
+            context.newComplaintWindow.EnterCitizenPhoneNumber(complaintToAdd[7]);
+            context.newComplaintWindow.EnterCitizenEmailAddress(complaintToAdd[8]);
+            context.newComplaintWindow.SelectOfficer(complaintToAdd[9]);
+            context.newComplaintWindow.SelectAllegation(complaintToAdd[10]);
+            context.newComplaintWindow.EnterComplaintSummary(complaintToAdd[11]);
+            context.newComplaintWindow.ClickOnSave();
+        }
+
+        [Given(@"the user logs out")]
+        public void GivenTheUserLogsOut()
+        {
+            context.newComplaintWindow.ClickOnLogout();
+        }
+
+
     }
 }

@@ -25,7 +25,7 @@ namespace E2ETests.Steps
         {
             context.loginWindow.EnterUserName(username);
         }
-        
+
         [Given(@"password is empty")]
         public void GivenPasswordIsEmpty()
         {
@@ -37,13 +37,13 @@ namespace E2ETests.Steps
         {
             context.loginWindow.EnterPassword(password);
         }
-        
+
         [When(@"click on Login")]
         public void WhenClickOnLogin()
         {
             context.loginWindow.Login();
         }
-        
+
         [Then(@"the message ""(.*)"" is shown")]
         public void ThenTheMessageIsShown(string message)
         {
@@ -79,5 +79,14 @@ namespace E2ETests.Steps
             context.loginWindow.EnterPassword(password);
             context.loginWindow.Login();
         }
+
+        [Given(@"investigator ""(.*)"" logs in with password ""(.*)""")]
+        public void GivenInvestigatorLogsInWithPassword(string username, string password)
+        {
+            context.loginWindow.EnterUserName(username);
+            context.loginWindow.EnterPassword(password);
+            context.loginWindow.Login();
+        }
+
     }
 }
