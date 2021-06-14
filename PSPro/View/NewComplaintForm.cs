@@ -18,10 +18,10 @@ namespace PSPro.View
         private readonly Form loginForm;
         private readonly LoginController loginController;
         private readonly SupervisorController supervisorController;
+             private readonly User loggedInUser;
         private Complaint complaint;
         private Citizen citizen;
         private Citizen updatedCitizen;
-        private User loggedInUser;
 
         public NewComplaintForm(Form loginForm)
         {
@@ -32,7 +32,7 @@ namespace PSPro.View
             this.complaint = new Complaint();
             this.citizen = new Citizen();
             this.updatedCitizen = new Citizen();
-            this.loggedInUser = new User();
+            this.loggedInUser = LoginController.GetUser();
             this.ShowUserName();
             this.PopulateOfficerComboBox();
             this.PopulateStateComboBox(this.stateComboBox);
@@ -65,7 +65,6 @@ namespace PSPro.View
         /// </summary>
         private void ShowUserName()
         {
-            this.loggedInUser = LoginController.GetUser();
             this.SupervisorLabel.Text = this.loggedInUser.FullName + " (" + this.loggedInUser.UserName + ")";
         }
 

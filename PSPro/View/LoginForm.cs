@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using PSPro.Controller;
+using PSPro.Model;
 
 namespace PSPro.View
 {
@@ -25,20 +26,36 @@ namespace PSPro.View
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            bool success = loginController.Login(userNameTextBox.Text, passwordTextBox.Text); 
-            if (success)
+            User user = loginController.Login(userNameTextBox.Text, passwordTextBox.Text);
+            if (user != null)
             {
-                using (NewComplaintForm form = new NewComplaintForm(this))
+                switch (user.Role)
                 {
-                    Hide();
-                    form.ShowDialog();
-                    userNameTextBox.Clear();
-                    passwordTextBox.Clear();
+                    case UserRole.Supervisor:
+                        ShowWindow(new NewComplaintForm(this));
+                        break;
+                    case UserRole.Investigator:
+                        ShowWindow(new InvestigatorDashboard(this));
+                        break;
+                    case UserRole.Administrator:
+                        ShowWindow(new NewComplaintForm(this));
+                        break;
                 }
-            }   
+            }
             else
             {
                 errorMessageLabel.Text = "Invalid credentials";
+            }
+        }
+
+        private void ShowWindow(Form form)
+        {
+            using (form)
+            {
+                Hide();
+                form.ShowDialog();
+                userNameTextBox.Clear();
+                passwordTextBox.Clear();
             }
         }
 

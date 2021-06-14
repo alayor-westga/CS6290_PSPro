@@ -44,7 +44,7 @@ namespace PSPro.Controller
             return LoginController.user;
         }
 
-        public bool Login(string username, string password)
+        public User Login(string username, string password)
         {
             Personnel personnel = null;
             UserRole role = UserRole.Unknown;
@@ -63,7 +63,7 @@ namespace PSPro.Controller
             if (personnel == null)
             {
                 user = null;
-                return false;
+                return null;
             }
             user = new User()
             {
@@ -72,7 +72,7 @@ namespace PSPro.Controller
                 FullName = personnel.FullName,
                 Role = role
             };
-            return true;
+            return user;
         }
     }
 }
