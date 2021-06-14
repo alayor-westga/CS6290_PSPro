@@ -218,7 +218,7 @@ this.FeatureBackground();
     testRunner.Given("this citizen info is entered", ((string)(null)), table2, "Given ");
 #line hidden
 #line 22
-    testRunner.And("the officer \"Cer, Offi\" is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the officer \"Offi Cer\" is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 23
     testRunner.And("the allegation \"Ethics Violation\" is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

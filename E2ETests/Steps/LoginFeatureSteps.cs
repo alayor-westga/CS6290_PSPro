@@ -65,6 +65,13 @@ namespace E2ETests.Steps
             Assert.AreEqual(message, userFullName);
         }
 
+        [Then(@"the user full name ""(.*)"" is shown in the administrator dashboard window")]
+        public void ThenUserFullNameIsShownInTheAdministratorDashboardWindow(string message)
+        {
+            var userFullName = context.administratorDashboardWindow.GetUserFullName();
+            Assert.AreEqual(message, userFullName);
+        }
+
         [Given(@"supervisor ""(.*)"" logs in with password ""(.*)""")]
         public void SupervisorLogsIn(string username, string password)
         {

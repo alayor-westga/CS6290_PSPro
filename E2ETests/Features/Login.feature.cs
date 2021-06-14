@@ -301,7 +301,8 @@ this.FeatureBackground();
  testRunner.When("click on Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 33
- testRunner.Then("the user full name \"Admin Istrator (a-001)\" is shown in the new complaint window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the user full name \"Admin Istrator (a-001)\" is shown in the administrator dashboa" +
+                        "rd window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -30,4 +30,4 @@ Scenario: Login as administrator
 	Given username is "a-001"
 	And password is "4567"
 	When click on Login
-	Then the user full name "Admin Istrator (a-001)" is shown in the new complaint window
+	Then the user full name "Admin Istrator (a-001)" is shown in the administrator dashboard window
