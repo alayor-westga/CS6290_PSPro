@@ -46,10 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CitizenController.cs" />
     <Compile Include="Controller\ComplaintController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\SupervisorController.cs" />
     <Compile Include="DAL\AdministratorDAL.cs" />
+    <Compile Include="DAL\CitizenDAL.cs" />
     <Compile Include="DAL\ComplaintDAL.cs" />
     <Compile Include="DAL\InvestigatorDAL.cs" />
     <Compile Include="DAL\PsProDBConnection.cs" />

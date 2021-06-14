@@ -17,12 +17,16 @@ namespace PSPro.View
     public partial class SearchCitizenForm : Form        
     {
         NewComplaintForm newComplaintForm;
+        CitizenController citizenController;
+        List<Citizen> citizens;
 
         public SearchCitizenForm(NewComplaintForm newComplaintForm)
         {
             InitializeComponent();
             this.DisableAllSearchBoxes();
             this.newComplaintForm = newComplaintForm;
+            this.citizenController = new CitizenController();
+            this.citizens = new List<Citizen>(); 
         }
 
         private void DisableAllSearchBoxes()
@@ -39,17 +43,17 @@ namespace PSPro.View
             if (this.FirstAndLastNameRadioButton.Checked)
             {
                 if (!this.ValidateFirstName()) return;
-                this.SearchByName();
+                this.citizens = this.citizenController.searchByName(this.firstNameTextBox.Text, this.lastNameTextBox.Text);
             }
             if (this.PhoneRadioButton.Checked)
             {
                 if (!this.ValidatePhone()) return;
-                this.SearchByPhone();
+                this.citizens = this.citizenController.searchByPhone(this.phoneTextBox.Text);
             }
             if (this.EmailRadioButton.Checked)
             {
                 if (!this.ValidateEmail()) return;
-                this.SearchByEmail();
+                this.citizens = this.citizenController.searchByEmail(this.emailTextBox.Text);
             }
         }
 
@@ -99,21 +103,6 @@ namespace PSPro.View
                 firstNameErrorLabel.Text = "";
             }
             return isValid;
-        }
-
-        private void SearchByEmail()
-        {
-            //throw new NotImplementedException();
-        }
-
-        private void SearchByPhone()
-        {
-            //throw new NotImplementedException();
-        }
-
-        private void SearchByName()
-        {
-            //throw new NotImplementedException();
         }
 
         private void RadioButtons_CheckChanged(object sender, EventArgs e)
