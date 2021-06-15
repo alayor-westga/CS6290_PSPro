@@ -19,13 +19,6 @@ namespace UnitTests
         }
 
         private void setupMocks() {}
-
-        [TestMethod]
-        public void TestGetOfficersForCombobox()
-        {
-            supervisorController.GetOfficersForComboBox();
-            supervisorDAL.Verify(v => v.GetOfficersForComboBox());
-        }
         
         [TestMethod]
         public void TestAddCitizenAndComplaint()

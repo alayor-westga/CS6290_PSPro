@@ -9,12 +9,12 @@ namespace PSPro.UserControls
     public partial class ComplaintList : UserControl
     {
         private readonly ComplaintController complaintController;
-        private readonly SupervisorController supervisorController;
+        private readonly OfficerController officerController;
         public ComplaintList()
         {
             InitializeComponent();
             complaintController = new ComplaintController();
-            supervisorController = new SupervisorController();
+            officerController = new OfficerController();
         }
 
         private void ShowAllActiveComplaints()
@@ -48,7 +48,7 @@ namespace PSPro.UserControls
         {
             try
             {
-                List<OfficerComboBox> officers = supervisorController.GetOfficersForComboBox();
+                List<OfficerComboBox> officers = officerController.GetOfficersForComboBox();
                 officers.Insert(0, new OfficerComboBox()
                 {
                     PersonnelID = -1,
