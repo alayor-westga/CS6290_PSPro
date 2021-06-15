@@ -442,3 +442,24 @@ GRANT EXECUTE ON
 GetCitizensByPhoneNumber
 TO winforms;
 GO
+
+
+--GetCitizensByName
+DROP PROCEDURE IF EXISTS GetCitizensByName;
+GO
+CREATE PROCEDURE GetCitizensByName
+	@first_name varchar(45),
+	@last_name varchar(45)
+AS
+SET NOCOUNT ON;
+
+    SELECT 
+		citizen_id, first_name, last_name, address1, address2, city, state, zipcode, phone, email
+	FROM Citizens		
+	WHERE first_name = @first_name OR last_name = @last_name 
+
+GO
+GRANT EXECUTE ON
+GetCitizensByName
+TO winforms;
+GO
