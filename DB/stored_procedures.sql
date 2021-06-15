@@ -425,9 +425,9 @@ GO
 
 
 --GetCitizensByPhone
-DROP PROCEDURE IF EXISTS GetCitizensByPhone;
+DROP PROCEDURE IF EXISTS GetCitizensByPhoneNumber;
 GO
-CREATE PROCEDURE GetCitizensByPhone
+CREATE PROCEDURE GetCitizensByPhoneNumber
 	@phone varchar(12)
 AS
 SET NOCOUNT ON;
@@ -439,6 +439,6 @@ SET NOCOUNT ON;
 
 GO
 GRANT EXECUTE ON
-GetCitizensByPhone
+GetCitizensByPhoneNumber
 TO winforms;
 GO
