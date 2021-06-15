@@ -13,12 +13,39 @@ namespace PSPro.DAL
     {
         public List<Citizen> SearchByName(string firstName, string lastName)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "GetCitizensByName";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@first_name", firstName);
+                    command.Parameters.AddWithValue("@last_name", lastName);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        return this.BuildCitizenViewList(reader);
+                    }
+                }
+            }
         }
 
         public List<Citizen> SearchByEmail(string email)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "GetCitizensByEmail";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@phone", email);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        return this.BuildCitizenViewList(reader);
+                    }
+                }
+            }
         }
 
         public List<Citizen> SearchByPhone(string phone)
