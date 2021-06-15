@@ -13,7 +13,7 @@ namespace PSPro.DAL
         /// <returns>A SQL connection</returns>
         public static SqlConnection GetConnection()
         {
-            string connectionString = "Server=tcp:pspro.database.windows.net,1433;" +
+            string connectionString = "Server=tcp:pspro2.database.windows.net,1433;" +
             "Initial Catalog=pspro;Persist Security Info=False;User ID=adm1n;" +
             "Password=Pa$$w0rd;MultipleActiveResultSets=False;Encrypt=True;" +
             "TrustServerCertificate=False;Connection Timeout=30;";
