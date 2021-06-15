@@ -42,7 +42,7 @@ namespace PSPro.View
         {         
             if (this.FirstAndLastNameRadioButton.Checked)
             {
-                if (!this.ValidateFirstName()) return;
+                if (!this.ValidateName()) return;
                 try
                 {
                     this.citizens = this.citizenController.SearchByName(this.firstNameTextBox.Text, this.lastNameTextBox.Text);
@@ -118,13 +118,13 @@ namespace PSPro.View
             return isValid;
         }
 
-        private bool ValidateFirstName()
+        private bool ValidateName()
         {
             var isValid = true;
-            if (firstNameTextBox.Text.Length == 0)
+            if (string.IsNullOrWhiteSpace(firstNameTextBox.Text) && string.IsNullOrWhiteSpace(lastNameTextBox.Text))
             {
                 isValid = false;
-                firstNameErrorLabel.Text = "Required Field";
+                firstNameErrorLabel.Text = "One or Both Fields Required";
             }
             else
             {
