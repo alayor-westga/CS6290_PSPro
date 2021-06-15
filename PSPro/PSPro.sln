@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSPro", "PSPro.csproj", "{D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\UnitTests\UnitTests.csproj", "{B0BD046F-AA43-45F7-8E83-D5082DD0FC06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2ETests", "..\E2ETests\E2ETests.csproj", "{DC8DEDDF-EC16-444C-A166-CA51D82FF77F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E2ETests", "..\E2ETests\E2ETests.csproj", "{DC8DEDDF-EC16-444C-A166-CA51D82FF77F}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup.vdproj", "{A5F95C93-EB9A-4C9D-B0D3-22BC758A195B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,8 @@ Global
 		{DC8DEDDF-EC16-444C-A166-CA51D82FF77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC8DEDDF-EC16-444C-A166-CA51D82FF77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC8DEDDF-EC16-444C-A166-CA51D82FF77F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5F95C93-EB9A-4C9D-B0D3-22BC758A195B}.Debug|Any CPU.ActiveCfg = Debug
+		{A5F95C93-EB9A-4C9D-B0D3-22BC758A195B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

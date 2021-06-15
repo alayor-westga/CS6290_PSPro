@@ -29,13 +29,14 @@ namespace PSPro.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvestigatorDashboard));
             this.userFullNameLabel = new System.Windows.Forms.Label();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.LogoutLinkLabel = new System.Windows.Forms.LinkLabel();
             this.complaintListTabControl = new System.Windows.Forms.TabControl();
             this.complaintListTabPage = new System.Windows.Forms.TabPage();
-            this.manageComplaintTabPage = new System.Windows.Forms.TabPage();
             this.complaintList = new PSPro.UserControls.ComplaintList();
+            this.manageComplaintTabPage = new System.Windows.Forms.TabPage();
             this.complaintListTabControl.SuspendLayout();
             this.complaintListTabPage.SuspendLayout();
             this.SuspendLayout();
@@ -94,16 +95,6 @@ namespace PSPro.View
             this.complaintListTabPage.Text = "Complaint List";
             this.complaintListTabPage.UseVisualStyleBackColor = true;
             // 
-            // manageComplaintTabPage
-            // 
-            this.manageComplaintTabPage.Location = new System.Drawing.Point(8, 64);
-            this.manageComplaintTabPage.Name = "manageComplaintTabPage";
-            this.manageComplaintTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.manageComplaintTabPage.Size = new System.Drawing.Size(1308, 718);
-            this.manageComplaintTabPage.TabIndex = 1;
-            this.manageComplaintTabPage.Text = "Manage Complaint";
-            this.manageComplaintTabPage.UseVisualStyleBackColor = true;
-            // 
             // complaintList
             // 
             this.complaintList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -113,6 +104,16 @@ namespace PSPro.View
             this.complaintList.Name = "complaintList";
             this.complaintList.Size = new System.Drawing.Size(1302, 712);
             this.complaintList.TabIndex = 0;
+            // 
+            // manageComplaintTabPage
+            // 
+            this.manageComplaintTabPage.Location = new System.Drawing.Point(8, 64);
+            this.manageComplaintTabPage.Name = "manageComplaintTabPage";
+            this.manageComplaintTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.manageComplaintTabPage.Size = new System.Drawing.Size(1308, 718);
+            this.manageComplaintTabPage.TabIndex = 1;
+            this.manageComplaintTabPage.Text = "Manage Complaint";
+            this.manageComplaintTabPage.UseVisualStyleBackColor = true;
             // 
             // InvestigatorDashboard
             // 
@@ -125,6 +126,7 @@ namespace PSPro.View
             this.Controls.Add(this.LogoutLinkLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
