@@ -30,6 +30,7 @@ namespace PSPro.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewComplaintForm));
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.CitizenInfoGroupBox = new System.Windows.Forms.GroupBox();
@@ -78,19 +79,20 @@ namespace PSPro.View
             // firstNameTextBox
             // 
             this.firstNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.firstNameTextBox.Location = new System.Drawing.Point(19, 77);
-            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.firstNameTextBox.Location = new System.Drawing.Point(28, 120);
+            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(321, 39);
+            this.firstNameTextBox.Size = new System.Drawing.Size(480, 57);
             this.firstNameTextBox.TabIndex = 0;
             // 
             // FirstNameLabel
             // 
             this.FirstNameLabel.AutoSize = true;
             this.FirstNameLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.FirstNameLabel.Location = new System.Drawing.Point(19, 43);
+            this.FirstNameLabel.Location = new System.Drawing.Point(28, 67);
+            this.FirstNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(140, 32);
+            this.FirstNameLabel.Size = new System.Drawing.Size(218, 51);
             this.FirstNameLabel.TabIndex = 1;
             this.FirstNameLabel.Text = "*First Name";
             // 
@@ -121,11 +123,11 @@ namespace PSPro.View
             this.CitizenInfoGroupBox.Controls.Add(this.firstNameTextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.FirstNameLabel);
             this.CitizenInfoGroupBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.CitizenInfoGroupBox.Location = new System.Drawing.Point(12, 91);
-            this.CitizenInfoGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CitizenInfoGroupBox.Location = new System.Drawing.Point(18, 142);
+            this.CitizenInfoGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CitizenInfoGroupBox.Name = "CitizenInfoGroupBox";
-            this.CitizenInfoGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CitizenInfoGroupBox.Size = new System.Drawing.Size(897, 429);
+            this.CitizenInfoGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.CitizenInfoGroupBox.Size = new System.Drawing.Size(1346, 670);
             this.CitizenInfoGroupBox.TabIndex = 2;
             this.CitizenInfoGroupBox.TabStop = false;
             this.CitizenInfoGroupBox.Text = "Enter Citizen Information";
@@ -134,17 +136,19 @@ namespace PSPro.View
             // 
             this.emailErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.emailErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.emailErrorLabel.Location = new System.Drawing.Point(573, 351);
+            this.emailErrorLabel.Location = new System.Drawing.Point(860, 548);
+            this.emailErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emailErrorLabel.Name = "emailErrorLabel";
-            this.emailErrorLabel.Size = new System.Drawing.Size(304, 22);
+            this.emailErrorLabel.Size = new System.Drawing.Size(456, 34);
             this.emailErrorLabel.TabIndex = 25;
             // 
             // phoneNumberErrorLabel
             // 
             this.phoneNumberErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.phoneNumberErrorLabel.Location = new System.Drawing.Point(197, 351);
+            this.phoneNumberErrorLabel.Location = new System.Drawing.Point(296, 548);
+            this.phoneNumberErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.phoneNumberErrorLabel.Name = "phoneNumberErrorLabel";
-            this.phoneNumberErrorLabel.Size = new System.Drawing.Size(196, 22);
+            this.phoneNumberErrorLabel.Size = new System.Drawing.Size(294, 34);
             this.phoneNumberErrorLabel.TabIndex = 24;
             this.phoneNumberErrorLabel.Text = "###-###-####";
             // 
@@ -152,9 +156,10 @@ namespace PSPro.View
             // 
             this.zipCodeErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.zipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
-            this.zipCodeErrorLabel.Location = new System.Drawing.Point(689, 275);
+            this.zipCodeErrorLabel.Location = new System.Drawing.Point(1034, 430);
+            this.zipCodeErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.zipCodeErrorLabel.Name = "zipCodeErrorLabel";
-            this.zipCodeErrorLabel.Size = new System.Drawing.Size(202, 25);
+            this.zipCodeErrorLabel.Size = new System.Drawing.Size(303, 39);
             this.zipCodeErrorLabel.TabIndex = 23;
             this.zipCodeErrorLabel.Text = "##### OR #####-####";
             // 
@@ -162,68 +167,72 @@ namespace PSPro.View
             // 
             this.firstNameErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.firstNameErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.firstNameErrorLabel.Location = new System.Drawing.Point(169, 51);
+            this.firstNameErrorLabel.Location = new System.Drawing.Point(254, 80);
+            this.firstNameErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.firstNameErrorLabel.Name = "firstNameErrorLabel";
-            this.firstNameErrorLabel.Size = new System.Drawing.Size(169, 24);
+            this.firstNameErrorLabel.Size = new System.Drawing.Size(254, 38);
             this.firstNameErrorLabel.TabIndex = 22;
             // 
             // CitizenIDLabel
             // 
             this.CitizenIDLabel.AutoSize = true;
             this.CitizenIDLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.CitizenIDLabel.Location = new System.Drawing.Point(692, 43);
+            this.CitizenIDLabel.Location = new System.Drawing.Point(1038, 67);
+            this.CitizenIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CitizenIDLabel.Name = "CitizenIDLabel";
-            this.CitizenIDLabel.Size = new System.Drawing.Size(111, 32);
+            this.CitizenIDLabel.Size = new System.Drawing.Size(173, 51);
             this.CitizenIDLabel.TabIndex = 21;
             this.CitizenIDLabel.Text = "CitizenID";
             // 
             // citizenIDTextBox
             // 
             this.citizenIDTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.citizenIDTextBox.Location = new System.Drawing.Point(689, 77);
-            this.citizenIDTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.citizenIDTextBox.Location = new System.Drawing.Point(1034, 120);
+            this.citizenIDTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.citizenIDTextBox.Name = "citizenIDTextBox";
             this.citizenIDTextBox.ReadOnly = true;
-            this.citizenIDTextBox.Size = new System.Drawing.Size(188, 39);
+            this.citizenIDTextBox.Size = new System.Drawing.Size(280, 57);
             this.citizenIDTextBox.TabIndex = 100;
             this.citizenIDTextBox.TabStop = false;
             // 
             // phoneNumberTextBox
             // 
             this.phoneNumberTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(19, 377);
-            this.phoneNumberTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(28, 589);
+            this.phoneNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.phoneNumberTextBox.MaxLength = 12;
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
-            this.phoneNumberTextBox.Size = new System.Drawing.Size(374, 39);
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(559, 57);
             this.phoneNumberTextBox.TabIndex = 7;
             // 
             // PhoneNumberLabel
             // 
             this.PhoneNumberLabel.AutoSize = true;
             this.PhoneNumberLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.PhoneNumberLabel.Location = new System.Drawing.Point(19, 343);
+            this.PhoneNumberLabel.Location = new System.Drawing.Point(28, 536);
+            this.PhoneNumberLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PhoneNumberLabel.Name = "PhoneNumberLabel";
-            this.PhoneNumberLabel.Size = new System.Drawing.Size(178, 32);
+            this.PhoneNumberLabel.Size = new System.Drawing.Size(277, 51);
             this.PhoneNumberLabel.TabIndex = 19;
             this.PhoneNumberLabel.Text = "Phone Number";
             // 
             // emailTextBox
             // 
             this.emailTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.emailTextBox.Location = new System.Drawing.Point(410, 377);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.emailTextBox.Location = new System.Drawing.Point(615, 589);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(467, 39);
+            this.emailTextBox.Size = new System.Drawing.Size(698, 57);
             this.emailTextBox.TabIndex = 8;
             // 
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.EmailLabel.Location = new System.Drawing.Point(410, 343);
+            this.EmailLabel.Location = new System.Drawing.Point(615, 536);
+            this.EmailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(163, 32);
+            this.EmailLabel.Size = new System.Drawing.Size(255, 51);
             this.EmailLabel.TabIndex = 17;
             this.EmailLabel.Text = "Email Address";
             // 
@@ -232,29 +241,30 @@ namespace PSPro.View
             this.stateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.stateComboBox.FormattingEnabled = true;
             this.stateComboBox.IntegralHeight = false;
-            this.stateComboBox.Location = new System.Drawing.Point(325, 302);
-            this.stateComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stateComboBox.Location = new System.Drawing.Point(488, 472);
+            this.stateComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.stateComboBox.Name = "stateComboBox";
-            this.stateComboBox.Size = new System.Drawing.Size(238, 39);
+            this.stateComboBox.Size = new System.Drawing.Size(355, 58);
             this.stateComboBox.TabIndex = 5;
             // 
             // zipCodeTextBox
             // 
             this.zipCodeTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.zipCodeTextBox.Location = new System.Drawing.Point(569, 302);
-            this.zipCodeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.zipCodeTextBox.Location = new System.Drawing.Point(854, 472);
+            this.zipCodeTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.zipCodeTextBox.MaxLength = 10;
             this.zipCodeTextBox.Name = "zipCodeTextBox";
-            this.zipCodeTextBox.Size = new System.Drawing.Size(308, 39);
+            this.zipCodeTextBox.Size = new System.Drawing.Size(460, 57);
             this.zipCodeTextBox.TabIndex = 6;
             // 
             // ZipCodeLabel
             // 
             this.ZipCodeLabel.AutoSize = true;
             this.ZipCodeLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.ZipCodeLabel.Location = new System.Drawing.Point(575, 268);
+            this.ZipCodeLabel.Location = new System.Drawing.Point(862, 419);
+            this.ZipCodeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ZipCodeLabel.Name = "ZipCodeLabel";
-            this.ZipCodeLabel.Size = new System.Drawing.Size(105, 32);
+            this.ZipCodeLabel.Size = new System.Drawing.Size(163, 51);
             this.ZipCodeLabel.TabIndex = 14;
             this.ZipCodeLabel.Text = "ZipCode";
             // 
@@ -262,95 +272,100 @@ namespace PSPro.View
             // 
             this.StateLabel.AutoSize = true;
             this.StateLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.StateLabel.Location = new System.Drawing.Point(325, 268);
+            this.StateLabel.Location = new System.Drawing.Point(488, 419);
+            this.StateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StateLabel.Name = "StateLabel";
-            this.StateLabel.Size = new System.Drawing.Size(68, 32);
+            this.StateLabel.Size = new System.Drawing.Size(106, 51);
             this.StateLabel.TabIndex = 12;
             this.StateLabel.Text = "State";
             // 
             // cityTextBox
             // 
             this.cityTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.cityTextBox.Location = new System.Drawing.Point(19, 302);
-            this.cityTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cityTextBox.Location = new System.Drawing.Point(28, 472);
+            this.cityTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(300, 39);
+            this.cityTextBox.Size = new System.Drawing.Size(448, 57);
             this.cityTextBox.TabIndex = 4;
             // 
             // CityLabel
             // 
             this.CityLabel.AutoSize = true;
             this.CityLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.CityLabel.Location = new System.Drawing.Point(19, 268);
+            this.CityLabel.Location = new System.Drawing.Point(28, 419);
+            this.CityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CityLabel.Name = "CityLabel";
-            this.CityLabel.Size = new System.Drawing.Size(56, 32);
+            this.CityLabel.Size = new System.Drawing.Size(86, 51);
             this.CityLabel.TabIndex = 10;
             this.CityLabel.Text = "City";
             // 
             // address2TextBox
             // 
             this.address2TextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.address2TextBox.Location = new System.Drawing.Point(19, 227);
-            this.address2TextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.address2TextBox.Location = new System.Drawing.Point(28, 355);
+            this.address2TextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.address2TextBox.Name = "address2TextBox";
-            this.address2TextBox.Size = new System.Drawing.Size(858, 39);
+            this.address2TextBox.Size = new System.Drawing.Size(1285, 57);
             this.address2TextBox.TabIndex = 3;
             // 
             // Address2Label
             // 
             this.Address2Label.AutoSize = true;
             this.Address2Label.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.Address2Label.Location = new System.Drawing.Point(19, 193);
+            this.Address2Label.Location = new System.Drawing.Point(28, 302);
+            this.Address2Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Address2Label.Name = "Address2Label";
-            this.Address2Label.Size = new System.Drawing.Size(119, 32);
+            this.Address2Label.Size = new System.Drawing.Size(186, 51);
             this.Address2Label.TabIndex = 8;
             this.Address2Label.Text = "Address 2";
             // 
             // address1TextBox
             // 
             this.address1TextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.address1TextBox.Location = new System.Drawing.Point(19, 152);
-            this.address1TextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.address1TextBox.Location = new System.Drawing.Point(28, 238);
+            this.address1TextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.address1TextBox.Name = "address1TextBox";
-            this.address1TextBox.Size = new System.Drawing.Size(858, 39);
+            this.address1TextBox.Size = new System.Drawing.Size(1285, 57);
             this.address1TextBox.TabIndex = 2;
             // 
             // Address1Label
             // 
             this.Address1Label.AutoSize = true;
             this.Address1Label.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.Address1Label.Location = new System.Drawing.Point(19, 118);
+            this.Address1Label.Location = new System.Drawing.Point(28, 184);
+            this.Address1Label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Address1Label.Name = "Address1Label";
-            this.Address1Label.Size = new System.Drawing.Size(119, 32);
+            this.Address1Label.Size = new System.Drawing.Size(186, 51);
             this.Address1Label.TabIndex = 5;
             this.Address1Label.Text = "Address 1";
             // 
             // lastNameTextBox
             // 
             this.lastNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.lastNameTextBox.Location = new System.Drawing.Point(351, 77);
-            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lastNameTextBox.Location = new System.Drawing.Point(526, 120);
+            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(321, 39);
+            this.lastNameTextBox.Size = new System.Drawing.Size(480, 57);
             this.lastNameTextBox.TabIndex = 1;
             // 
             // LastNameLabel
             // 
             this.LastNameLabel.AutoSize = true;
             this.LastNameLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.LastNameLabel.Location = new System.Drawing.Point(357, 43);
+            this.LastNameLabel.Location = new System.Drawing.Point(536, 67);
+            this.LastNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(127, 32);
+            this.LastNameLabel.Size = new System.Drawing.Size(198, 51);
             this.LastNameLabel.TabIndex = 3;
             this.LastNameLabel.Text = "Last Name";
             // 
             // SearchCitizenButton
             // 
             this.SearchCitizenButton.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.SearchCitizenButton.Location = new System.Drawing.Point(687, 49);
-            this.SearchCitizenButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchCitizenButton.Location = new System.Drawing.Point(1030, 77);
+            this.SearchCitizenButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SearchCitizenButton.Name = "SearchCitizenButton";
-            this.SearchCitizenButton.Size = new System.Drawing.Size(216, 38);
+            this.SearchCitizenButton.Size = new System.Drawing.Size(324, 59);
             this.SearchCitizenButton.TabIndex = 13;
             this.SearchCitizenButton.Text = "Search for Citizen";
             this.SearchCitizenButton.UseVisualStyleBackColor = true;
@@ -364,10 +379,10 @@ namespace PSPro.View
             this.officerComboBox.DisplayMember = "DisplayName";
             this.officerComboBox.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.officerComboBox.FormattingEnabled = true;
-            this.officerComboBox.Location = new System.Drawing.Point(31, 556);
-            this.officerComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.officerComboBox.Location = new System.Drawing.Point(46, 869);
+            this.officerComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.officerComboBox.Name = "officerComboBox";
-            this.officerComboBox.Size = new System.Drawing.Size(407, 39);
+            this.officerComboBox.Size = new System.Drawing.Size(608, 58);
             this.officerComboBox.TabIndex = 9;
             this.officerComboBox.ValueMember = "PersonnelID";
             // 
@@ -379,9 +394,10 @@ namespace PSPro.View
             // 
             this.OfficerLabel.AutoSize = true;
             this.OfficerLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.OfficerLabel.Location = new System.Drawing.Point(31, 522);
+            this.OfficerLabel.Location = new System.Drawing.Point(46, 816);
+            this.OfficerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OfficerLabel.Name = "OfficerLabel";
-            this.OfficerLabel.Size = new System.Drawing.Size(97, 32);
+            this.OfficerLabel.Size = new System.Drawing.Size(151, 51);
             this.OfficerLabel.TabIndex = 20;
             this.OfficerLabel.Text = "*Officer";
             // 
@@ -399,49 +415,51 @@ namespace PSPro.View
             "Excessive Force",
             "Officer Safety Violation",
             "Other Policy Violation"});
-            this.allegationComboBox.Location = new System.Drawing.Point(466, 556);
-            this.allegationComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.allegationComboBox.Location = new System.Drawing.Point(699, 869);
+            this.allegationComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.allegationComboBox.Name = "allegationComboBox";
-            this.allegationComboBox.Size = new System.Drawing.Size(423, 39);
+            this.allegationComboBox.Size = new System.Drawing.Size(632, 58);
             this.allegationComboBox.TabIndex = 10;
             // 
             // AllegationLabel
             // 
             this.AllegationLabel.AutoSize = true;
             this.AllegationLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.AllegationLabel.Location = new System.Drawing.Point(466, 522);
+            this.AllegationLabel.Location = new System.Drawing.Point(699, 816);
+            this.AllegationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AllegationLabel.Name = "AllegationLabel";
-            this.AllegationLabel.Size = new System.Drawing.Size(133, 32);
+            this.AllegationLabel.Size = new System.Drawing.Size(208, 51);
             this.AllegationLabel.TabIndex = 22;
             this.AllegationLabel.Text = "*Allegation";
             // 
             // complaintSummaryTextBox
             // 
             this.complaintSummaryTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.complaintSummaryTextBox.Location = new System.Drawing.Point(31, 631);
-            this.complaintSummaryTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.complaintSummaryTextBox.Location = new System.Drawing.Point(46, 986);
+            this.complaintSummaryTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.complaintSummaryTextBox.Multiline = true;
             this.complaintSummaryTextBox.Name = "complaintSummaryTextBox";
-            this.complaintSummaryTextBox.Size = new System.Drawing.Size(858, 121);
+            this.complaintSummaryTextBox.Size = new System.Drawing.Size(1285, 187);
             this.complaintSummaryTextBox.TabIndex = 11;
             // 
             // ComplaintSummaryLabel
             // 
             this.ComplaintSummaryLabel.AutoSize = true;
             this.ComplaintSummaryLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.ComplaintSummaryLabel.Location = new System.Drawing.Point(31, 597);
+            this.ComplaintSummaryLabel.Location = new System.Drawing.Point(46, 933);
+            this.ComplaintSummaryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ComplaintSummaryLabel.Name = "ComplaintSummaryLabel";
-            this.ComplaintSummaryLabel.Size = new System.Drawing.Size(243, 32);
+            this.ComplaintSummaryLabel.Size = new System.Drawing.Size(379, 51);
             this.ComplaintSummaryLabel.TabIndex = 21;
             this.ComplaintSummaryLabel.Text = "*Complaint Summary";
             // 
             // SaveButton
             // 
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.SaveButton.Location = new System.Drawing.Point(673, 765);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SaveButton.Location = new System.Drawing.Point(1010, 1195);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(216, 38);
+            this.SaveButton.Size = new System.Drawing.Size(324, 59);
             this.SaveButton.TabIndex = 12;
             this.SaveButton.Text = "Save Complaint";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -451,9 +469,10 @@ namespace PSPro.View
             // 
             this.LogoutLinkLabel.AutoSize = true;
             this.LogoutLinkLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.LogoutLinkLabel.Location = new System.Drawing.Point(820, 7);
+            this.LogoutLinkLabel.Location = new System.Drawing.Point(1230, 11);
+            this.LogoutLinkLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LogoutLinkLabel.Name = "LogoutLinkLabel";
-            this.LogoutLinkLabel.Size = new System.Drawing.Size(90, 32);
+            this.LogoutLinkLabel.Size = new System.Drawing.Size(141, 51);
             this.LogoutLinkLabel.TabIndex = 24;
             this.LogoutLinkLabel.TabStop = true;
             this.LogoutLinkLabel.Text = "Logout";
@@ -463,62 +482,68 @@ namespace PSPro.View
             // 
             this.WelcomeLabel.AutoSize = true;
             this.WelcomeLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.WelcomeLabel.Location = new System.Drawing.Point(31, 16);
+            this.WelcomeLabel.Location = new System.Drawing.Point(46, 25);
+            this.WelcomeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.WelcomeLabel.Name = "WelcomeLabel";
-            this.WelcomeLabel.Size = new System.Drawing.Size(114, 32);
+            this.WelcomeLabel.Size = new System.Drawing.Size(179, 51);
             this.WelcomeLabel.TabIndex = 25;
             this.WelcomeLabel.Text = "Welcome";
             // 
             // SupervisorLabel
             // 
             this.SupervisorLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.SupervisorLabel.Location = new System.Drawing.Point(145, 16);
+            this.SupervisorLabel.Location = new System.Drawing.Point(218, 25);
+            this.SupervisorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SupervisorLabel.Name = "SupervisorLabel";
-            this.SupervisorLabel.Size = new System.Drawing.Size(475, 33);
+            this.SupervisorLabel.Size = new System.Drawing.Size(712, 52);
             this.SupervisorLabel.TabIndex = 26;
             // 
             // officerErrorLabel
             // 
             this.officerErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.officerErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.officerErrorLabel.Location = new System.Drawing.Point(137, 530);
+            this.officerErrorLabel.Location = new System.Drawing.Point(206, 828);
+            this.officerErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.officerErrorLabel.Name = "officerErrorLabel";
-            this.officerErrorLabel.Size = new System.Drawing.Size(301, 22);
+            this.officerErrorLabel.Size = new System.Drawing.Size(452, 34);
             this.officerErrorLabel.TabIndex = 23;
             // 
             // allegationErrorLabel
             // 
             this.allegationErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.allegationErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.allegationErrorLabel.Location = new System.Drawing.Point(610, 530);
+            this.allegationErrorLabel.Location = new System.Drawing.Point(915, 828);
+            this.allegationErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.allegationErrorLabel.Name = "allegationErrorLabel";
-            this.allegationErrorLabel.Size = new System.Drawing.Size(279, 22);
+            this.allegationErrorLabel.Size = new System.Drawing.Size(418, 34);
             this.allegationErrorLabel.TabIndex = 27;
             // 
             // complaintSummaryErrorLabel
             // 
             this.complaintSummaryErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.complaintSummaryErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.complaintSummaryErrorLabel.Location = new System.Drawing.Point(289, 605);
+            this.complaintSummaryErrorLabel.Location = new System.Drawing.Point(434, 945);
+            this.complaintSummaryErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.complaintSummaryErrorLabel.Name = "complaintSummaryErrorLabel";
-            this.complaintSummaryErrorLabel.Size = new System.Drawing.Size(588, 24);
+            this.complaintSummaryErrorLabel.Size = new System.Drawing.Size(882, 38);
             this.complaintSummaryErrorLabel.TabIndex = 28;
             // 
             // RequiredFieldLabel
             // 
             this.RequiredFieldLabel.AutoSize = true;
             this.RequiredFieldLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RequiredFieldLabel.Location = new System.Drawing.Point(31, 765);
+            this.RequiredFieldLabel.Location = new System.Drawing.Point(46, 1195);
+            this.RequiredFieldLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.RequiredFieldLabel.Name = "RequiredFieldLabel";
-            this.RequiredFieldLabel.Size = new System.Drawing.Size(188, 32);
+            this.RequiredFieldLabel.Size = new System.Drawing.Size(286, 50);
             this.RequiredFieldLabel.TabIndex = 29;
             this.RequiredFieldLabel.Text = "*Required Fields";
             // 
             // NewComplaintForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 814);
+            this.ClientSize = new System.Drawing.Size(1382, 1272);
             this.Controls.Add(this.RequiredFieldLabel);
             this.Controls.Add(this.complaintSummaryErrorLabel);
             this.Controls.Add(this.allegationErrorLabel);
@@ -536,7 +561,8 @@ namespace PSPro.View
             this.Controls.Add(this.CitizenInfoGroupBox);
             this.Controls.Add(this.SearchCitizenButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewComplaintForm";
