@@ -20,11 +20,6 @@ namespace PSPro.Controller
             this.supervisorSource = supervisorDAL;
         }
 
-        public List<OfficerComboBox> GetOfficersForComboBox()
-        {
-            return this.supervisorSource.GetOfficersForComboBox();
-        }
-
         public void AddCitizenAndComplaint(Citizen citizen, Complaint complaint)
         {
             this.supervisorSource.AddCitizenAndComplaint(citizen, complaint);

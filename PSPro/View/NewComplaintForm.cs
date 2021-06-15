@@ -18,7 +18,8 @@ namespace PSPro.View
         private readonly Form loginForm;
         private readonly LoginController loginController;
         private readonly SupervisorController supervisorController;
-             private readonly User loggedInUser;
+        private readonly OfficerController officerController;
+        private readonly User loggedInUser;
         private Complaint complaint;
         private Citizen citizen;
         private Citizen updatedCitizen;
@@ -29,6 +30,7 @@ namespace PSPro.View
             this.loginForm = loginForm;
             this.loginController = new LoginController();
             this.supervisorController = new SupervisorController();
+            this.officerController = new OfficerController();
             this.complaint = new Complaint();
             this.citizen = new Citizen();
             this.updatedCitizen = new Citizen();
@@ -72,7 +74,7 @@ namespace PSPro.View
         {         
             try
             {
-                List<OfficerComboBox> officers = this.supervisorController.GetOfficersForComboBox();      
+                List<OfficerComboBox> officers = this.officerController.GetOfficersForComboBox();      
                 this.officerComboBox.DataSource = officers;
             }
             catch (Exception exception)

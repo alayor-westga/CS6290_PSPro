@@ -60,8 +60,8 @@ AS
 SET NOCOUNT ON;
 
     SELECT p.last_name, p.first_name, p.personnel_id
-	FROM Officers o, Personnel p
-	WHERE o.personnel_id = p.personnel_id
+	FROM Personnel p
+		INNER JOIN Officers o ON (o.personnel_id = p.personnel_id)
 	ORDER BY p.last_name;
 GO
 GRANT EXECUTE ON
