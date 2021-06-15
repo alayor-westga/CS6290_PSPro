@@ -124,7 +124,7 @@ namespace PSPro.View
                     this.supervisorController.AddComplaint(this.complaint);
                     this.ClearForm();
                     MessageBox.Show("Complaint Successfully\nAdded to Database.",
-                        "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception exception)
                 {
