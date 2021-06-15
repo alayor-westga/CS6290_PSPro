@@ -43,18 +43,46 @@ namespace PSPro.View
             if (this.FirstAndLastNameRadioButton.Checked)
             {
                 if (!this.ValidateFirstName()) return;
-                this.citizens = this.citizenController.SearchByName(this.firstNameTextBox.Text, this.lastNameTextBox.Text);
+                try
+                {
+                    this.citizens = this.citizenController.SearchByName(this.firstNameTextBox.Text, this.lastNameTextBox.Text);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message,
+                            "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }               
             }
+
             if (this.PhoneRadioButton.Checked)
             {
                 if (!this.ValidatePhone()) return;
-                this.citizens = this.citizenController.SearchByPhone(this.phoneTextBox.Text);
+                try
+                {
+                    this.citizens = this.citizenController.SearchByPhone(this.phoneTextBox.Text);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message,
+                            "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
             if (this.EmailRadioButton.Checked)
             {
                 if (!this.ValidateEmail()) return;
-                this.citizens = this.citizenController.SearchByEmail(this.emailTextBox.Text);
+                try
+                {
+                    this.citizens = this.citizenController.SearchByEmail(this.emailTextBox.Text);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message,
+                            "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
+            this.citizenResultDataGridView.DataSource = this.citizens;
         }
 
         private bool ValidateEmail()

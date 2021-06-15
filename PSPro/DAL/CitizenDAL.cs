@@ -39,7 +39,7 @@ namespace PSPro.DAL
                 using (SqlCommand command = new SqlCommand(storedProcedure, connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@phone", email);
+                    command.Parameters.AddWithValue("@email", email);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         return this.BuildCitizenViewList(reader);
@@ -73,7 +73,7 @@ namespace PSPro.DAL
             {
                 Citizen citizenView = new Citizen();
                 {
-                    citizenView.CitizenID = int.Parse(reader["complaint_id"].ToString());
+                    citizenView.CitizenID = int.Parse(reader["citizen_id"].ToString());
                     citizenView.FirstName = reader["first_name"].ToString();
                     citizenView.LastName = reader["last_name"].ToString();
                     citizenView.Address1 = reader["address1"].ToString();

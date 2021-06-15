@@ -96,6 +96,9 @@ namespace PSPro.View
                 try
                 {
                     this.supervisorController.AddCitizenAndComplaint(this.citizen, this.complaint);
+                    this.ClearForm();
+                    MessageBox.Show("Complaint Successfully\nAdded to Database.",
+                        "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception exception)
                 {
