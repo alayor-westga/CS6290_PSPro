@@ -1,4 +1,6 @@
 ﻿using FlaUI.Core.AutomationElements;
+using FlaUI.Core.Input;
+using FlaUI.Core.WindowsAPI;
 using System.Threading;
 
 namespace E2ETests.Windows
@@ -104,6 +106,7 @@ namespace E2ETests.Windows
                 .AsButton()
                 .Click();
             Thread.Sleep(2000);
+            Keyboard.Press(VirtualKeyShort.ENTER);
         }
 
         public void ClickSearchCitizen()
