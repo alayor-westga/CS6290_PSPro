@@ -81,7 +81,6 @@ namespace PSPro.View
                             "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
             this.citizenResultDataGridView.DataSource = this.citizens;
         }
 
@@ -168,7 +167,7 @@ namespace PSPro.View
             this.phoneFormatLabel.ForeColor = System.Drawing.Color.Black;
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void CancelActionButton_Click(object sender, EventArgs e)
         {
             this.newComplaintForm.Show();
             this.Hide();

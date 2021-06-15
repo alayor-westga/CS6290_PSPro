@@ -37,7 +37,7 @@ namespace PSPro.View
             this.firstNameErrorLabel = new System.Windows.Forms.Label();
             this.phoneErrorLabel = new System.Windows.Forms.Label();
             this.emailErrorLabel = new System.Windows.Forms.Label();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.CancelActionButton = new System.Windows.Forms.Button();
             this.SearchButton = new System.Windows.Forms.Button();
             this.phoneLabel = new System.Windows.Forms.Label();
             this.phoneTextBox = new System.Windows.Forms.TextBox();
@@ -70,7 +70,7 @@ namespace PSPro.View
             this.searchGroupBox.Controls.Add(this.firstNameErrorLabel);
             this.searchGroupBox.Controls.Add(this.phoneErrorLabel);
             this.searchGroupBox.Controls.Add(this.emailErrorLabel);
-            this.searchGroupBox.Controls.Add(this.CancelButton);
+            this.searchGroupBox.Controls.Add(this.CancelActionButton);
             this.searchGroupBox.Controls.Add(this.SearchButton);
             this.searchGroupBox.Controls.Add(this.phoneLabel);
             this.searchGroupBox.Controls.Add(this.phoneTextBox);
@@ -128,15 +128,15 @@ namespace PSPro.View
             this.emailErrorLabel.Size = new System.Drawing.Size(276, 24);
             this.emailErrorLabel.TabIndex = 13;
             // 
-            // CancelButton
+            // CancelActionButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(624, 196);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(276, 34);
-            this.CancelButton.TabIndex = 12;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.CancelActionButton.Location = new System.Drawing.Point(624, 196);
+            this.CancelActionButton.Name = "CancelActionButton";
+            this.CancelActionButton.Size = new System.Drawing.Size(276, 34);
+            this.CancelActionButton.TabIndex = 12;
+            this.CancelActionButton.Text = "Cancel";
+            this.CancelActionButton.UseVisualStyleBackColor = true;
+            this.CancelActionButton.Click += new System.EventHandler(this.CancelActionButton_Click);
             // 
             // SearchButton
             // 
@@ -291,6 +291,7 @@ namespace PSPro.View
             this.citizenResultDataGridView.Size = new System.Drawing.Size(924, 237);
             this.citizenResultDataGridView.TabIndex = 1;
             this.citizenResultDataGridView.TabStop = false;
+            this.citizenResultDataGridView.DoubleClick += new System.EventHandler(this.SelectCitizenButton_Click);
             // 
             // SelectCitizenButton
             // 
@@ -403,7 +404,7 @@ namespace PSPro.View
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource citizenBindingSource;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button CancelActionButton;
         private System.Windows.Forms.Button SelectCitizenButton;
         private System.Windows.Forms.Label searchResultsLabel;
         private System.Windows.Forms.Label emailErrorLabel;

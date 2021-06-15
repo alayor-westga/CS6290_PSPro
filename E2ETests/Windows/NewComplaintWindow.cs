@@ -106,6 +106,15 @@ namespace E2ETests.Windows
             Thread.Sleep(2000);
         }
 
+        public void ClickSearchCitizen()
+        {
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("SearchCitizenButton"))
+                .AsButton()
+                .Click();
+            Thread.Sleep(2000);
+        }
+
         public void ClickOnLogout()
         {
             context.GetWindow()
