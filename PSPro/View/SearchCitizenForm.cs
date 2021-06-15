@@ -19,6 +19,7 @@ namespace PSPro.View
         NewComplaintForm newComplaintForm;
         CitizenController citizenController;
         List<Citizen> citizens;
+        Citizen existingCitizen = new Citizen();
 
         public SearchCitizenForm(NewComplaintForm newComplaintForm)
         {
@@ -38,8 +39,7 @@ namespace PSPro.View
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
-        {
-            
+        {         
             if (this.FirstAndLastNameRadioButton.Checked)
             {
                 if (!this.ValidateFirstName()) return;
@@ -182,10 +182,8 @@ namespace PSPro.View
 
         private void SelectCitizenButton_Click(object sender, EventArgs e)
         {
-            Citizen existingCitizen = new Citizen();
-            SupervisorController controller = new SupervisorController();
-            existingCitizen = controller.GetCitizen(5059);
 
+            this.existingCitizen = (Citizen)this.citizenResultDataGridView.CurrentRow.DataBoundItem;
             this.newComplaintForm.Show();
             this.newComplaintForm.PopulateCitizenFieldsWithExistingCitizenInformation(existingCitizen);
             this.Hide();
@@ -207,5 +205,7 @@ namespace PSPro.View
                 return false;
             }
         }
+
+
     }
 }

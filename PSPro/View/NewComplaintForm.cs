@@ -143,7 +143,14 @@ namespace PSPro.View
             this.updatedCitizen.Address1 = this.address1TextBox.Text;
             this.updatedCitizen.Address2 = this.address2TextBox.Text;
             this.updatedCitizen.City = this.cityTextBox.Text;
-            this.updatedCitizen.State = this.stateComboBox.SelectedValue.ToString();
+            if (this.stateComboBox.SelectedIndex == 0)
+            {
+                this.updatedCitizen.State = "";
+            }
+            else
+            {
+                this.updatedCitizen.State = stateComboBox.SelectedValue.ToString();
+            }
             this.updatedCitizen.ZipCode = this.zipCodeTextBox.Text;
             this.updatedCitizen.Phone = this.phoneNumberTextBox.Text;
             this.updatedCitizen.Email = this.emailTextBox.Text;
@@ -192,16 +199,11 @@ namespace PSPro.View
 
         private void GetCitizenFromDB()
         {
-            this.citizen = this.supervisorController.GetCitizen(this.citizen.CitizenID);
-            //this.citizen = this.supervisorController.GetCitizen(this.CitizenIDTextBox.Text);
+            this.citizen = this.supervisorController.GetCitizen(this.citizen.CitizenID);           
         }
 
         private bool CheckForChangesMadeToCitizenFields()
-        {
-            //Console.WriteLine(this.citizen.LastName.Equals(this.lastNameTextBox.Text));
-       
-            Console.WriteLine("object: " + this.citizen.State);
-            Console.WriteLine("box: " + this.stateComboBox.Text);
+        {      
             if (this.citizen.FirstName == this.firstNameTextBox.Text &&
                 this.citizen.LastName == this.lastNameTextBox.Text &&
                 this.citizen.Address1 == this.address1TextBox.Text &&
@@ -256,7 +258,14 @@ namespace PSPro.View
             this.citizen.Address1 = address1TextBox.Text;
             this.citizen.Address2 = address2TextBox.Text;
             this.citizen.City = cityTextBox.Text;
-            this.citizen.State = stateComboBox.SelectedValue.ToString();
+            if (this.stateComboBox.SelectedIndex == 0)
+            {
+                this.citizen.State = "";
+            }
+            else
+            {
+                this.citizen.State = stateComboBox.SelectedValue.ToString();
+            }          
             this.citizen.ZipCode = zipCodeTextBox.Text;
             this.citizen.Phone = phoneNumberTextBox.Text;
             this.citizen.Email = emailTextBox.Text;
