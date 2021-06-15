@@ -37,6 +37,9 @@ namespace PSPro.View
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.errorMessageLabel = new System.Windows.Forms.Label();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.versionLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginButton
@@ -109,11 +112,29 @@ namespace PSPro.View
             this.errorMessageLabel.Size = new System.Drawing.Size(0, 31);
             this.errorMessageLabel.TabIndex = 6;
             // 
+            // statusStrip
+            // 
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.versionLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 352);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(638, 42);
+            this.statusStrip.TabIndex = 7;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // versionLabel
+            // 
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(117, 32);
+            this.versionLabel.Text = "Iteration1";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 366);
+            this.ClientSize = new System.Drawing.Size(638, 394);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.errorMessageLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.passwordTextBox);
@@ -130,6 +151,8 @@ namespace PSPro.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,5 +167,7 @@ namespace PSPro.View
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label errorMessageLabel;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel versionLabel;
     }
 }
