@@ -27,7 +27,8 @@ namespace PSPro.View
             this.DisableAllSearchBoxes();
             this.newComplaintForm = newComplaintForm;
             this.citizenController = new CitizenController();
-            this.citizens = new List<Citizen>(); 
+            this.citizens = new List<Citizen>();
+            this.SelectCitizenButton.Enabled = false;
         }
 
         private void DisableAllSearchBoxes()
@@ -82,6 +83,14 @@ namespace PSPro.View
                 }
             }
             this.citizenResultDataGridView.DataSource = this.citizens;
+            if (this.citizens.Count > 0)
+            {
+                this.SelectCitizenButton.Enabled = true;
+            } 
+            else
+            {
+                this.SelectCitizenButton.Enabled = false;
+            }
         }
 
         private bool ValidateEmail()
