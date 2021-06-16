@@ -131,6 +131,56 @@ namespace E2ETests.Steps
             return complaint;
         }
 
+        [Then(@"the citizen should be saved with this content")]
+        public void ThenTheCitizenShouldBeSavedWithThisContent(Table table)
+        {
+            var expectedcitizen = table.Rows[0];
+            Dictionary<string, string> complaint = GetCitizen();
+            Assert.AreEqual(expectedcitizen[0], complaint.GetValueOrDefault("first_name"));
+            Assert.AreEqual(expectedcitizen[1], complaint.GetValueOrDefault("last_name"));
+            Assert.AreEqual(expectedcitizen[2], complaint.GetValueOrDefault("address1"));
+            Assert.AreEqual(expectedcitizen[3], complaint.GetValueOrDefault("address2"));
+            Assert.AreEqual(expectedcitizen[4], complaint.GetValueOrDefault("city"));
+            Assert.AreEqual(expectedcitizen[5], complaint.GetValueOrDefault("state"));
+            Assert.AreEqual(expectedcitizen[6], complaint.GetValueOrDefault("zipcode"));
+            Assert.AreEqual(expectedcitizen[7], complaint.GetValueOrDefault("phone"));
+            Assert.AreEqual(expectedcitizen[8], complaint.GetValueOrDefault("email"));
+        }
+
+        private Dictionary<string, string> GetCitizen()
+        {
+            Dictionary<string, string> citizen = new Dictionary<string, string>();
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                var query = "" +
+                " SELECT " +
+                "citizen_id, first_name, last_name, address1, address2, city, state, zipcode, phone, email " +
+                "FROM Citizens;";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            citizen.Add("first_name", reader["first_name"].ToString());
+                            citizen.Add("last_name", reader["last_name"].ToString());
+                            citizen.Add("address1", reader["address1"].ToString());
+                            citizen.Add("address2", reader["address2"].ToString());
+                            citizen.Add("address2", reader["address2"].ToString());
+                            citizen.Add("city", reader["city"].ToString());
+                            citizen.Add("state", reader["state"].ToString());
+                            citizen.Add("zipcode", reader["zipcode"].ToString());
+                            citizen.Add("email", reader["email"].ToString());
+                            citizen.Add("phone", reader["phone"].ToString());
+                        }
+                    }
+                }
+            }
+            return citizen;
+        }
+
         [Given(@"a complaint with this info is created")]
         public void GivenAComplaintWithThisInfoIsCreated(Table table)
         {
