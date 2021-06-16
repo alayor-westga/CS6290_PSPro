@@ -24,6 +24,8 @@ Scenario: Add new complaint successfully
     And the complaint summary is "Complaint summary example"
     When click on save
     Then the complaint should be saved with this content
-    Then the citizen should be saved with this content
     |supervisor_name|citizen_name|officer_name|allegation_type|complaint_notes|
     |Super Visor|Citi Zen|Offi Cer|Ethics Violation|Complaint summary example|
+    And the citizen should be saved with this content
+    |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|
+    |Citi|Zen|123 Main St.||San Jose|CA|89900|555-555-5555|citizen@example.com|

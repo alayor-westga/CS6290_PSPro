@@ -168,7 +168,6 @@ namespace E2ETests.Steps
                             citizen.Add("last_name", reader["last_name"].ToString());
                             citizen.Add("address1", reader["address1"].ToString());
                             citizen.Add("address2", reader["address2"].ToString());
-                            citizen.Add("address2", reader["address2"].ToString());
                             citizen.Add("city", reader["city"].ToString());
                             citizen.Add("state", reader["state"].ToString());
                             citizen.Add("zipcode", reader["zipcode"].ToString());

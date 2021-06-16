@@ -77,7 +77,7 @@ namespace E2ETests.Features
         {
 #line 4
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "type",
                         "username",
                         "password",
@@ -87,7 +87,7 @@ namespace E2ETests.Features
                         "hiredate",
                         "birthdate",
                         "assignment"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "supervisor",
                         "s-001",
                         "4567",
@@ -97,7 +97,7 @@ namespace E2ETests.Features
                         "2000-01-01",
                         "1970-01-01",
                         "assigment1"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "administrator",
                         "a-001",
                         "4567",
@@ -107,7 +107,7 @@ namespace E2ETests.Features
                         "2000-01-01",
                         "1970-01-01",
                         "assigment1"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "officer",
                         "",
                         "",
@@ -118,12 +118,12 @@ namespace E2ETests.Features
                         "1990-01-01",
                         "assigment2"});
 #line 5
-    testRunner.Given("personnel exists on the DB with this info", ((string)(null)), table5, "Given ");
+    testRunner.Given("personnel exists on the DB with this info", ((string)(null)), table6, "Given ");
 #line hidden
 #line 10
     testRunner.And("supervisor \"s-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "first_name",
                         "last_name",
                         "address1",
@@ -136,7 +136,7 @@ namespace E2ETests.Features
                         "officer",
                         "allegation",
                         "summary"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Citi",
                         "Zen",
                         "123 Main St.",
@@ -150,7 +150,7 @@ namespace E2ETests.Features
                         "Officer Safety Violation",
                         "Complaint summary"});
 #line 11
- testRunner.And("a complaint with this info is created", ((string)(null)), table6, "And ");
+ testRunner.And("a complaint with this info is created", ((string)(null)), table7, "And ");
 #line hidden
 #line 14
  testRunner.And("the user logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -190,14 +190,14 @@ this.FeatureBackground();
 #line 18
  testRunner.When("administrator \"a-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "officer",
                             "citizen"});
-                table7.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "Offi Cer",
                             "Citi Zen"});
 #line 19
- testRunner.Then("administrator should see a complaint with this info", ((string)(null)), table7, "Then ");
+ testRunner.Then("administrator should see a complaint with this info", ((string)(null)), table8, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -229,9 +229,6 @@ this.FeatureBackground();
 #line 25
     testRunner.When("click on save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 26
-    testRunner.Then("the complaint should be saved with this content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
                 TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "supervisor_name",
                             "citizen_name",
@@ -244,8 +241,31 @@ this.FeatureBackground();
                             "Offi Cer",
                             "Ethics Violation",
                             "Complaint summary example"});
-#line 27
-    testRunner.Then("the citizen should be saved with this content", ((string)(null)), table3, "Then ");
+#line 26
+    testRunner.Then("the complaint should be saved with this content", ((string)(null)), table3, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "first_name",
+                            "last_name",
+                            "address1",
+                            "address2",
+                            "city",
+                            "state",
+                            "zip_code",
+                            "phone_number",
+                            "email_address"});
+                table4.AddRow(new string[] {
+                            "Citi",
+                            "Zen",
+                            "123 Main St.",
+                            "",
+                            "San Jose",
+                            "CA",
+                            "89900",
+                            "555-555-5555",
+                            "citizen@example.com"});
+#line 29
+    testRunner.And("the citizen should be saved with this content", ((string)(null)), table4, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
