@@ -39,11 +39,21 @@ namespace PSPro.Controller
             this.administratorDAL = administratorDAL;
         }
 
+        /// <summary>
+        /// Gets current logged in user
+        /// </summary>
+        /// <returns>returns logged in user</returns>
         public static User GetUser()
         {
             return LoginController.user;
         }
 
+        /// <summary>
+        /// Assigns roles based on login credentials and returns user information
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns>returns a User object of the current logged in user</returns>
         public User Login(string username, string password)
         {
             Personnel personnel = null;
