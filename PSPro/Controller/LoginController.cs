@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using PSPro.DAL;
+﻿using PSPro.DAL;
 using PSPro.Model;
 
 namespace PSPro.Controller

@@ -18,6 +18,10 @@ namespace PSPro.Controller
             this.officerSource = officerDAL;
         }
 
+        /// <summary>
+        /// returns a list of all the officers that will be used to populate the combo box on the NewComplaintForm
+        /// </summary>
+        /// <returns>a List of all officers</returns>
         public List<OfficerComboBox> GetOfficersForComboBox()
         {
             return this.officerSource.GetOfficersForComboBox();
