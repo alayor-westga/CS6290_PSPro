@@ -31,8 +31,8 @@ namespace UnitTests
         [TestMethod]
         public void TestGetActiveComplaintsByOfficerId()
         {
-            complaintController.GetActiveComplaintsByOfficerId(1);
-            complaintDAL.Verify(v => v.GetActiveComplaintsByOfficerId(1));
+            complaintController.GetActiveComplaintsByOfficer(1);
+            complaintDAL.Verify(v => v.GetActiveComplaintsByOfficer(1));
         }
     }
 }

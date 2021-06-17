@@ -10,7 +10,7 @@ namespace UnitTests
     [TestClass]
     public class OfficerControllerTest
     {
-        private readonly OfficerController supervisorController;
+        private readonly OfficerController officerController;
         private readonly Mock<OfficerDAL> officerDAL;
         public OfficerControllerTest() {
             officerDAL = new Mock<OfficerDAL>();

@@ -62,7 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComplaintControllerTest.cs" />
     <Compile Include="LoginControllerTest.cs" />
+    <Compile Include="OfficerControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupervisorControllerTest.cs" />
   </ItemGroup>
