@@ -9,8 +9,17 @@ using System.Threading.Tasks;
 
 namespace PSPro.DAL
 {
+    /// <summary>
+    /// Citizen object DAL
+    /// </summary>
     class CitizenDAL
     {
+        /// <summary>
+        /// Searches for Citizen by first and/or last name and returns a list of matching Citizens
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <returns>List of Citizen objects matching search criteria</returns>
         public List<Citizen> SearchByName(string firstName, string lastName)
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
@@ -30,6 +39,11 @@ namespace PSPro.DAL
             }
         }
 
+        /// <summary>
+        /// Searches for Citizen by email and returns a list of matching Citizens
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns>List of Citizen objects matching search criteria</returns>
         public List<Citizen> SearchByEmail(string email)
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
@@ -48,6 +62,11 @@ namespace PSPro.DAL
             }
         }
 
+        /// <summary>
+        /// Searches for Citizen by phone and returns a list of matching Citizens
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns>List of Citizen objects matching search criteria</returns>
         public List<Citizen> SearchByPhone(string phone)
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
