@@ -85,6 +85,130 @@ namespace PSPro.DAL
             }
         }
 
+
+        public bool UpdateCitizen(Citizen citizen, Citizen updatedCitizen)
+        {
+            if (citizen == null)
+            {
+                throw new ArgumentNullException("citizen");
+            }
+            if (updatedCitizen == null)
+            {
+                throw new ArgumentNullException("updatedCitizen");
+            }
+            string storedProcedure = "UpdateCitizen";
+
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand updateCommand = new SqlCommand(storedProcedure, connection))
+                {
+                    updateCommand.CommandType = CommandType.StoredProcedure;
+                    updateCommand.Parameters.AddWithValue("@UpdatedFirstName", updatedCitizen.FirstName);
+                    updateCommand.Parameters.AddWithValue("@UpdatedLastName", updatedCitizen.LastName);
+                    updateCommand.Parameters.AddWithValue("@UpdatedAddress1", updatedCitizen.Address1);
+                    if (updatedCitizen.Address2 == "")
+                    {
+                        updateCommand.Parameters.AddWithValue("@UpdatedAddress2", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@UpdatedAddress2", updatedCitizen.Address2);
+                    }
+                    updateCommand.Parameters.AddWithValue("@UpdatedCity", updatedCitizen.City);
+                    updateCommand.Parameters.AddWithValue("@UpdatedState", updatedCitizen.State);
+                    updateCommand.Parameters.AddWithValue("@UpdatedZipcode", updatedCitizen.ZipCode);
+                    updateCommand.Parameters.AddWithValue("@UpdatedPhone", updatedCitizen.Phone);
+                    if (updatedCitizen.Email == "")
+                    {
+                        updateCommand.Parameters.AddWithValue("@UpdatedEmail", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@UpdatedEmail", updatedCitizen.Email);
+                    }
+
+                    updateCommand.Parameters.AddWithValue("@CitizenID", citizen.CitizenID);
+                    updateCommand.Parameters.AddWithValue("@FirstName", citizen.FirstName);
+                    updateCommand.Parameters.AddWithValue("@LastName", citizen.LastName);
+                    updateCommand.Parameters.AddWithValue("@Address1", citizen.Address1);
+                    if (citizen.Address2 == "")
+                    {
+                        updateCommand.Parameters.AddWithValue("@Address2", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@Address2", citizen.Address2);
+                    }
+                    updateCommand.Parameters.AddWithValue("@City", citizen.City);
+                    updateCommand.Parameters.AddWithValue("@State", citizen.State);
+                    updateCommand.Parameters.AddWithValue("@Zipcode", citizen.ZipCode);
+                    updateCommand.Parameters.AddWithValue("@Phone", citizen.Phone);
+                    if (citizen.Email == "")
+                    {
+                        updateCommand.Parameters.AddWithValue("@Email", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@Email", citizen.Email);
+                    }
+
+                    SqlParameter returnValue = new SqlParameter("@RowCnt", SqlDbType.Int);
+                    returnValue.Direction = ParameterDirection.Output;
+                    updateCommand.Parameters.Add(returnValue);
+                    updateCommand.ExecuteNonQuery();
+                    int numberOfRowsAffected = (int)updateCommand.Parameters["@RowCnt"].Value;
+                    if (numberOfRowsAffected > 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
+
+        public Citizen GetCitizen(int citizenID)
+        {
+            if (citizenID < 0)
+            {
+                throw new ArgumentException("patientID must not be negative");
+            }
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "GetCitizen";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@citizen_id", citizenID);
+                    using (SqlDataReader reader = command.ExecuteReader(CommandBehavior.SingleRow))
+                    {
+                        if (reader.Read())
+                        {
+                            Citizen citizen = new Citizen()
+                            {
+                                CitizenID = (int)reader["citizen_id"],
+                                FirstName = reader["first_name"].ToString(),
+                                LastName = reader["last_name"].ToString(),
+                                Address1 = reader["address1"].ToString(),
+                                Address2 = reader["address2"].ToString(),
+                                City = reader["city"].ToString(),
+                                State = reader["state"].ToString(),
+                                ZipCode = reader["zipcode"].ToString(),
+                                Phone = reader["phone"].ToString(),
+                                Email = reader["email"].ToString(),
+                            };
+                            return citizen;
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
+        }
+
         private List<Citizen> BuildCitizenViewList(SqlDataReader reader)
         {
             List<Citizen> citizenViewList = new List<Citizen>();
