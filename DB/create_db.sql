@@ -1,4 +1,4 @@
-/****** Object:  Table [dbo].[Administrators]    Script Date: 6/18/2021 9:38:53 AM ******/
+/****** Object:  Table [dbo].[Administrators]    Script Date: 6/18/2021 10:15:42 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11,7 +11,6 @@ DROP TABLE [dbo].[Supervisors]
 DROP TABLE [dbo].[Officers] 
 DROP TABLE [dbo].[Administrators] 
 DROP TABLE [dbo].[Personnel] 
-
 
 CREATE TABLE [dbo].[Administrators](
 	[personnel_id] [int] NOT NULL,
@@ -27,7 +26,7 @@ CREATE TABLE [dbo].[Administrators](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Citizens]    Script Date: 6/18/2021 9:38:53 AM ******/
+/****** Object:  Table [dbo].[Citizens]    Script Date: 6/18/2021 10:15:42 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -35,21 +34,25 @@ GO
 CREATE TABLE [dbo].[Citizens](
 	[citizen_id] [int] IDENTITY(5000,1) NOT NULL,
 	[first_name] [varchar](45) NOT NULL,
-	[last_name] [varchar](45) NULL,
-	[address1] [varchar](45) NULL,
+	[last_name] [varchar](45) NOT NULL,
+	[address1] [varchar](45) NOT NULL,
 	[address2] [varchar](45) NULL,
-	[city] [varchar](45) NULL,
-	[state] [char](2) NULL,
-	[zipcode] [varchar](10) NULL,
-	[phone] [varchar](12) NULL,
+	[city] [varchar](45) NOT NULL,
+	[state] [char](2) NOT NULL,
+	[zipcode] [varchar](10) NOT NULL,
+	[phone] [varchar](12) NOT NULL,
 	[email] [varchar](45) NULL,
  CONSTRAINT [PK_Citizens] PRIMARY KEY CLUSTERED 
 (
 	[citizen_id] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UQ_Citizens_phone] UNIQUE NONCLUSTERED 
+(
+	[phone] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Complaints]    Script Date: 6/18/2021 9:38:53 AM ******/
+/****** Object:  Table [dbo].[Complaints]    Script Date: 6/18/2021 10:15:42 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -73,7 +76,7 @@ CREATE TABLE [dbo].[Complaints](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Investigators]    Script Date: 6/18/2021 9:38:53 AM ******/
+/****** Object:  Table [dbo].[Investigators]    Script Date: 6/18/2021 10:15:42 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -92,7 +95,7 @@ CREATE TABLE [dbo].[Investigators](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Officers]    Script Date: 6/18/2021 9:38:53 AM ******/
+/****** Object:  Table [dbo].[Officers]    Script Date: 6/18/2021 10:15:42 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -105,7 +108,7 @@ CREATE TABLE [dbo].[Officers](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Personnel]    Script Date: 6/18/2021 9:38:53 AM ******/
+/****** Object:  Table [dbo].[Personnel]    Script Date: 6/18/2021 10:15:42 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -124,7 +127,7 @@ CREATE TABLE [dbo].[Personnel](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Supervisors]    Script Date: 6/18/2021 9:38:53 AM ******/
+/****** Object:  Table [dbo].[Supervisors]    Script Date: 6/18/2021 10:15:42 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -143,7 +146,7 @@ CREATE TABLE [dbo].[Supervisors](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[sysdiagrams]    Script Date: 6/18/2021 9:38:53 AM ******/
+/****** Object:  Table [dbo].[sysdiagrams]    Script Date: 6/18/2021 10:15:42 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -212,3 +215,4 @@ ALTER TABLE [dbo].[Supervisors] CHECK CONSTRAINT [FK_Supervisors_Personnel]
 GO
 EXEC sys.sp_addextendedproperty @name=N'microsoft_database_tools_support', @value=1 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'sysdiagrams'
 GO
+
