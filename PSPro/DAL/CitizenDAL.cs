@@ -85,7 +85,6 @@ namespace PSPro.DAL
             }
         }
 
-
         public bool UpdateCitizen(Citizen citizen, Citizen updatedCitizen)
         {
             if (citizen == null)

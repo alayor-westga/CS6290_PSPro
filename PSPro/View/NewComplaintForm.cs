@@ -19,6 +19,7 @@ namespace PSPro.View
         private readonly LoginController loginController;
         private readonly SupervisorController supervisorController;
         private readonly OfficerController officerController;
+        private readonly CitizenController citizenControler;
         private readonly User loggedInUser;
         private Complaint complaint;
         private Citizen citizen;
@@ -31,6 +32,7 @@ namespace PSPro.View
             this.loginController = new LoginController();
             this.supervisorController = new SupervisorController();
             this.officerController = new OfficerController();
+            this.citizenControler = new CitizenController();
             this.complaint = new Complaint();
             this.citizen = new Citizen();
             this.updatedCitizen = new Citizen();
@@ -159,7 +161,7 @@ namespace PSPro.View
 
             try
             {               
-                if (this.supervisorController.UpdateCitizen(this.citizen, updatedCitizen))
+                if (this.citizenControler.UpdateCitizen(this.citizen, updatedCitizen))
                 {
                     return true;
                 }
@@ -201,7 +203,7 @@ namespace PSPro.View
 
         private void GetCitizenFromDB()
         {
-            this.citizen = this.supervisorController.GetCitizen(this.citizen.CitizenID);           
+            this.citizen = this.citizenControler.GetCitizen(this.citizen.CitizenID);           
         }
 
         private bool CheckForChangesMadeToCitizenFields()
