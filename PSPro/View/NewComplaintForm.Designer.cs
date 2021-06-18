@@ -34,6 +34,10 @@ namespace PSPro.View
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.CitizenInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.stateErrorLabel = new System.Windows.Forms.Label();
+            this.cityErrorLabel = new System.Windows.Forms.Label();
+            this.address1ErrorLabel = new System.Windows.Forms.Label();
+            this.lastNameErrorLabel = new System.Windows.Forms.Label();
             this.emailErrorLabel = new System.Windows.Forms.Label();
             this.phoneNumberErrorLabel = new System.Windows.Forms.Label();
             this.zipCodeErrorLabel = new System.Windows.Forms.Label();
@@ -97,6 +101,10 @@ namespace PSPro.View
             // 
             // CitizenInfoGroupBox
             // 
+            this.CitizenInfoGroupBox.Controls.Add(this.stateErrorLabel);
+            this.CitizenInfoGroupBox.Controls.Add(this.cityErrorLabel);
+            this.CitizenInfoGroupBox.Controls.Add(this.address1ErrorLabel);
+            this.CitizenInfoGroupBox.Controls.Add(this.lastNameErrorLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.emailErrorLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.phoneNumberErrorLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.zipCodeErrorLabel);
@@ -131,6 +139,42 @@ namespace PSPro.View
             this.CitizenInfoGroupBox.TabStop = false;
             this.CitizenInfoGroupBox.Text = "Enter Citizen Information";
             // 
+            // stateErrorLabel
+            // 
+            this.stateErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.stateErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.stateErrorLabel.Location = new System.Drawing.Point(394, 276);
+            this.stateErrorLabel.Name = "stateErrorLabel";
+            this.stateErrorLabel.Size = new System.Drawing.Size(179, 24);
+            this.stateErrorLabel.TabIndex = 104;
+            // 
+            // cityErrorLabel
+            // 
+            this.cityErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cityErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.cityErrorLabel.Location = new System.Drawing.Point(72, 276);
+            this.cityErrorLabel.Name = "cityErrorLabel";
+            this.cityErrorLabel.Size = new System.Drawing.Size(197, 24);
+            this.cityErrorLabel.TabIndex = 103;
+            // 
+            // address1ErrorLabel
+            // 
+            this.address1ErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.address1ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.address1ErrorLabel.Location = new System.Drawing.Point(135, 126);
+            this.address1ErrorLabel.Name = "address1ErrorLabel";
+            this.address1ErrorLabel.Size = new System.Drawing.Size(169, 24);
+            this.address1ErrorLabel.TabIndex = 102;
+            // 
+            // lastNameErrorLabel
+            // 
+            this.lastNameErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lastNameErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.lastNameErrorLabel.Location = new System.Drawing.Point(490, 51);
+            this.lastNameErrorLabel.Name = "lastNameErrorLabel";
+            this.lastNameErrorLabel.Size = new System.Drawing.Size(169, 24);
+            this.lastNameErrorLabel.TabIndex = 101;
+            // 
             // emailErrorLabel
             // 
             this.emailErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -145,9 +189,8 @@ namespace PSPro.View
             this.phoneNumberErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.phoneNumberErrorLabel.Location = new System.Drawing.Point(197, 351);
             this.phoneNumberErrorLabel.Name = "phoneNumberErrorLabel";
-            this.phoneNumberErrorLabel.Size = new System.Drawing.Size(196, 22);
+            this.phoneNumberErrorLabel.Size = new System.Drawing.Size(207, 22);
             this.phoneNumberErrorLabel.TabIndex = 24;
-            this.phoneNumberErrorLabel.Text = "###-###-####";
             // 
             // zipCodeErrorLabel
             // 
@@ -596,5 +639,9 @@ namespace PSPro.View
         private System.Windows.Forms.Label phoneNumberErrorLabel;
         private System.Windows.Forms.Label zipCodeErrorLabel;
         private System.Windows.Forms.Label RequiredFieldLabel;
+        private System.Windows.Forms.Label stateErrorLabel;
+        private System.Windows.Forms.Label cityErrorLabel;
+        private System.Windows.Forms.Label address1ErrorLabel;
+        private System.Windows.Forms.Label lastNameErrorLabel;
     }
 }

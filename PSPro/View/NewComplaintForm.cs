@@ -42,11 +42,13 @@ namespace PSPro.View
             this.ShowUserName();
             this.PopulateOfficerComboBox();
             this.PopulateStateComboBox(this.stateComboBox);
+            phoneNumberErrorLabel.Text = "###-###-####";
         }
 
        public void PopulateCitizenFieldsWithExistingCitizenInformation(Citizen existingCitizen)
         {
             this.citizen = existingCitizen;
+            this.ClearForm();
             this.PopulateCitizenFields();
         }
 
@@ -148,15 +150,8 @@ namespace PSPro.View
             this.updatedCitizen.LastName = this.lastNameTextBox.Text;
             this.updatedCitizen.Address1 = this.address1TextBox.Text;
             this.updatedCitizen.Address2 = this.address2TextBox.Text;
-            this.updatedCitizen.City = this.cityTextBox.Text;
-            if (this.stateComboBox.SelectedIndex == 0)
-            {
-                this.updatedCitizen.State = "";
-            }
-            else
-            {
-                this.updatedCitizen.State = stateComboBox.SelectedValue.ToString();
-            }
+            this.updatedCitizen.City = this.cityTextBox.Text;           
+            this.updatedCitizen.State = stateComboBox.SelectedValue.ToString();           
             this.updatedCitizen.ZipCode = this.zipCodeTextBox.Text;
             this.updatedCitizen.Phone = this.phoneNumberTextBox.Text;
             this.updatedCitizen.Email = this.emailTextBox.Text;
@@ -243,6 +238,7 @@ namespace PSPro.View
             this.complaintSummaryTextBox.Text = "";
             this.firstNameErrorLabel.Text = "";
             this.zipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
+            phoneNumberErrorLabel.Text = "###-###-####";
             this.phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
             this.officerErrorLabel.Text = "";
             this.allegationErrorLabel.Text = "";
@@ -300,7 +296,7 @@ namespace PSPro.View
         private bool ValidateFields()
         {
             var isValid = true;
-            if (firstNameTextBox.Text.Length == 0)
+            if (firstNameTextBox.Text.Trim().Length == 0)
             {
                 isValid = false;
                 firstNameErrorLabel.Text = "Required Field";
@@ -309,8 +305,44 @@ namespace PSPro.View
             {
                 firstNameErrorLabel.Text = "";
             }
+            if (lastNameTextBox.Text.Trim().Length == 0)
+            {
+                isValid = false;
+                lastNameErrorLabel.Text = "Required Field";
+            }
+            else
+            {
+                lastNameErrorLabel.Text = "";
+            }
+            if (address1TextBox.Text.Trim().Length == 0)
+            {
+                isValid = false;
+                address1ErrorLabel.Text = "Required Field";
+            }
+            else
+            {
+                address1ErrorLabel.Text = "";
+            }            
+            if (cityTextBox.Text.Trim().Length == 0)
+            {
+                isValid = false;
+                cityErrorLabel.Text = "Required Field";
+            }
+            else
+            {
+                cityErrorLabel.Text = "";
+            }
+            if (stateComboBox.Text == "")
+            {
+                isValid = false;
+                stateErrorLabel.Text = "Required Field";
+            }
+            else
+            {
+                stateErrorLabel.Text = "";
+            }
             Regex zipRegex = new Regex("[0-9]{5}(-[0-9]{4})?$");
-            if (!zipRegex.IsMatch(zipCodeTextBox.Text) && zipCodeTextBox.Text.Length != 0)
+            if (!zipRegex.IsMatch(zipCodeTextBox.Text))
             {
                 isValid = false;
                 zipCodeErrorLabel.ForeColor = System.Drawing.Color.Red;
@@ -319,15 +351,37 @@ namespace PSPro.View
             {
                 zipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
             }
+            if (phoneNumberTextBox.Text.Trim().Length == 0)
+            {
+                isValid = false;
+                phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Red;
+                phoneNumberErrorLabel.Text = "###-###-####";
+            } 
+            else
+            {
+                phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
+
+            }
             Regex phoneRegex = new Regex("[0-9]{3}-[0-9]{3}-[0-9]{4}");
             if (!phoneRegex.IsMatch(phoneNumberTextBox.Text) &&  !string.IsNullOrWhiteSpace(this.phoneNumberTextBox.Text))
             {
                 isValid = false;
                 phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Red;
+                phoneNumberErrorLabel.Text = "###-###-####";
             } 
             else
             {
-                phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
+                if (this.citizenControler.SearchByPhone(this.phoneNumberTextBox.Text).Count > 0)
+                {
+                    phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Red;
+                    phoneNumberErrorLabel.Text = "Phone not unique";
+                    isValid = false;
+                }
+                else
+                {
+                    phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
+                    phoneNumberErrorLabel.Text = "###-###-####";
+                }
             }
             if (officerComboBox.SelectedValue == null)
             {

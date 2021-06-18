@@ -19,7 +19,7 @@ namespace PSPro.DAL
                     command.CommandType = CommandType.StoredProcedure;
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        return buildComplaintViewList(reader);
+                        return BuildComplaintViewList(reader);
                     }
                 }
             }
@@ -37,13 +37,13 @@ namespace PSPro.DAL
                     command.Parameters.AddWithValue("@officers_personnel_id", officerPersonelId);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        return buildComplaintViewList(reader);
+                        return BuildComplaintViewList(reader);
                     }
                 }
             }
         }
 
-        private List<ComplaintView> buildComplaintViewList(SqlDataReader reader)
+        private List<ComplaintView> BuildComplaintViewList(SqlDataReader reader)
         {
             List<ComplaintView> complaintViewList = new List<ComplaintView>();
             while (reader.Read())
