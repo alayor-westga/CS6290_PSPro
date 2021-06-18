@@ -23,24 +23,5 @@ namespace PSPro.Controller
         {
             this.supervisorSource = supervisorDAL;
         }
-
-        /// <summary>
-        /// Adds Citizen object to Citizen table and adds a new Complaint object to Complaint table
-        /// </summary>
-        /// <param name="citizen"></param>
-        /// <param name="complaint"></param>
-        public void AddCitizenAndComplaint(Citizen citizen, Complaint complaint)
-        {
-            this.supervisorSource.AddCitizenAndComplaint(citizen, complaint);
-        }
-
-        /// <summary>
-        /// Adds new Complaint object to Complaint table
-        /// </summary>
-        /// <param name="complaint"></param>
-        public void AddComplaint(Complaint complaint)
-        {
-            this.supervisorSource.AddComplaint(complaint);
-        }
     }
 }

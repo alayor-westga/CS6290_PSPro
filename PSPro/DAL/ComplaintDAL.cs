@@ -91,12 +91,26 @@ namespace PSPro.DAL
                         command.Parameters.AddWithValue("@first_name", citizen.FirstName);
                         command.Parameters.AddWithValue("@last_name", citizen.LastName);
                         command.Parameters.AddWithValue("@address1", citizen.Address1);
-                        command.Parameters.AddWithValue("@address2", citizen.Address2);
+                        if (citizen.Address2 == "")
+                        {
+                            command.Parameters.AddWithValue("@address2", DBNull.Value);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@address2", citizen.Address2);
+                        }
                         command.Parameters.AddWithValue("@city", citizen.City);
                         command.Parameters.AddWithValue("@state", citizen.State);
                         command.Parameters.AddWithValue("@zipcode", citizen.ZipCode);
                         command.Parameters.AddWithValue("@phone", citizen.Phone);
-                        command.Parameters.AddWithValue("@email", citizen.Email);
+                        if (citizen.Email == "")
+                        {
+                            command.Parameters.AddWithValue("@email", DBNull.Value);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@email", citizen.Email);
+                        }
                         command.ExecuteNonQuery();
                     }
                     int citizenID = this.GetLastCitizenID(connection, transaction);

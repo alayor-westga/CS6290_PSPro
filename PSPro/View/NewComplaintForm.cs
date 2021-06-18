@@ -20,6 +20,7 @@ namespace PSPro.View
         private readonly SupervisorController supervisorController;
         private readonly OfficerController officerController;
         private readonly CitizenController citizenControler;
+        private readonly ComplaintController complaintController;
         private readonly User loggedInUser;
         private Complaint complaint;
         private Citizen citizen;
@@ -33,6 +34,7 @@ namespace PSPro.View
             this.supervisorController = new SupervisorController();
             this.officerController = new OfficerController();
             this.citizenControler = new CitizenController();
+            this.complaintController = new ComplaintController();
             this.complaint = new Complaint();
             this.citizen = new Citizen();
             this.updatedCitizen = new Citizen();
@@ -99,7 +101,7 @@ namespace PSPro.View
 
                 try
                 {
-                    this.supervisorController.AddCitizenAndComplaint(this.citizen, this.complaint);
+                    this.complaintController.AddCitizenAndComplaint(this.citizen, this.complaint);
                     this.ClearForm();
                     MessageBox.Show("Complaint Successfully\nAdded to Database.",
                         "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -125,7 +127,7 @@ namespace PSPro.View
 
                 try
                 {
-                    this.supervisorController.AddComplaint(this.complaint);
+                    this.complaintController.AddComplaint(this.complaint);
                     this.ClearForm();
                     MessageBox.Show("Complaint Successfully\nAdded to Database.",
                        "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -257,11 +259,11 @@ namespace PSPro.View
         
         private void BindCitizenFieldsToCitizenObject()
         {
-            this.citizen.FirstName = firstNameTextBox.Text;
-            this.citizen.LastName = lastNameTextBox.Text;
-            this.citizen.Address1 = address1TextBox.Text;
-            this.citizen.Address2 = address2TextBox.Text;
-            this.citizen.City = cityTextBox.Text;
+            this.citizen.FirstName = firstNameTextBox.Text.Trim();
+            this.citizen.LastName = lastNameTextBox.Text.Trim();
+            this.citizen.Address1 = address1TextBox.Text.Trim();
+            this.citizen.Address2 = address2TextBox.Text.Trim();
+            this.citizen.City = cityTextBox.Text.Trim();
             if (this.stateComboBox.SelectedIndex == 0)
             {
                 this.citizen.State = "";
@@ -270,9 +272,9 @@ namespace PSPro.View
             {
                 this.citizen.State = stateComboBox.SelectedValue.ToString();
             }          
-            this.citizen.ZipCode = zipCodeTextBox.Text;
-            this.citizen.Phone = phoneNumberTextBox.Text;
-            this.citizen.Email = emailTextBox.Text;
+            this.citizen.ZipCode = zipCodeTextBox.Text.Trim();
+            this.citizen.Phone = phoneNumberTextBox.Text.Trim();
+            this.citizen.Email = emailTextBox.Text.Trim();
         }
 
         private void SearchCitizenButton_Click(object sender, EventArgs e)
