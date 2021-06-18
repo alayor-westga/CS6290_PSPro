@@ -343,12 +343,12 @@ UPDATE Citizens SET
                     AND first_name = @FirstName  
                     AND last_name = @LastName  
                     AND address1 = @Address1  
-                    AND address2 = @Address2
+                    AND (address2 = @Address2 OR address2 IS NULL AND @Address2 IS NULL)
                     AND city = @City
                     AND state = @State
                     AND zipcode = @Zipcode
                     AND phone = @Phone 
-                    AND email = @Email  
+                    AND (email = @Email OR email IS NULL AND @Email IS NULL)
 				SELECT @RowCnt = @@ROWCOUNT
 GO
 GRANT EXECUTE ON UpdateCitizen 
