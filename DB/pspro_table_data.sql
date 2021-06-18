@@ -1,11 +1,5 @@
 ﻿SET IDENTITY_INSERT [dbo].[Personnel] ON 
- 
-DELETE FROM Complaints
-DELETE FROM Personnel
-DELETE FROM Investigators
-DELETE FROM Administrators
-DELETE FROM Officers
-DELETE FROM Citizens
+--This script will not work unless you recreate the db first
 
 INSERT [dbo].[Personnel] ([personnel_id], [first_name], [last_name], [gender], [hire_date], [birthdate], [assignment]) VALUES (1000, N'Mike', N'Hamel', N'M', CAST(N'1995-01-03' AS Date), CAST(N'1970-03-29' AS Date), N'Administration')
 INSERT [dbo].[Personnel] ([personnel_id], [first_name], [last_name], [gender], [hire_date], [birthdate], [assignment]) VALUES (1001, N'Robert', N'Peel', N'M', CAST(N'1892-01-03' AS Date), CAST(N'1845-03-29' AS Date), N'Administration')
