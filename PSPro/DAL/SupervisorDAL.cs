@@ -78,23 +78,51 @@ namespace PSPro.DAL
                     updateCommand.Parameters.AddWithValue("@UpdatedFirstName", updatedCitizen.FirstName);
                     updateCommand.Parameters.AddWithValue("@UpdatedLastName", updatedCitizen.LastName);
                     updateCommand.Parameters.AddWithValue("@UpdatedAddress1", updatedCitizen.Address1);
-                    updateCommand.Parameters.AddWithValue("@UpdatedAddress2", updatedCitizen.Address2);
+                    if (updatedCitizen.Address2 == "")
+                    {
+                        updateCommand.Parameters.AddWithValue("@UpdatedAddress2", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@UpdatedAddress2", updatedCitizen.Address2);
+                    }
                     updateCommand.Parameters.AddWithValue("@UpdatedCity", updatedCitizen.City);
                     updateCommand.Parameters.AddWithValue("@UpdatedState", updatedCitizen.State);
                     updateCommand.Parameters.AddWithValue("@UpdatedZipcode", updatedCitizen.ZipCode);
                     updateCommand.Parameters.AddWithValue("@UpdatedPhone", updatedCitizen.Phone);
-                    updateCommand.Parameters.AddWithValue("@UpdatedEmail", updatedCitizen.Email);        
+                    if (updatedCitizen.Email == "")
+                    {
+                        updateCommand.Parameters.AddWithValue("@UpdatedEmail", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@UpdatedEmail", updatedCitizen.Email);
+                    }
 
                     updateCommand.Parameters.AddWithValue("@CitizenID", citizen.CitizenID);
                     updateCommand.Parameters.AddWithValue("@FirstName", citizen.FirstName);
                     updateCommand.Parameters.AddWithValue("@LastName", citizen.LastName);
                     updateCommand.Parameters.AddWithValue("@Address1", citizen.Address1);
-                    updateCommand.Parameters.AddWithValue("@Address2", citizen.Address2);
+                    if (citizen.Address2 == "")
+                    {
+                        updateCommand.Parameters.AddWithValue("@Address2", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@Address2", citizen.Address2);
+                    }
                     updateCommand.Parameters.AddWithValue("@City", citizen.City);
                     updateCommand.Parameters.AddWithValue("@State", citizen.State);
                     updateCommand.Parameters.AddWithValue("@Zipcode", citizen.ZipCode);
                     updateCommand.Parameters.AddWithValue("@Phone", citizen.Phone);
-                    updateCommand.Parameters.AddWithValue("@Email", citizen.Email);
+                    if (citizen.Email == "")
+                    {
+                        updateCommand.Parameters.AddWithValue("@Email", DBNull.Value);
+                    }
+                    else
+                    {
+                        updateCommand.Parameters.AddWithValue("@Email", citizen.Email);
+                    }             
 
                     SqlParameter returnValue = new SqlParameter("@RowCnt", SqlDbType.Int);
                     returnValue.Direction = ParameterDirection.Output;
@@ -179,23 +207,8 @@ namespace PSPro.DAL
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@first_name", citizen.FirstName);
-
-                        if (citizen.LastName == "")
-                        {
-                            command.Parameters.AddWithValue("@last_name", DBNull.Value);
-                        }
-                        else
-                        {
-                            command.Parameters.AddWithValue("@last_name", citizen.LastName);
-                        }                       
-                        if (citizen.Address1 == "")
-                        {
-                            command.Parameters.AddWithValue("@address1", DBNull.Value);
-                        }
-                        else
-                        {
-                            command.Parameters.AddWithValue("@address1", citizen.Address1);
-                        }
+                        command.Parameters.AddWithValue("@last_name", citizen.LastName);
+                        command.Parameters.AddWithValue("@address1", citizen.Address1);
                         if (citizen.Address2 == "")
                         {
                             command.Parameters.AddWithValue("@address2", DBNull.Value);
@@ -203,40 +216,12 @@ namespace PSPro.DAL
                         else
                         {
                             command.Parameters.AddWithValue("@address2", citizen.Address2);
-                        }
-                        if (citizen.City == "")
-                        {
-                            command.Parameters.AddWithValue("@city", DBNull.Value);
-                        }
-                        else
-                        {
-                            command.Parameters.AddWithValue("@city", citizen.City);
-                        }
-                        if (citizen.State == "")
-                        {
-                            command.Parameters.AddWithValue("@state", DBNull.Value);
-                        }
-                        else
-                        {
-                            command.Parameters.AddWithValue("@state", citizen.State);
-                        }
-                        if (citizen.ZipCode == "")
-                        {
-                            command.Parameters.AddWithValue("@zipcode", DBNull.Value);
-                        }
-                        else
-                        {
-                            command.Parameters.AddWithValue("@zipcode", citizen.ZipCode);
-                        }
-                        if (citizen.Phone == "")
-                        {
-                            command.Parameters.AddWithValue("@phone", DBNull.Value);
-                        }
-                        else
-                        {
-                            command.Parameters.AddWithValue("@phone", citizen.Phone);
-                        }
-                        if (citizen.Email == "")
+                        }                     
+                        command.Parameters.AddWithValue("@city", citizen.City);
+                        command.Parameters.AddWithValue("@state", citizen.State);
+                        command.Parameters.AddWithValue("@zipcode", citizen.ZipCode);
+                        command.Parameters.AddWithValue("@phone", citizen.Phone);
+                        if (citizen.Address2 == "")
                         {
                             command.Parameters.AddWithValue("@email", DBNull.Value);
                         }
