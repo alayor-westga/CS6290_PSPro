@@ -1,5 +1,5 @@
 SET IDENTITY_INSERT [dbo].[Personnel] ON 
---you must run create_db before running this script
+
 INSERT [dbo].[Personnel] ([personnel_id], [first_name], [last_name], [gender], [hire_date], [birthdate], [assignment]) VALUES (1000, N'Mike', N'Hamel', N'M', CAST(N'1995-01-03' AS Date), CAST(N'1970-03-29' AS Date), N'Administration')
 INSERT [dbo].[Personnel] ([personnel_id], [first_name], [last_name], [gender], [hire_date], [birthdate], [assignment]) VALUES (1001, N'Robert', N'Peel', N'M', CAST(N'1892-01-03' AS Date), CAST(N'1845-03-29' AS Date), N'Administration')
 INSERT [dbo].[Personnel] ([personnel_id], [first_name], [last_name], [gender], [hire_date], [birthdate], [assignment]) VALUES (1002, N'Wyatt', N'Earp', N'M', CAST(N'1961-03-06' AS Date), CAST(N'1955-05-12' AS Date), N'Patrol')
@@ -19,8 +19,8 @@ INSERT [dbo].[Personnel] ([personnel_id], [first_name], [last_name], [gender], [
 INSERT [dbo].[Personnel] ([personnel_id], [first_name], [last_name], [gender], [hire_date], [birthdate], [assignment]) VALUES (1016, N'Olivia', N'Benson', N'F', CAST(N'2000-04-19' AS Date), CAST(N'1985-09-17' AS Date), N'Investigations')
 SET IDENTITY_INSERT [dbo].[Personnel] OFF
 GO
-INSERT [dbo].[Administrators] ([personnel_id], [username], [password]) VALUES (1001, N'a-001', N'EPA«_Ç»2-O~Ò}ÞWDo~±¶L{È¡b§Ùˆ¤å–Tûÿ¹µÑ(Ž ëê¡Ëƒ#ÍùËv¿-Ô')
-INSERT [dbo].[Administrators] ([personnel_id], [username], [password]) VALUES (1009, N'a-002', N'ØB^v£x¼m*F|sHµD!Ü‰*Wm¤úh!9C¦Ÿß…eçÃ!×pJWxhÝÑûF›nï›ÞÍòÍ')
+INSERT [dbo].[Administrators] ([personnel_id], [username], [password]) VALUES (1001, N'a-001', N'EPA«_Ç»2-O~Ò }ÞWDo~±¶L{È¡b§Ùˆ¤å–Tûÿ¹µÑ(Ž ëê¡Ëƒ#ÍùËv¿-Ô')
+INSERT [dbo].[Administrators] ([personnel_id], [username], [password]) VALUES (1009, N'a-002', N'ØB^v£x¼m*F|sHµD!Ü‰*Wm ¤úh!9C¦Ÿß…eçÃ!×pJWxhÝÑûF›nï›ÞÍòÍ')
 INSERT [dbo].[Administrators] ([personnel_id], [username], [password]) VALUES (1015, N'a-003', N'NÒ$,v‚‡êNÃ”P%½Óö‰ïa‚u?£xñetAª¿ÂØÂ¬DÂ—÷X9—î«ëÀU²à÷•àô‘')
 GO
 INSERT [dbo].[Investigators] ([personnel_id], [username], [password]) VALUES (1005, N'i-001', N'€uõÓÎƒlÌÏ¼F»‰i·rù0ÂbN¡õII`>¹{vË0 ap(7*ÙyÊ—K†í]¹ZÎ¿¯ë5\èpÃw')
@@ -37,9 +37,11 @@ INSERT [dbo].[Officers] ([personnel_id]) VALUES (1012)
 INSERT [dbo].[Officers] ([personnel_id]) VALUES (1014)
 INSERT [dbo].[Officers] ([personnel_id]) VALUES (1016)
 GO
-INSERT [dbo].[Supervisors] ([personnel_id], [username], [password]) VALUES (1008, N's-001', N'ÀÐào GD‘X‚¾.ö²…ê.û‘Ix,¶7ËÎ‡nk§àh4$¯`ìKù^m×ïaÉqD!L™+aƒ)Ä™2Æ')
-INSERT [dbo].[Supervisors] ([personnel_id], [username], [password]) VALUES (1011, N's-002', N'þÏ³o›O‚ûî˜?Ø
+INSERT [dbo].[Supervisors] ([personnel_id], [username], [password]) VALUES (1000, N's-003', N'þÏ³o›O‚ûî˜?Ø
 ÂçB”6³A‘š6hb¶ã°m4ð£ôGÙ¦Â‘€ë»¼[<ÀêráNæø¯©t%îv@l')
+INSERT [dbo].[Supervisors] ([personnel_id], [username], [password]) VALUES (1008, N's-001', N'p°aZ!ïdòÓ£CÒb ÊN«Žgwî½ 8v•€h,)8A+iëæÖ`
+Ú[*’Ãœˆƒºò€ªW¢S…%{&')
+INSERT [dbo].[Supervisors] ([personnel_id], [username], [password]) VALUES (1011, N's-002', N'ÀÐào GD‘X‚¾.ö²…ê.û‘Ix,¶7Ë Î‡nk§àh4$¯`ìKù^m×ïaÉqD!L™+aƒ)Ä™2Æ')
 GO
 SET IDENTITY_INSERT [dbo].[Citizens] ON 
 
@@ -64,3 +66,4 @@ INSERT [dbo].[Complaints] ([complaint_id], [citizen_id], [officers_personnel_id]
 Drove faster than I can fly in traffic!', NULL, NULL, NULL)
 SET IDENTITY_INSERT [dbo].[Complaints] OFF
 GO
+
