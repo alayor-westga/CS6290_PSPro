@@ -368,10 +368,11 @@ namespace PSPro.View
                 isValid = false;
                 phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Red;
                 phoneNumberErrorLabel.Text = "###-###-####";
-            } 
+            }
             else
             {
-                if (this.citizenControler.SearchByPhone(this.phoneNumberTextBox.Text).Count > 0)
+                List<Citizen> searchByPhoneResults = this.citizenControler.SearchByPhone(this.phoneNumberTextBox.Text);             
+                if (searchByPhoneResults.Count > 0 && (string.IsNullOrEmpty(this.citizenIDTextBox.Text) || searchByPhoneResults[0].CitizenID != Int32.Parse(this.citizenIDTextBox.Text)))
                 {
                     phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Red;
                     phoneNumberErrorLabel.Text = "Phone not unique";
