@@ -85,6 +85,12 @@ namespace PSPro.DAL
             }
         }
 
+        /// <summary>
+        /// Updates the data fields for an existing Citizen; returns true if any rows were updated
+        /// </summary>
+        /// <param name="citizen"></param>
+        /// <param name="updatedCitizen"></param>
+        /// <returns>true if 1 or more rows updated; false otherwise</returns>
         public bool UpdateCitizen(Citizen citizen, Citizen updatedCitizen)
         {
             if (citizen == null)
@@ -166,6 +172,11 @@ namespace PSPro.DAL
             }
         }
 
+        /// <summary>
+        /// Get Citizen object by citizenID
+        /// </summary>
+        /// <param name="citizenID"></param>
+        /// <returns>Citizen object</returns>
         public Citizen GetCitizen(int citizenID)
         {
             if (citizenID < 0)
