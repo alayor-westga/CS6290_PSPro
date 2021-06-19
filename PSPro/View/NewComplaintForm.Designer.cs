@@ -187,9 +187,9 @@ namespace PSPro.View
             // phoneNumberErrorLabel
             // 
             this.phoneNumberErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.phoneNumberErrorLabel.Location = new System.Drawing.Point(197, 351);
+            this.phoneNumberErrorLabel.Location = new System.Drawing.Point(203, 351);
             this.phoneNumberErrorLabel.Name = "phoneNumberErrorLabel";
-            this.phoneNumberErrorLabel.Size = new System.Drawing.Size(207, 22);
+            this.phoneNumberErrorLabel.Size = new System.Drawing.Size(190, 22);
             this.phoneNumberErrorLabel.TabIndex = 24;
             // 
             // zipCodeErrorLabel

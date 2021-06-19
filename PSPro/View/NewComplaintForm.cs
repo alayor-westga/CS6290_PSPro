@@ -351,19 +351,8 @@ namespace PSPro.View
             {
                 zipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
             }
-            if (phoneNumberTextBox.Text.Trim().Length == 0)
-            {
-                isValid = false;
-                phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Red;
-                phoneNumberErrorLabel.Text = "###-###-####";
-            } 
-            else
-            {
-                phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
-
-            }
             Regex phoneRegex = new Regex("[0-9]{3}-[0-9]{3}-[0-9]{4}");
-            if (!phoneRegex.IsMatch(phoneNumberTextBox.Text) &&  !string.IsNullOrWhiteSpace(this.phoneNumberTextBox.Text))
+            if (!phoneRegex.IsMatch(phoneNumberTextBox.Text) ||  string.IsNullOrWhiteSpace(this.phoneNumberTextBox.Text))
             {
                 isValid = false;
                 phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Red;
@@ -377,7 +366,7 @@ namespace PSPro.View
                     phoneNumberErrorLabel.Text = "Phone not unique";
                     isValid = false;
                 }
-                else
+                else if (phoneNumberTextBox.Text.Trim().Length != 0)
                 {
                     phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
                     phoneNumberErrorLabel.Text = "###-###-####";
