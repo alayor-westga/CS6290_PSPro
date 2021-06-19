@@ -6,8 +6,15 @@ using PSPro.Model;
 
 namespace PSPro.DAL
 {
+    /// <summary>
+    /// Complaint DAL
+    /// </summary>
     public class ComplaintDAL
     {
+        /// <summary>
+        /// Gets all active complaints for display in view
+        /// </summary>
+        /// <returns>a LIst of all active complaints</returns>
         virtual public List<ComplaintView> GetAllActiveComplaints()
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
@@ -25,6 +32,11 @@ namespace PSPro.DAL
             }
         }
 
+        /// <summary>
+        /// Gets all active complaints by officer
+        /// </summary>
+        /// <param name="officerPersonelId"></param>
+        /// <returns>a List of a single officer's active complaints</returns>
         virtual public List<ComplaintView> GetActiveComplaintsByOfficer(int officerPersonelId)
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
@@ -61,6 +73,10 @@ namespace PSPro.DAL
             return complaintViewList;
         }
 
+        /// <summary>
+        /// Adds a new complaint to the complaint table
+        /// </summary>
+        /// <param name="complaint"></param>
         virtual public void AddComplaint(Complaint complaint)
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
@@ -76,6 +92,11 @@ namespace PSPro.DAL
             }
         }
 
+        /// <summary>
+        /// Adds a new citizen to the Citizen table and also creates a new complaint with the assoicated new citizen
+        /// </summary>
+        /// <param name="citizen"></param>
+        /// <param name="complaint"></param>
         virtual public void AddCitizenAndComplaint(Citizen citizen, Complaint complaint)
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
