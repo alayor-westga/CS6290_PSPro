@@ -50,6 +50,7 @@ namespace E2ETests.Hooks
                 "DELETE FROM Investigators; " +
                 "DELETE FROM Administrators; " +
                 "DELETE FROM Officers; " +
+                "DELETE FROM Citizens; " +
                 "DELETE FROM Personnel; DBCC CHECKIDENT ('Personnel', RESEED, 1);";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
