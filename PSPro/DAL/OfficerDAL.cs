@@ -6,6 +6,9 @@ using PSPro.Model;
 
 namespace PSPro.DAL
 {
+    /// <summary>
+    /// Officer DAL
+    /// </summary>
     public class OfficerDAL
     {
         /// <summary>

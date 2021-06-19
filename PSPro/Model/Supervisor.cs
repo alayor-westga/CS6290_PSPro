@@ -4,6 +4,9 @@ using System.Text;
 
 namespace PSPro.Model
 {
+    /// <summary>
+    /// Supervisor Model
+    /// </summary>
     public class Supervisor : Personnel
     {
 

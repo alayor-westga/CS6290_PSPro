@@ -6,6 +6,9 @@ using PSPro.Model;
 
 namespace PSPro.DAL
 {
+    /// <summary>
+    /// Supervisor DAL
+    /// </summary>
     public class SupervisorDAL
     {
 

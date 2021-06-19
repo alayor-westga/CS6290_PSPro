@@ -6,6 +6,9 @@ using PSPro.Model;
 
 namespace PSPro.DAL
 {
+    /// <summary>
+    /// Investigator DAL
+    /// </summary>
     public class InvestigatorDAL
     {
 

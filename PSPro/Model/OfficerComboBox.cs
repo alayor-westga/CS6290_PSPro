@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PSPro.Model
 {
+    /// <summary>
+    /// OfficerComboBox model
+    /// </summary>
     public class OfficerComboBox
     {
         /// <summary>
