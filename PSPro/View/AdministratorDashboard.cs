@@ -4,10 +4,18 @@ using PSPro.Model;
 
 namespace PSPro.View
 {
+    /// <summary>
+    /// View for dashboard for logged in administrator
+    /// </summary>
     public partial class AdministratorDashboard : Form
     {
         private readonly Form loginForm;
         private readonly User loggedInUser;
+
+        /// <summary>
+        /// Constructor; initializes components; instantiates instance variable and writes logged-in user on form
+        /// </summary>
+        /// <param name="loginForm"></param>
         public AdministratorDashboard(Form loginForm)
         {
             InitializeComponent();

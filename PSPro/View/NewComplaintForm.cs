@@ -4,15 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PSPro.View
 {
+    /// <summary>
+    /// View class for NewComplaintForm
+    /// </summary>
     public partial class NewComplaintForm : Form
     {
         private readonly Form loginForm;
@@ -26,6 +27,11 @@ namespace PSPro.View
         private Citizen citizen;
         private Citizen updatedCitizen;
 
+        /// <summary>
+        /// Constructor called when login is successful
+        /// Instantiates instance variabled; gets current user; shows current user in view, populates combo boxes
+        /// </summary>
+        /// <param name="loginForm"></param>
         public NewComplaintForm(Form loginForm)
         {
             InitializeComponent();
@@ -45,6 +51,11 @@ namespace PSPro.View
             phoneNumberErrorLabel.Text = "###-###-####";
         }
 
+        /// <summary>
+        /// called when user selects a citizen in the SearchCitizenForm
+        /// Assigns selected citizen to the Citizen instance variable
+        /// </summary>
+        /// <param name="existingCitizen"></param>
        public void PopulateCitizenFieldsWithExistingCitizenInformation(Citizen existingCitizen)
         {
             this.citizen = existingCitizen;
@@ -428,7 +439,5 @@ namespace PSPro.View
                 return false;
             }
         }
-
-
     }
 }

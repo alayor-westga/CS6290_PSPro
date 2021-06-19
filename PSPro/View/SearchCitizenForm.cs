@@ -2,18 +2,15 @@
 using PSPro.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PSPro.View
 {
+    /// <summary>
+    /// View class for SearchCitizenForm
+    /// </summary>
     public partial class SearchCitizenForm : Form        
     {
         NewComplaintForm newComplaintForm;
@@ -21,6 +18,10 @@ namespace PSPro.View
         List<Citizen> citizens;
         Citizen existingCitizen = new Citizen();
 
+        /// <summary>
+        /// Constructor - initialize components; instantiate instance variables
+        /// </summary>
+        /// <param name="newComplaintForm"></param>
         public SearchCitizenForm(NewComplaintForm newComplaintForm)
         {
             InitializeComponent();
@@ -213,7 +214,5 @@ namespace PSPro.View
                 return false;
             }
         }
-
-
     }
 }

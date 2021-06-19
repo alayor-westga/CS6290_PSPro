@@ -10,10 +10,16 @@ using PSPro.Model;
 
 namespace PSPro.View
 {
+    /// <summary>
+    /// View class for login form
+    /// </summary>
     public partial class LoginForm : Form
     {
         private readonly LoginController loginController;
 
+        /// <summary>
+        /// constructor - instantiates instance variable and initializes components
+        /// </summary>
         public LoginForm()
         {
             InitializeComponent();
