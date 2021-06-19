@@ -34,5 +34,14 @@ namespace UnitTests
             complaintController.GetActiveComplaintsByOfficer(1);
             complaintDAL.Verify(v => v.GetActiveComplaintsByOfficer(1));
         }
+
+        [TestMethod]
+        public void TestAddCitizenAndComplaint()
+        {
+            Citizen citizen = new Citizen();
+            Complaint complaint = new Complaint();
+            complaintController.AddCitizenAndComplaint(citizen, complaint);
+            complaintDAL.Verify(v => v.AddCitizenAndComplaint(citizen, complaint));
+        }
     }
 }

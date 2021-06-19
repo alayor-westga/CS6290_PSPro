@@ -19,14 +19,5 @@ namespace UnitTests
         }
 
         private void setupMocks() {}
-        
-        [TestMethod]
-        public void TestAddCitizenAndComplaint()
-        {
-            Citizen citizen = new Citizen();
-            Complaint complaint = new Complaint();
-            supervisorController.AddCitizenAndComplaint(citizen, complaint);
-            supervisorDAL.Verify(v => v.AddCitizenAndComplaint(citizen, complaint));
-        }
     }
 }
