@@ -143,16 +143,16 @@ namespace PSPro.View
             // 
             this.stateErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.stateErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.stateErrorLabel.Location = new System.Drawing.Point(394, 276);
+            this.stateErrorLabel.Location = new System.Drawing.Point(406, 276);
             this.stateErrorLabel.Name = "stateErrorLabel";
-            this.stateErrorLabel.Size = new System.Drawing.Size(179, 24);
+            this.stateErrorLabel.Size = new System.Drawing.Size(167, 24);
             this.stateErrorLabel.TabIndex = 104;
             // 
             // cityErrorLabel
             // 
             this.cityErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cityErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.cityErrorLabel.Location = new System.Drawing.Point(72, 276);
+            this.cityErrorLabel.Location = new System.Drawing.Point(81, 276);
             this.cityErrorLabel.Name = "cityErrorLabel";
             this.cityErrorLabel.Size = new System.Drawing.Size(197, 24);
             this.cityErrorLabel.TabIndex = 103;
@@ -161,7 +161,7 @@ namespace PSPro.View
             // 
             this.address1ErrorLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.address1ErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.address1ErrorLabel.Location = new System.Drawing.Point(135, 126);
+            this.address1ErrorLabel.Location = new System.Drawing.Point(150, 126);
             this.address1ErrorLabel.Name = "address1ErrorLabel";
             this.address1ErrorLabel.Size = new System.Drawing.Size(169, 24);
             this.address1ErrorLabel.TabIndex = 102;
@@ -248,9 +248,9 @@ namespace PSPro.View
             this.PhoneNumberLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.PhoneNumberLabel.Location = new System.Drawing.Point(19, 343);
             this.PhoneNumberLabel.Name = "PhoneNumberLabel";
-            this.PhoneNumberLabel.Size = new System.Drawing.Size(178, 32);
+            this.PhoneNumberLabel.Size = new System.Drawing.Size(188, 32);
             this.PhoneNumberLabel.TabIndex = 19;
-            this.PhoneNumberLabel.Text = "Phone Number";
+            this.PhoneNumberLabel.Text = "*Phone Number";
             // 
             // emailTextBox
             // 
@@ -298,9 +298,9 @@ namespace PSPro.View
             this.ZipCodeLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.ZipCodeLabel.Location = new System.Drawing.Point(575, 268);
             this.ZipCodeLabel.Name = "ZipCodeLabel";
-            this.ZipCodeLabel.Size = new System.Drawing.Size(105, 32);
+            this.ZipCodeLabel.Size = new System.Drawing.Size(115, 32);
             this.ZipCodeLabel.TabIndex = 14;
-            this.ZipCodeLabel.Text = "ZipCode";
+            this.ZipCodeLabel.Text = "*ZipCode";
             // 
             // StateLabel
             // 
@@ -308,9 +308,9 @@ namespace PSPro.View
             this.StateLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.StateLabel.Location = new System.Drawing.Point(325, 268);
             this.StateLabel.Name = "StateLabel";
-            this.StateLabel.Size = new System.Drawing.Size(68, 32);
+            this.StateLabel.Size = new System.Drawing.Size(78, 32);
             this.StateLabel.TabIndex = 12;
-            this.StateLabel.Text = "State";
+            this.StateLabel.Text = "*State";
             // 
             // cityTextBox
             // 
@@ -327,9 +327,9 @@ namespace PSPro.View
             this.CityLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.CityLabel.Location = new System.Drawing.Point(19, 268);
             this.CityLabel.Name = "CityLabel";
-            this.CityLabel.Size = new System.Drawing.Size(56, 32);
+            this.CityLabel.Size = new System.Drawing.Size(66, 32);
             this.CityLabel.TabIndex = 10;
-            this.CityLabel.Text = "City";
+            this.CityLabel.Text = "*City";
             // 
             // address2TextBox
             // 
@@ -365,9 +365,9 @@ namespace PSPro.View
             this.Address1Label.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.Address1Label.Location = new System.Drawing.Point(19, 118);
             this.Address1Label.Name = "Address1Label";
-            this.Address1Label.Size = new System.Drawing.Size(119, 32);
+            this.Address1Label.Size = new System.Drawing.Size(129, 32);
             this.Address1Label.TabIndex = 5;
-            this.Address1Label.Text = "Address 1";
+            this.Address1Label.Text = "*Address 1";
             // 
             // lastNameTextBox
             // 
@@ -384,9 +384,9 @@ namespace PSPro.View
             this.LastNameLabel.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.LastNameLabel.Location = new System.Drawing.Point(357, 43);
             this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(127, 32);
+            this.LastNameLabel.Size = new System.Drawing.Size(137, 32);
             this.LastNameLabel.TabIndex = 3;
-            this.LastNameLabel.Text = "Last Name";
+            this.LastNameLabel.Text = "*Last Name";
             // 
             // SearchCitizenButton
             // 
