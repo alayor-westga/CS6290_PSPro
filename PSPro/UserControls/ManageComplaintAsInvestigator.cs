@@ -27,6 +27,7 @@ namespace PSPro.UserControls
             this.citizenNameLabelValue.Text = complaintView.CitizenFullName;
             this.citizenAddressLabelValue.Text = complaintView.CitizenFullAddress;
             this.citizenPhoneLabelValue.Text = complaintView.CitizenPhone;
+            this.officerFullNameLabelValue.Text = complaintView.OfficerFullName;
         }
     }
 }

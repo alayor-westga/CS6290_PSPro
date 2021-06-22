@@ -36,7 +36,11 @@ namespace PSPro.UserControls
             this.citizenAddressLabel = new System.Windows.Forms.Label();
             this.citizenNameLabelValue = new System.Windows.Forms.Label();
             this.citizenNameLabel = new System.Windows.Forms.Label();
+            this.complaintGroupBox = new System.Windows.Forms.GroupBox();
+            this.officerFullNameLabel = new System.Windows.Forms.Label();
+            this.officerFullNameLabelValue = new System.Windows.Forms.Label();
             this.citizenGroupBox.SuspendLayout();
+            this.complaintGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // citizenGroupBox
@@ -109,15 +113,48 @@ namespace PSPro.UserControls
             this.citizenNameLabel.TabIndex = 0;
             this.citizenNameLabel.Text = "Name:";
             // 
+            // complaintGroupBox
+            // 
+            this.complaintGroupBox.Controls.Add(this.officerFullNameLabelValue);
+            this.complaintGroupBox.Controls.Add(this.officerFullNameLabel);
+            this.complaintGroupBox.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.complaintGroupBox.Location = new System.Drawing.Point(30, 300);
+            this.complaintGroupBox.Name = "complaintGroupBox";
+            this.complaintGroupBox.Size = new System.Drawing.Size(1246, 392);
+            this.complaintGroupBox.TabIndex = 1;
+            this.complaintGroupBox.TabStop = false;
+            this.complaintGroupBox.Text = "Complaint";
+            // 
+            // officerFullNameLabel
+            // 
+            this.officerFullNameLabel.AutoSize = true;
+            this.officerFullNameLabel.Location = new System.Drawing.Point(16, 98);
+            this.officerFullNameLabel.Name = "officerFullNameLabel";
+            this.officerFullNameLabel.Size = new System.Drawing.Size(140, 50);
+            this.officerFullNameLabel.TabIndex = 6;
+            this.officerFullNameLabel.Text = "Officer:";
+            // 
+            // officerFullNameLabelValue
+            // 
+            this.officerFullNameLabelValue.AutoSize = true;
+            this.officerFullNameLabelValue.Location = new System.Drawing.Point(162, 98);
+            this.officerFullNameLabelValue.Name = "officerFullNameLabelValue";
+            this.officerFullNameLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.officerFullNameLabelValue.TabIndex = 6;
+            this.officerFullNameLabelValue.Text = "--";
+            // 
             // ManageComplaintAsInvestigator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.complaintGroupBox);
             this.Controls.Add(this.citizenGroupBox);
             this.Name = "ManageComplaintAsInvestigator";
             this.Size = new System.Drawing.Size(1308, 718);
             this.citizenGroupBox.ResumeLayout(false);
             this.citizenGroupBox.PerformLayout();
+            this.complaintGroupBox.ResumeLayout(false);
+            this.complaintGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -131,5 +168,8 @@ namespace PSPro.UserControls
         private System.Windows.Forms.Label citizenPhoneLabel;
         private System.Windows.Forms.Label citizenAddressLabelValue;
         private System.Windows.Forms.Label citizenAddressLabel;
+        private System.Windows.Forms.GroupBox complaintGroupBox;
+        private System.Windows.Forms.Label officerFullNameLabelValue;
+        private System.Windows.Forms.Label officerFullNameLabel;
     }
 }
