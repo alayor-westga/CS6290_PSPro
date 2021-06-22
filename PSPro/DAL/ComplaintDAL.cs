@@ -66,6 +66,7 @@ namespace PSPro.DAL
                     complaintView.DateCreated = DateTime.Parse(reader["date_created"].ToString());
                     complaintView.OfficerFullName = reader["officer_full_name"].ToString();
                     complaintView.CitizenFullName = reader["citizen_full_name"].ToString();
+                    complaintView.CitizenPhone = reader["citizen_phone"].ToString();
                     complaintView.CitizenFullAddress = reader["citizen_full_address"].ToString();
                     complaintView.Disposition = reader["disposition"].ToString();
                 }

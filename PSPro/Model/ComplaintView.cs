@@ -33,6 +33,11 @@ namespace PSPro.Model
         public string CitizenFullAddress { get; set; }
 
         /// <summary>
+        /// CitizenPhone for ComplaintView
+        /// </summary>
+        public string CitizenPhone { get; set; }
+
+        /// <summary>
         /// Disposition for ComplaintView
         /// </summary>
         public string Disposition { get; set; }

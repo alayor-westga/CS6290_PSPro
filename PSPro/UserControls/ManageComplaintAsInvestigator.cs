@@ -26,6 +26,7 @@ namespace PSPro.UserControls
             ComplaintView complaintView = complaintController.GetComplaintById(complaintID);
             this.citizenNameLabelValue.Text = complaintView.CitizenFullName;
             this.citizenAddressLabelValue.Text = complaintView.CitizenFullAddress;
+            this.citizenPhoneLabelValue.Text = complaintView.CitizenPhone;
         }
     }
 }
