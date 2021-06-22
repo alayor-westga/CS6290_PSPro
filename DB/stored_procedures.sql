@@ -366,11 +366,13 @@ SET NOCOUNT ON;
 		co.complaint_id,
 		co.date_created,
 		CONCAT(o.first_name, ' ', o.last_name) AS officer_full_name,
-		CONCAT(c.first_name, ' ', c.last_name) AS citizen_full_name,
+		CONCAT(ci.first_name, ' ', ci.last_name) AS citizen_full_name,
+		CONCAT(ci.address1, ' ', ci.address2, ' ', ci.city, ' ', ci.state, ' ', ci.zipcode) AS citizen_full_address,
+		ci.phone AS citizen_phone,
 		co.disposition
 	FROM Complaints co
 		INNER JOIN Personnel o ON (o.personnel_id = co.officers_personnel_id)
-		INNER JOIN Citizens c ON (c.citizen_id = co.citizen_id)
+		INNER JOIN Citizens ci ON (ci.citizen_id = co.citizen_id)
 	WHERE co.discipline IS NULL
 GO
 GRANT EXECUTE ON
@@ -390,11 +392,13 @@ SET NOCOUNT ON;
 		co.complaint_id,
 		co.date_created,
 		CONCAT(o.first_name, ' ', o.last_name) AS officer_full_name,
-		CONCAT(c.first_name, ' ', c.last_name) AS citizen_full_name,
+		CONCAT(ci.first_name, ' ', ci.last_name) AS citizen_full_name,
+		CONCAT(ci.address1, ' ', ci.address2, ' ', ci.city, ' ', ci.state, ' ', ci.zipcode) AS citizen_full_address,
+		ci.phone AS citizen_phone,
 		co.disposition
 	FROM Complaints co
 		INNER JOIN Personnel o ON (o.personnel_id = co.officers_personnel_id)
-		INNER JOIN Citizens c ON (c.citizen_id = co.citizen_id)
+		INNER JOIN Citizens ci ON (ci.citizen_id = co.citizen_id)
 	WHERE co.discipline IS NULL
 	AND o.personnel_id = @officers_personnel_id
 GO
@@ -464,3 +468,36 @@ GRANT EXECUTE ON
 GetCitizensByName
 TO winforms;
 GO
+
+
+--GetComplaintById
+DROP PROCEDURE IF EXISTS GetComplaintById;
+GO
+CREATE PROCEDURE GetComplaintById
+	@complaint_id int
+AS
+SET NOCOUNT ON;
+
+    SELECT 
+		co.complaint_id,
+		co.date_created,
+		CONCAT(o.first_name, ' ', o.last_name) AS officer_full_name,
+		CONCAT(ci.first_name, ' ', ci.last_name) AS citizen_full_name,
+		CONCAT(ci.address1, ' ', ci.address2, ' ', ci.city, ' ', ci.state, ' ', ci.zipcode) AS citizen_full_address,
+		ci.phone AS citizen_phone,
+		co.disposition
+	FROM Complaints	co
+		INNER JOIN Personnel o ON (o.personnel_id = co.officers_personnel_id)
+		INNER JOIN Citizens ci ON (ci.citizen_id = co.citizen_id)
+	WHERE complaint_id = @complaint_id
+
+GO
+GRANT EXECUTE ON
+GetComplaintById
+TO winforms;
+GO
+
+
+
+--INSERT Complaints(citizen_id, officers_personnel_id, supervisors_personnel_id, date_created, allegation_type, complaint_notes)
+--VALUES (@citizen_id,@officers_personnel_id, @supervisors_personnel_id, CURRENT_TIMESTAMP,@allegation_type, @complaint_notes)

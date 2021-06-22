@@ -28,6 +28,11 @@ namespace PSPro.Model
         public string CitizenFullName { get; set; }
 
         /// <summary>
+        /// CitizenFullAddress for ComplaintView
+        /// </summary>
+        public string CitizenFullAddress { get; set; }
+
+        /// <summary>
         /// Disposition for ComplaintView
         /// </summary>
         public string Disposition { get; set; }

@@ -60,5 +60,15 @@ namespace PSPro.Controller
         {
             this.complaintSource.AddComplaint(complaint);
         }
+
+        /// <summary>
+        /// Get complaint view by id
+        /// </summary>
+        /// <param name="complaintId">the complaint id to be retrieved.</param>
+        /// <returns>Complaint information</returns>
+        virtual public ComplaintView GetComplaintById(int complaintId)
+        {
+            return this.complaintSource.GetComplaintById(complaintId);
+        }
     }
 }

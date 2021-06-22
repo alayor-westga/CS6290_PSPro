@@ -66,6 +66,7 @@ namespace PSPro.DAL
                     complaintView.DateCreated = DateTime.Parse(reader["date_created"].ToString());
                     complaintView.OfficerFullName = reader["officer_full_name"].ToString();
                     complaintView.CitizenFullName = reader["citizen_full_name"].ToString();
+                    complaintView.CitizenFullAddress = reader["citizen_full_address"].ToString();
                     complaintView.Disposition = reader["disposition"].ToString();
                 }
                 complaintViewList.Add(complaintView);
@@ -185,6 +186,29 @@ namespace PSPro.DAL
                 }
             }
             return lastCitizenID;
+        }
+
+        /// <summary>
+        /// Get complaint view by id
+        /// </summary>
+        /// <param name="complaintId">the complaint id to be retrieved.</param>
+        /// <returns>Complaint information</returns>
+        virtual public ComplaintView GetComplaintById(int complaintId)
+        {
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "GetComplaintById";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@complaint_id", complaintId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        return BuildComplaintViewList(reader)[0];
+                    }
+                }
+            }
         }
     }
 }

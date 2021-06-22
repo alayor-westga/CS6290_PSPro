@@ -30,12 +30,12 @@ namespace PSPro.UserControls
         private void InitializeComponent()
         {
             this.citizenGroupBox = new System.Windows.Forms.GroupBox();
-            this.citizenNameLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.citizenAddressLabel = new System.Windows.Forms.Label();
-            this.citizenAddressLabelValue = new System.Windows.Forms.Label();
-            this.citizenPhoneLabel = new System.Windows.Forms.Label();
             this.citizenPhoneLabelValue = new System.Windows.Forms.Label();
+            this.citizenPhoneLabel = new System.Windows.Forms.Label();
+            this.citizenAddressLabelValue = new System.Windows.Forms.Label();
+            this.citizenAddressLabel = new System.Windows.Forms.Label();
+            this.citizenNameLabelValue = new System.Windows.Forms.Label();
+            this.citizenNameLabel = new System.Windows.Forms.Label();
             this.citizenGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +45,7 @@ namespace PSPro.UserControls
             this.citizenGroupBox.Controls.Add(this.citizenPhoneLabel);
             this.citizenGroupBox.Controls.Add(this.citizenAddressLabelValue);
             this.citizenGroupBox.Controls.Add(this.citizenAddressLabel);
-            this.citizenGroupBox.Controls.Add(this.label1);
+            this.citizenGroupBox.Controls.Add(this.citizenNameLabelValue);
             this.citizenGroupBox.Controls.Add(this.citizenNameLabel);
             this.citizenGroupBox.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.citizenGroupBox.Location = new System.Drawing.Point(30, 32);
@@ -55,41 +55,14 @@ namespace PSPro.UserControls
             this.citizenGroupBox.TabStop = false;
             this.citizenGroupBox.Text = "Citizen";
             // 
-            // citizenNameLabel
+            // citizenPhoneLabelValue
             // 
-            this.citizenNameLabel.AutoSize = true;
-            this.citizenNameLabel.Location = new System.Drawing.Point(38, 53);
-            this.citizenNameLabel.Name = "citizenNameLabel";
-            this.citizenNameLabel.Size = new System.Drawing.Size(128, 50);
-            this.citizenNameLabel.TabIndex = 0;
-            this.citizenNameLabel.Text = "Name:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(172, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 50);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "--";
-            // 
-            // citizenAddressLabel
-            // 
-            this.citizenAddressLabel.AutoSize = true;
-            this.citizenAddressLabel.Location = new System.Drawing.Point(38, 103);
-            this.citizenAddressLabel.Name = "citizenAddressLabel";
-            this.citizenAddressLabel.Size = new System.Drawing.Size(162, 50);
-            this.citizenAddressLabel.TabIndex = 2;
-            this.citizenAddressLabel.Text = "Address:";
-            // 
-            // citizenAddressLabelValue
-            // 
-            this.citizenAddressLabelValue.AutoSize = true;
-            this.citizenAddressLabelValue.Location = new System.Drawing.Point(206, 103);
-            this.citizenAddressLabelValue.Name = "citizenAddressLabelValue";
-            this.citizenAddressLabelValue.Size = new System.Drawing.Size(52, 50);
-            this.citizenAddressLabelValue.TabIndex = 3;
-            this.citizenAddressLabelValue.Text = "--";
+            this.citizenPhoneLabelValue.AutoSize = true;
+            this.citizenPhoneLabelValue.Location = new System.Drawing.Point(323, 153);
+            this.citizenPhoneLabelValue.Name = "citizenPhoneLabelValue";
+            this.citizenPhoneLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.citizenPhoneLabelValue.TabIndex = 5;
+            this.citizenPhoneLabelValue.Text = "--";
             // 
             // citizenPhoneLabel
             // 
@@ -100,14 +73,41 @@ namespace PSPro.UserControls
             this.citizenPhoneLabel.TabIndex = 4;
             this.citizenPhoneLabel.Text = "Phone Number:";
             // 
-            // citizenPhoneLabelValue
+            // citizenAddressLabelValue
             // 
-            this.citizenPhoneLabelValue.AutoSize = true;
-            this.citizenPhoneLabelValue.Location = new System.Drawing.Point(323, 153);
-            this.citizenPhoneLabelValue.Name = "citizenPhoneLabelValue";
-            this.citizenPhoneLabelValue.Size = new System.Drawing.Size(52, 50);
-            this.citizenPhoneLabelValue.TabIndex = 5;
-            this.citizenPhoneLabelValue.Text = "--";
+            this.citizenAddressLabelValue.AutoSize = true;
+            this.citizenAddressLabelValue.Location = new System.Drawing.Point(206, 103);
+            this.citizenAddressLabelValue.Name = "citizenAddressLabelValue";
+            this.citizenAddressLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.citizenAddressLabelValue.TabIndex = 3;
+            this.citizenAddressLabelValue.Text = "--";
+            // 
+            // citizenAddressLabel
+            // 
+            this.citizenAddressLabel.AutoSize = true;
+            this.citizenAddressLabel.Location = new System.Drawing.Point(38, 103);
+            this.citizenAddressLabel.Name = "citizenAddressLabel";
+            this.citizenAddressLabel.Size = new System.Drawing.Size(162, 50);
+            this.citizenAddressLabel.TabIndex = 2;
+            this.citizenAddressLabel.Text = "Address:";
+            // 
+            // citizenNameLabelValue
+            // 
+            this.citizenNameLabelValue.AutoSize = true;
+            this.citizenNameLabelValue.Location = new System.Drawing.Point(172, 53);
+            this.citizenNameLabelValue.Name = "citizenNameLabelValue";
+            this.citizenNameLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.citizenNameLabelValue.TabIndex = 1;
+            this.citizenNameLabelValue.Text = "--";
+            // 
+            // citizenNameLabel
+            // 
+            this.citizenNameLabel.AutoSize = true;
+            this.citizenNameLabel.Location = new System.Drawing.Point(38, 53);
+            this.citizenNameLabel.Name = "citizenNameLabel";
+            this.citizenNameLabel.Size = new System.Drawing.Size(128, 50);
+            this.citizenNameLabel.TabIndex = 0;
+            this.citizenNameLabel.Text = "Name:";
             // 
             // ManageComplaintAsInvestigator
             // 
@@ -126,7 +126,7 @@ namespace PSPro.UserControls
 
         private System.Windows.Forms.GroupBox citizenGroupBox;
         private System.Windows.Forms.Label citizenNameLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label citizenNameLabelValue;
         private System.Windows.Forms.Label citizenPhoneLabelValue;
         private System.Windows.Forms.Label citizenPhoneLabel;
         private System.Windows.Forms.Label citizenAddressLabelValue;
