@@ -37,8 +37,10 @@ namespace PSPro.View
             this.complaintListTabPage = new System.Windows.Forms.TabPage();
             this.complaintList = new PSPro.UserControls.ComplaintList();
             this.manageComplaintTabPage = new System.Windows.Forms.TabPage();
+            this.manageComplaintAsInvestigator = new PSPro.UserControls.ManageComplaintAsInvestigator();
             this.complaintListTabControl.SuspendLayout();
             this.complaintListTabPage.SuspendLayout();
+            this.manageComplaintTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // userFullNameLabel
@@ -107,6 +109,7 @@ namespace PSPro.View
             // 
             // manageComplaintTabPage
             // 
+            this.manageComplaintTabPage.Controls.Add(this.manageComplaintAsInvestigator);
             this.manageComplaintTabPage.Location = new System.Drawing.Point(8, 64);
             this.manageComplaintTabPage.Name = "manageComplaintTabPage";
             this.manageComplaintTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -114,6 +117,15 @@ namespace PSPro.View
             this.manageComplaintTabPage.TabIndex = 1;
             this.manageComplaintTabPage.Text = "Manage Complaint";
             this.manageComplaintTabPage.UseVisualStyleBackColor = true;
+            // 
+            // manageComplaintAsInvestigator
+            // 
+            this.manageComplaintAsInvestigator.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageComplaintAsInvestigator.Location = new System.Drawing.Point(3, 3);
+            this.manageComplaintAsInvestigator.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.manageComplaintAsInvestigator.Name = "manageComplaintAsInvestigator";
+            this.manageComplaintAsInvestigator.Size = new System.Drawing.Size(1302, 712);
+            this.manageComplaintAsInvestigator.TabIndex = 0;
             // 
             // InvestigatorDashboard
             // 
@@ -136,6 +148,7 @@ namespace PSPro.View
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InvestigatorDashboard_FormClosed);
             this.complaintListTabControl.ResumeLayout(false);
             this.complaintListTabPage.ResumeLayout(false);
+            this.manageComplaintTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +163,6 @@ namespace PSPro.View
         private System.Windows.Forms.TabPage complaintListTabPage;
         private System.Windows.Forms.TabPage manageComplaintTabPage;
         private UserControls.ComplaintList complaintList;
+        private UserControls.ManageComplaintAsInvestigator manageComplaintAsInvestigator;
     }
 }

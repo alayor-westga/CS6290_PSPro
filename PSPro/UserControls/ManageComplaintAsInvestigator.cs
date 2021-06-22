@@ -16,5 +16,10 @@ namespace PSPro.UserControls
         {
             InitializeComponent();
         }
+
+        public void SetComplaintInfo(int complaintID)
+        {
+            
+        }
     }
 }

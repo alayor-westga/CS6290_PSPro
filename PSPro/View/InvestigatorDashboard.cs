@@ -46,7 +46,8 @@ namespace PSPro.View
 
         public void OnComplaintSelected(int complaintId)
         {
-            System.Console.WriteLine(complaintId);
+            this.manageComplaintAsInvestigator.SetComplaintInfo(complaintId);
+            this.complaintListTabControl.SelectedTab = manageComplaintTabPage;
         }
     }
 }
