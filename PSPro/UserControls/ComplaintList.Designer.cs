@@ -40,6 +40,7 @@ namespace PSPro.UserControls
             this.officerComboBox = new System.Windows.Forms.ComboBox();
             this.officerComboBoxBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.officerLabel = new System.Windows.Forms.Label();
+            this.manageComplaintButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.complaintsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaintViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).BeginInit();
@@ -139,10 +140,23 @@ namespace PSPro.UserControls
             this.officerLabel.TabIndex = 2;
             this.officerLabel.Text = "Officer";
             // 
+            // manageComplaintButton
+            // 
+            this.manageComplaintButton.AutoSize = true;
+            this.manageComplaintButton.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageComplaintButton.Location = new System.Drawing.Point(898, 628);
+            this.manageComplaintButton.Name = "manageComplaintButton";
+            this.manageComplaintButton.Size = new System.Drawing.Size(354, 60);
+            this.manageComplaintButton.TabIndex = 4;
+            this.manageComplaintButton.Text = "Manage Complaint";
+            this.manageComplaintButton.UseVisualStyleBackColor = true;
+            this.manageComplaintButton.Click += new System.EventHandler(this.manageComplaintButton_Click);
+            // 
             // ComplaintList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 40F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.manageComplaintButton);
             this.Controls.Add(this.officerLabel);
             this.Controls.Add(this.officerComboBox);
             this.Controls.Add(this.complaintsDataGridView);
@@ -171,5 +185,6 @@ namespace PSPro.UserControls
         private System.Windows.Forms.ComboBox officerComboBox;
         private System.Windows.Forms.Label officerLabel;
         private System.Windows.Forms.BindingSource officerComboBoxBindingSource;
+        private System.Windows.Forms.Button manageComplaintButton;
     }
 }

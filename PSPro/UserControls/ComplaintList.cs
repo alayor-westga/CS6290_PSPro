@@ -8,13 +8,25 @@ namespace PSPro.UserControls
 {
     public partial class ComplaintList : UserControl
     {
+        private List<ComplaintSelectionListener> complaintSelectionListeners;
         private readonly ComplaintController complaintController;
         private readonly OfficerController officerController;
         public ComplaintList()
         {
             InitializeComponent();
+            complaintSelectionListeners = new List<ComplaintSelectionListener>();
             complaintController = new ComplaintController();
             officerController = new OfficerController();
+        }
+
+        public void AddComplaintSelectionListener(ComplaintSelectionListener listener)
+        {
+            complaintSelectionListeners.Add(listener);
+        }
+
+        public void RemoveComplaintSelectionListener(ComplaintSelectionListener listener)
+        {
+            complaintSelectionListeners.Remove(listener);
         }
 
         private void ShowAllActiveComplaints()
@@ -67,6 +79,15 @@ namespace PSPro.UserControls
         private void officerComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ShowAllActiveComplaints();
+        }
+
+        private void manageComplaintButton_Click(object sender, EventArgs e)
+        {
+            ComplaintView complaintView = (ComplaintView) complaintsDataGridView.SelectedRows[0].DataBoundItem;
+            foreach (ComplaintSelectionListener listener in complaintSelectionListeners)
+            {
+                listener.OnComplaintSelected(complaintView.ComplaintID);
+            }
         }
     }
 }

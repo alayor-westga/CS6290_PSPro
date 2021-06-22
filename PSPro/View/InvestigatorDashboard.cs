@@ -7,7 +7,7 @@ namespace PSPro.View
     /// <summary>
     /// View for dashboard for logged in investigator
     /// </summary>
-    public partial class InvestigatorDashboard : Form
+    public partial class InvestigatorDashboard : Form, ComplaintSelectionListener
     {
         private readonly Form loginForm;
         private readonly User loggedInUser;
@@ -19,6 +19,7 @@ namespace PSPro.View
         public InvestigatorDashboard(Form loginForm)
         {
             InitializeComponent();
+            this.complaintList.AddComplaintSelectionListener(this);
             this.loginForm = loginForm;
             this.loggedInUser = LoginController.GetUser();
             this.ShowUserName();
@@ -41,6 +42,11 @@ namespace PSPro.View
         private void InvestigatorDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        public void OnComplaintSelected(int complaintId)
+        {
+            System.Console.WriteLine(complaintId);
         }
     }
 }
