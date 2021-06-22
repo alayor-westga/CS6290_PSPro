@@ -28,6 +28,7 @@ namespace E2ETests.Windows
                 .AsButton()
                 .Click();
             Thread.Sleep(2000);
+            context.mustChangeWindow = true;
         }
 
         public void ClickOnLogout()
