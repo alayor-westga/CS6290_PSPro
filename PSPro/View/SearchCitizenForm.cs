@@ -30,6 +30,7 @@ namespace PSPro.View
             this.citizenController = new CitizenController();
             this.citizens = new List<Citizen>();
             this.SelectCitizenButton.Enabled = false;
+            Console.WriteLine("In Search form");
         }
 
         private void DisableAllSearchBoxes()

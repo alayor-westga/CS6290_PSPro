@@ -29,6 +29,7 @@ namespace E2ETests.Hooks
             context.newComplaintWindow = new NewComplaintWindow(context);
             context.investigatorDashboardWindow = new InvestigatorDashboardWindow(context);
             context.administratorDashboardWindow = new AdministratorDashboardWindow(context);
+            context.citizenWindow = new CitizenWindow(context);
         }
 
         [AfterScenario]

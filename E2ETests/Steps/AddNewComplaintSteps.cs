@@ -3,6 +3,8 @@ using TechTalk.SpecFlow;
 using NUnit.Framework;
 using System.Data.SqlClient;
 using E2ETests.Drivers;
+using System.Data;
+using System;
 
 namespace E2ETests.Steps
 {
@@ -197,6 +199,67 @@ namespace E2ETests.Steps
             context.newComplaintWindow.SelectAllegation(complaintToAdd[10]);
             context.newComplaintWindow.EnterComplaintSummary(complaintToAdd[11]);
             context.newComplaintWindow.ClickOnSave();
+        }
+
+        [Given(@"a citizen exists on the DB with this info")]
+        public void GivenACitizenExistsOnTheDbWithThisInfo(Table table)
+        {
+            var citizen = table.Rows[0];
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedureAddCitizen = "AddCitizen";
+
+                using (SqlCommand command = new SqlCommand(storedProcedureAddCitizen, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@first_name", citizen[0]);
+                    command.Parameters.AddWithValue("@last_name", citizen[1]);
+                    command.Parameters.AddWithValue("@address1", citizen[2]);
+                    if (citizen[3] == "")
+                    {
+                        command.Parameters.AddWithValue("@address2", DBNull.Value);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@address2", citizen[3]);
+                    }
+                    command.Parameters.AddWithValue("@city", citizen[4]);
+                    command.Parameters.AddWithValue("@state", citizen[5]);
+                    command.Parameters.AddWithValue("@zipcode", citizen[6]);
+                    command.Parameters.AddWithValue("@phone", citizen[7]);
+                    if (citizen[8] == "")
+                    {
+                        command.Parameters.AddWithValue("@email", DBNull.Value);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@email", citizen[8]);
+                    }
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        [When(@"Search Citizen button is selected")]
+
+        public void WhenSearchCitizenButtonIsSelected()
+        {
+            context.newComplaintWindow.ClickSearchCitizen();
+        }
+
+        [Then(@"SearchCitizenForm is shown")]
+
+        public void SearchCitizenFormIsShown()
+        {
+
+        }
+
+        [When(@"""(.*)"" is entered in First Name text box")]
+        public void WhenIsEnteredInFirstNameTextBox(string firstName)
+        {
+            Console.Write("firstName: " + firstName);
+           context.citizenWindow.EnterCitizenFirstName(firstName); //null reference
         }
 
         [Given(@"the user logs out")]

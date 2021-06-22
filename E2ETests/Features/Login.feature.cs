@@ -77,7 +77,7 @@ namespace E2ETests.Features
         {
 #line 4
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "type",
                         "username",
                         "password",
@@ -87,7 +87,7 @@ namespace E2ETests.Features
                         "hiredate",
                         "birthdate",
                         "assignment"});
-            table5.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "supervisor",
                         "s-001",
                         "4567",
@@ -97,7 +97,7 @@ namespace E2ETests.Features
                         "2000-01-01",
                         "1970-01-01",
                         "assigment1"});
-            table5.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "investigator",
                         "i-001",
                         "4567",
@@ -107,7 +107,7 @@ namespace E2ETests.Features
                         "2001-01-01",
                         "1988-01-01",
                         "assigment1"});
-            table5.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "administrator",
                         "a-001",
                         "4567",
@@ -118,7 +118,7 @@ namespace E2ETests.Features
                         "1992-01-01",
                         "assigment1"});
 #line 5
-    testRunner.Given("personnel exists on the DB with this info", ((string)(null)), table5, "Given ");
+    testRunner.Given("personnel exists on the DB with this info", ((string)(null)), table7, "Given ");
 #line hidden
         }
         

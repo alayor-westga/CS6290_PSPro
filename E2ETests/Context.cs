@@ -16,6 +16,7 @@ namespace E2ETests
         public NewComplaintWindow newComplaintWindow { get; set; }
         public InvestigatorDashboardWindow investigatorDashboardWindow { get; set; }
         public AdministratorDashboardWindow administratorDashboardWindow { get; set; }
+        public CitizenWindow citizenWindow { get; set; }
 
         public Window GetWindow()
         {
