@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 using PSPro.Controller;
 using PSPro.Model;
 
@@ -11,6 +12,7 @@ namespace PSPro.View
     {
         private readonly Form loginForm;
         private readonly User loggedInUser;
+        private readonly List<TabPage> refreshableTabPages;
 
         /// <summary>
         /// Constructor; initializes components; instantiates instance variable and writes logged-in user on form
@@ -23,6 +25,9 @@ namespace PSPro.View
             this.loginForm = loginForm;
             this.loggedInUser = LoginController.GetUser();
             this.ShowUserName();
+            refreshableTabPages = new List<TabPage> {
+               complaintListTabPage
+            };
         }
 
         /// <summary>
@@ -48,6 +53,25 @@ namespace PSPro.View
         {
             this.manageComplaintAsInvestigator.SetComplaintInfo(complaintId);
             this.complaintListTabControl.SelectedTab = manageComplaintTabPage;
+        }
+
+        private void RefreshControlsInTabPage(TabPage tabPage)
+        {
+            foreach (Control control in tabPage.Controls)
+            {
+                if (control is IRefreshable)
+                {
+                    ((IRefreshable)control).Refresh();
+                }
+            }
+        }
+
+        private void complaintListTabControl_Selected(object sender, TabControlEventArgs e)
+        {
+            if (refreshableTabPages.Contains(e.TabPage))
+            {
+                RefreshControlsInTabPage(e.TabPage);
+            }
         }
     }
 }

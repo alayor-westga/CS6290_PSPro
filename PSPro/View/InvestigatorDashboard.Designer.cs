@@ -85,6 +85,7 @@ namespace PSPro.View
             this.complaintListTabControl.SelectedIndex = 0;
             this.complaintListTabControl.Size = new System.Drawing.Size(1324, 790);
             this.complaintListTabControl.TabIndex = 30;
+            this.complaintListTabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.complaintListTabControl_Selected);
             // 
             // complaintListTabPage
             // 

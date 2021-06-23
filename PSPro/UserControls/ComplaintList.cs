@@ -6,7 +6,7 @@ using PSPro.Model;
 
 namespace PSPro.UserControls
 {
-    public partial class ComplaintList : UserControl
+    public partial class ComplaintList : UserControl, IRefreshable
     {
         private List<ComplaintSelectionListener> complaintSelectionListeners;
         private readonly ComplaintController complaintController;
@@ -54,6 +54,11 @@ namespace PSPro.UserControls
                 ShowAllActiveComplaints();
                 PopulateOfficerComboBox();
             }
+        }
+
+        override public void Refresh()
+        {
+            ShowAllActiveComplaints();
         }
 
         private void PopulateOfficerComboBox()
