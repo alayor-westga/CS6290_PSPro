@@ -72,6 +72,11 @@ namespace PSPro.View
             {
                 RefreshControlsInTabPage(e.TabPage);
             }
+            if (this.complaintListTabControl.SelectedTab == manageComplaintTabPage)
+            {
+                int complaintId = complaintList.GetSelectedComplaintId();
+                this.manageComplaintAsInvestigator.SetComplaintInfo(complaintId);
+            }
         }
     }
 }

@@ -104,5 +104,11 @@ namespace PSPro.UserControls
                 listener.OnComplaintSelected(complaintView.ComplaintID);
             }
         }
+
+        public int GetSelectedComplaintId()
+        {
+            ComplaintView complaintView = (ComplaintView)complaintsDataGridView.SelectedRows[0].DataBoundItem;
+            return complaintView.ComplaintID;
+        }
     }
 }
