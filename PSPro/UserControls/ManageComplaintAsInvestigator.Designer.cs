@@ -52,6 +52,8 @@ namespace PSPro.UserControls
             this.saveButton = new System.Windows.Forms.Button();
             this.disciplineLabel = new System.Windows.Forms.Label();
             this.disciplineLabelValue = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dispositionComboBox = new System.Windows.Forms.ComboBox();
             this.citizenGroupBox.SuspendLayout();
             this.complaintGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -136,6 +138,8 @@ namespace PSPro.UserControls
             // 
             // complaintGroupBox
             // 
+            this.complaintGroupBox.Controls.Add(this.dispositionComboBox);
+            this.complaintGroupBox.Controls.Add(this.label1);
             this.complaintGroupBox.Controls.Add(this.disciplineLabelValue);
             this.complaintGroupBox.Controls.Add(this.disciplineLabel);
             this.complaintGroupBox.Controls.Add(this.saveButton);
@@ -289,6 +293,7 @@ namespace PSPro.UserControls
             this.saveButton.TabIndex = 17;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // disciplineLabel
             // 
@@ -309,6 +314,29 @@ namespace PSPro.UserControls
             this.disciplineLabelValue.Size = new System.Drawing.Size(52, 50);
             this.disciplineLabelValue.TabIndex = 19;
             this.disciplineLabelValue.Text = "--";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 353);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(215, 50);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Disposition:";
+            // 
+            // dispositionComboBox
+            // 
+            this.dispositionComboBox.FormattingEnabled = true;
+            this.dispositionComboBox.Items.AddRange(new object[] {
+            "Sustained",
+            "Not sustained",
+            "Exonerated",
+            "Unfounded"});
+            this.dispositionComboBox.Location = new System.Drawing.Point(242, 350);
+            this.dispositionComboBox.Name = "dispositionComboBox";
+            this.dispositionComboBox.Size = new System.Drawing.Size(541, 58);
+            this.dispositionComboBox.TabIndex = 21;
             // 
             // ManageComplaintAsInvestigator
             // 
@@ -353,5 +381,7 @@ namespace PSPro.UserControls
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label disciplineLabel;
         private System.Windows.Forms.Label disciplineLabelValue;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox dispositionComboBox;
     }
 }

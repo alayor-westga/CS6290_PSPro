@@ -507,6 +507,22 @@ TO winforms;
 GO
 
 
+--UpdateComplaintDisposition
+DROP PROCEDURE IF EXISTS UpdateComplaintDisposition;
+GO
+CREATE PROCEDURE UpdateComplaintDisposition
+	@complaint_id int,
+	@disposition varchar(25)
+AS
+SET NOCOUNT ON;
 
---INSERT Complaints(citizen_id, officers_personnel_id, supervisors_personnel_id, date_created, allegation_type, complaint_notes)
---VALUES (@citizen_id,@officers_personnel_id, @supervisors_personnel_id, CURRENT_TIMESTAMP,@allegation_type, @complaint_notes)
+    UPDATE Complaints
+		SET disposition = @disposition, 
+		disposition_date = CURRENT_TIMESTAMP
+	WHERE complaint_id = @complaint_id
+
+GO
+GRANT EXECUTE ON
+UpdateComplaintDisposition
+TO winforms;
+GO

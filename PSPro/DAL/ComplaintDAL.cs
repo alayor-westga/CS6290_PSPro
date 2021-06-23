@@ -214,5 +214,26 @@ namespace PSPro.DAL
                 }
             }
         }
+
+        /// <summary>
+        /// Update complaint's disposition.
+        /// </summary>
+        /// <param name="complaintId">the complaint id to be updates.</param>
+        /// <param name="disposition">the new disposition of the complaint.</param>
+        virtual public void UpdateDisposition(int complaintId, string disposition)
+        {
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "UpdateComplaintDisposition";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@complaint_id", complaintId);
+                    command.Parameters.AddWithValue("@disposition", disposition);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

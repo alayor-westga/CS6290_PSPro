@@ -66,9 +66,19 @@ namespace PSPro.Controller
         /// </summary>
         /// <param name="complaintId">the complaint id to be retrieved.</param>
         /// <returns>Complaint information</returns>
-        virtual public ComplaintView GetComplaintById(int complaintId)
+        public ComplaintView GetComplaintById(int complaintId)
         {
             return this.complaintSource.GetComplaintById(complaintId);
+        }
+
+        /// <summary>
+        /// Update complaint's disposition.
+        /// </summary>
+        /// <param name="complaintId">the complaint id to be updates.</param>
+        /// <param name="disposition">the new disposition of the complaint.</param>
+        public void UpdateDisposition(int complaintId, string disposition)
+        {
+            this.complaintSource.UpdateDisposition(complaintId, disposition);
         }
     }
 }
