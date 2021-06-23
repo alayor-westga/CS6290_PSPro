@@ -32,6 +32,10 @@ namespace PSPro.UserControls
             this.statusLabelValue.Text = complaintView.Status;
             this.allegationLabelValue.Text = complaintView.Allegation;
             this.notesTextBox.Text = complaintView.Notes;
+            this.dateLabelValue.Text = complaintView.DateCreated.ToShortDateString();
+            var discipline = complaintView.Discipline != null && complaintView.Discipline.Length > 0
+                    ? complaintView.Discipline : "--";
+            this.disciplineLabelValue.Text = discipline;
         }
     }
 }

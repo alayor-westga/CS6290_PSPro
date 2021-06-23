@@ -47,6 +47,11 @@ namespace PSPro.UserControls
             this.allegationLabelValue = new System.Windows.Forms.Label();
             this.notesLabel = new System.Windows.Forms.Label();
             this.notesTextBox = new System.Windows.Forms.RichTextBox();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.dateLabelValue = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.disciplineLabel = new System.Windows.Forms.Label();
+            this.disciplineLabelValue = new System.Windows.Forms.Label();
             this.citizenGroupBox.SuspendLayout();
             this.complaintGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -131,6 +136,11 @@ namespace PSPro.UserControls
             // 
             // complaintGroupBox
             // 
+            this.complaintGroupBox.Controls.Add(this.disciplineLabelValue);
+            this.complaintGroupBox.Controls.Add(this.disciplineLabel);
+            this.complaintGroupBox.Controls.Add(this.saveButton);
+            this.complaintGroupBox.Controls.Add(this.dateLabelValue);
+            this.complaintGroupBox.Controls.Add(this.dateLabel);
             this.complaintGroupBox.Controls.Add(this.notesTextBox);
             this.complaintGroupBox.Controls.Add(this.notesLabel);
             this.complaintGroupBox.Controls.Add(this.allegationLabelValue);
@@ -224,7 +234,7 @@ namespace PSPro.UserControls
             // allegationLabelValue
             // 
             this.allegationLabelValue.AutoSize = true;
-            this.allegationLabelValue.Location = new System.Drawing.Point(772, 95);
+            this.allegationLabelValue.Location = new System.Drawing.Point(749, 95);
             this.allegationLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.allegationLabelValue.Name = "allegationLabelValue";
             this.allegationLabelValue.Size = new System.Drawing.Size(52, 50);
@@ -249,6 +259,56 @@ namespace PSPro.UserControls
             this.notesTextBox.Size = new System.Drawing.Size(1216, 126);
             this.notesTextBox.TabIndex = 14;
             this.notesTextBox.Text = "";
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Location = new System.Drawing.Point(953, 337);
+            this.dateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(107, 50);
+            this.dateLabel.TabIndex = 15;
+            this.dateLabel.Text = "Date:";
+            // 
+            // dateLabelValue
+            // 
+            this.dateLabelValue.AutoSize = true;
+            this.dateLabelValue.Location = new System.Drawing.Point(1054, 337);
+            this.dateLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dateLabelValue.Name = "dateLabelValue";
+            this.dateLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.dateLabelValue.TabIndex = 16;
+            this.dateLabelValue.Text = "--";
+            // 
+            // saveButton
+            // 
+            this.saveButton.AutoSize = true;
+            this.saveButton.Location = new System.Drawing.Point(1051, 402);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(172, 60);
+            this.saveButton.TabIndex = 17;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            // 
+            // disciplineLabel
+            // 
+            this.disciplineLabel.AutoSize = true;
+            this.disciplineLabel.Location = new System.Drawing.Point(20, 421);
+            this.disciplineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.disciplineLabel.Name = "disciplineLabel";
+            this.disciplineLabel.Size = new System.Drawing.Size(187, 50);
+            this.disciplineLabel.TabIndex = 18;
+            this.disciplineLabel.Text = "Discipline:";
+            // 
+            // disciplineLabelValue
+            // 
+            this.disciplineLabelValue.AutoSize = true;
+            this.disciplineLabelValue.Location = new System.Drawing.Point(215, 421);
+            this.disciplineLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.disciplineLabelValue.Name = "disciplineLabelValue";
+            this.disciplineLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.disciplineLabelValue.TabIndex = 19;
+            this.disciplineLabelValue.Text = "--";
             // 
             // ManageComplaintAsInvestigator
             // 
@@ -288,5 +348,10 @@ namespace PSPro.UserControls
         private System.Windows.Forms.Label allegationLabel;
         private System.Windows.Forms.Label notesLabel;
         private System.Windows.Forms.RichTextBox notesTextBox;
+        private System.Windows.Forms.Label dateLabelValue;
+        private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Label disciplineLabel;
+        private System.Windows.Forms.Label disciplineLabelValue;
     }
 }
