@@ -370,7 +370,9 @@ SET NOCOUNT ON;
 		CONCAT(ci.address1, ' ', ci.address2, ' ', ci.city, ' ', ci.state, ' ', ci.zipcode) AS citizen_full_address,
 		ci.phone AS citizen_phone,
 		co.disposition,
-		co.discipline
+		co.discipline,
+		co.allegation_type,
+		co.complaint_notes
 	FROM Complaints co
 		INNER JOIN Personnel o ON (o.personnel_id = co.officers_personnel_id)
 		INNER JOIN Citizens ci ON (ci.citizen_id = co.citizen_id)
@@ -397,7 +399,9 @@ SET NOCOUNT ON;
 		CONCAT(ci.address1, ' ', ci.address2, ' ', ci.city, ' ', ci.state, ' ', ci.zipcode) AS citizen_full_address,
 		ci.phone AS citizen_phone,
 		co.disposition,
-		co.discipline
+		co.discipline,
+		co.allegation_type,
+		co.complaint_notes
 	FROM Complaints co
 		INNER JOIN Personnel o ON (o.personnel_id = co.officers_personnel_id)
 		INNER JOIN Citizens ci ON (ci.citizen_id = co.citizen_id)
@@ -488,7 +492,9 @@ SET NOCOUNT ON;
 		CONCAT(ci.address1, ' ', ci.address2, ' ', ci.city, ' ', ci.state, ' ', ci.zipcode) AS citizen_full_address,
 		ci.phone AS citizen_phone,
 		co.disposition,
-		co.discipline
+		co.discipline,
+		co.allegation_type,
+		co.complaint_notes
 	FROM Complaints	co
 		INNER JOIN Personnel o ON (o.personnel_id = co.officers_personnel_id)
 		INNER JOIN Citizens ci ON (ci.citizen_id = co.citizen_id)

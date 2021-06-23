@@ -47,6 +47,16 @@ namespace PSPro.Model
         /// </summary>
         public string Discipline { get; set; }
 
+        /// <summary>
+        /// Allegation for ComplaintView
+        /// </summary>
+        public string Allegation { get; set; }
+
+        /// <summary>
+        /// Notes for ComplaintView
+        /// </summary>
+        public string Notes { get; set; }
+
 
         /// <summary>
         /// Status for ComplaintView

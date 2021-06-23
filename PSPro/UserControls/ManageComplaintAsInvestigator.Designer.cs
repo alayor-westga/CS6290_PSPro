@@ -43,6 +43,10 @@ namespace PSPro.UserControls
             this.complaintIdLabelValue = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
             this.statusLabelValue = new System.Windows.Forms.Label();
+            this.allegationLabel = new System.Windows.Forms.Label();
+            this.allegationLabelValue = new System.Windows.Forms.Label();
+            this.notesLabel = new System.Windows.Forms.Label();
+            this.notesTextBox = new System.Windows.Forms.RichTextBox();
             this.citizenGroupBox.SuspendLayout();
             this.complaintGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -127,6 +131,10 @@ namespace PSPro.UserControls
             // 
             // complaintGroupBox
             // 
+            this.complaintGroupBox.Controls.Add(this.notesTextBox);
+            this.complaintGroupBox.Controls.Add(this.notesLabel);
+            this.complaintGroupBox.Controls.Add(this.allegationLabelValue);
+            this.complaintGroupBox.Controls.Add(this.allegationLabel);
             this.complaintGroupBox.Controls.Add(this.statusLabelValue);
             this.complaintGroupBox.Controls.Add(this.statusLabel);
             this.complaintGroupBox.Controls.Add(this.complaintIdLabelValue);
@@ -186,7 +194,7 @@ namespace PSPro.UserControls
             // statusLabel
             // 
             this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(934, 45);
+            this.statusLabel.Location = new System.Drawing.Point(559, 45);
             this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Size = new System.Drawing.Size(131, 50);
@@ -196,12 +204,51 @@ namespace PSPro.UserControls
             // statusLabelValue
             // 
             this.statusLabelValue.AutoSize = true;
-            this.statusLabelValue.Location = new System.Drawing.Point(1061, 45);
+            this.statusLabelValue.Location = new System.Drawing.Point(689, 45);
             this.statusLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.statusLabelValue.Name = "statusLabelValue";
             this.statusLabelValue.Size = new System.Drawing.Size(52, 50);
             this.statusLabelValue.TabIndex = 10;
             this.statusLabelValue.Text = "--";
+            // 
+            // allegationLabel
+            // 
+            this.allegationLabel.AutoSize = true;
+            this.allegationLabel.Location = new System.Drawing.Point(559, 95);
+            this.allegationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.allegationLabel.Name = "allegationLabel";
+            this.allegationLabel.Size = new System.Drawing.Size(197, 50);
+            this.allegationLabel.TabIndex = 11;
+            this.allegationLabel.Text = "Allegation:";
+            // 
+            // allegationLabelValue
+            // 
+            this.allegationLabelValue.AutoSize = true;
+            this.allegationLabelValue.Location = new System.Drawing.Point(772, 95);
+            this.allegationLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.allegationLabelValue.Name = "allegationLabelValue";
+            this.allegationLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.allegationLabelValue.TabIndex = 12;
+            this.allegationLabelValue.Text = "--";
+            // 
+            // notesLabel
+            // 
+            this.notesLabel.AutoSize = true;
+            this.notesLabel.Location = new System.Drawing.Point(20, 155);
+            this.notesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.notesLabel.Name = "notesLabel";
+            this.notesLabel.Size = new System.Drawing.Size(128, 50);
+            this.notesLabel.TabIndex = 13;
+            this.notesLabel.Text = "Notes:";
+            // 
+            // notesTextBox
+            // 
+            this.notesTextBox.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.notesTextBox.Location = new System.Drawing.Point(29, 208);
+            this.notesTextBox.Name = "notesTextBox";
+            this.notesTextBox.Size = new System.Drawing.Size(1216, 126);
+            this.notesTextBox.TabIndex = 14;
+            this.notesTextBox.Text = "";
             // 
             // ManageComplaintAsInvestigator
             // 
@@ -237,5 +284,9 @@ namespace PSPro.UserControls
         private System.Windows.Forms.Label complaintIdLabel;
         private System.Windows.Forms.Label statusLabelValue;
         private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.Label allegationLabelValue;
+        private System.Windows.Forms.Label allegationLabel;
+        private System.Windows.Forms.Label notesLabel;
+        private System.Windows.Forms.RichTextBox notesTextBox;
     }
 }

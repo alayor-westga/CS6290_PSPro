@@ -30,6 +30,8 @@ namespace PSPro.UserControls
             this.officerFullNameLabelValue.Text = complaintView.OfficerFullName;
             this.complaintIdLabelValue.Text = complaintView.ComplaintID.ToString();
             this.statusLabelValue.Text = complaintView.Status;
+            this.allegationLabelValue.Text = complaintView.Allegation;
+            this.notesTextBox.Text = complaintView.Notes;
         }
     }
 }
