@@ -69,6 +69,7 @@ namespace PSPro.UserControls
             this.complaintsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.complaintsDataGridView.Size = new System.Drawing.Size(1258, 480);
             this.complaintsDataGridView.TabIndex = 0;
+            this.complaintsDataGridView.DoubleClick += new System.EventHandler(this.complaintsDataGridView_DoubleClick);
             // 
             // complaintIDDataGridViewTextBoxColumn
             // 

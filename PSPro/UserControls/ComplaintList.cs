@@ -83,7 +83,17 @@ namespace PSPro.UserControls
 
         private void manageComplaintButton_Click(object sender, EventArgs e)
         {
-            ComplaintView complaintView = (ComplaintView) complaintsDataGridView.SelectedRows[0].DataBoundItem;
+            manageComplaint();
+        }
+
+        private void complaintsDataGridView_DoubleClick(object sender, EventArgs e)
+        {
+            manageComplaint();
+        }
+
+        private void manageComplaint()
+        {
+            ComplaintView complaintView = (ComplaintView)complaintsDataGridView.SelectedRows[0].DataBoundItem;
             foreach (ComplaintSelectionListener listener in complaintSelectionListeners)
             {
                 listener.OnComplaintSelected(complaintView.ComplaintID);

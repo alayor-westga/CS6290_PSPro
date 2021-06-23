@@ -52,9 +52,11 @@ namespace PSPro.UserControls
             this.citizenGroupBox.Controls.Add(this.citizenNameLabelValue);
             this.citizenGroupBox.Controls.Add(this.citizenNameLabel);
             this.citizenGroupBox.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.citizenGroupBox.Location = new System.Drawing.Point(30, 32);
+            this.citizenGroupBox.Location = new System.Drawing.Point(16, 4);
+            this.citizenGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.citizenGroupBox.Name = "citizenGroupBox";
-            this.citizenGroupBox.Size = new System.Drawing.Size(1246, 230);
+            this.citizenGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.citizenGroupBox.Size = new System.Drawing.Size(1274, 198);
             this.citizenGroupBox.TabIndex = 0;
             this.citizenGroupBox.TabStop = false;
             this.citizenGroupBox.Text = "Citizen";
@@ -62,7 +64,8 @@ namespace PSPro.UserControls
             // citizenPhoneLabelValue
             // 
             this.citizenPhoneLabelValue.AutoSize = true;
-            this.citizenPhoneLabelValue.Location = new System.Drawing.Point(323, 153);
+            this.citizenPhoneLabelValue.Location = new System.Drawing.Point(1008, 54);
+            this.citizenPhoneLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenPhoneLabelValue.Name = "citizenPhoneLabelValue";
             this.citizenPhoneLabelValue.Size = new System.Drawing.Size(52, 50);
             this.citizenPhoneLabelValue.TabIndex = 5;
@@ -71,7 +74,8 @@ namespace PSPro.UserControls
             // citizenPhoneLabel
             // 
             this.citizenPhoneLabel.AutoSize = true;
-            this.citizenPhoneLabel.Location = new System.Drawing.Point(38, 153);
+            this.citizenPhoneLabel.Location = new System.Drawing.Point(721, 54);
+            this.citizenPhoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenPhoneLabel.Name = "citizenPhoneLabel";
             this.citizenPhoneLabel.Size = new System.Drawing.Size(279, 50);
             this.citizenPhoneLabel.TabIndex = 4;
@@ -80,7 +84,8 @@ namespace PSPro.UserControls
             // citizenAddressLabelValue
             // 
             this.citizenAddressLabelValue.AutoSize = true;
-            this.citizenAddressLabelValue.Location = new System.Drawing.Point(206, 103);
+            this.citizenAddressLabelValue.Location = new System.Drawing.Point(258, 128);
+            this.citizenAddressLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenAddressLabelValue.Name = "citizenAddressLabelValue";
             this.citizenAddressLabelValue.Size = new System.Drawing.Size(52, 50);
             this.citizenAddressLabelValue.TabIndex = 3;
@@ -89,7 +94,8 @@ namespace PSPro.UserControls
             // citizenAddressLabel
             // 
             this.citizenAddressLabel.AutoSize = true;
-            this.citizenAddressLabel.Location = new System.Drawing.Point(38, 103);
+            this.citizenAddressLabel.Location = new System.Drawing.Point(48, 128);
+            this.citizenAddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenAddressLabel.Name = "citizenAddressLabel";
             this.citizenAddressLabel.Size = new System.Drawing.Size(162, 50);
             this.citizenAddressLabel.TabIndex = 2;
@@ -98,7 +104,8 @@ namespace PSPro.UserControls
             // citizenNameLabelValue
             // 
             this.citizenNameLabelValue.AutoSize = true;
-            this.citizenNameLabelValue.Location = new System.Drawing.Point(172, 53);
+            this.citizenNameLabelValue.Location = new System.Drawing.Point(215, 54);
+            this.citizenNameLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenNameLabelValue.Name = "citizenNameLabelValue";
             this.citizenNameLabelValue.Size = new System.Drawing.Size(52, 50);
             this.citizenNameLabelValue.TabIndex = 1;
@@ -107,7 +114,8 @@ namespace PSPro.UserControls
             // citizenNameLabel
             // 
             this.citizenNameLabel.AutoSize = true;
-            this.citizenNameLabel.Location = new System.Drawing.Point(38, 53);
+            this.citizenNameLabel.Location = new System.Drawing.Point(48, 54);
+            this.citizenNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenNameLabel.Name = "citizenNameLabel";
             this.citizenNameLabel.Size = new System.Drawing.Size(128, 50);
             this.citizenNameLabel.TabIndex = 0;
@@ -118,9 +126,11 @@ namespace PSPro.UserControls
             this.complaintGroupBox.Controls.Add(this.officerFullNameLabelValue);
             this.complaintGroupBox.Controls.Add(this.officerFullNameLabel);
             this.complaintGroupBox.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.complaintGroupBox.Location = new System.Drawing.Point(30, 300);
+            this.complaintGroupBox.Location = new System.Drawing.Point(16, 210);
+            this.complaintGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.complaintGroupBox.Name = "complaintGroupBox";
-            this.complaintGroupBox.Size = new System.Drawing.Size(1246, 392);
+            this.complaintGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.complaintGroupBox.Size = new System.Drawing.Size(1274, 484);
             this.complaintGroupBox.TabIndex = 1;
             this.complaintGroupBox.TabStop = false;
             this.complaintGroupBox.Text = "Complaint";
@@ -128,7 +138,8 @@ namespace PSPro.UserControls
             // officerFullNameLabel
             // 
             this.officerFullNameLabel.AutoSize = true;
-            this.officerFullNameLabel.Location = new System.Drawing.Point(16, 98);
+            this.officerFullNameLabel.Location = new System.Drawing.Point(20, 95);
+            this.officerFullNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.officerFullNameLabel.Name = "officerFullNameLabel";
             this.officerFullNameLabel.Size = new System.Drawing.Size(140, 50);
             this.officerFullNameLabel.TabIndex = 6;
@@ -137,7 +148,8 @@ namespace PSPro.UserControls
             // officerFullNameLabelValue
             // 
             this.officerFullNameLabelValue.AutoSize = true;
-            this.officerFullNameLabelValue.Location = new System.Drawing.Point(162, 98);
+            this.officerFullNameLabelValue.Location = new System.Drawing.Point(202, 95);
+            this.officerFullNameLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.officerFullNameLabelValue.Name = "officerFullNameLabelValue";
             this.officerFullNameLabelValue.Size = new System.Drawing.Size(52, 50);
             this.officerFullNameLabelValue.TabIndex = 6;
@@ -145,10 +157,12 @@ namespace PSPro.UserControls
             // 
             // ManageComplaintAsInvestigator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.complaintGroupBox);
             this.Controls.Add(this.citizenGroupBox);
+            this.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ManageComplaintAsInvestigator";
             this.Size = new System.Drawing.Size(1308, 718);
             this.citizenGroupBox.ResumeLayout(false);

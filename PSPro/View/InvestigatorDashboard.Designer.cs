@@ -121,8 +121,9 @@ namespace PSPro.View
             // manageComplaintAsInvestigator
             // 
             this.manageComplaintAsInvestigator.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageComplaintAsInvestigator.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageComplaintAsInvestigator.Location = new System.Drawing.Point(3, 3);
-            this.manageComplaintAsInvestigator.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.manageComplaintAsInvestigator.Margin = new System.Windows.Forms.Padding(4);
             this.manageComplaintAsInvestigator.Name = "manageComplaintAsInvestigator";
             this.manageComplaintAsInvestigator.Size = new System.Drawing.Size(1302, 712);
             this.manageComplaintAsInvestigator.TabIndex = 0;
