@@ -93,6 +93,12 @@
     <Compile Include="View\AdministratorDashboard.Designer.cs">
       <DependentUpon>AdministratorDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ComplaintNotesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ComplaintNotesForm.Designer.cs">
+      <DependentUpon>ComplaintNotesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\InvestigatorDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AdministratorDashboard.resx">
       <DependentUpon>AdministratorDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ComplaintNotesForm.resx">
+      <DependentUpon>ComplaintNotesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\InvestigatorDashboard.resx">
       <DependentUpon>InvestigatorDashboard.cs</DependentUpon>

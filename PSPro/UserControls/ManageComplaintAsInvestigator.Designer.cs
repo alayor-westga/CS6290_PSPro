@@ -46,7 +46,6 @@ namespace PSPro.UserControls
             this.allegationLabel = new System.Windows.Forms.Label();
             this.allegationLabelValue = new System.Windows.Forms.Label();
             this.notesLabel = new System.Windows.Forms.Label();
-            this.notesTextBox = new System.Windows.Forms.RichTextBox();
             this.dateLabel = new System.Windows.Forms.Label();
             this.dateLabelValue = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
@@ -54,6 +53,7 @@ namespace PSPro.UserControls
             this.disciplineLabelValue = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dispositionComboBox = new System.Windows.Forms.ComboBox();
+            this.seeNotesButton = new System.Windows.Forms.Button();
             this.citizenGroupBox.SuspendLayout();
             this.complaintGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -99,7 +99,7 @@ namespace PSPro.UserControls
             // citizenAddressLabelValue
             // 
             this.citizenAddressLabelValue.AutoSize = true;
-            this.citizenAddressLabelValue.Location = new System.Drawing.Point(202, 128);
+            this.citizenAddressLabelValue.Location = new System.Drawing.Point(174, 128);
             this.citizenAddressLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenAddressLabelValue.Name = "citizenAddressLabelValue";
             this.citizenAddressLabelValue.Size = new System.Drawing.Size(52, 50);
@@ -109,7 +109,7 @@ namespace PSPro.UserControls
             // citizenAddressLabel
             // 
             this.citizenAddressLabel.AutoSize = true;
-            this.citizenAddressLabel.Location = new System.Drawing.Point(48, 128);
+            this.citizenAddressLabel.Location = new System.Drawing.Point(20, 128);
             this.citizenAddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenAddressLabel.Name = "citizenAddressLabel";
             this.citizenAddressLabel.Size = new System.Drawing.Size(162, 50);
@@ -119,7 +119,7 @@ namespace PSPro.UserControls
             // citizenNameLabelValue
             // 
             this.citizenNameLabelValue.AutoSize = true;
-            this.citizenNameLabelValue.Location = new System.Drawing.Point(175, 54);
+            this.citizenNameLabelValue.Location = new System.Drawing.Point(147, 54);
             this.citizenNameLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenNameLabelValue.Name = "citizenNameLabelValue";
             this.citizenNameLabelValue.Size = new System.Drawing.Size(52, 50);
@@ -129,7 +129,7 @@ namespace PSPro.UserControls
             // citizenNameLabel
             // 
             this.citizenNameLabel.AutoSize = true;
-            this.citizenNameLabel.Location = new System.Drawing.Point(48, 54);
+            this.citizenNameLabel.Location = new System.Drawing.Point(20, 54);
             this.citizenNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenNameLabel.Name = "citizenNameLabel";
             this.citizenNameLabel.Size = new System.Drawing.Size(128, 50);
@@ -138,6 +138,7 @@ namespace PSPro.UserControls
             // 
             // complaintGroupBox
             // 
+            this.complaintGroupBox.Controls.Add(this.seeNotesButton);
             this.complaintGroupBox.Controls.Add(this.dispositionComboBox);
             this.complaintGroupBox.Controls.Add(this.label1);
             this.complaintGroupBox.Controls.Add(this.disciplineLabelValue);
@@ -145,7 +146,6 @@ namespace PSPro.UserControls
             this.complaintGroupBox.Controls.Add(this.saveButton);
             this.complaintGroupBox.Controls.Add(this.dateLabelValue);
             this.complaintGroupBox.Controls.Add(this.dateLabel);
-            this.complaintGroupBox.Controls.Add(this.notesTextBox);
             this.complaintGroupBox.Controls.Add(this.notesLabel);
             this.complaintGroupBox.Controls.Add(this.allegationLabelValue);
             this.complaintGroupBox.Controls.Add(this.allegationLabel);
@@ -160,7 +160,7 @@ namespace PSPro.UserControls
             this.complaintGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.complaintGroupBox.Name = "complaintGroupBox";
             this.complaintGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.complaintGroupBox.Size = new System.Drawing.Size(1274, 484);
+            this.complaintGroupBox.Size = new System.Drawing.Size(1274, 382);
             this.complaintGroupBox.TabIndex = 1;
             this.complaintGroupBox.TabStop = false;
             this.complaintGroupBox.Text = "Complaint";
@@ -255,19 +255,10 @@ namespace PSPro.UserControls
             this.notesLabel.TabIndex = 13;
             this.notesLabel.Text = "Notes:";
             // 
-            // notesTextBox
-            // 
-            this.notesTextBox.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notesTextBox.Location = new System.Drawing.Point(29, 208);
-            this.notesTextBox.Name = "notesTextBox";
-            this.notesTextBox.Size = new System.Drawing.Size(1216, 126);
-            this.notesTextBox.TabIndex = 14;
-            this.notesTextBox.Text = "";
-            // 
             // dateLabel
             // 
             this.dateLabel.AutoSize = true;
-            this.dateLabel.Location = new System.Drawing.Point(953, 337);
+            this.dateLabel.Location = new System.Drawing.Point(953, 215);
             this.dateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(107, 50);
@@ -277,7 +268,7 @@ namespace PSPro.UserControls
             // dateLabelValue
             // 
             this.dateLabelValue.AutoSize = true;
-            this.dateLabelValue.Location = new System.Drawing.Point(1054, 337);
+            this.dateLabelValue.Location = new System.Drawing.Point(1054, 215);
             this.dateLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateLabelValue.Name = "dateLabelValue";
             this.dateLabelValue.Size = new System.Drawing.Size(52, 50);
@@ -287,7 +278,7 @@ namespace PSPro.UserControls
             // saveButton
             // 
             this.saveButton.AutoSize = true;
-            this.saveButton.Location = new System.Drawing.Point(1051, 402);
+            this.saveButton.Location = new System.Drawing.Point(1051, 299);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(172, 60);
             this.saveButton.TabIndex = 17;
@@ -298,7 +289,7 @@ namespace PSPro.UserControls
             // disciplineLabel
             // 
             this.disciplineLabel.AutoSize = true;
-            this.disciplineLabel.Location = new System.Drawing.Point(20, 421);
+            this.disciplineLabel.Location = new System.Drawing.Point(20, 299);
             this.disciplineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.disciplineLabel.Name = "disciplineLabel";
             this.disciplineLabel.Size = new System.Drawing.Size(187, 50);
@@ -308,7 +299,7 @@ namespace PSPro.UserControls
             // disciplineLabelValue
             // 
             this.disciplineLabelValue.AutoSize = true;
-            this.disciplineLabelValue.Location = new System.Drawing.Point(215, 421);
+            this.disciplineLabelValue.Location = new System.Drawing.Point(215, 299);
             this.disciplineLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.disciplineLabelValue.Name = "disciplineLabelValue";
             this.disciplineLabelValue.Size = new System.Drawing.Size(52, 50);
@@ -318,7 +309,7 @@ namespace PSPro.UserControls
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 353);
+            this.label1.Location = new System.Drawing.Point(20, 231);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 50);
@@ -333,10 +324,20 @@ namespace PSPro.UserControls
             "Not sustained",
             "Exonerated",
             "Unfounded"});
-            this.dispositionComboBox.Location = new System.Drawing.Point(242, 350);
+            this.dispositionComboBox.Location = new System.Drawing.Point(242, 228);
             this.dispositionComboBox.Name = "dispositionComboBox";
             this.dispositionComboBox.Size = new System.Drawing.Size(541, 58);
             this.dispositionComboBox.TabIndex = 21;
+            // 
+            // seeNotesButton
+            // 
+            this.seeNotesButton.Location = new System.Drawing.Point(155, 150);
+            this.seeNotesButton.Name = "seeNotesButton";
+            this.seeNotesButton.Size = new System.Drawing.Size(221, 55);
+            this.seeNotesButton.TabIndex = 22;
+            this.seeNotesButton.Text = "See Notes";
+            this.seeNotesButton.UseVisualStyleBackColor = true;
+            this.seeNotesButton.Click += new System.EventHandler(this.seeNotesButton_Click);
             // 
             // ManageComplaintAsInvestigator
             // 
@@ -347,7 +348,7 @@ namespace PSPro.UserControls
             this.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ManageComplaintAsInvestigator";
-            this.Size = new System.Drawing.Size(1308, 718);
+            this.Size = new System.Drawing.Size(1308, 620);
             this.citizenGroupBox.ResumeLayout(false);
             this.citizenGroupBox.PerformLayout();
             this.complaintGroupBox.ResumeLayout(false);
@@ -375,7 +376,6 @@ namespace PSPro.UserControls
         private System.Windows.Forms.Label allegationLabelValue;
         private System.Windows.Forms.Label allegationLabel;
         private System.Windows.Forms.Label notesLabel;
-        private System.Windows.Forms.RichTextBox notesTextBox;
         private System.Windows.Forms.Label dateLabelValue;
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Button saveButton;
@@ -383,5 +383,6 @@ namespace PSPro.UserControls
         private System.Windows.Forms.Label disciplineLabelValue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox dispositionComboBox;
+        private System.Windows.Forms.Button seeNotesButton;
     }
 }

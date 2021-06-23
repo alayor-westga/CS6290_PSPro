@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using PSPro.Controller;
 using PSPro.Model;
+using PSPro.View;
 
 namespace PSPro.UserControls
 {
@@ -27,7 +28,6 @@ namespace PSPro.UserControls
             this.complaintIdLabelValue.Text = complaintView.ComplaintID.ToString();
             this.statusLabelValue.Text = complaintView.Status;
             this.allegationLabelValue.Text = complaintView.Allegation;
-            this.notesTextBox.Text = complaintView.Notes;
             this.dateLabelValue.Text = complaintView.DateCreated.ToShortDateString();
             if (complaintView.Disposition != null && complaintView.Disposition.Length > 0)
             {
@@ -55,6 +55,15 @@ namespace PSPro.UserControls
             {
                 MessageBox.Show(exception.Message,
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void seeNotesButton_Click(object sender, EventArgs e)
+        {
+            using (ComplaintNotesForm form = new ComplaintNotesForm(this))
+            {
+                Hide();
+                form.ShowDialog();
             }
         }
     }
