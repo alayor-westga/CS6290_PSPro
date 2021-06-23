@@ -41,5 +41,22 @@ namespace PSPro.Model
         /// Disposition for ComplaintView
         /// </summary>
         public string Disposition { get; set; }
+
+        /// <summary>
+        /// Discipline for ComplaintView
+        /// </summary>
+        public string Discipline { get; set; }
+
+
+        /// <summary>
+        /// Status for ComplaintView
+        /// </summary>
+        public string Status
+        {
+            get
+            {
+                return Discipline == null ? "Closed" : "Open";
+            }
+        }
     }
 }

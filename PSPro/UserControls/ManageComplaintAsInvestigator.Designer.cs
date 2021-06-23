@@ -41,6 +41,8 @@ namespace PSPro.UserControls
             this.officerFullNameLabelValue = new System.Windows.Forms.Label();
             this.complaintIdLabel = new System.Windows.Forms.Label();
             this.complaintIdLabelValue = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.statusLabelValue = new System.Windows.Forms.Label();
             this.citizenGroupBox.SuspendLayout();
             this.complaintGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -125,6 +127,8 @@ namespace PSPro.UserControls
             // 
             // complaintGroupBox
             // 
+            this.complaintGroupBox.Controls.Add(this.statusLabelValue);
+            this.complaintGroupBox.Controls.Add(this.statusLabel);
             this.complaintGroupBox.Controls.Add(this.complaintIdLabelValue);
             this.complaintGroupBox.Controls.Add(this.complaintIdLabel);
             this.complaintGroupBox.Controls.Add(this.officerFullNameLabelValue);
@@ -179,6 +183,26 @@ namespace PSPro.UserControls
             this.complaintIdLabelValue.TabIndex = 8;
             this.complaintIdLabelValue.Text = "--";
             // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(934, 45);
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(131, 50);
+            this.statusLabel.TabIndex = 9;
+            this.statusLabel.Text = "Status:";
+            // 
+            // statusLabelValue
+            // 
+            this.statusLabelValue.AutoSize = true;
+            this.statusLabelValue.Location = new System.Drawing.Point(1061, 45);
+            this.statusLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLabelValue.Name = "statusLabelValue";
+            this.statusLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.statusLabelValue.TabIndex = 10;
+            this.statusLabelValue.Text = "--";
+            // 
             // ManageComplaintAsInvestigator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
@@ -211,5 +235,7 @@ namespace PSPro.UserControls
         private System.Windows.Forms.Label officerFullNameLabel;
         private System.Windows.Forms.Label complaintIdLabelValue;
         private System.Windows.Forms.Label complaintIdLabel;
+        private System.Windows.Forms.Label statusLabelValue;
+        private System.Windows.Forms.Label statusLabel;
     }
 }

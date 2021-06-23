@@ -69,6 +69,7 @@ namespace PSPro.DAL
                     complaintView.CitizenPhone = reader["citizen_phone"].ToString();
                     complaintView.CitizenFullAddress = reader["citizen_full_address"].ToString();
                     complaintView.Disposition = reader["disposition"].ToString();
+                    complaintView.Discipline = reader["discipline"].ToString();
                 }
                 complaintViewList.Add(complaintView);
             }
