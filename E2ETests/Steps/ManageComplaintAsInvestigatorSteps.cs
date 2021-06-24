@@ -66,7 +66,7 @@ namespace E2ETests.Steps
             using (SqlConnection connection = PsProDBConnection.GetConnection())
             {
                 connection.Open();
-                var query = "SELECT disposition from Complaints;";
+                var query = "SELECT disposition, complaint_notes from Complaints;";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -75,6 +75,7 @@ namespace E2ETests.Steps
                         if (reader.Read())
                         {
                             disposition.Add("disposition", reader["disposition"].ToString());
+                            disposition.Add("complaint_notes", reader["complaint_notes"].ToString());
                         }
                     }
                 }
@@ -106,6 +107,12 @@ namespace E2ETests.Steps
         {
             context.complaintNotesWindow.ClickOnSave();
         }
+
+        [Then(@"the complaint notes should contain ""(.*)"" in the DB")]
+        public void ThenTheComplaintNotesShouldContainInTheDB(string expectedNote)
+        {
+            Dictionary<string, string> complaint = GetComplaintFromDB();
+           Assert.True(complaint.GetValueOrDefault("complaint_notes").Contains(expectedNote));        }
 
     }
 }

@@ -34,3 +34,4 @@ Scenario: Append comments to complaint
 	Then the current notes should contain "Complaint summary example"
 	When investigator adds the comment "my comment"
 	And investigator saves the comment
+	Then the complaint notes should contain "my comment" in the DB

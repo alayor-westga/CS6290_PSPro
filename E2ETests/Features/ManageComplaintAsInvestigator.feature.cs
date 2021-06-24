@@ -302,6 +302,9 @@ this.FeatureBackground();
 #line 36
  testRunner.And("investigator saves the comment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 37
+ testRunner.Then("the complaint notes should contain \"my comment\" in the DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
