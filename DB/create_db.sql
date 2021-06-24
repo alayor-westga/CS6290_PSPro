@@ -40,7 +40,7 @@ CREATE TABLE [dbo].[Citizens](
 	[city] [varchar](45) NOT NULL,
 	[state] [char](2) NOT NULL,
 	[zipcode] [varchar](10) NOT NULL,
-	[phone] [varchar](12) NOT NULL,
+	[phone] [varchar](14) NOT NULL,
 	[email] [varchar](45) NULL,
  CONSTRAINT [PK_Citizens] PRIMARY KEY CLUSTERED 
 (
