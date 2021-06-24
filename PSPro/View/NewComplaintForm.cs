@@ -48,7 +48,6 @@ namespace PSPro.View
             this.ShowUserName();
             this.PopulateOfficerComboBox();
             this.PopulateStateComboBox(this.stateComboBox);
-            phoneNumberErrorLabel.Text = "###-###-####";
         }
 
         /// <summary>
@@ -56,7 +55,7 @@ namespace PSPro.View
         /// Assigns selected citizen to the Citizen instance variable
         /// </summary>
         /// <param name="existingCitizen"></param>
-       public void PopulateCitizenFieldsWithExistingCitizenInformation(Citizen existingCitizen)
+        public void PopulateCitizenFieldsWithExistingCitizenInformation(Citizen existingCitizen)
         {
             this.citizen = existingCitizen;
             this.ClearForm();
@@ -88,10 +87,10 @@ namespace PSPro.View
         }
 
         private void PopulateOfficerComboBox()
-        {         
+        {
             try
             {
-                List<OfficerComboBox> officers = this.officerController.GetOfficersForComboBox();      
+                List<OfficerComboBox> officers = this.officerController.GetOfficersForComboBox();
                 this.officerComboBox.DataSource = officers;
             }
             catch (Exception exception)
@@ -106,7 +105,7 @@ namespace PSPro.View
         private void SaveButton_Click(object sender, EventArgs e)
         {
             if (!this.ValidateFields()) return;
-           
+
             if (string.IsNullOrEmpty(this.citizenIDTextBox.Text))
             {
                 this.BindCitizenFieldsToCitizenObject();
@@ -128,13 +127,13 @@ namespace PSPro.View
             }
             else
             {
-                this.complaint.CitizenID = Int32.Parse(this.citizenIDTextBox.Text); 
+                this.complaint.CitizenID = Int32.Parse(this.citizenIDTextBox.Text);
                 if (this.CheckForChangesMadeToCitizenFields())
                 {
                     if (!this.UpdateCitizen())
                     {
                         return;
-                    } 
+                    }
                 }
                 this.BindComplaintFieldsToComplaintObject();
 
@@ -149,26 +148,26 @@ namespace PSPro.View
                 {
                     MessageBox.Show(exception.Message,
                             "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }           
-            }         
+                }
+            }
         }
 
         private bool UpdateCitizen()
         {
             if (!this.ValidateFields()) return false;
-            
+
             this.updatedCitizen.FirstName = this.firstNameTextBox.Text;
             this.updatedCitizen.LastName = this.lastNameTextBox.Text;
             this.updatedCitizen.Address1 = this.address1TextBox.Text;
             this.updatedCitizen.Address2 = this.address2TextBox.Text;
-            this.updatedCitizen.City = this.cityTextBox.Text;           
-            this.updatedCitizen.State = stateComboBox.SelectedValue.ToString();           
+            this.updatedCitizen.City = this.cityTextBox.Text;
+            this.updatedCitizen.State = stateComboBox.SelectedValue.ToString();
             this.updatedCitizen.ZipCode = this.zipCodeTextBox.Text;
             this.updatedCitizen.Phone = this.phoneNumberTextBox.Text;
             this.updatedCitizen.Email = this.emailTextBox.Text;
 
             try
-            {               
+            {
                 if (this.citizenControler.UpdateCitizen(this.citizen, updatedCitizen))
                 {
                     return true;
@@ -180,7 +179,7 @@ namespace PSPro.View
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.GetCitizenFromDB();
                     this.PopulateCitizenFields();
-                    return false;                   
+                    return false;
                 }
             }
             catch (ArgumentException argumentException)
@@ -189,7 +188,7 @@ namespace PSPro.View
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            
+
         }
 
         private void PopulateCitizenFields()
@@ -211,17 +210,17 @@ namespace PSPro.View
 
         private void GetCitizenFromDB()
         {
-            this.citizen = this.citizenControler.GetCitizen(this.citizen.CitizenID);           
+            this.citizen = this.citizenControler.GetCitizen(this.citizen.CitizenID);
         }
 
         private bool CheckForChangesMadeToCitizenFields()
-        {      
+        {
             if (this.citizen.FirstName == this.firstNameTextBox.Text &&
                 this.citizen.LastName == this.lastNameTextBox.Text &&
                 this.citizen.Address1 == this.address1TextBox.Text &&
                 this.citizen.Address2 == this.address2TextBox.Text &&
                 this.citizen.City == this.cityTextBox.Text &&
-                (this.citizen.State == this.stateComboBox.SelectedValue.ToString() || (string.IsNullOrWhiteSpace(this.citizen.State) && this.stateComboBox.SelectedIndex == 0))  &&
+                (this.citizen.State == this.stateComboBox.SelectedValue.ToString() || (string.IsNullOrWhiteSpace(this.citizen.State) && this.stateComboBox.SelectedIndex == 0)) &&
                 this.citizen.ZipCode == this.zipCodeTextBox.Text &&
                 this.citizen.Phone == this.phoneNumberTextBox.Text &&
                 this.citizen.Email == this.emailTextBox.Text
@@ -248,8 +247,12 @@ namespace PSPro.View
             this.allegationComboBox.SelectedIndex = -1;
             this.complaintSummaryTextBox.Text = "";
             this.firstNameErrorLabel.Text = "";
+            this.lastNameErrorLabel.Text = "";
+            this.address1ErrorLabel.Text = "";
+            this.cityErrorLabel.Text = "";
+            this.stateErrorLabel.Text = "";
             this.zipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
-            phoneNumberErrorLabel.Text = "###-###-####";
+            this.phoneNumberErrorLabel.Text = "###-###-####";
             this.phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Black;
             this.officerErrorLabel.Text = "";
             this.allegationErrorLabel.Text = "";
@@ -263,7 +266,7 @@ namespace PSPro.View
             this.complaint.Allegation = this.allegationComboBox.Text;
             this.complaint.Summary = DateTime.Now + " by " + this.loggedInUser.FullName + ":\r\n" + this.complaintSummaryTextBox.Text + "\r\n\r\n";
         }
-        
+
         private void BindCitizenFieldsToCitizenObject()
         {
             this.citizen.FirstName = firstNameTextBox.Text.Trim();
@@ -278,7 +281,7 @@ namespace PSPro.View
             else
             {
                 this.citizen.State = stateComboBox.SelectedValue.ToString();
-            }          
+            }
             this.citizen.ZipCode = zipCodeTextBox.Text.Trim();
             this.citizen.Phone = phoneNumberTextBox.Text.Trim();
             this.citizen.Email = emailTextBox.Text.Trim();
@@ -333,7 +336,7 @@ namespace PSPro.View
             else
             {
                 address1ErrorLabel.Text = "";
-            }            
+            }
             if (cityTextBox.Text.Trim().Length == 0)
             {
                 isValid = false;
@@ -357,13 +360,14 @@ namespace PSPro.View
             {
                 isValid = false;
                 zipCodeErrorLabel.ForeColor = System.Drawing.Color.Red;
-            } 
+            }
             else
             {
                 zipCodeErrorLabel.ForeColor = System.Drawing.Color.Black;
             }
+
             Regex phoneRegex = new Regex("[0-9]{3}-[0-9]{3}-[0-9]{4}");
-            if (!phoneRegex.IsMatch(phoneNumberTextBox.Text) ||  string.IsNullOrWhiteSpace(this.phoneNumberTextBox.Text))
+            if (!phoneRegex.IsMatch(phoneNumberTextBox.Text) || string.IsNullOrWhiteSpace(this.phoneNumberTextBox.Text))
             {
                 isValid = false;
                 phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Red;
@@ -371,7 +375,7 @@ namespace PSPro.View
             }
             else
             {
-                List<Citizen> searchByPhoneResults = this.citizenControler.SearchByPhone(this.phoneNumberTextBox.Text);             
+                List<Citizen> searchByPhoneResults = this.citizenControler.SearchByPhone(this.phoneNumberTextBox.Text);
                 if (searchByPhoneResults.Count > 0 && (string.IsNullOrEmpty(this.citizenIDTextBox.Text) || searchByPhoneResults[0].CitizenID != Int32.Parse(this.citizenIDTextBox.Text)))
                 {
                     phoneNumberErrorLabel.ForeColor = System.Drawing.Color.Red;
@@ -384,6 +388,7 @@ namespace PSPro.View
                     phoneNumberErrorLabel.Text = "###-###-####";
                 }
             }
+
             if (officerComboBox.SelectedValue == null)
             {
                 isValid = false;
@@ -402,7 +407,7 @@ namespace PSPro.View
             {
                 this.emailErrorLabel.Text = "";
             }
-         
+
             if (string.IsNullOrEmpty(allegationComboBox.Text))
             {
                 isValid = false;
@@ -431,7 +436,7 @@ namespace PSPro.View
                 return true;
             }
             try
-            { 
+            {
                 MailAddress m = new MailAddress(this.emailTextBox.Text);
                 return true;
             }

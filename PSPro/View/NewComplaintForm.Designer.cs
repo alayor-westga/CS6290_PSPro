@@ -34,6 +34,7 @@ namespace PSPro.View
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.CitizenInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.phoneNumberTextBox = new System.Windows.Forms.MaskedTextBox();
             this.stateErrorLabel = new System.Windows.Forms.Label();
             this.cityErrorLabel = new System.Windows.Forms.Label();
             this.address1ErrorLabel = new System.Windows.Forms.Label();
@@ -44,12 +45,10 @@ namespace PSPro.View
             this.firstNameErrorLabel = new System.Windows.Forms.Label();
             this.CitizenIDLabel = new System.Windows.Forms.Label();
             this.citizenIDTextBox = new System.Windows.Forms.TextBox();
-            this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.PhoneNumberLabel = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.EmailLabel = new System.Windows.Forms.Label();
             this.stateComboBox = new System.Windows.Forms.ComboBox();
-            this.zipCodeTextBox = new System.Windows.Forms.TextBox();
             this.ZipCodeLabel = new System.Windows.Forms.Label();
             this.StateLabel = new System.Windows.Forms.Label();
             this.cityTextBox = new System.Windows.Forms.TextBox();
@@ -76,6 +75,7 @@ namespace PSPro.View
             this.allegationErrorLabel = new System.Windows.Forms.Label();
             this.complaintSummaryErrorLabel = new System.Windows.Forms.Label();
             this.RequiredFieldLabel = new System.Windows.Forms.Label();
+            this.zipCodeTextBox = new System.Windows.Forms.MaskedTextBox();
             this.CitizenInfoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -101,6 +101,8 @@ namespace PSPro.View
             // 
             // CitizenInfoGroupBox
             // 
+            this.CitizenInfoGroupBox.Controls.Add(this.zipCodeTextBox);
+            this.CitizenInfoGroupBox.Controls.Add(this.phoneNumberTextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.stateErrorLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.cityErrorLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.address1ErrorLabel);
@@ -111,12 +113,10 @@ namespace PSPro.View
             this.CitizenInfoGroupBox.Controls.Add(this.firstNameErrorLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.CitizenIDLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.citizenIDTextBox);
-            this.CitizenInfoGroupBox.Controls.Add(this.phoneNumberTextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.PhoneNumberLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.emailTextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.EmailLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.stateComboBox);
-            this.CitizenInfoGroupBox.Controls.Add(this.zipCodeTextBox);
             this.CitizenInfoGroupBox.Controls.Add(this.ZipCodeLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.StateLabel);
             this.CitizenInfoGroupBox.Controls.Add(this.cityTextBox);
@@ -138,6 +138,14 @@ namespace PSPro.View
             this.CitizenInfoGroupBox.TabIndex = 2;
             this.CitizenInfoGroupBox.TabStop = false;
             this.CitizenInfoGroupBox.Text = "Enter Citizen Information";
+            // 
+            // phoneNumberTextBox
+            // 
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(19, 378);
+            this.phoneNumberTextBox.Mask = "999-000-0000";
+            this.phoneNumberTextBox.Name = "phoneNumberTextBox";
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(374, 39);
+            this.phoneNumberTextBox.TabIndex = 105;
             // 
             // stateErrorLabel
             // 
@@ -191,6 +199,7 @@ namespace PSPro.View
             this.phoneNumberErrorLabel.Name = "phoneNumberErrorLabel";
             this.phoneNumberErrorLabel.Size = new System.Drawing.Size(190, 22);
             this.phoneNumberErrorLabel.TabIndex = 24;
+            this.phoneNumberErrorLabel.Text = "###-###-####";
             // 
             // zipCodeErrorLabel
             // 
@@ -200,7 +209,7 @@ namespace PSPro.View
             this.zipCodeErrorLabel.Name = "zipCodeErrorLabel";
             this.zipCodeErrorLabel.Size = new System.Drawing.Size(202, 25);
             this.zipCodeErrorLabel.TabIndex = 23;
-            this.zipCodeErrorLabel.Text = "##### OR #####-####";
+            this.zipCodeErrorLabel.Text = "#####";
             // 
             // firstNameErrorLabel
             // 
@@ -231,16 +240,6 @@ namespace PSPro.View
             this.citizenIDTextBox.Size = new System.Drawing.Size(188, 39);
             this.citizenIDTextBox.TabIndex = 100;
             this.citizenIDTextBox.TabStop = false;
-            // 
-            // phoneNumberTextBox
-            // 
-            this.phoneNumberTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(19, 377);
-            this.phoneNumberTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.phoneNumberTextBox.MaxLength = 12;
-            this.phoneNumberTextBox.Name = "phoneNumberTextBox";
-            this.phoneNumberTextBox.Size = new System.Drawing.Size(374, 39);
-            this.phoneNumberTextBox.TabIndex = 7;
             // 
             // PhoneNumberLabel
             // 
@@ -282,16 +281,6 @@ namespace PSPro.View
             this.stateComboBox.Size = new System.Drawing.Size(238, 39);
             this.stateComboBox.TabIndex = 5;
             // 
-            // zipCodeTextBox
-            // 
-            this.zipCodeTextBox.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.zipCodeTextBox.Location = new System.Drawing.Point(569, 302);
-            this.zipCodeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.zipCodeTextBox.MaxLength = 10;
-            this.zipCodeTextBox.Name = "zipCodeTextBox";
-            this.zipCodeTextBox.Size = new System.Drawing.Size(308, 39);
-            this.zipCodeTextBox.TabIndex = 6;
-            // 
             // ZipCodeLabel
             // 
             this.ZipCodeLabel.AutoSize = true;
@@ -318,7 +307,7 @@ namespace PSPro.View
             this.cityTextBox.Location = new System.Drawing.Point(19, 302);
             this.cityTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cityTextBox.Name = "cityTextBox";
-            this.cityTextBox.Size = new System.Drawing.Size(300, 39);
+            this.cityTextBox.Size = new System.Drawing.Size(287, 39);
             this.cityTextBox.TabIndex = 4;
             // 
             // CityLabel
@@ -558,6 +547,14 @@ namespace PSPro.View
             this.RequiredFieldLabel.TabIndex = 29;
             this.RequiredFieldLabel.Text = "*Required Fields";
             // 
+            // zipCodeTextBox
+            // 
+            this.zipCodeTextBox.Location = new System.Drawing.Point(581, 303);
+            this.zipCodeTextBox.Mask = "00000";
+            this.zipCodeTextBox.Name = "zipCodeTextBox";
+            this.zipCodeTextBox.Size = new System.Drawing.Size(296, 39);
+            this.zipCodeTextBox.TabIndex = 106;
+            // 
             // NewComplaintForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -606,12 +603,10 @@ namespace PSPro.View
         private System.Windows.Forms.Button SearchCitizenButton;
         private System.Windows.Forms.TextBox address1TextBox;
         private System.Windows.Forms.Label Address1Label;
-        private System.Windows.Forms.TextBox phoneNumberTextBox;
         private System.Windows.Forms.Label PhoneNumberLabel;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.ComboBox stateComboBox;
-        private System.Windows.Forms.TextBox zipCodeTextBox;
         private System.Windows.Forms.Label ZipCodeLabel;
         private System.Windows.Forms.Label StateLabel;
         private System.Windows.Forms.TextBox cityTextBox;
@@ -643,5 +638,7 @@ namespace PSPro.View
         private System.Windows.Forms.Label cityErrorLabel;
         private System.Windows.Forms.Label address1ErrorLabel;
         private System.Windows.Forms.Label lastNameErrorLabel;
+        private System.Windows.Forms.MaskedTextBox phoneNumberTextBox;
+        private System.Windows.Forms.MaskedTextBox zipCodeTextBox;
     }
 }
