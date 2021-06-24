@@ -247,6 +247,9 @@ this.FeatureBackground();
 #line 27
  testRunner.And("investigator selects the disposition \"Unfounded\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 28
+ testRunner.When("investigator saves the complaint changes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

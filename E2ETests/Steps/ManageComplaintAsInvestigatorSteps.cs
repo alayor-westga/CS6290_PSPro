@@ -44,5 +44,11 @@ namespace E2ETests.Steps
             context.investigatorDashboardWindow.SelectDisposition(disposition);
         }
 
+        [When(@"investigator saves the complaint changes")]
+        public void WhenInvestigatorSavesTheComplaintChanges()
+        {
+            context.investigatorDashboardWindow.ClickOnSave();
+        }
+
     }
 }

@@ -25,3 +25,4 @@ Scenario: See active complaint
 Scenario: Set complaint disposition
 	Given investigator clicks on Manage Complaint
 	And investigator selects the disposition "Unfounded"
+	When investigator saves the complaint changes
