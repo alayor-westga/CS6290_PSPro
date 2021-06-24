@@ -81,7 +81,7 @@ CREATE PROCEDURE AddCitizen
 	@city varchar(45), 
 	@state char(2), 
 	@zipcode varchar(10), 
-	@phone varchar(12), 
+	@phone varchar(14), 
 	@email varchar(45)
 AS
 SET NOCOUNT ON;
@@ -313,7 +313,7 @@ CREATE PROCEDURE UpdateCitizen
 	@UpdatedCity varchar(45), 
 	@UpdatedState char(2), 
 	@UpdatedZipcode varchar(10), 
-	@UpdatedPhone varchar(12), 
+	@UpdatedPhone varchar(14), 
 	@UpdatedEmail varchar(45),
 
 	@CitizenID int,
@@ -324,7 +324,7 @@ CREATE PROCEDURE UpdateCitizen
 	@City varchar(45), 
 	@State char(2), 
 	@Zipcode varchar(10), 
-	@Phone varchar(12), 
+	@Phone varchar(14), 
 	@Email varchar(45)
 AS
 SET NOCOUNT ON;
