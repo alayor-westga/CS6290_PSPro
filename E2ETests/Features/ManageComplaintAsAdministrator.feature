@@ -17,5 +17,5 @@ Background:
 Scenario: See active complaint
 	When administrator "a-001" logs in with password "4567"
 	Then administrator should see a complaint with this info
-	|officer|citizen|
-	|Offi Cer|Citi Zen|
+	|officer|citizen|allegation|
+	|Offi Cer|Citi Zen|Officer Safety Violation|

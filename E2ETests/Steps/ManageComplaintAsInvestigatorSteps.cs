@@ -23,6 +23,7 @@ namespace E2ETests.Steps
             var actualComplaint = complaints[0];
             Assert.AreEqual(expectedComplaint[0], actualComplaint.GetValueOrDefault("Officer"));
             Assert.AreEqual(expectedComplaint[1], actualComplaint.GetValueOrDefault("Citizen"));
+            Assert.AreEqual(expectedComplaint[2], actualComplaint.GetValueOrDefault("Allegation"));
         }
     }
 }

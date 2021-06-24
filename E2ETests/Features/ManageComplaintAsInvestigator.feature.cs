@@ -192,10 +192,12 @@ this.FeatureBackground();
 #line hidden
                 TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                             "officer",
-                            "citizen"});
+                            "citizen",
+                            "allegation"});
                 table13.AddRow(new string[] {
                             "Offi Cer",
-                            "Citi Zen"});
+                            "Citi Zen",
+                            "Ethics Violation"});
 #line 19
  testRunner.Then("investigator should see a complaint with this info", ((string)(null)), table13, "Then ");
 #line hidden
