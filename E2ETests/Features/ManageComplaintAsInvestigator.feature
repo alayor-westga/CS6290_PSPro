@@ -26,3 +26,4 @@ Scenario: Set complaint disposition
 	Given investigator clicks on Manage Complaint
 	And investigator selects the disposition "Unfounded"
 	When investigator saves the complaint changes
+	Then the complaint disposition should be updated to "Unfounded" in the DB

@@ -250,6 +250,9 @@ this.FeatureBackground();
 #line 28
  testRunner.When("investigator saves the complaint changes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
+#line 29
+ testRunner.Then("the complaint disposition should be updated to \"Unfounded\" in the DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

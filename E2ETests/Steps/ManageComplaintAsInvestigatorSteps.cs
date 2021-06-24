@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using TechTalk.SpecFlow;
 using NUnit.Framework;
+using System.Data.SqlClient;
+using E2ETests.Drivers;
+using System.Data;
 
 namespace E2ETests.Steps
 {
@@ -50,5 +53,33 @@ namespace E2ETests.Steps
             context.investigatorDashboardWindow.ClickOnSave();
         }
 
+        [Then(@"the complaint disposition should be updated to ""(.*)"" in the DB")]
+        public void ThenTheComplaintDispositionShouldBeUpdatedToInTheDB(string expectedDisposition)
+        {
+            Dictionary<string, string> complaint = GetComplaintFromDB();
+            Assert.AreEqual(expectedDisposition, complaint.GetValueOrDefault("disposition"));
+        }
+
+        private Dictionary<string, string> GetComplaintFromDB()
+        {
+            Dictionary<string, string> disposition = new Dictionary<string, string>();
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                var query = "SELECT disposition from Complaints;";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            disposition.Add("disposition", reader["disposition"].ToString());
+                        }
+                    }
+                }
+            }
+            return disposition;
+        }
     }
 }
