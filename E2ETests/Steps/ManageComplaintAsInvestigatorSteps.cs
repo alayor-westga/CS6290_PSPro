@@ -31,5 +31,12 @@ namespace E2ETests.Steps
         {
             context.investigatorDashboardWindow.ClicksOnManageComplaint();
         }
+
+        [Given(@"investigator clicks on Manage Complaint")]
+        public void GivenInvestigatorClicksOnManageComplaint()
+        {
+            context.investigatorDashboardWindow.ClicksOnManageComplaint();
+        }
+
     }
 }

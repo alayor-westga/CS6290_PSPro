@@ -19,5 +19,5 @@ Scenario: See active complaint
 	Then administrator should see a complaint with this info
 	|officer|citizen|allegation|
 	|Offi Cer|Citi Zen|Officer Safety Violation|
-	When administrator clicks on Manage Complaint
-	Then the complaint status should be "Open"
+	# When administrator clicks on Manage Complaint
+	# Then the complaint status should be "Open"

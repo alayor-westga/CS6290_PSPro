@@ -17,7 +17,7 @@ namespace E2ETests.Steps
         [Then(@"administrator should see a complaint with this info")]
         public void ThenAdministratorShouldSeeAComplaintWithThisInfo(Table table)
         {
-            List<Dictionary<string, string>> complaints = context.investigatorDashboardWindow.GetComplaintsList();
+            List<Dictionary<string, string>> complaints = context.administratorDashboardWindow.GetComplaintsList();
             Assert.AreEqual(1, complaints.Count);
             var expectedComplaint = table.Rows[0];
             var actualComplaint = complaints[0];
@@ -28,7 +28,7 @@ namespace E2ETests.Steps
         [When(@"administrator clicks on Manage Complaint")]
         public void WhenAdministratorClicksOnManageComplaint()
         {
-            context.investigatorDashboardWindow.ClicksOnManageComplaint();
+            context.administratorDashboardWindow.ClicksOnManageComplaint();
         }
     }
 }
