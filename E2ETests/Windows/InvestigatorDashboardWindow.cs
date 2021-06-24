@@ -55,5 +55,13 @@ namespace E2ETests.Windows
                 .AsLabel()
                 .Text;
         }
+
+        public void SelectDisposition(string disposition)
+        {
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("dispositionComboBox"))
+                .AsComboBox()
+                .Select(disposition);
+        }
     }
 }

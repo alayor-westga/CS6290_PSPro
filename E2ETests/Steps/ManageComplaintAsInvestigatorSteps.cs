@@ -38,5 +38,11 @@ namespace E2ETests.Steps
             context.investigatorDashboardWindow.ClicksOnManageComplaint();
         }
 
+        [Given(@"investigator selects the disposition ""(.*)""")]
+        public void GivenInvestigatorSelectsTheDisposition(string disposition)
+        {
+            context.investigatorDashboardWindow.SelectDisposition(disposition);
+        }
+
     }
 }
