@@ -24,5 +24,11 @@ namespace E2ETests.Steps
             Assert.AreEqual(expectedComplaint[0], actualComplaint.GetValueOrDefault("Officer"));
             Assert.AreEqual(expectedComplaint[1], actualComplaint.GetValueOrDefault("Citizen"));
         }
+
+        [When(@"administrator clicks on Manage Complaint")]
+        public void WhenAdministratorClicksOnManageComplaint()
+        {
+            context.investigatorDashboardWindow.ClicksOnManageComplaint();
+        }
     }
 }

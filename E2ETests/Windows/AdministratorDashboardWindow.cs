@@ -39,5 +39,21 @@ namespace E2ETests.Windows
             }
             return complaints;
         }
+
+        public void ClicksOnManageComplaint()
+        {
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("manageComplaintButton"))
+                .AsButton()
+                .Click();
+        }
+
+        public string GetComplaintStatus()
+        {
+            return context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("statusLabelValue"))
+                .AsLabel()
+                .Text;
+        }
     }
 }

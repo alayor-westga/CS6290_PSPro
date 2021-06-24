@@ -19,4 +19,5 @@ Scenario: See active complaint
 	Then investigator should see a complaint with this info
 	|officer|citizen|allegation|
 	|Offi Cer|Citi Zen|Ethics Violation|
-	When administrator clicks on Manage Complaint
+	When investigator clicks on Manage Complaint
+	Then the complaint status should be "Open"

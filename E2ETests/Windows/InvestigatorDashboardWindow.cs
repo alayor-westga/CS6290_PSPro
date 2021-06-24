@@ -47,5 +47,13 @@ namespace E2ETests.Windows
                 .AsButton()
                 .Click();
         }
+
+        public string GetComplaintStatus()
+        {
+            return context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("statusLabelValue"))
+                .AsLabel()
+                .Text;
+        }
     }
 }

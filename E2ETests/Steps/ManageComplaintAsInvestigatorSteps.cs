@@ -26,10 +26,10 @@ namespace E2ETests.Steps
             Assert.AreEqual(expectedComplaint[2], actualComplaint.GetValueOrDefault("Allegation"));
         }
 
-        [When(@"administrator clicks on Manage Complaint")]
-        public void WhenAdministratorClicksOnManageComplaint()
+        [When(@"investigator clicks on Manage Complaint")]
+        public void WhenInvestigatorClicksOnManageComplaint()
         {
-             context.investigatorDashboardWindow.ClicksOnManageComplaint();
+            context.investigatorDashboardWindow.ClicksOnManageComplaint();
         }
     }
 }

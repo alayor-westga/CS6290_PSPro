@@ -202,7 +202,10 @@ this.FeatureBackground();
  testRunner.Then("investigator should see a complaint with this info", ((string)(null)), table13, "Then ");
 #line hidden
 #line 22
- testRunner.When("administrator clicks on Manage Complaint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("investigator clicks on Manage Complaint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 23
+ testRunner.Then("the complaint status should be \"Open\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
