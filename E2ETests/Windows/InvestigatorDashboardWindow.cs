@@ -76,5 +76,15 @@ namespace E2ETests.Windows
             Thread.Sleep(2000);
             Keyboard.Press(VirtualKeyShort.ENTER);
         }
+
+        public void ClickOnSeeNotes()
+        {
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("seeNotesButton"))
+                .AsButton()
+                .Click();
+            Thread.Sleep(2000);
+            context.mustChangeWindow = true;
+        }
     }
 }

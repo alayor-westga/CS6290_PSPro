@@ -81,5 +81,19 @@ namespace E2ETests.Steps
             }
             return disposition;
         }
+
+        [Given(@"investigator clicks the See Notes button")]
+        public void GivenInvestigatorClicksTheSeeNotesButton()
+        {
+            context.investigatorDashboardWindow.ClickOnSeeNotes();
+        }
+
+        [Then(@"the current notes should contain ""(.*)""")]
+        public void ThenTheCurrentNotesShouldContain(string expectedNotes)
+        {
+            string actualNotes = context.complaintNotesWindow.GetNotes();
+            Assert.True(actualNotes.Contains(expectedNotes));
+        }
+
     }
 }

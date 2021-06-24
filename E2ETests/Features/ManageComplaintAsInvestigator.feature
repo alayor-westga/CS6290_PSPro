@@ -27,3 +27,8 @@ Scenario: Set complaint disposition
 	And investigator selects the disposition "Unfounded"
 	When investigator saves the complaint changes
 	Then the complaint disposition should be updated to "Unfounded" in the DB
+
+Scenario: Append comments to complaint
+	Given investigator clicks on Manage Complaint
+	And investigator clicks the See Notes button
+	Then the current notes should contain "Complaint summary example"
