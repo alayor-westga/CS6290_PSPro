@@ -115,6 +115,7 @@ namespace PSPro.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Complaint Notes";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ComplaintNotesForm_FormClosed);
+            this.Load += new System.EventHandler(this.ComplaintNotesForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

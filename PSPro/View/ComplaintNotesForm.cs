@@ -1,22 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using PSPro.Model;
 
 namespace PSPro.View
 {
     public partial class ComplaintNotesForm : Form
     {
+        private ComplaintView complaintView;
         UserControl parentForm;
         public ComplaintNotesForm(UserControl parentForm)
         {
             InitializeComponent();
             this.parentForm = parentForm;
+        }
+
+        public void SetComplaintView(ComplaintView complaintView)
+        {
+            this.complaintView = complaintView;
         }
 
         private void ComplaintNotesForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -29,6 +29,11 @@ namespace PSPro.View
         {
             this.parentForm.Show();
             this.Hide();
+        }
+
+        private void ComplaintNotesForm_Load(object sender, EventArgs e)
+        {
+            notesTextBox.Text = complaintView.Notes;
         }
     }
 }

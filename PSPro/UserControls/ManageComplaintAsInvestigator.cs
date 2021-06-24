@@ -9,7 +9,7 @@ namespace PSPro.UserControls
 {
     public partial class ManageComplaintAsInvestigator : UserControl
     {
-        private int complaintID;
+        private ComplaintView complaintView;
         private readonly ComplaintController complaintController;
         public ManageComplaintAsInvestigator()
         {
@@ -19,8 +19,7 @@ namespace PSPro.UserControls
 
         public void SetComplaintInfo(int complaintID)
         {
-            this.complaintID = complaintID;
-            ComplaintView complaintView = complaintController.GetComplaintById(complaintID);
+            complaintView = complaintController.GetComplaintById(complaintID);
             this.citizenNameLabelValue.Text = complaintView.CitizenFullName;
             this.citizenAddressLabelValue.Text = complaintView.CitizenFullAddress;
             this.citizenPhoneLabelValue.Text = complaintView.CitizenPhone;
@@ -47,7 +46,7 @@ namespace PSPro.UserControls
         {
             try
             {
-                complaintController.UpdateDisposition(complaintID, this.dispositionComboBox.SelectedItem.ToString());
+                complaintController.UpdateDisposition(complaintView.ComplaintID, this.dispositionComboBox.SelectedItem.ToString());
                 MessageBox.Show("Complaint Successfully\nUpdated.",
                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -62,6 +61,7 @@ namespace PSPro.UserControls
         {
             using (ComplaintNotesForm form = new ComplaintNotesForm(this))
             {
+                form.SetComplaintView(complaintView);
                 Hide();
                 form.ShowDialog();
             }
