@@ -33,7 +33,7 @@ Scenario: Add new complaint successfully
 Scenario: Add new complaint successfully with existing citizen
     Given a citizen exists on the DB with this info
     |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|
-	|Citi|Zen|123 Main St.||San Jose|California|89900|555-555-5555|citizen@example.com|
+	|Citi|Zen|123 Main St.||San Jose|CA|89900|555-555-5555|citizen@example.com|
     When Search Citizen button is selected
     Then SearchCitizenForm is shown
     When "Citi" is entered in First Name text box

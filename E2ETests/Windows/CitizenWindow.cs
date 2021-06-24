@@ -24,11 +24,10 @@ namespace E2ETests.Windows
         public void ClickSearchCitizen()
         {
             context.GetWindow()
-                .FindFirstDescendant(cf => cf.ByAutomationId("SearchCitizenButton"))
+                .FindFirstDescendant(cf => cf.ByAutomationId("SearchButton"))
                 .AsButton()
                 .Click();
             Thread.Sleep(2000);
-            context.mustChangeWindow = true;
         }
 
         public void ClickOnLogout()
@@ -47,6 +46,16 @@ namespace E2ETests.Windows
                 .FindFirstDescendant(cf => cf.ByAutomationId(fieldName))
                 .AsTextBox()
                 .Enter(value);
+        }
+
+        internal void ClickSelectCitizenWindow()
+        {
+            context.GetWindow()
+                 .FindFirstDescendant(cf => cf.ByAutomationId("SelectCitizenButton"))
+                 .AsButton()
+                 .Click();
+            Thread.Sleep(2000);
+            context.mustChangeWindow = true; 
         }
     }
 }

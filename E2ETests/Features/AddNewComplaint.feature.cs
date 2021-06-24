@@ -317,7 +317,7 @@ this.FeatureBackground();
                             "123 Main St.",
                             "",
                             "San Jose",
-                            "California",
+                            "CA",
                             "89900",
                             "555-555-5555",
                             "citizen@example.com"});

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using E2ETests.Drivers;
 using System.Data;
 using System;
+using System.Threading;
 
 namespace E2ETests.Steps
 {
@@ -259,7 +260,52 @@ namespace E2ETests.Steps
         public void WhenIsEnteredInFirstNameTextBox(string firstName)
         {
             Console.Write("firstName: " + firstName);
-           context.citizenWindow.EnterCitizenFirstName(firstName); //null reference
+           context.citizenWindow.EnterCitizenFirstName(firstName);
+        }
+
+        [When(@"Search for Citizen button is clicked")]
+        public void WhenSearchForCitizenButtonIsClicked()
+        {
+            context.citizenWindow.ClickSearchCitizen();
+        }
+        [Then(@"""(.*)"" information populates dataGridView")]
+        public void ThenInformationPopulatesDataGridView(string p0)
+        {
+  
+        }
+
+        [When(@"Select Citizen Button is clicked")]
+        public void WhenSelectCitizenButtonIsClicked()
+        {
+            context.citizenWindow.ClickSelectCitizenWindow();
+        }
+
+        [Then(@"NewComplaintForm is shown")]
+        public void ThenNewComplaintFormIsShown()
+        {      
+        }
+
+        [Then(@"'(.*)' information populates NewComplaintForm")]
+        public void ThenInformationPopulatesNewComplaintForm(string p0)
+        {
+        }
+
+        [Then(@"the officer ""(.*)"" is selected")]
+        public void ThenTheOfficerIsSelected(string officer)
+        {
+            context.newComplaintWindow.SelectOfficer(officer);
+        }
+
+        [Then(@"the allegation ""(.*)"" is selected")]
+        public void ThenTheAllegationIsSelected(string allegation)
+        {
+            context.newComplaintWindow.SelectAllegation(allegation);
+        }
+
+        [Then(@"the complaint summary is ""(.*)""")]
+        public void ThenTheComplaintSummaryIs(string complaintSummary)
+        {
+            context.newComplaintWindow.EnterComplaintSummary(complaintSummary);
         }
 
         [Given(@"the user logs out")]
