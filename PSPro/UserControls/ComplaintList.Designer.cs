@@ -31,19 +31,19 @@ namespace PSPro.UserControls
         {
             this.components = new System.ComponentModel.Container();
             this.complaintsDataGridView = new System.Windows.Forms.DataGridView();
+            this.complaintViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.officerComboBox = new System.Windows.Forms.ComboBox();
             this.officerComboBoxBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.officerLabel = new System.Windows.Forms.Label();
             this.manageComplaintButton = new System.Windows.Forms.Button();
-            this.complaintViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.complaintIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.officerFullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.citizenFullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allegationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.complaintsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaintViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // complaintsDataGridView
@@ -70,6 +70,10 @@ namespace PSPro.UserControls
             this.complaintsDataGridView.Size = new System.Drawing.Size(1258, 480);
             this.complaintsDataGridView.TabIndex = 0;
             this.complaintsDataGridView.DoubleClick += new System.EventHandler(this.complaintsDataGridView_DoubleClick);
+            // 
+            // complaintViewBindingSource
+            // 
+            this.complaintViewBindingSource.DataSource = typeof(PSPro.Model.ComplaintView);
             // 
             // officerComboBox
             // 
@@ -109,10 +113,6 @@ namespace PSPro.UserControls
             this.manageComplaintButton.UseVisualStyleBackColor = true;
             this.manageComplaintButton.Click += new System.EventHandler(this.manageComplaintButton_Click);
             // 
-            // complaintViewBindingSource
-            // 
-            this.complaintViewBindingSource.DataSource = typeof(PSPro.Model.ComplaintView);
-            // 
             // complaintIDDataGridViewTextBoxColumn
             // 
             this.complaintIDDataGridViewTextBoxColumn.DataPropertyName = "ComplaintID";
@@ -132,7 +132,7 @@ namespace PSPro.UserControls
             // officerFullNameDataGridViewTextBoxColumn
             // 
             this.officerFullNameDataGridViewTextBoxColumn.DataPropertyName = "OfficerFullName";
-            this.officerFullNameDataGridViewTextBoxColumn.HeaderText = "Office";
+            this.officerFullNameDataGridViewTextBoxColumn.HeaderText = "Officer";
             this.officerFullNameDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.officerFullNameDataGridViewTextBoxColumn.Name = "officerFullNameDataGridViewTextBoxColumn";
             this.officerFullNameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -167,8 +167,8 @@ namespace PSPro.UserControls
             this.Size = new System.Drawing.Size(1308, 718);
             this.Load += new System.EventHandler(this.ComplaintList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.complaintsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaintViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,11 +181,11 @@ namespace PSPro.UserControls
         private System.Windows.Forms.Label officerLabel;
         private System.Windows.Forms.BindingSource officerComboBoxBindingSource;
         private System.Windows.Forms.Button manageComplaintButton;
+        private System.Windows.Forms.BindingSource complaintViewBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn complaintIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCreatedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn officerFullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn citizenFullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn allegationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource complaintViewBindingSource;
     }
 }
