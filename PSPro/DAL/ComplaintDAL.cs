@@ -235,5 +235,26 @@ namespace PSPro.DAL
                 }
             }
         }
+
+        /// <summary>
+        /// Append to complaint's notes.
+        /// </summary>
+        /// <param name="complaintId">the complaint id to be updates.</param>
+        /// <param name="notesToAppend">the notes to be appended.</param>
+        virtual public void AppendNotes(int complaintId, string notesToAppend)
+        {
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "AppendComplaintNotes";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@complaint_id", complaintId);
+                    command.Parameters.AddWithValue("@notes_to_append", notesToAppend);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

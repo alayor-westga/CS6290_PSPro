@@ -64,6 +64,7 @@ namespace PSPro.UserControls
                 form.SetComplaintView(complaintView);
                 Hide();
                 form.ShowDialog();
+                SetComplaintInfo(complaintView.ComplaintID);
             }
         }
     }

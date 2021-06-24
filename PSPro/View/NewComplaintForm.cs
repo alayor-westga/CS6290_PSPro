@@ -261,7 +261,7 @@ namespace PSPro.View
             this.complaint.SupervisorID = this.loggedInUser.UserId;
             this.complaint.OfficerID = (int)this.officerComboBox.SelectedValue;
             this.complaint.Allegation = this.allegationComboBox.Text;
-            this.complaint.Summary = DateTime.Now + " by " + this.loggedInUser.FullName + ":\r\n\r\n" + this.complaintSummaryTextBox.Text;
+            this.complaint.Summary = DateTime.Now + " by " + this.loggedInUser.FullName + ":\r\n" + this.complaintSummaryTextBox.Text + "\r\n\r\n";
         }
         
         private void BindCitizenFieldsToCitizenObject()

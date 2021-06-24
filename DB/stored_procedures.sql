@@ -526,3 +526,23 @@ GRANT EXECUTE ON
 UpdateComplaintDisposition
 TO winforms;
 GO
+
+
+--AppendComplaintNotes
+DROP PROCEDURE IF EXISTS AppendComplaintNotes;
+GO
+CREATE PROCEDURE AppendComplaintNotes
+	@complaint_id int,
+	@notes_to_append text
+AS
+SET NOCOUNT ON;
+
+    UPDATE Complaints
+		SET complaint_notes = CONCAT(@notes_to_append, complaint_notes)
+	WHERE complaint_id = @complaint_id
+
+GO
+GRANT EXECUTE ON
+AppendComplaintNotes
+TO winforms;
+GO

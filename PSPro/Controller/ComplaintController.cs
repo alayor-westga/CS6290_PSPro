@@ -80,5 +80,15 @@ namespace PSPro.Controller
         {
             this.complaintSource.UpdateDisposition(complaintId, disposition);
         }
+
+        /// <summary>
+        /// Append to complaint's notes.
+        /// </summary>
+        /// <param name="complaintId">the complaint id to be updates.</param>
+        /// <param name="notesToAppend">the notes to be appended.</param>
+        public void AppendNotes(int complaintId, string notesToAppend)
+        {
+            this.complaintSource.AppendNotes(complaintId, notesToAppend);
+        }
     }
 }
