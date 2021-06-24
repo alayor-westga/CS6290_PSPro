@@ -43,5 +43,19 @@ namespace UnitTests
             complaintController.AddCitizenAndComplaint(citizen, complaint);
             complaintDAL.Verify(v => v.AddCitizenAndComplaint(citizen, complaint));
         }
+
+        [TestMethod]
+        public void TestUpdateDisposition()
+        {
+            complaintController.UpdateDisposition(1, "disposition1");
+            complaintDAL.Verify(v => v.UpdateDisposition(1, "disposition1"));
+        }
+
+        [TestMethod]
+        public void TestAppendNotes()
+        {
+            complaintController.AppendNotes(1, "appendedNote");
+            complaintDAL.Verify(v => v.AppendNotes(1, "appendedNote"));
+        }
     }
 }
