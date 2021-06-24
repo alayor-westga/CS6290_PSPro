@@ -296,6 +296,12 @@ this.FeatureBackground();
 #line 34
  testRunner.Then("the current notes should contain \"Complaint summary example\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 35
+ testRunner.When("investigator adds the comment \"my comment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 36
+ testRunner.And("investigator saves the comment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

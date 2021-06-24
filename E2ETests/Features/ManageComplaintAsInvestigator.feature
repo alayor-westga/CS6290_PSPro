@@ -32,3 +32,5 @@ Scenario: Append comments to complaint
 	Given investigator clicks on Manage Complaint
 	And investigator clicks the See Notes button
 	Then the current notes should contain "Complaint summary example"
+	When investigator adds the comment "my comment"
+	And investigator saves the comment

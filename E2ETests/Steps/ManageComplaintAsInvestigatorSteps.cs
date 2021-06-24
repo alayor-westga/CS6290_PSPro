@@ -95,5 +95,17 @@ namespace E2ETests.Steps
             Assert.True(actualNotes.Contains(expectedNotes));
         }
 
+        [When(@"investigator adds the comment ""(.*)""")]
+        public void WhenInvestigatorAddsTheComment(string note)
+        {
+            context.complaintNotesWindow.AddNote(note);
+        }
+
+        [When(@"investigator saves the comment")]
+        public void WhenInvestigatorSavesTheComment()
+        {
+            context.complaintNotesWindow.ClickOnSave();
+        }
+
     }
 }
