@@ -50,7 +50,7 @@ namespace PSPro.UserControls
         {
             try
             {
-                complaintController.UpdateDiscipline(complaintView.ComplaintID, this.disciplineComboBox.SelectedItem.ToString());
+                complaintController.UpdateDiscipline(complaintView.ComplaintID, this.disciplineComboBox.SelectedItem.ToString(), LoginController.GetUser().UserId);
                 MessageBox.Show("Complaint Successfully\nUpdated.",
                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

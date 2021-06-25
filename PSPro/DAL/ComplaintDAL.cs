@@ -78,7 +78,7 @@ namespace PSPro.DAL
             return complaintViewList;
         }
 
-        internal void UpdateDiscipline(int complaintId, string discipline)
+        internal void UpdateDiscipline(int complaintId, string discipline, int userId)
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
             {
@@ -89,6 +89,29 @@ namespace PSPro.DAL
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@complaint_id", complaintId);
                     command.Parameters.AddWithValue("@discipline", discipline);
+                    command.Parameters.AddWithValue("@administrators_personnel_id", userId);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Update complaint's disposition.
+        /// </summary>
+        /// <param name="complaintId">the complaint id to be updates.</param>
+        /// <param name="disposition">the new disposition of the complaint.</param>
+        virtual public void UpdateDisposition(int complaintId, string disposition, int userId)
+        {
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "UpdateComplaintDisposition";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@complaint_id", complaintId);
+                    command.Parameters.AddWithValue("@disposition", disposition);
+                    command.Parameters.AddWithValue("@investigators_personnel_id", userId);
                     command.ExecuteNonQuery();
                 }
             }
@@ -227,27 +250,6 @@ namespace PSPro.DAL
                     {
                         return BuildComplaintViewList(reader)[0];
                     }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Update complaint's disposition.
-        /// </summary>
-        /// <param name="complaintId">the complaint id to be updates.</param>
-        /// <param name="disposition">the new disposition of the complaint.</param>
-        virtual public void UpdateDisposition(int complaintId, string disposition)
-        {
-            using (SqlConnection connection = PsProDBConnection.GetConnection())
-            {
-                connection.Open();
-                string storedProcedure = "UpdateComplaintDisposition";
-                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@complaint_id", complaintId);
-                    command.Parameters.AddWithValue("@disposition", disposition);
-                    command.ExecuteNonQuery();
                 }
             }
         }

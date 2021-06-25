@@ -46,7 +46,7 @@ namespace PSPro.UserControls
         {
             try
             {
-                complaintController.UpdateDisposition(complaintView.ComplaintID, this.dispositionComboBox.SelectedItem.ToString());
+                complaintController.UpdateDisposition(complaintView.ComplaintID, this.dispositionComboBox.SelectedItem.ToString(), LoginController.GetUser().UserId);
                 MessageBox.Show("Complaint Successfully\nUpdated.",
                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

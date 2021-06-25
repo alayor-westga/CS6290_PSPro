@@ -61,9 +61,9 @@ namespace PSPro.Controller
             this.complaintSource.AddComplaint(complaint);
         }
 
-        internal void UpdateDiscipline(int complaintId, string discipline)
+        internal void UpdateDiscipline(int complaintId, string discipline, int userId)
         {
-            this.complaintSource.UpdateDiscipline(complaintId, discipline);
+            this.complaintSource.UpdateDiscipline(complaintId, discipline, userId);
         }
 
         /// <summary>
@@ -81,9 +81,9 @@ namespace PSPro.Controller
         /// </summary>
         /// <param name="complaintId">the complaint id to be updates.</param>
         /// <param name="disposition">the new disposition of the complaint.</param>
-        public void UpdateDisposition(int complaintId, string disposition)
+        public void UpdateDisposition(int complaintId, string disposition, int userId)
         {
-            this.complaintSource.UpdateDisposition(complaintId, disposition);
+            this.complaintSource.UpdateDisposition(complaintId, disposition, userId);
         }
 
         /// <summary>
