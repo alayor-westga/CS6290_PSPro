@@ -31,9 +31,9 @@ namespace PSPro.UserControls
         {
             this.complaintGroupBox = new System.Windows.Forms.GroupBox();
             this.seeNotesButton = new System.Windows.Forms.Button();
-            this.dispositionComboBox = new System.Windows.Forms.ComboBox();
+            this.disciplineComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.disciplineLabelValue = new System.Windows.Forms.Label();
+            this.dispositionLabelValue = new System.Windows.Forms.Label();
             this.disciplineLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.dateLabelValue = new System.Windows.Forms.Label();
@@ -61,9 +61,9 @@ namespace PSPro.UserControls
             // complaintGroupBox
             // 
             this.complaintGroupBox.Controls.Add(this.seeNotesButton);
-            this.complaintGroupBox.Controls.Add(this.dispositionComboBox);
+            this.complaintGroupBox.Controls.Add(this.disciplineComboBox);
             this.complaintGroupBox.Controls.Add(this.label1);
-            this.complaintGroupBox.Controls.Add(this.disciplineLabelValue);
+            this.complaintGroupBox.Controls.Add(this.dispositionLabelValue);
             this.complaintGroupBox.Controls.Add(this.disciplineLabel);
             this.complaintGroupBox.Controls.Add(this.saveButton);
             this.complaintGroupBox.Controls.Add(this.dateLabelValue);
@@ -98,16 +98,16 @@ namespace PSPro.UserControls
             // 
             // dispositionComboBox
             // 
-            this.dispositionComboBox.FormattingEnabled = true;
-            this.dispositionComboBox.Items.AddRange(new object[] {
+            this.disciplineComboBox.FormattingEnabled = true;
+            this.disciplineComboBox.Items.AddRange(new object[] {
             "Sustained",
             "Not sustained",
             "Exonerated",
             "Unfounded"});
-            this.dispositionComboBox.Location = new System.Drawing.Point(242, 228);
-            this.dispositionComboBox.Name = "dispositionComboBox";
-            this.dispositionComboBox.Size = new System.Drawing.Size(541, 39);
-            this.dispositionComboBox.TabIndex = 21;
+            this.disciplineComboBox.Location = new System.Drawing.Point(242, 228);
+            this.disciplineComboBox.Name = "dispositionComboBox";
+            this.disciplineComboBox.Size = new System.Drawing.Size(541, 39);
+            this.disciplineComboBox.TabIndex = 21;
             // 
             // label1
             // 
@@ -121,13 +121,13 @@ namespace PSPro.UserControls
             // 
             // disciplineLabelValue
             // 
-            this.disciplineLabelValue.AutoSize = true;
-            this.disciplineLabelValue.Location = new System.Drawing.Point(215, 299);
-            this.disciplineLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.disciplineLabelValue.Name = "disciplineLabelValue";
-            this.disciplineLabelValue.Size = new System.Drawing.Size(35, 32);
-            this.disciplineLabelValue.TabIndex = 19;
-            this.disciplineLabelValue.Text = "--";
+            this.dispositionLabelValue.AutoSize = true;
+            this.dispositionLabelValue.Location = new System.Drawing.Point(215, 299);
+            this.dispositionLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dispositionLabelValue.Name = "disciplineLabelValue";
+            this.dispositionLabelValue.Size = new System.Drawing.Size(35, 32);
+            this.dispositionLabelValue.TabIndex = 19;
+            this.dispositionLabelValue.Text = "--";
             // 
             // disciplineLabel
             // 
@@ -357,9 +357,9 @@ namespace PSPro.UserControls
 
         private System.Windows.Forms.GroupBox complaintGroupBox;
         private System.Windows.Forms.Button seeNotesButton;
-        private System.Windows.Forms.ComboBox dispositionComboBox;
+        private System.Windows.Forms.ComboBox disciplineComboBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label disciplineLabelValue;
+        private System.Windows.Forms.Label dispositionLabelValue;
         private System.Windows.Forms.Label disciplineLabel;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label dateLabelValue;

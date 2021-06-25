@@ -61,6 +61,11 @@ namespace PSPro.Controller
             this.complaintSource.AddComplaint(complaint);
         }
 
+        internal void UpdateDiscipline(int complaintID, string v)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Get complaint view by id
         /// </summary>
