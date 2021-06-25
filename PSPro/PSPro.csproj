@@ -81,6 +81,12 @@
     <Compile Include="UserControls\ComplaintList.Designer.cs">
       <DependentUpon>ComplaintList.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ManageComplaintAsAdministrator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ManageComplaintAsAdministrator.Designer.cs">
+      <DependentUpon>ManageComplaintAsAdministrator.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ManageComplaintAsInvestigator.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\ComplaintList.resx">
       <DependentUpon>ComplaintList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ManageComplaintAsAdministrator.resx">
+      <DependentUpon>ManageComplaintAsAdministrator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ManageComplaintAsInvestigator.resx">
       <DependentUpon>ManageComplaintAsInvestigator.cs</DependentUpon>
