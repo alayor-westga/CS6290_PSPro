@@ -96,35 +96,36 @@ namespace PSPro.UserControls
             this.seeNotesButton.Text = "See Notes";
             this.seeNotesButton.UseVisualStyleBackColor = true;
             // 
-            // dispositionComboBox
+            // disciplineComboBox
             // 
             this.disciplineComboBox.FormattingEnabled = true;
             this.disciplineComboBox.Items.AddRange(new object[] {
-            "Sustained",
-            "Not sustained",
-            "Exonerated",
-            "Unfounded"});
-            this.disciplineComboBox.Location = new System.Drawing.Point(242, 228);
-            this.disciplineComboBox.Name = "dispositionComboBox";
+            "None",
+            "Letter of reprimand",
+            "Suspension",
+            "Demotion",
+            "Termination"});
+            this.disciplineComboBox.Location = new System.Drawing.Point(242, 312);
+            this.disciplineComboBox.Name = "disciplineComboBox";
             this.disciplineComboBox.Size = new System.Drawing.Size(541, 39);
             this.disciplineComboBox.TabIndex = 21;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 231);
+            this.label1.Location = new System.Drawing.Point(20, 315);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 32);
+            this.label1.Size = new System.Drawing.Size(123, 32);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Disposition:";
+            this.label1.Text = "Discipline:";
             // 
-            // disciplineLabelValue
+            // dispositionLabelValue
             // 
             this.dispositionLabelValue.AutoSize = true;
-            this.dispositionLabelValue.Location = new System.Drawing.Point(215, 299);
+            this.dispositionLabelValue.Location = new System.Drawing.Point(215, 237);
             this.dispositionLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.dispositionLabelValue.Name = "disciplineLabelValue";
+            this.dispositionLabelValue.Name = "dispositionLabelValue";
             this.dispositionLabelValue.Size = new System.Drawing.Size(35, 32);
             this.dispositionLabelValue.TabIndex = 19;
             this.dispositionLabelValue.Text = "--";
@@ -132,12 +133,12 @@ namespace PSPro.UserControls
             // disciplineLabel
             // 
             this.disciplineLabel.AutoSize = true;
-            this.disciplineLabel.Location = new System.Drawing.Point(20, 299);
+            this.disciplineLabel.Location = new System.Drawing.Point(20, 237);
             this.disciplineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.disciplineLabel.Name = "disciplineLabel";
-            this.disciplineLabel.Size = new System.Drawing.Size(123, 32);
+            this.disciplineLabel.Size = new System.Drawing.Size(139, 32);
             this.disciplineLabel.TabIndex = 18;
-            this.disciplineLabel.Text = "Discipline:";
+            this.disciplineLabel.Text = "Disposition:";
             // 
             // saveButton
             // 
