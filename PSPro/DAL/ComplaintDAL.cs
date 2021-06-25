@@ -78,6 +78,22 @@ namespace PSPro.DAL
             return complaintViewList;
         }
 
+        internal void UpdateDiscipline(int complaintId, string discipline)
+        {
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "UpdateComplaintDiscipline";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@complaint_id", complaintId);
+                    command.Parameters.AddWithValue("@discipline", discipline);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         /// <summary>
         /// Adds a new complaint to the complaint table
         /// </summary>
