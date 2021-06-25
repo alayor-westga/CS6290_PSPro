@@ -95,6 +95,7 @@ namespace PSPro.UserControls
             this.seeNotesButton.TabIndex = 22;
             this.seeNotesButton.Text = "See Notes";
             this.seeNotesButton.UseVisualStyleBackColor = true;
+            this.seeNotesButton.Click += new System.EventHandler(this.seeNotesButton_Click);
             // 
             // disciplineComboBox
             // 
@@ -149,6 +150,7 @@ namespace PSPro.UserControls
             this.saveButton.TabIndex = 17;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // dateLabelValue
             // 
