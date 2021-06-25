@@ -507,17 +507,20 @@ TO winforms;
 GO
 
 
---UpdateComplaintDisposition
+--UpdateComplaintDiscipline
 DROP PROCEDURE IF EXISTS UpdateComplaintDiscipline;
 GO
 CREATE PROCEDURE UpdateComplaintDiscipline
 	@complaint_id int,
-	@discipline varchar(25)
+	@discipline varchar(25),
+	@administrators_personnel_id int
 AS
 SET NOCOUNT ON;
 
     UPDATE Complaints
-		SET discipline = @discipline 
+		SET discipline = @discipline,
+		administrators_personnel_id = @administrators_personnel_id
+		
 	WHERE complaint_id = @complaint_id
 
 GO
@@ -527,23 +530,25 @@ TO winforms;
 GO
 
 
---UpdateComplaintDiscipline
-DROP PROCEDURE IF EXISTS UpdateComplaintDiscipline;
+--UpdateComplaintDisposition
+DROP PROCEDURE IF EXISTS UpdateComplaintDisposition;
 GO
-CREATE PROCEDURE UpdateComplaintDiscipline
+CREATE PROCEDURE UpdateComplaintDisposition
 	@complaint_id int,
-	@discipline varchar(25)
+	@disposition varchar(25),
+	@investigators_personnel_id int
 AS
 SET NOCOUNT ON;
 
     UPDATE Complaints
-		SET discipline = @discipline, 
-		discipline_date = CURRENT_TIMESTAMP
+		SET disposition = @disposition, 
+		disposition_date = CURRENT_TIMESTAMP,
+		investigators_personnel_id = @investigators_personnel_id
 	WHERE complaint_id = @complaint_id
 
 GO
 GRANT EXECUTE ON
-UpdateComplaintDiscipline
+UpdateComplaintDisposition
 TO winforms;
 GO
 
