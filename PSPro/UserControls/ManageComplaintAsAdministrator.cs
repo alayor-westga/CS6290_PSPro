@@ -40,6 +40,10 @@ namespace PSPro.UserControls
             var disposition = complaintView.Disposition != null && complaintView.Disposition.Length > 0
                     ? complaintView.Disposition : "--";
             this.dispositionLabelValue.Text = disposition;
+            if (disposition == "--")
+            {
+                this.disciplineComboBox.Enabled = false;
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
