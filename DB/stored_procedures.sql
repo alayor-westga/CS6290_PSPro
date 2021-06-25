@@ -528,6 +528,27 @@ TO winforms;
 GO
 
 
+--UpdateComplaintDiscipline
+DROP PROCEDURE IF EXISTS UpdateComplaintDiscipline;
+GO
+CREATE PROCEDURE UpdateComplaintDiscipline
+	@complaint_id int,
+	@discipline varchar(25)
+AS
+SET NOCOUNT ON;
+
+    UPDATE Complaints
+		SET discipline = @discipline, 
+		discipline_date = CURRENT_TIMESTAMP
+	WHERE complaint_id = @complaint_id
+
+GO
+GRANT EXECUTE ON
+UpdateComplaintDiscipline
+TO winforms;
+GO
+
+
 --AppendComplaintNotes
 DROP PROCEDURE IF EXISTS AppendComplaintNotes;
 GO
