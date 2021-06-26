@@ -34,12 +34,13 @@ Scenario: Add new complaint successfully with existing citizen
     Given a citizen exists on the DB with this info
     |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|
 	|Citi|Zen|123 Main St.||San Jose|CA|89900|555-555-5555|citizen@example.com|
+    |John|Smith|456 Elm St.||Los Angeles|CA|90731|999-999-9999|john@email.com|
     When Search Citizen button is selected
     Then SearchCitizenForm is shown
     When "Citi" is entered in First Name text box
-    When "Zen" is entered in the Last Name text box
+    When "Smith" is entered in the Last Name text box
     When "citizen@example.com" is entered in the email text box
-    When "555-555-5555"  is entered in the phone text box
+    When "999-999-9999"  is entered in the phone text box
     When Select Citizen Button is clicked
     Then NewComplaintForm is shown
     And 'Citi Zen' information populates NewComplaintForm

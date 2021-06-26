@@ -208,8 +208,15 @@ namespace E2ETests.Steps
         /// <param name="table"></param>
         [Given(@"a citizen exists on the DB with this info")]
         public void GivenACitizenExistsOnTheDbWithThisInfo(Table table)
-        {
+        {          
             var citizen = table.Rows[0];
+            var citizen2 = table.Rows[1];
+            this.AddCitizen(citizen);
+            this.AddCitizen(citizen2);           
+        }
+
+        private void AddCitizen(TableRow citizen)
+        {
             using (SqlConnection connection = PsProDBConnection.GetConnection())
             {
                 connection.Open();
@@ -289,7 +296,7 @@ namespace E2ETests.Steps
         {
             context.citizenWindow.EnterCitizenPhone(phone);
             var result = this.ClickSearchCitizenButtonAndReturnContentsOfDataGridView(4);
-            Assert.AreEqual("555-555-5555", result);
+            Assert.AreEqual("999-999-9999", result);
         }
 
         [When(@"Select Citizen Button is clicked")]

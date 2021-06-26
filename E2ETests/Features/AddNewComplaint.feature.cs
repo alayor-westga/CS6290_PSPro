@@ -321,46 +321,56 @@ this.FeatureBackground();
                             "89900",
                             "555-555-5555",
                             "citizen@example.com"});
+                table5.AddRow(new string[] {
+                            "John",
+                            "Smith",
+                            "456 Elm St.",
+                            "",
+                            "Los Angeles",
+                            "CA",
+                            "90731",
+                            "999-999-9999",
+                            "john@email.com"});
 #line 34
     testRunner.Given("a citizen exists on the DB with this info", ((string)(null)), table5, "Given ");
 #line hidden
-#line 37
+#line 38
     testRunner.When("Search Citizen button is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 38
+#line 39
     testRunner.Then("SearchCitizenForm is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 39
+#line 40
     testRunner.When("\"Citi\" is entered in First Name text box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 40
-    testRunner.When("\"Zen\" is entered in the Last Name text box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 41
-    testRunner.When("\"citizen@example.com\" is entered in the email text box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("\"Smith\" is entered in the Last Name text box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 42
-    testRunner.When("\"555-555-5555\"  is entered in the phone text box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("\"citizen@example.com\" is entered in the email text box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 43
-    testRunner.When("Select Citizen Button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("\"999-999-9999\"  is entered in the phone text box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 44
-    testRunner.Then("NewComplaintForm is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.When("Select Citizen Button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 45
-    testRunner.And("\'Citi Zen\' information populates NewComplaintForm", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Then("NewComplaintForm is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 46
-    testRunner.And("the officer \"Offi Cer\" is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("\'Citi Zen\' information populates NewComplaintForm", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 47
-    testRunner.And("the allegation \"Ethics Violation\" is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the officer \"Offi Cer\" is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 48
-    testRunner.And("the complaint summary is \"Complaint summary example\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("the allegation \"Ethics Violation\" is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 49
+    testRunner.And("the complaint summary is \"Complaint summary example\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 50
     testRunner.When("click on save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -375,7 +385,7 @@ this.FeatureBackground();
                             "Offi Cer",
                             "Ethics Violation",
                             "Complaint summary example"});
-#line 50
+#line 51
     testRunner.Then("the complaint should be saved with this content", ((string)(null)), table6, "Then ");
 #line hidden
             }
