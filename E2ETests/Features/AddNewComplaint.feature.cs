@@ -391,6 +391,131 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Add new complaint successfully with existing Citizen when Citizen information is " +
+            "amended")]
+        public virtual void AddNewComplaintSuccessfullyWithExistingCitizenWhenCitizenInformationIsAmended()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new complaint successfully with existing Citizen when Citizen information is " +
+                    "amended", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 55
+    this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "first_name",
+                            "last_name",
+                            "address1",
+                            "address2",
+                            "city",
+                            "state",
+                            "zip_code",
+                            "phone_number",
+                            "email_address"});
+                table7.AddRow(new string[] {
+                            "Citi",
+                            "Zen",
+                            "123 Main St.",
+                            "",
+                            "San Jose",
+                            "CA",
+                            "89900",
+                            "555-555-5555",
+                            "citizen@example.com"});
+                table7.AddRow(new string[] {
+                            "John",
+                            "Smith",
+                            "456 Elm St.",
+                            "",
+                            "Los Angeles",
+                            "CA",
+                            "90731",
+                            "999-999-9999",
+                            "john@email.com"});
+#line 56
+        testRunner.Given("a citizen exists on the DB with this info", ((string)(null)), table7, "Given ");
+#line hidden
+#line 60
+        testRunner.When("Search Citizen button is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 61
+        testRunner.Then("SearchCitizenForm is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 62
+        testRunner.When("\"Citi\" is entered in First Name text box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 63
+        testRunner.When("Select Citizen Button is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 64
+        testRunner.Then("NewComplaintForm is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 65
+        testRunner.And("\'Citi Zen\' information populates NewComplaintForm", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 66
+        testRunner.And("the officer \"Offi Cer\" is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 67
+        testRunner.And("the allegation \"Ethics Violation\" is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 68
+        testRunner.And("the complaint summary is \"Complaint summary example\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 69
+        testRunner.And("\"San Marino\" is entered in the City text box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 70
+        testRunner.When("click on save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                            "first_name",
+                            "last_name",
+                            "address1",
+                            "address2",
+                            "city",
+                            "state",
+                            "zip_code",
+                            "phone_number",
+                            "email_address"});
+                table8.AddRow(new string[] {
+                            "Citi",
+                            "Zen",
+                            "123 Main St.",
+                            "",
+                            "San Marino",
+                            "CA",
+                            "89900",
+                            "555-555-5555",
+                            "citizen@example.com"});
+#line 71
+        testRunner.And("the citizen should be saved with this content", ((string)(null)), table8, "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

@@ -68,6 +68,7 @@ namespace E2ETests.Windows
         public void EnterCitizenCity(string city)
         {
             setCitizenField("cityTextBox", city);
+            Thread.Sleep(2000);
         }
         public void SelectCitizenState(string state)
         {

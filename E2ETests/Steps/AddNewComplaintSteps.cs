@@ -89,6 +89,12 @@ namespace E2ETests.Steps
         [Then(@"the complaint should be saved with this content")]
         public void ThenTheComplaintShouldBeSavedWithThisContent(Table table)
         {
+            this.SaveComplaint(table);
+           
+        }
+
+        private void SaveComplaint(Table table)
+        {
             var expectedComplaint = table.Rows[0];
             Dictionary<string, string> complaint = GetComplaint();
             Assert.AreEqual(expectedComplaint[0], complaint.GetValueOrDefault("supervisor_name"));
@@ -96,6 +102,21 @@ namespace E2ETests.Steps
             Assert.AreEqual(expectedComplaint[2], complaint.GetValueOrDefault("officer_name"));
             Assert.AreEqual(expectedComplaint[3], complaint.GetValueOrDefault("allegation_type"));
             Assert.True(complaint.GetValueOrDefault("complaint_notes").Contains(expectedComplaint[4]));
+        }
+
+        private void SaveCitizen(Table table)
+        {
+            var expectedcitizen = table.Rows[0];
+            Dictionary<string, string> citizen = GetCitizen();
+            Assert.AreEqual(expectedcitizen[0], citizen.GetValueOrDefault("first_name"));
+            Assert.AreEqual(expectedcitizen[1], citizen.GetValueOrDefault("last_name"));
+            Assert.AreEqual(expectedcitizen[2], citizen.GetValueOrDefault("address1"));
+            Assert.AreEqual(expectedcitizen[3], citizen.GetValueOrDefault("address2"));
+            Assert.AreEqual(expectedcitizen[4], citizen.GetValueOrDefault("city"));
+            Assert.AreEqual(expectedcitizen[5], citizen.GetValueOrDefault("state"));
+            Assert.AreEqual(expectedcitizen[6], citizen.GetValueOrDefault("zipcode"));
+            Assert.AreEqual(expectedcitizen[7], citizen.GetValueOrDefault("phone"));
+            Assert.AreEqual(expectedcitizen[8], citizen.GetValueOrDefault("email"));
         }
 
         private Dictionary<string, string> GetComplaint()
@@ -137,17 +158,8 @@ namespace E2ETests.Steps
         [Then(@"the citizen should be saved with this content")]
         public void ThenTheCitizenShouldBeSavedWithThisContent(Table table)
         {
-            var expectedcitizen = table.Rows[0];
-            Dictionary<string, string> citizen = GetCitizen();
-            Assert.AreEqual(expectedcitizen[0], citizen.GetValueOrDefault("first_name"));
-            Assert.AreEqual(expectedcitizen[1], citizen.GetValueOrDefault("last_name"));
-            Assert.AreEqual(expectedcitizen[2], citizen.GetValueOrDefault("address1"));
-            Assert.AreEqual(expectedcitizen[3], citizen.GetValueOrDefault("address2"));
-            Assert.AreEqual(expectedcitizen[4], citizen.GetValueOrDefault("city"));
-            Assert.AreEqual(expectedcitizen[5], citizen.GetValueOrDefault("state"));
-            Assert.AreEqual(expectedcitizen[6], citizen.GetValueOrDefault("zipcode"));
-            Assert.AreEqual(expectedcitizen[7], citizen.GetValueOrDefault("phone"));
-            Assert.AreEqual(expectedcitizen[8], citizen.GetValueOrDefault("email"));
+            this.SaveCitizen(table);
+           
         }
 
         private Dictionary<string, string> GetCitizen()
@@ -343,6 +355,19 @@ namespace E2ETests.Steps
         {
             context.citizenWindow.ClickSearchCitizen();
             return context.citizenWindow.GetDataGridViewData(columnIndex);
+        }
+
+        [When(@"the citizen should be saved with this content")]
+        public void WhenTheCitizenShouldBeSavedWithThisContent(Table table)
+        {
+            this.SaveCitizen(table);
+        }
+
+        [Then(@"""(.*)"" is entered in the City text box")]
+        public void ThenIsEnteredInTheCityTextBox(string city)
+        {
+            context.newComplaintWindow.EnterCitizenCity(city);
+            
         }
 
     }

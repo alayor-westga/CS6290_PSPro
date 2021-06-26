@@ -47,8 +47,8 @@ namespace UnitTests
         [TestMethod]
         public void TestUpdateDisposition()
         {
-            complaintController.UpdateDisposition(1, "disposition1");
-            complaintDAL.Verify(v => v.UpdateDisposition(1, "disposition1"));
+            complaintController.UpdateDisposition(1, "disposition1", 1);
+            complaintDAL.Verify(v => v.UpdateDisposition(1, "disposition1", 1));
         }
 
         [TestMethod]
