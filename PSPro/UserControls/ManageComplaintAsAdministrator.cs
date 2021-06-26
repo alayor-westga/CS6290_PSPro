@@ -44,6 +44,10 @@ namespace PSPro.UserControls
             {
                 this.disciplineComboBox.Enabled = false;
             }
+            else
+            {
+                this.disciplineComboBox.Enabled = true;
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
