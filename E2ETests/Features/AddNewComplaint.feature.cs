@@ -381,7 +381,7 @@ this.FeatureBackground();
                             "complaint_notes"});
                 table6.AddRow(new string[] {
                             "Super Visor",
-                            "Citi Zen",
+                            "John Smith",
                             "Offi Cer",
                             "Ethics Violation",
                             "Complaint summary example"});

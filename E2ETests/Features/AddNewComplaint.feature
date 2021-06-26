@@ -50,4 +50,4 @@ Scenario: Add new complaint successfully with existing citizen
     When click on save
     Then the complaint should be saved with this content
     |supervisor_name|citizen_name|officer_name|allegation_type|complaint_notes|
-    |Super Visor|Citi Zen|Offi Cer|Ethics Violation|Complaint summary example|
+    |Super Visor|John Smith|Offi Cer|Ethics Violation|Complaint summary example|
