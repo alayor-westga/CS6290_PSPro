@@ -37,8 +37,9 @@ Scenario: Add new complaint successfully with existing citizen
     When Search Citizen button is selected
     Then SearchCitizenForm is shown
     When "Citi" is entered in First Name text box
-    And Search for Citizen button is clicked
-    Then "Citi Zen" information populates dataGridView
+    When "Zen" is entered in the Last Name text box
+    When "citizen@example.com" is entered in the email text box
+    When "555-555-5555"  is entered in the phone text box
     When Select Citizen Button is clicked
     Then NewComplaintForm is shown
     And 'Citi Zen' information populates NewComplaintForm

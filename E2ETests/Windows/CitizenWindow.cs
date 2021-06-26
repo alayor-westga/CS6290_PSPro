@@ -57,5 +57,38 @@ namespace E2ETests.Windows
             Thread.Sleep(2000);
             context.mustChangeWindow = true; 
         }
+
+        internal object GetDataGridViewData(int columnIndex)
+        {
+            var searchValue = context.GetWindow().FindFirstDescendant(cf => cf.ByAutomationId("citizenResultDataGridView")).AsDataGridView().Rows[0].Cells[columnIndex];
+            Console.WriteLine(searchValue.Value);
+            return searchValue.Value;
+        }
+
+        internal void EnterCitizenLastName(string lastName)
+        {           
+            this.setCitizenField("lastNameTextBox", lastName);
+            Thread.Sleep(2000);
+        }
+
+        internal void EnterCitizenEmail(string email)
+        {
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("EmailRadioButton"))
+                .AsButton()
+                .Click();
+            this.setCitizenField("emailTextBox", email);
+            Thread.Sleep(2000);
+        }
+
+        internal void EnterCitizenPhone(string phone)
+        {
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("PhoneRadioButton"))
+                .AsButton()
+                .Click();
+            this.setCitizenField("phoneTextBox", phone);
+            Thread.Sleep(2000);
+        }
     }
 }

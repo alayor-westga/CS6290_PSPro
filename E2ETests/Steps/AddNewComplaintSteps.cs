@@ -202,6 +202,10 @@ namespace E2ETests.Steps
             context.newComplaintWindow.ClickOnSave();
         }
 
+        /// <summary>
+        /// Add new complaint successfully with existing citizen
+        /// </summary>
+        /// <param name="table"></param>
         [Given(@"a citizen exists on the DB with this info")]
         public void GivenACitizenExistsOnTheDbWithThisInfo(Table table)
         {
@@ -259,19 +263,33 @@ namespace E2ETests.Steps
         [When(@"""(.*)"" is entered in First Name text box")]
         public void WhenIsEnteredInFirstNameTextBox(string firstName)
         {
-            Console.Write("firstName: " + firstName);
-           context.citizenWindow.EnterCitizenFirstName(firstName);
+            context.citizenWindow.EnterCitizenFirstName(firstName);
+            var result = this.ClickSearchCitizenButtonAndReturnContentsOfDataGridView(1);
+            Assert.AreEqual("Citi", result);
         }
 
-        [When(@"Search for Citizen button is clicked")]
-        public void WhenSearchForCitizenButtonIsClicked()
+        [When(@"""(.*)"" is entered in the Last Name text box")]
+        public void WhenIsEnteredInTheLastNameTextBox(string lastName)
         {
-            context.citizenWindow.ClickSearchCitizen();
+            context.citizenWindow.EnterCitizenLastName(lastName);
+            var result = this.ClickSearchCitizenButtonAndReturnContentsOfDataGridView(2);
+            Assert.AreEqual("Zen", result);
         }
-        [Then(@"""(.*)"" information populates dataGridView")]
-        public void ThenInformationPopulatesDataGridView(string p0)
+   
+        [When(@"""(.*)"" is entered in the email text box")]
+        public void WhenIsEnteredInTheEmailTextBox(string email)
         {
-  
+            context.citizenWindow.EnterCitizenEmail(email);
+            var result = this.ClickSearchCitizenButtonAndReturnContentsOfDataGridView(3);
+            Assert.AreEqual("citizen@example.com", result);
+        }
+     
+        [When(@"""(.*)""  is entered in the phone text box")]
+        public void WhenIsEnteredInThePhoneTextBox(string phone)
+        {
+            context.citizenWindow.EnterCitizenPhone(phone);
+            var result = this.ClickSearchCitizenButtonAndReturnContentsOfDataGridView(4);
+            Assert.AreEqual("555-555-5555", result);
         }
 
         [When(@"Select Citizen Button is clicked")]
@@ -314,6 +332,11 @@ namespace E2ETests.Steps
             context.newComplaintWindow.ClickOnLogout();
         }
 
+        private object ClickSearchCitizenButtonAndReturnContentsOfDataGridView(int columnIndex)
+        {
+            context.citizenWindow.ClickSearchCitizen();
+            return context.citizenWindow.GetDataGridViewData(columnIndex);
+        }
 
     }
 }
