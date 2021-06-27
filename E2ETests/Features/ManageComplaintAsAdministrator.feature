@@ -21,3 +21,17 @@ Scenario: See active complaint
 	|Offi Cer|Citi Zen|Officer Safety Violation|
 	# When administrator clicks on Manage Complaint
 	# Then the complaint status should be "Open"
+
+	Scenario: Set complaint discipline
+	Given administrator clicks on Manage Complaint
+	And administrator selects the discipline "None"
+	When administrator saves the complaint changes
+	Then the complaint discipline should be updated to "None" in the DB
+
+Scenario: Append comments to complaint
+	Given administrator clicks on Manage Complaint
+	And administrator clicks the See Notes button
+	Then the current notes should contain "Complaint summary example"
+	When administrator adds the comment "my comment"
+	And administrator saves the comment
+	Then the complaint notes should contain "my comment" in the DB
