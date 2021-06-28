@@ -95,7 +95,8 @@ namespace PSPro.View
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message,
+             Console.WriteLine(exception.Message);
+                MessageBox.Show("The officers list could not get loaded.",
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
