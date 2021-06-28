@@ -48,10 +48,10 @@ namespace PSPro.UserControls
                     complaintsDataGridView.DataSource = complaintController.GetAllActiveComplaints();
                 }
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                Console.WriteLine(e.Message);
-                MessageBox.Show("An error occurred when loading the complaints. Please try later.",
+                Console.WriteLine(exception.Message);
+                MessageBox.Show("An error occurred when loading the complaints.",
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -84,9 +84,9 @@ namespace PSPro.UserControls
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message,
+                Console.WriteLine(exception.Message);
+                MessageBox.Show("An error occurred when loading the officers.",
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
             }
         }
 
