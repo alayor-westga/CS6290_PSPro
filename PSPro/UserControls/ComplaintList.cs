@@ -31,19 +31,28 @@ namespace PSPro.UserControls
 
         private void ShowAllActiveComplaints()
         {
-            if (this.officerComboBox.SelectedValue == null)
+            try
             {
-                complaintsDataGridView.DataSource = complaintController.GetAllActiveComplaints();
-                return;
+                if (this.officerComboBox.SelectedValue == null)
+                {
+                    complaintsDataGridView.DataSource = complaintController.GetAllActiveComplaints();
+                    return;
+                }
+                int officerId = (int)this.officerComboBox.SelectedValue;
+                if (officerId > -1)
+                {
+                    complaintsDataGridView.DataSource = complaintController.GetActiveComplaintsByOfficer(officerId);
+                }
+                else
+                {
+                    complaintsDataGridView.DataSource = complaintController.GetAllActiveComplaints();
+                }
             }
-            int officerId =(int) this.officerComboBox.SelectedValue;
-            if (officerId > -1)
+            catch (Exception e)
             {
-                complaintsDataGridView.DataSource = complaintController.GetActiveComplaintsByOfficer(officerId);
-            } 
-            else
-            {
-                complaintsDataGridView.DataSource = complaintController.GetAllActiveComplaints();
+                Console.WriteLine(e.Message);
+                MessageBox.Show("An error occurred when loading the complaints. Please try later.",
+                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
