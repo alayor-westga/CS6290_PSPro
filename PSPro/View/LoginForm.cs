@@ -32,25 +32,34 @@ namespace PSPro.View
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            User user = loginController.Login(userNameTextBox.Text, passwordTextBox.Text);
-            if (user != null)
+            try
             {
-                switch (user.Role)
+                User user = loginController.Login(userNameTextBox.Text, passwordTextBox.Text);
+                if (user != null)
                 {
-                    case UserRole.Supervisor:
-                        ShowWindow(new NewComplaintForm(this));
-                        break;
-                    case UserRole.Investigator:
-                        ShowWindow(new InvestigatorDashboard(this));
-                        break;
-                    case UserRole.Administrator:
-                        ShowWindow(new AdministratorDashboard(this));
-                        break;
+                    switch (user.Role)
+                    {
+                        case UserRole.Supervisor:
+                            ShowWindow(new NewComplaintForm(this));
+                            break;
+                        case UserRole.Investigator:
+                            ShowWindow(new InvestigatorDashboard(this));
+                            break;
+                        case UserRole.Administrator:
+                            ShowWindow(new AdministratorDashboard(this));
+                            break;
+                    }
+                }
+                else
+                {
+                    errorMessageLabel.Text = "Invalid credentials";
                 }
             }
-            else
+            catch (Exception exception)
             {
-                errorMessageLabel.Text = "Invalid credentials";
+                Console.WriteLine(exception.Message);
+                MessageBox.Show("The system is not accessible. Please try again later",
+                        "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
