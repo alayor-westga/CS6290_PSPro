@@ -95,7 +95,7 @@ namespace PSPro.View
             }
             catch (Exception exception)
             {
-             Console.WriteLine(exception.Message);
+                Console.WriteLine(exception.Message);
                 MessageBox.Show("The officers list could not get loaded.",
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -121,7 +121,8 @@ namespace PSPro.View
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.Message,
+                    Console.WriteLine(exception.Message);
+                    MessageBox.Show("The complaint could not get saved.",
                             "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -147,7 +148,8 @@ namespace PSPro.View
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.Message,
+                    Console.WriteLine(exception.Message);
+                    MessageBox.Show("The complaint could not get saved.",
                             "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -175,7 +177,7 @@ namespace PSPro.View
                 }
                 else
                 {
-                    MessageBox.Show("This patient's information has been\nmodified since it has been retrieved."
+                    MessageBox.Show("This citizens's information has been\nmodified since it has been retrieved."
                     + "\n\nThe form has been updated to reflect those changes.",
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.GetCitizenFromDB();
