@@ -52,7 +52,8 @@ namespace PSPro.View
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(exception.Message,
+                    Console.WriteLine(exception.Message);
+                    MessageBox.Show("An error occurred when searching for a citizen.",
                             "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }               
             }
