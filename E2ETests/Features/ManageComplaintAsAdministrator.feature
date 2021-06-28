@@ -39,4 +39,15 @@ Scenario: Set complaint discipline
 	And administrator selects the discipline "None"
 	When administrator saves the complaint changes
 	Then the complaint discipline should be updated to "None" in the DB
+	And the user logs out
+
+Scenario: Append comments to complaint
+	Given administrator "a-001" logs in with password "4567"
+	Given administrator clicks on Manage Complaint
+	And administrator clicks the See Notes button
+	Then the current notes should contain "Complaint summary example"
+	When administrator adds the comment "my comment"
+	And administrator saves the comment
+	Then the complaint notes should contain "my comment" in the DB
+	And the user logs out
 
