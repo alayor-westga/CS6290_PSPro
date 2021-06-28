@@ -121,7 +121,7 @@ namespace PSPro.View
             // manageComplaintAsAdministrator1
             // 
             this.manageComplaintAsAdministrator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manageComplaintAsAdministrator1.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.manageComplaintAsAdministrator1.Font = new System.Drawing.Font("Segoe UI", 10.125F);
             this.manageComplaintAsAdministrator1.Location = new System.Drawing.Point(3, 3);
             this.manageComplaintAsAdministrator1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.manageComplaintAsAdministrator1.Name = "manageComplaintAsAdministrator1";
