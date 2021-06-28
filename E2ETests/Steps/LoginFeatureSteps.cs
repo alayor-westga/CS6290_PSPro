@@ -103,5 +103,13 @@ namespace E2ETests.Steps
             context.loginWindow.EnterPassword(password);
             context.loginWindow.Login();
         }
+
+        [Given(@"administrator ""(.*)"" logs in with password ""(.*)""")]
+        public void GivenAdministratorLogsInWithPassword(string username, string password)
+        {
+            context.loginWindow.EnterUserName(username);
+            context.loginWindow.EnterPassword(password);
+            context.loginWindow.Login();
+        }
     }
 }

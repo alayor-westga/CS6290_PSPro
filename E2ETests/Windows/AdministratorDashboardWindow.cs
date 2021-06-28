@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using FlaUI.Core.AutomationElements;
+using FlaUI.Core.Input;
+using FlaUI.Core.WindowsAPI;
+using System.Threading;
 
 namespace E2ETests.Windows
 {
@@ -46,6 +49,24 @@ namespace E2ETests.Windows
                 .FindFirstDescendant(cf => cf.ByAutomationId("manageComplaintButton"))
                 .AsButton()
                 .Click();
+        }
+
+        internal void SelectDiscipline(string discipline)
+        {
+            context.GetWindow()
+               .FindFirstDescendant(cf => cf.ByAutomationId("disciplineComboBox"))
+               .AsComboBox()
+               .Select(discipline);
+        }
+
+        internal void ClickOnSave()
+        {
+            context.GetWindow()
+               .FindFirstDescendant(cf => cf.ByAutomationId("saveButton"))
+               .AsButton()
+               .Click();
+            Thread.Sleep(2000);
+            Keyboard.Press(VirtualKeyShort.ENTER);
         }
 
         public string GetComplaintStatus()
