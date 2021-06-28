@@ -37,23 +37,23 @@ namespace PSPro.UserControls
             this.citizenNameLabelValue = new System.Windows.Forms.Label();
             this.citizenNameLabel = new System.Windows.Forms.Label();
             this.complaintGroupBox = new System.Windows.Forms.GroupBox();
-            this.officerFullNameLabel = new System.Windows.Forms.Label();
-            this.officerFullNameLabelValue = new System.Windows.Forms.Label();
-            this.complaintIdLabel = new System.Windows.Forms.Label();
-            this.complaintIdLabelValue = new System.Windows.Forms.Label();
-            this.statusLabel = new System.Windows.Forms.Label();
-            this.statusLabelValue = new System.Windows.Forms.Label();
-            this.allegationLabel = new System.Windows.Forms.Label();
-            this.allegationLabelValue = new System.Windows.Forms.Label();
-            this.notesLabel = new System.Windows.Forms.Label();
-            this.dateLabel = new System.Windows.Forms.Label();
-            this.dateLabelValue = new System.Windows.Forms.Label();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.disciplineLabel = new System.Windows.Forms.Label();
-            this.disciplineLabelValue = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dispositionComboBox = new System.Windows.Forms.ComboBox();
             this.seeNotesButton = new System.Windows.Forms.Button();
+            this.dispositionComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.disciplineLabelValue = new System.Windows.Forms.Label();
+            this.disciplineLabel = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.dateLabelValue = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.notesLabel = new System.Windows.Forms.Label();
+            this.allegationLabelValue = new System.Windows.Forms.Label();
+            this.allegationLabel = new System.Windows.Forms.Label();
+            this.statusLabelValue = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.complaintIdLabelValue = new System.Windows.Forms.Label();
+            this.complaintIdLabel = new System.Windows.Forms.Label();
+            this.officerFullNameLabelValue = new System.Windows.Forms.Label();
+            this.officerFullNameLabel = new System.Windows.Forms.Label();
             this.citizenGroupBox.SuspendLayout();
             this.complaintGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -68,9 +68,9 @@ namespace PSPro.UserControls
             this.citizenGroupBox.Controls.Add(this.citizenNameLabel);
             this.citizenGroupBox.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.citizenGroupBox.Location = new System.Drawing.Point(16, 4);
-            this.citizenGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.citizenGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.citizenGroupBox.Name = "citizenGroupBox";
-            this.citizenGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.citizenGroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.citizenGroupBox.Size = new System.Drawing.Size(1274, 198);
             this.citizenGroupBox.TabIndex = 0;
             this.citizenGroupBox.TabStop = false;
@@ -157,123 +157,67 @@ namespace PSPro.UserControls
             this.complaintGroupBox.Controls.Add(this.officerFullNameLabel);
             this.complaintGroupBox.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.complaintGroupBox.Location = new System.Drawing.Point(16, 210);
-            this.complaintGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.complaintGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.complaintGroupBox.Name = "complaintGroupBox";
-            this.complaintGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.complaintGroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.complaintGroupBox.Size = new System.Drawing.Size(1274, 382);
             this.complaintGroupBox.TabIndex = 1;
             this.complaintGroupBox.TabStop = false;
             this.complaintGroupBox.Text = "Complaint";
             // 
-            // officerFullNameLabel
+            // seeNotesButton
             // 
-            this.officerFullNameLabel.AutoSize = true;
-            this.officerFullNameLabel.Location = new System.Drawing.Point(20, 95);
-            this.officerFullNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.officerFullNameLabel.Name = "officerFullNameLabel";
-            this.officerFullNameLabel.Size = new System.Drawing.Size(140, 50);
-            this.officerFullNameLabel.TabIndex = 6;
-            this.officerFullNameLabel.Text = "Officer:";
+            this.seeNotesButton.Location = new System.Drawing.Point(155, 150);
+            this.seeNotesButton.Name = "seeNotesButton";
+            this.seeNotesButton.Size = new System.Drawing.Size(221, 55);
+            this.seeNotesButton.TabIndex = 22;
+            this.seeNotesButton.Text = "See Notes";
+            this.seeNotesButton.UseVisualStyleBackColor = true;
+            this.seeNotesButton.Click += new System.EventHandler(this.seeNotesButton_Click);
             // 
-            // officerFullNameLabelValue
+            // dispositionComboBox
             // 
-            this.officerFullNameLabelValue.AutoSize = true;
-            this.officerFullNameLabelValue.Location = new System.Drawing.Point(158, 95);
-            this.officerFullNameLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.officerFullNameLabelValue.Name = "officerFullNameLabelValue";
-            this.officerFullNameLabelValue.Size = new System.Drawing.Size(52, 50);
-            this.officerFullNameLabelValue.TabIndex = 6;
-            this.officerFullNameLabelValue.Text = "--";
+            this.dispositionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dispositionComboBox.FormattingEnabled = true;
+            this.dispositionComboBox.Items.AddRange(new object[] {
+            "Sustained",
+            "Not sustained",
+            "Exonerated",
+            "Unfounded"});
+            this.dispositionComboBox.Location = new System.Drawing.Point(242, 228);
+            this.dispositionComboBox.Name = "dispositionComboBox";
+            this.dispositionComboBox.Size = new System.Drawing.Size(541, 58);
+            this.dispositionComboBox.TabIndex = 21;
             // 
-            // complaintIdLabel
+            // label1
             // 
-            this.complaintIdLabel.AutoSize = true;
-            this.complaintIdLabel.Location = new System.Drawing.Point(20, 45);
-            this.complaintIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.complaintIdLabel.Name = "complaintIdLabel";
-            this.complaintIdLabel.Size = new System.Drawing.Size(66, 50);
-            this.complaintIdLabel.TabIndex = 7;
-            this.complaintIdLabel.Text = "ID:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 231);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(215, 50);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Disposition:";
             // 
-            // complaintIdLabelValue
+            // disciplineLabelValue
             // 
-            this.complaintIdLabelValue.AutoSize = true;
-            this.complaintIdLabelValue.Location = new System.Drawing.Point(83, 45);
-            this.complaintIdLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.complaintIdLabelValue.Name = "complaintIdLabelValue";
-            this.complaintIdLabelValue.Size = new System.Drawing.Size(52, 50);
-            this.complaintIdLabelValue.TabIndex = 8;
-            this.complaintIdLabelValue.Text = "--";
+            this.disciplineLabelValue.AutoSize = true;
+            this.disciplineLabelValue.Location = new System.Drawing.Point(215, 299);
+            this.disciplineLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.disciplineLabelValue.Name = "disciplineLabelValue";
+            this.disciplineLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.disciplineLabelValue.TabIndex = 19;
+            this.disciplineLabelValue.Text = "--";
             // 
-            // statusLabel
+            // disciplineLabel
             // 
-            this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(559, 45);
-            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(131, 50);
-            this.statusLabel.TabIndex = 9;
-            this.statusLabel.Text = "Status:";
-            // 
-            // statusLabelValue
-            // 
-            this.statusLabelValue.AutoSize = true;
-            this.statusLabelValue.Location = new System.Drawing.Point(689, 45);
-            this.statusLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.statusLabelValue.Name = "statusLabelValue";
-            this.statusLabelValue.Size = new System.Drawing.Size(52, 50);
-            this.statusLabelValue.TabIndex = 10;
-            this.statusLabelValue.Text = "--";
-            // 
-            // allegationLabel
-            // 
-            this.allegationLabel.AutoSize = true;
-            this.allegationLabel.Location = new System.Drawing.Point(559, 95);
-            this.allegationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.allegationLabel.Name = "allegationLabel";
-            this.allegationLabel.Size = new System.Drawing.Size(197, 50);
-            this.allegationLabel.TabIndex = 11;
-            this.allegationLabel.Text = "Allegation:";
-            // 
-            // allegationLabelValue
-            // 
-            this.allegationLabelValue.AutoSize = true;
-            this.allegationLabelValue.Location = new System.Drawing.Point(749, 95);
-            this.allegationLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.allegationLabelValue.Name = "allegationLabelValue";
-            this.allegationLabelValue.Size = new System.Drawing.Size(52, 50);
-            this.allegationLabelValue.TabIndex = 12;
-            this.allegationLabelValue.Text = "--";
-            // 
-            // notesLabel
-            // 
-            this.notesLabel.AutoSize = true;
-            this.notesLabel.Location = new System.Drawing.Point(20, 155);
-            this.notesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.notesLabel.Name = "notesLabel";
-            this.notesLabel.Size = new System.Drawing.Size(128, 50);
-            this.notesLabel.TabIndex = 13;
-            this.notesLabel.Text = "Notes:";
-            // 
-            // dateLabel
-            // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.Location = new System.Drawing.Point(953, 215);
-            this.dateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(107, 50);
-            this.dateLabel.TabIndex = 15;
-            this.dateLabel.Text = "Date:";
-            // 
-            // dateLabelValue
-            // 
-            this.dateLabelValue.AutoSize = true;
-            this.dateLabelValue.Location = new System.Drawing.Point(1054, 215);
-            this.dateLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.dateLabelValue.Name = "dateLabelValue";
-            this.dateLabelValue.Size = new System.Drawing.Size(52, 50);
-            this.dateLabelValue.TabIndex = 16;
-            this.dateLabelValue.Text = "--";
+            this.disciplineLabel.AutoSize = true;
+            this.disciplineLabel.Location = new System.Drawing.Point(20, 299);
+            this.disciplineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.disciplineLabel.Name = "disciplineLabel";
+            this.disciplineLabel.Size = new System.Drawing.Size(187, 50);
+            this.disciplineLabel.TabIndex = 18;
+            this.disciplineLabel.Text = "Discipline:";
             // 
             // saveButton
             // 
@@ -286,58 +230,115 @@ namespace PSPro.UserControls
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // disciplineLabel
+            // dateLabelValue
             // 
-            this.disciplineLabel.AutoSize = true;
-            this.disciplineLabel.Location = new System.Drawing.Point(20, 299);
-            this.disciplineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.disciplineLabel.Name = "disciplineLabel";
-            this.disciplineLabel.Size = new System.Drawing.Size(187, 50);
-            this.disciplineLabel.TabIndex = 18;
-            this.disciplineLabel.Text = "Discipline:";
+            this.dateLabelValue.AutoSize = true;
+            this.dateLabelValue.Location = new System.Drawing.Point(1054, 215);
+            this.dateLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dateLabelValue.Name = "dateLabelValue";
+            this.dateLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.dateLabelValue.TabIndex = 16;
+            this.dateLabelValue.Text = "--";
             // 
-            // disciplineLabelValue
+            // dateLabel
             // 
-            this.disciplineLabelValue.AutoSize = true;
-            this.disciplineLabelValue.Location = new System.Drawing.Point(215, 299);
-            this.disciplineLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.disciplineLabelValue.Name = "disciplineLabelValue";
-            this.disciplineLabelValue.Size = new System.Drawing.Size(52, 50);
-            this.disciplineLabelValue.TabIndex = 19;
-            this.disciplineLabelValue.Text = "--";
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Location = new System.Drawing.Point(953, 215);
+            this.dateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(107, 50);
+            this.dateLabel.TabIndex = 15;
+            this.dateLabel.Text = "Date:";
             // 
-            // label1
+            // notesLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 231);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 50);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Disposition:";
+            this.notesLabel.AutoSize = true;
+            this.notesLabel.Location = new System.Drawing.Point(20, 155);
+            this.notesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.notesLabel.Name = "notesLabel";
+            this.notesLabel.Size = new System.Drawing.Size(128, 50);
+            this.notesLabel.TabIndex = 13;
+            this.notesLabel.Text = "Notes:";
             // 
-            // dispositionComboBox
+            // allegationLabelValue
             // 
-            this.dispositionComboBox.FormattingEnabled = true;
-            this.dispositionComboBox.Items.AddRange(new object[] {
-            "Sustained",
-            "Not sustained",
-            "Exonerated",
-            "Unfounded"});
-            this.dispositionComboBox.Location = new System.Drawing.Point(242, 228);
-            this.dispositionComboBox.Name = "dispositionComboBox";
-            this.dispositionComboBox.Size = new System.Drawing.Size(541, 58);
-            this.dispositionComboBox.TabIndex = 21;
+            this.allegationLabelValue.AutoSize = true;
+            this.allegationLabelValue.Location = new System.Drawing.Point(749, 95);
+            this.allegationLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.allegationLabelValue.Name = "allegationLabelValue";
+            this.allegationLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.allegationLabelValue.TabIndex = 12;
+            this.allegationLabelValue.Text = "--";
             // 
-            // seeNotesButton
+            // allegationLabel
             // 
-            this.seeNotesButton.Location = new System.Drawing.Point(155, 150);
-            this.seeNotesButton.Name = "seeNotesButton";
-            this.seeNotesButton.Size = new System.Drawing.Size(221, 55);
-            this.seeNotesButton.TabIndex = 22;
-            this.seeNotesButton.Text = "See Notes";
-            this.seeNotesButton.UseVisualStyleBackColor = true;
-            this.seeNotesButton.Click += new System.EventHandler(this.seeNotesButton_Click);
+            this.allegationLabel.AutoSize = true;
+            this.allegationLabel.Location = new System.Drawing.Point(559, 95);
+            this.allegationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.allegationLabel.Name = "allegationLabel";
+            this.allegationLabel.Size = new System.Drawing.Size(197, 50);
+            this.allegationLabel.TabIndex = 11;
+            this.allegationLabel.Text = "Allegation:";
+            // 
+            // statusLabelValue
+            // 
+            this.statusLabelValue.AutoSize = true;
+            this.statusLabelValue.Location = new System.Drawing.Point(689, 45);
+            this.statusLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLabelValue.Name = "statusLabelValue";
+            this.statusLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.statusLabelValue.TabIndex = 10;
+            this.statusLabelValue.Text = "--";
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(559, 45);
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(131, 50);
+            this.statusLabel.TabIndex = 9;
+            this.statusLabel.Text = "Status:";
+            // 
+            // complaintIdLabelValue
+            // 
+            this.complaintIdLabelValue.AutoSize = true;
+            this.complaintIdLabelValue.Location = new System.Drawing.Point(83, 45);
+            this.complaintIdLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.complaintIdLabelValue.Name = "complaintIdLabelValue";
+            this.complaintIdLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.complaintIdLabelValue.TabIndex = 8;
+            this.complaintIdLabelValue.Text = "--";
+            // 
+            // complaintIdLabel
+            // 
+            this.complaintIdLabel.AutoSize = true;
+            this.complaintIdLabel.Location = new System.Drawing.Point(20, 45);
+            this.complaintIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.complaintIdLabel.Name = "complaintIdLabel";
+            this.complaintIdLabel.Size = new System.Drawing.Size(66, 50);
+            this.complaintIdLabel.TabIndex = 7;
+            this.complaintIdLabel.Text = "ID:";
+            // 
+            // officerFullNameLabelValue
+            // 
+            this.officerFullNameLabelValue.AutoSize = true;
+            this.officerFullNameLabelValue.Location = new System.Drawing.Point(158, 95);
+            this.officerFullNameLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.officerFullNameLabelValue.Name = "officerFullNameLabelValue";
+            this.officerFullNameLabelValue.Size = new System.Drawing.Size(52, 50);
+            this.officerFullNameLabelValue.TabIndex = 6;
+            this.officerFullNameLabelValue.Text = "--";
+            // 
+            // officerFullNameLabel
+            // 
+            this.officerFullNameLabel.AutoSize = true;
+            this.officerFullNameLabel.Location = new System.Drawing.Point(20, 95);
+            this.officerFullNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.officerFullNameLabel.Name = "officerFullNameLabel";
+            this.officerFullNameLabel.Size = new System.Drawing.Size(140, 50);
+            this.officerFullNameLabel.TabIndex = 6;
+            this.officerFullNameLabel.Text = "Officer:";
             // 
             // ManageComplaintAsInvestigator
             // 
@@ -346,7 +347,7 @@ namespace PSPro.UserControls
             this.Controls.Add(this.complaintGroupBox);
             this.Controls.Add(this.citizenGroupBox);
             this.Font = new System.Drawing.Font("Segoe UI", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageComplaintAsInvestigator";
             this.Size = new System.Drawing.Size(1308, 620);
             this.citizenGroupBox.ResumeLayout(false);

@@ -52,7 +52,8 @@ namespace PSPro.UserControls
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message,
+                Console.WriteLine(exception.Message);
+                MessageBox.Show("The complaint could not get saved.",
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
