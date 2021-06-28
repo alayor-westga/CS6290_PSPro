@@ -11,7 +11,7 @@ Background:
     And supervisor "s-001" logs in with password "4567"
 	And a complaint with this info is created
     |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|officer|allegation|summary|
-	|Citi|Zen|123 Main St.||San Jose|California|89900|555-555-5555|citizen@example.com|Offi Cer|Officer Safety Violation|Complaint summary|
+	|Citi|Zen|123 Main St.||San Jose|California|89900|555-555-5555|citizen@example.com|Offi Cer|Officer Safety Violation|Complaint summary example|
 	And the user logs out
 	
 

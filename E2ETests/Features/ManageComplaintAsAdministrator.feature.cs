@@ -158,7 +158,7 @@ namespace E2ETests.Features
                         "citizen@example.com",
                         "Offi Cer",
                         "Officer Safety Violation",
-                        "Complaint summary"});
+                        "Complaint summary example"});
 #line 12
  testRunner.And("a complaint with this info is created", ((string)(null)), table11, "And ");
 #line hidden

@@ -76,5 +76,15 @@ namespace E2ETests.Windows
                 .AsLabel()
                 .Text;
         }
+
+        internal void ClickOnSeeNotes()
+        {
+            context.GetWindow()
+                           .FindFirstDescendant(cf => cf.ByAutomationId("seeNotesButton"))
+                           .AsButton()
+                           .Click();
+            Thread.Sleep(2000);
+            context.mustChangeWindow = true;
+        }
     }
 }

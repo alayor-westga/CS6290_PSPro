@@ -81,6 +81,34 @@ namespace E2ETests.Steps
             return discipline;
         }
 
+         [Given(@"administrator clicks the See Notes button")]
+        public void GivenAdministratorClicksTheSeeNotesButton()
+        {
+            context.administratorDashboardWindow.ClickOnSeeNotes();
+        }
 
+        //[Then(@"the current notes should contain ""(.*)""")]
+        //public void ThenTheCurrentNotesShouldContain(string expectedNotes)
+        //{
+           // string actualNotes = context.complaintNotesWindow.GetNotes();
+            //Assert.True(actualNotes.Contains(expectedNotes));
+        //}
+
+        [When(@"administrator adds the comment ""(.*)""")]
+        public void WhenAdministratorAddsTheComment(string note)
+        {
+            context.complaintNotesWindow.AddNote(note);
+        }
+
+        [When(@"administrator saves the comment")]
+        public void WhenAdministratorSavesTheComment()
+        {
+            context.complaintNotesWindow.ClickOnSave();
+        }
+
+        //[Then(@"the complaint notes should contain ""(.*)"" in the DB")]
+        //public void ThenTheComplaintNotesShouldContainInTheDB(string expectedNote)
+        //    Dictionary<string, string> complaint = GetComplaintFromDB();
+           //Assert.True(complaint.GetValueOrDefault("complaint_notes").Contains(expectedNote));        }
     }
 }
