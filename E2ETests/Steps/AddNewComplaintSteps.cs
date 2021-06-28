@@ -370,5 +370,11 @@ namespace E2ETests.Steps
             
         }
 
+        [Then(@"the user logs out")]
+        public void ThenTheUserLogsOut()
+        {
+            context.newComplaintWindow.ClickOnLogout();
+        }
+
     }
 }
