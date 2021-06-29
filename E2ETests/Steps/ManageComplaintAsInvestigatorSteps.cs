@@ -3,7 +3,6 @@ using TechTalk.SpecFlow;
 using NUnit.Framework;
 using System.Data.SqlClient;
 using E2ETests.Drivers;
-using System.Data;
 
 namespace E2ETests.Steps
 {
@@ -112,7 +111,21 @@ namespace E2ETests.Steps
         public void ThenTheComplaintNotesShouldContainInTheDB(string expectedNote)
         {
             Dictionary<string, string> complaint = GetComplaintFromDB();
-           Assert.True(complaint.GetValueOrDefault("complaint_notes").Contains(expectedNote));        }
+            Assert.True(complaint.GetValueOrDefault("complaint_notes").Contains(expectedNote));
+        }
+
+        [Then(@"investigator should see (.*) complaints")]
+        public void ThenInvestigatorShouldSeeComplaints(int complaintsNumber)
+        {
+            List<Dictionary<string, string>> complaintList = context.investigatorDashboardWindow.GetComplaintsList();
+            Assert.AreEqual(complaintsNumber, complaintList.Count);
+        }
+
+        [When(@"selects officer ""(.*)""")]
+        public void WhenSelectsOfficer(string officer)
+        {
+            context.investigatorDashboardWindow.SelectOfficer(officer);
+        }
 
     }
 }

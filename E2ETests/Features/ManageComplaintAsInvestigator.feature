@@ -28,6 +28,9 @@ Scenario: See active complaints by officer
     |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|officer|allegation|summary|
 	|Another|CitiZen|123 Linconln Blvd.||Grapevine|Texas|68821|555-444-5532|citizen2@example.com|Another OffiCer|Excessive Force|Complaint notes example|
 	And the user logs out
+	And investigator "i-001" logs in with password "4567"
+	Then investigator should see 2 complaints
+	When selects officer "Offi Cer"
 
 Scenario: Set complaint disposition
 	Given investigator "i-001" logs in with password "4567"
