@@ -7,6 +7,7 @@ Background:
 	|supervisor|s-001|4567|Super|Visor|M|2000-01-01|1970-01-01|assigment1|
 	|investigator|i-001|4567|Investi|Gator|M|2000-01-01|1970-01-01|assigment1|
 	|officer|||Offi|Cer|F|2010-01-01|1990-01-01|assigment2|
+	|officer|||Another|OffiCer|M|2009-10-01|1970-01-12|assigment3|
     And supervisor "s-001" logs in with password "4567"
 	And a complaint with this info is created
     |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|officer|allegation|summary|
@@ -14,13 +15,19 @@ Background:
 	And the user logs out
 	And investigator "i-001" logs in with password "4567"
 
-
 Scenario: See active complaint
 	Then investigator should see a complaint with this info
 	|officer|citizen|allegation|
 	|Offi Cer|Citi Zen|Ethics Violation|
 	When investigator clicks on Manage Complaint
 	Then the complaint status should be "Open"
+
+Scenario: See active complaints by officer
+    Given supervisor "s-001" logs in with password "4567"
+	And a complaint with this info is created
+    |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|officer|allegation|summary|
+	|Another|CitiZen|123 Linconln Blvd.||Grapevine|Texas|68821|555-444-5532|citizen2@example.com|Another OffiCer|Excessive Force|Complaint notes example|
+	And the user logs out
 
 Scenario: Set complaint disposition
 	Given investigator clicks on Manage Complaint

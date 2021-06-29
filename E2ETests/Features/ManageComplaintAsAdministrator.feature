@@ -14,18 +14,14 @@ Background:
 	|Citi|Zen|123 Main St.||San Jose|California|89900|555-555-5555|citizen@example.com|Offi Cer|Officer Safety Violation|Complaint summary example|
 	And the user logs out
 	
-
-
 Scenario: See active complaint
     And administrator "a-001" logs in with password "4567"
 	Then administrator should see a complaint with this info
 	|officer|citizen|allegation|
 	|Offi Cer|Citi Zen|Officer Safety Violation|
-	# When administrator clicks on Manage Complaint
-	# Then the complaint status should be "Open"
+	When administrator clicks on Manage Complaint
+	Then the complaint status should be "Open"
 	And the user logs out
-
-
 
 Scenario: Set complaint discipline
 	And investigator "i-001" logs in with password "4567"
@@ -50,4 +46,3 @@ Scenario: Append comments to complaint
 	And administrator saves the comment
 	Then the complaint notes should contain "my comment" in the DB
 	And the user logs out
-
