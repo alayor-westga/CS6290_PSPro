@@ -31,6 +31,13 @@ Scenario: See active complaints by officer
 	And investigator "i-001" logs in with password "4567"
 	Then investigator should see 2 complaints
 	When selects officer "Offi Cer"
+	Then investigator should see one complaint with this info
+	|officer|allegation|
+	|Offi Cer|Ethics Violation|
+	When selects officer "Another OffiCer"
+	Then investigator should see one complaint with this info
+	|officer|allegation|
+	|Another OffiCer|Excessive Force|
 
 Scenario: Set complaint disposition
 	Given investigator "i-001" logs in with password "4567"

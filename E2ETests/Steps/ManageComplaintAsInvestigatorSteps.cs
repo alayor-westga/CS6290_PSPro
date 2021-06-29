@@ -127,5 +127,15 @@ namespace E2ETests.Steps
             context.investigatorDashboardWindow.SelectOfficer(officer);
         }
 
+        [Then(@"investigator should see one complaint with this info")]
+        public void ThenInvestigatorShouldSeeOneComplaintWithThisInfo(Table table)
+        {
+            List<Dictionary<string, string>> complaintList = context.investigatorDashboardWindow.GetComplaintsList();
+            Assert.AreEqual(1, complaintList.Count);
+            var expectedComplaint = table.Rows[0];
+            Dictionary<string, string> actualComplaint = complaintList[0];
+            Assert.AreEqual(expectedComplaint[0], actualComplaint.GetValueOrDefault("Officer"));
+            Assert.AreEqual(expectedComplaint[1], actualComplaint.GetValueOrDefault("Allegation"));
+        }
     }
 }
