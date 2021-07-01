@@ -59,5 +59,17 @@ namespace PSPro.View
                         "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void addNotesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (addNotesTextBox.Text.Length > 0)
+            {
+                saveButton.Enabled = true;
+            }
+            else
+            {
+                saveButton.Enabled = false;
+            }
+        }
     }
 }

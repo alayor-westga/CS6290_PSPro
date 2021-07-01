@@ -72,10 +72,12 @@ namespace PSPro.View
             this.addNotesTextBox.Size = new System.Drawing.Size(1296, 132);
             this.addNotesTextBox.TabIndex = 3;
             this.addNotesTextBox.Text = "";
+            this.addNotesTextBox.TextChanged += new System.EventHandler(this.addNotesTextBox_TextChanged);
             // 
             // saveButton
             // 
             this.saveButton.AutoSize = true;
+            this.saveButton.Enabled = false;
             this.saveButton.Location = new System.Drawing.Point(1153, 651);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(164, 60);

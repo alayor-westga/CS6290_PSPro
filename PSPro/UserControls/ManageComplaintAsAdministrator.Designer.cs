@@ -89,10 +89,10 @@ namespace PSPro.UserControls
             // 
             // seeNotesButton
             // 
-            this.seeNotesButton.Location = new System.Drawing.Point(128, 150);
+            this.seeNotesButton.Location = new System.Drawing.Point(155, 150);
             this.seeNotesButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.seeNotesButton.Name = "seeNotesButton";
-            this.seeNotesButton.Size = new System.Drawing.Size(181, 50);
+            this.seeNotesButton.Size = new System.Drawing.Size(221, 55);
             this.seeNotesButton.TabIndex = 22;
             this.seeNotesButton.Text = "See Notes";
             this.seeNotesButton.UseVisualStyleBackColor = true;
@@ -107,10 +107,10 @@ namespace PSPro.UserControls
             "Suspension",
             "Demotion",
             "Termination"});
-            this.disciplineComboBox.Location = new System.Drawing.Point(154, 288);
+            this.disciplineComboBox.Location = new System.Drawing.Point(218, 285);
             this.disciplineComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.disciplineComboBox.Name = "disciplineComboBox";
-            this.disciplineComboBox.Size = new System.Drawing.Size(608, 39);
+            this.disciplineComboBox.Size = new System.Drawing.Size(460, 58);
             this.disciplineComboBox.TabIndex = 21;
             // 
             // label1
@@ -119,17 +119,17 @@ namespace PSPro.UserControls
             this.label1.Location = new System.Drawing.Point(24, 288);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 32);
+            this.label1.Size = new System.Drawing.Size(187, 50);
             this.label1.TabIndex = 20;
             this.label1.Text = "Discipline:";
             // 
             // dispositionLabelValue
             // 
             this.dispositionLabelValue.AutoSize = true;
-            this.dispositionLabelValue.Location = new System.Drawing.Point(171, 223);
+            this.dispositionLabelValue.Location = new System.Drawing.Point(242, 228);
             this.dispositionLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dispositionLabelValue.Name = "dispositionLabelValue";
-            this.dispositionLabelValue.Size = new System.Drawing.Size(35, 32);
+            this.dispositionLabelValue.Size = new System.Drawing.Size(52, 50);
             this.dispositionLabelValue.TabIndex = 19;
             this.dispositionLabelValue.Text = "--";
             // 
@@ -139,7 +139,7 @@ namespace PSPro.UserControls
             this.disciplineLabel.Location = new System.Drawing.Point(24, 223);
             this.disciplineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.disciplineLabel.Name = "disciplineLabel";
-            this.disciplineLabel.Size = new System.Drawing.Size(139, 32);
+            this.disciplineLabel.Size = new System.Drawing.Size(215, 50);
             this.disciplineLabel.TabIndex = 18;
             this.disciplineLabel.Text = "Disposition:";
             // 
@@ -149,7 +149,7 @@ namespace PSPro.UserControls
             this.saveButton.Location = new System.Drawing.Point(824, 280);
             this.saveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(154, 47);
+            this.saveButton.Size = new System.Drawing.Size(154, 60);
             this.saveButton.TabIndex = 17;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -158,20 +158,20 @@ namespace PSPro.UserControls
             // dateLabelValue
             // 
             this.dateLabelValue.AutoSize = true;
-            this.dateLabelValue.Location = new System.Drawing.Point(707, 160);
+            this.dateLabelValue.Location = new System.Drawing.Point(1054, 215);
             this.dateLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateLabelValue.Name = "dateLabelValue";
-            this.dateLabelValue.Size = new System.Drawing.Size(35, 32);
+            this.dateLabelValue.Size = new System.Drawing.Size(52, 50);
             this.dateLabelValue.TabIndex = 16;
             this.dateLabelValue.Text = "--";
             // 
             // dateLabel
             // 
             this.dateLabel.AutoSize = true;
-            this.dateLabel.Location = new System.Drawing.Point(629, 158);
+            this.dateLabel.Location = new System.Drawing.Point(953, 215);
             this.dateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(70, 32);
+            this.dateLabel.Size = new System.Drawing.Size(107, 50);
             this.dateLabel.TabIndex = 15;
             this.dateLabel.Text = "Date:";
             // 
@@ -181,47 +181,47 @@ namespace PSPro.UserControls
             this.notesLabel.Location = new System.Drawing.Point(24, 158);
             this.notesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.notesLabel.Name = "notesLabel";
-            this.notesLabel.Size = new System.Drawing.Size(83, 32);
+            this.notesLabel.Size = new System.Drawing.Size(128, 50);
             this.notesLabel.TabIndex = 13;
             this.notesLabel.Text = "Notes:";
             // 
             // allegationLabelValue
             // 
             this.allegationLabelValue.AutoSize = true;
-            this.allegationLabelValue.Location = new System.Drawing.Point(763, 103);
+            this.allegationLabelValue.Location = new System.Drawing.Point(749, 95);
             this.allegationLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.allegationLabelValue.Name = "allegationLabelValue";
-            this.allegationLabelValue.Size = new System.Drawing.Size(35, 32);
+            this.allegationLabelValue.Size = new System.Drawing.Size(52, 50);
             this.allegationLabelValue.TabIndex = 12;
             this.allegationLabelValue.Text = "--";
             // 
             // allegationLabel
             // 
             this.allegationLabel.AutoSize = true;
-            this.allegationLabel.Location = new System.Drawing.Point(627, 103);
+            this.allegationLabel.Location = new System.Drawing.Point(559, 95);
             this.allegationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.allegationLabel.Name = "allegationLabel";
-            this.allegationLabel.Size = new System.Drawing.Size(128, 32);
+            this.allegationLabel.Size = new System.Drawing.Size(197, 50);
             this.allegationLabel.TabIndex = 11;
             this.allegationLabel.Text = "Allegation:";
             // 
             // statusLabelValue
             // 
             this.statusLabelValue.AutoSize = true;
-            this.statusLabelValue.Location = new System.Drawing.Point(720, 50);
+            this.statusLabelValue.Location = new System.Drawing.Point(689, 45);
             this.statusLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.statusLabelValue.Name = "statusLabelValue";
-            this.statusLabelValue.Size = new System.Drawing.Size(35, 32);
+            this.statusLabelValue.Size = new System.Drawing.Size(52, 50);
             this.statusLabelValue.TabIndex = 10;
             this.statusLabelValue.Text = "--";
             // 
             // statusLabel
             // 
             this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(629, 50);
+            this.statusLabel.Location = new System.Drawing.Point(559, 45);
             this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(84, 32);
+            this.statusLabel.Size = new System.Drawing.Size(131, 50);
             this.statusLabel.TabIndex = 9;
             this.statusLabel.Text = "Status:";
             // 
@@ -231,7 +231,7 @@ namespace PSPro.UserControls
             this.complaintIdLabelValue.Location = new System.Drawing.Point(79, 50);
             this.complaintIdLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.complaintIdLabelValue.Name = "complaintIdLabelValue";
-            this.complaintIdLabelValue.Size = new System.Drawing.Size(35, 32);
+            this.complaintIdLabelValue.Size = new System.Drawing.Size(52, 50);
             this.complaintIdLabelValue.TabIndex = 8;
             this.complaintIdLabelValue.Text = "--";
             // 
@@ -241,17 +241,17 @@ namespace PSPro.UserControls
             this.complaintIdLabel.Location = new System.Drawing.Point(22, 50);
             this.complaintIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.complaintIdLabel.Name = "complaintIdLabel";
-            this.complaintIdLabel.Size = new System.Drawing.Size(43, 32);
+            this.complaintIdLabel.Size = new System.Drawing.Size(66, 50);
             this.complaintIdLabel.TabIndex = 7;
             this.complaintIdLabel.Text = "ID:";
             // 
             // officerFullNameLabelValue
             // 
             this.officerFullNameLabelValue.AutoSize = true;
-            this.officerFullNameLabelValue.Location = new System.Drawing.Point(122, 103);
+            this.officerFullNameLabelValue.Location = new System.Drawing.Point(158, 95);
             this.officerFullNameLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.officerFullNameLabelValue.Name = "officerFullNameLabelValue";
-            this.officerFullNameLabelValue.Size = new System.Drawing.Size(35, 32);
+            this.officerFullNameLabelValue.Size = new System.Drawing.Size(52, 50);
             this.officerFullNameLabelValue.TabIndex = 6;
             this.officerFullNameLabelValue.Text = "--";
             // 
@@ -261,7 +261,7 @@ namespace PSPro.UserControls
             this.officerFullNameLabel.Location = new System.Drawing.Point(22, 103);
             this.officerFullNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.officerFullNameLabel.Name = "officerFullNameLabel";
-            this.officerFullNameLabel.Size = new System.Drawing.Size(92, 32);
+            this.officerFullNameLabel.Size = new System.Drawing.Size(140, 50);
             this.officerFullNameLabel.TabIndex = 6;
             this.officerFullNameLabel.Text = "Officer:";
             // 
@@ -286,50 +286,50 @@ namespace PSPro.UserControls
             // citizenPhoneLabelValue
             // 
             this.citizenPhoneLabelValue.AutoSize = true;
-            this.citizenPhoneLabelValue.Location = new System.Drawing.Point(818, 52);
+            this.citizenPhoneLabelValue.Location = new System.Drawing.Point(992, 54);
             this.citizenPhoneLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenPhoneLabelValue.Name = "citizenPhoneLabelValue";
-            this.citizenPhoneLabelValue.Size = new System.Drawing.Size(35, 32);
+            this.citizenPhoneLabelValue.Size = new System.Drawing.Size(52, 50);
             this.citizenPhoneLabelValue.TabIndex = 5;
             this.citizenPhoneLabelValue.Text = "--";
             // 
             // citizenPhoneLabel
             // 
             this.citizenPhoneLabel.AutoSize = true;
-            this.citizenPhoneLabel.Location = new System.Drawing.Point(627, 52);
+            this.citizenPhoneLabel.Location = new System.Drawing.Point(721, 54);
             this.citizenPhoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenPhoneLabel.Name = "citizenPhoneLabel";
-            this.citizenPhoneLabel.Size = new System.Drawing.Size(183, 32);
+            this.citizenPhoneLabel.Size = new System.Drawing.Size(279, 50);
             this.citizenPhoneLabel.TabIndex = 4;
             this.citizenPhoneLabel.Text = "Phone Number:";
             // 
             // citizenAddressLabelValue
             // 
             this.citizenAddressLabelValue.AutoSize = true;
-            this.citizenAddressLabelValue.Location = new System.Drawing.Point(136, 113);
+            this.citizenAddressLabelValue.Location = new System.Drawing.Point(174, 128);
             this.citizenAddressLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenAddressLabelValue.Name = "citizenAddressLabelValue";
-            this.citizenAddressLabelValue.Size = new System.Drawing.Size(35, 32);
+            this.citizenAddressLabelValue.Size = new System.Drawing.Size(52, 50);
             this.citizenAddressLabelValue.TabIndex = 3;
             this.citizenAddressLabelValue.Text = "--";
             // 
             // citizenAddressLabel
             // 
             this.citizenAddressLabel.AutoSize = true;
-            this.citizenAddressLabel.Location = new System.Drawing.Point(24, 113);
+            this.citizenAddressLabel.Location = new System.Drawing.Point(20, 128);
             this.citizenAddressLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenAddressLabel.Name = "citizenAddressLabel";
-            this.citizenAddressLabel.Size = new System.Drawing.Size(104, 32);
+            this.citizenAddressLabel.Size = new System.Drawing.Size(162, 50);
             this.citizenAddressLabel.TabIndex = 2;
             this.citizenAddressLabel.Text = "Address:";
             // 
             // citizenNameLabelValue
             // 
             this.citizenNameLabelValue.AutoSize = true;
-            this.citizenNameLabelValue.Location = new System.Drawing.Point(126, 52);
+            this.citizenNameLabelValue.Location = new System.Drawing.Point(147, 54);
             this.citizenNameLabelValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenNameLabelValue.Name = "citizenNameLabelValue";
-            this.citizenNameLabelValue.Size = new System.Drawing.Size(35, 32);
+            this.citizenNameLabelValue.Size = new System.Drawing.Size(52, 50);
             this.citizenNameLabelValue.TabIndex = 1;
             this.citizenNameLabelValue.Text = "--";
             // 
@@ -339,13 +339,13 @@ namespace PSPro.UserControls
             this.citizenNameLabel.Location = new System.Drawing.Point(22, 52);
             this.citizenNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.citizenNameLabel.Name = "citizenNameLabel";
-            this.citizenNameLabel.Size = new System.Drawing.Size(84, 32);
+            this.citizenNameLabel.Size = new System.Drawing.Size(128, 50);
             this.citizenNameLabel.TabIndex = 0;
             this.citizenNameLabel.Text = "Name:";
             // 
             // ManageComplaintAsAdministrator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.complaintGroupBox);
             this.Controls.Add(this.citizenGroupBox);
