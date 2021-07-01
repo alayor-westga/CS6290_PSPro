@@ -36,6 +36,8 @@ Scenario: Set complaint discipline
 	When administrator saves the complaint changes
 	Then the complaint discipline should be updated to "None" in the DB
 	And the user logs out
+	When investigator "i-001" logs in with password "4567"
+	Then investigator should see 0 complaints
 
 Scenario: Append comments to complaint
 	Given administrator "a-001" logs in with password "4567"
