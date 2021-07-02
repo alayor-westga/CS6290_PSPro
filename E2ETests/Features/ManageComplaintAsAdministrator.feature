@@ -23,6 +23,23 @@ Scenario: See active complaint
 	Then the complaint status should be "Open"
 	And the user logs out
 
+Scenario: See active complaints by officer
+    Given supervisor "s-001" logs in with password "4567"
+	And a complaint with this info is created
+    |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|officer|allegation|summary|
+	|Another|CitiZen|123 Linconln Blvd.||Grapevine|Texas|68821|555-444-5532|citizen2@example.com|Another OffiCer|Excessive Force|Complaint notes example|
+	And the user logs out
+	And administrator "a-001" logs in with password "4567"
+	Then administrator should see 2 complaints
+	When selects officer "Offi Cer"
+	Then administrator should see one complaint with this info
+	|officer|allegation|
+	|Offi Cer|Ethics Violation|
+	When selects officer "Another OffiCer"
+	Then administrator should see one complaint with this info
+	|officer|allegation|
+	|Another OffiCer|Excessive Force|
+
 Scenario: Set complaint discipline
 	And investigator "i-001" logs in with password "4567"
     Given investigator clicks on Manage Complaint
