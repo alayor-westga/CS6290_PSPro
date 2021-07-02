@@ -8,10 +8,11 @@ Background:
 	|administrator|a-001|4567|Adminis|Traitor|F|2000-01-01|1970-01-01|assigment1|
 	|investigator|i-001|4567|Investi|Gator|F|2000-01-01|1970-01-01|assigment1|
 	|officer|||Offi|Cer|F|2010-01-01|1990-01-01|assigment2|
+	|officer|||Another|OffiCer|M|2009-10-01|1970-01-12|assigment3|
     And supervisor "s-001" logs in with password "4567"
 	And a complaint with this info is created
     |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|officer|allegation|summary|
-	|Citi|Zen|123 Main St.||San Jose|California|89900|555-555-5555|citizen@example.com|Offi Cer|Officer Safety Violation|Complaint summary example|
+	|Citi|Zen|123 Main St.||San Jose|California|89900|555-555-5555|citizen@example.com|Offi Cer|Ethics Violation|Complaint summary example|
 	And the user logs out
 	
 Scenario: See active complaint
@@ -31,11 +32,11 @@ Scenario: See active complaints by officer
 	And the user logs out
 	And administrator "a-001" logs in with password "4567"
 	Then administrator should see 2 complaints
-	When selects officer "Offi Cer"
+	When admin selects officer "Offi Cer"
 	Then administrator should see one complaint with this info
 	|officer|allegation|
 	|Offi Cer|Ethics Violation|
-	When selects officer "Another OffiCer"
+	When admin selects officer "Another OffiCer"
 	Then administrator should see one complaint with this info
 	|officer|allegation|
 	|Another OffiCer|Excessive Force|

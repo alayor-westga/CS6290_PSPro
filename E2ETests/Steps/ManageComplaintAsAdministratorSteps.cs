@@ -106,9 +106,28 @@ namespace E2ETests.Steps
             context.complaintNotesWindow.ClickOnSave();
         }
 
-        //[Then(@"the complaint notes should contain ""(.*)"" in the DB")]
-        //public void ThenTheComplaintNotesShouldContainInTheDB(string expectedNote)
-        //    Dictionary<string, string> complaint = GetComplaintFromDB();
-           //Assert.True(complaint.GetValueOrDefault("complaint_notes").Contains(expectedNote));        }
+        [When(@"admin selects officer ""(.*)""")]
+        public void WhenAdminSelectsOfficer(string officer)
+        {
+            context.administratorDashboardWindow.SelectOfficer(officer);
+        }
+
+        [Then(@"administrator should see (.*) complaints")]
+        public void ThenAdministratorShouldSeeComplaints(int complaintsNumber)
+        {
+            List<Dictionary<string, string>> complaintList = context.administratorDashboardWindow.GetComplaintsList();
+            Assert.AreEqual(complaintsNumber, complaintList.Count);
+        }
+
+        [Then(@"administrator should see one complaint with this info")]
+        public void ThenAdministratorShouldSeeOneComplaintWithThisInfo(Table table)
+        {
+            List<Dictionary<string, string>> complaintList = context.administratorDashboardWindow.GetComplaintsList();
+            Assert.AreEqual(1, complaintList.Count);
+            var expectedComplaint = table.Rows[0];
+            Dictionary<string, string> actualComplaint = complaintList[0];
+            Assert.AreEqual(expectedComplaint[0], actualComplaint.GetValueOrDefault("Officer"));
+            Assert.AreEqual(expectedComplaint[1], actualComplaint.GetValueOrDefault("Allegation"));
+        }
     }
 }

@@ -86,5 +86,14 @@ namespace E2ETests.Windows
             Thread.Sleep(2000);
             context.mustChangeWindow = true;
         }
+
+        internal void SelectOfficer(string officer)
+        {
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("officerComboBox"))
+                .AsComboBox()
+                .Select(officer);
+            Thread.Sleep(2000);
+        }
     }
 }
