@@ -29,23 +29,24 @@ namespace PSPro.UserControls
             complaintSelectionListeners.Remove(listener);
         }
 
-        private void ShowAllActiveComplaints()
+        private void ShowActiveComplaints()
         {
+            StatusFilter statusFilter = statusComboBox.SelectedIndex == 0 ? StatusFilter.Open : StatusFilter.Closed;
             try
             {
                 if (this.officerComboBox.SelectedValue == null)
                 {
-                    complaintsDataGridView.DataSource = complaintController.GetAllActiveComplaints();
+                    complaintsDataGridView.DataSource = complaintController.GetAllComplaints(statusFilter);
                     return;
                 }
                 int officerId = (int)this.officerComboBox.SelectedValue;
                 if (officerId > -1)
                 {
-                    complaintsDataGridView.DataSource = complaintController.GetActiveComplaintsByOfficer(officerId);
+                    complaintsDataGridView.DataSource = complaintController.GetComplaintsByOfficer(officerId, statusFilter);
                 }
                 else
                 {
-                    complaintsDataGridView.DataSource = complaintController.GetAllActiveComplaints();
+                    complaintsDataGridView.DataSource = complaintController.GetAllComplaints(statusFilter);
                 }
             }
             catch (Exception exception)
@@ -60,14 +61,15 @@ namespace PSPro.UserControls
         {
             if (!this.DesignMode)
             {
-                ShowAllActiveComplaints();
+                ShowActiveComplaints();
                 PopulateOfficerComboBox();
+                statusComboBox.SelectedIndex = 0;
             }
         }
 
         override public void Refresh()
         {
-            ShowAllActiveComplaints();
+            ShowActiveComplaints();
         }
 
         private void PopulateOfficerComboBox()
@@ -92,7 +94,7 @@ namespace PSPro.UserControls
 
         private void officerComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ShowAllActiveComplaints();
+            ShowActiveComplaints();
         }
 
         private void manageComplaintButton_Click(object sender, EventArgs e)

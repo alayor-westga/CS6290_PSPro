@@ -6,6 +6,11 @@ using PSPro.Model;
 
 namespace PSPro.Controller
 {
+
+    public enum StatusFilter
+    {
+        Open, Closed
+    }
     /// <summary>
     /// Controller class for Complaints
     /// </summary>
@@ -27,7 +32,7 @@ namespace PSPro.Controller
         /// Gets all active complaints
         /// </summary>
         /// <returns>a List of active complaints</returns>
-        public List<ComplaintView> GetAllActiveComplaints()
+        public List<ComplaintView> GetAllComplaints(StatusFilter statusFilter)
         {
             return this.complaintSource.GetAllActiveComplaints();
         }
@@ -37,7 +42,7 @@ namespace PSPro.Controller
         /// </summary>
         /// <param name="officerPersonelId"></param>
         /// <returns>a List of active complaints by officer</returns>
-        public List<ComplaintView> GetActiveComplaintsByOfficer(int officerPersonelId)
+        public List<ComplaintView> GetComplaintsByOfficer(int officerPersonelId, StatusFilter statusFilter)
         {
             return this.complaintSource.GetActiveComplaintsByOfficer(officerPersonelId);
         }

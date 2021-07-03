@@ -24,14 +24,14 @@ namespace UnitTests
         [TestMethod]
         public void TestGetAllActiveComplaints()
         {
-            complaintController.GetAllActiveComplaints();
+            complaintController.GetAllComplaints(StatusFilter.Open);
             complaintDAL.Verify(v => v.GetAllActiveComplaints());
         }
 
         [TestMethod]
         public void TestGetActiveComplaintsByOfficerId()
         {
-            complaintController.GetActiveComplaintsByOfficer(1);
+            complaintController.GetComplaintsByOfficer(1, StatusFilter.Open);
             complaintDAL.Verify(v => v.GetActiveComplaintsByOfficer(1));
         }
 

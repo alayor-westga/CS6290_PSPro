@@ -31,16 +31,18 @@ namespace PSPro.UserControls
         {
             this.components = new System.ComponentModel.Container();
             this.complaintsDataGridView = new System.Windows.Forms.DataGridView();
-            this.complaintViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.officerComboBox = new System.Windows.Forms.ComboBox();
-            this.officerComboBoxBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.officerLabel = new System.Windows.Forms.Label();
-            this.manageComplaintButton = new System.Windows.Forms.Button();
             this.complaintIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.officerFullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.citizenFullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allegationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complaintViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.officerComboBox = new System.Windows.Forms.ComboBox();
+            this.officerComboBoxBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.officerLabel = new System.Windows.Forms.Label();
+            this.manageComplaintButton = new System.Windows.Forms.Button();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.complaintsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaintViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officerComboBoxBindingSource)).BeginInit();
@@ -70,6 +72,46 @@ namespace PSPro.UserControls
             this.complaintsDataGridView.Size = new System.Drawing.Size(1258, 480);
             this.complaintsDataGridView.TabIndex = 0;
             this.complaintsDataGridView.DoubleClick += new System.EventHandler(this.complaintsDataGridView_DoubleClick);
+            // 
+            // complaintIDDataGridViewTextBoxColumn
+            // 
+            this.complaintIDDataGridViewTextBoxColumn.DataPropertyName = "ComplaintID";
+            this.complaintIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.complaintIDDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.complaintIDDataGridViewTextBoxColumn.Name = "complaintIDDataGridViewTextBoxColumn";
+            this.complaintIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateCreatedDataGridViewTextBoxColumn
+            // 
+            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateCreatedDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
+            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // officerFullNameDataGridViewTextBoxColumn
+            // 
+            this.officerFullNameDataGridViewTextBoxColumn.DataPropertyName = "OfficerFullName";
+            this.officerFullNameDataGridViewTextBoxColumn.HeaderText = "Officer";
+            this.officerFullNameDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.officerFullNameDataGridViewTextBoxColumn.Name = "officerFullNameDataGridViewTextBoxColumn";
+            this.officerFullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // citizenFullNameDataGridViewTextBoxColumn
+            // 
+            this.citizenFullNameDataGridViewTextBoxColumn.DataPropertyName = "CitizenFullName";
+            this.citizenFullNameDataGridViewTextBoxColumn.HeaderText = "Citizen";
+            this.citizenFullNameDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.citizenFullNameDataGridViewTextBoxColumn.Name = "citizenFullNameDataGridViewTextBoxColumn";
+            this.citizenFullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // allegationDataGridViewTextBoxColumn
+            // 
+            this.allegationDataGridViewTextBoxColumn.DataPropertyName = "Allegation";
+            this.allegationDataGridViewTextBoxColumn.HeaderText = "Allegation";
+            this.allegationDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.allegationDataGridViewTextBoxColumn.Name = "allegationDataGridViewTextBoxColumn";
+            this.allegationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // complaintViewBindingSource
             // 
@@ -113,50 +155,34 @@ namespace PSPro.UserControls
             this.manageComplaintButton.UseVisualStyleBackColor = true;
             this.manageComplaintButton.Click += new System.EventHandler(this.manageComplaintButton_Click);
             // 
-            // complaintIDDataGridViewTextBoxColumn
+            // statusLabel
             // 
-            this.complaintIDDataGridViewTextBoxColumn.DataPropertyName = "ComplaintID";
-            this.complaintIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.complaintIDDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.complaintIDDataGridViewTextBoxColumn.Name = "complaintIDDataGridViewTextBoxColumn";
-            this.complaintIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(673, 52);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(94, 40);
+            this.statusLabel.TabIndex = 5;
+            this.statusLabel.Text = "Status";
             // 
-            // dateCreatedDataGridViewTextBoxColumn
+            // statusComboBox
             // 
-            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateCreatedDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
-            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // officerFullNameDataGridViewTextBoxColumn
-            // 
-            this.officerFullNameDataGridViewTextBoxColumn.DataPropertyName = "OfficerFullName";
-            this.officerFullNameDataGridViewTextBoxColumn.HeaderText = "Officer";
-            this.officerFullNameDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.officerFullNameDataGridViewTextBoxColumn.Name = "officerFullNameDataGridViewTextBoxColumn";
-            this.officerFullNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // citizenFullNameDataGridViewTextBoxColumn
-            // 
-            this.citizenFullNameDataGridViewTextBoxColumn.DataPropertyName = "CitizenFullName";
-            this.citizenFullNameDataGridViewTextBoxColumn.HeaderText = "Citizen";
-            this.citizenFullNameDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.citizenFullNameDataGridViewTextBoxColumn.Name = "citizenFullNameDataGridViewTextBoxColumn";
-            this.citizenFullNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // allegationDataGridViewTextBoxColumn
-            // 
-            this.allegationDataGridViewTextBoxColumn.DataPropertyName = "Allegation";
-            this.allegationDataGridViewTextBoxColumn.HeaderText = "Allegation";
-            this.allegationDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.allegationDataGridViewTextBoxColumn.Name = "allegationDataGridViewTextBoxColumn";
-            this.allegationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusComboBox.Font = new System.Drawing.Font("Segoe UI", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Items.AddRange(new object[] {
+            "Open",
+            "Closed"});
+            this.statusComboBox.Location = new System.Drawing.Point(788, 49);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(307, 58);
+            this.statusComboBox.TabIndex = 6;
             // 
             // ComplaintList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 40F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.statusComboBox);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.manageComplaintButton);
             this.Controls.Add(this.officerLabel);
             this.Controls.Add(this.officerComboBox);
@@ -187,5 +213,7 @@ namespace PSPro.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn officerFullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn citizenFullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn allegationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.ComboBox statusComboBox;
     }
 }
