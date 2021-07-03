@@ -40,6 +40,10 @@ namespace PSPro.UserControls
             var discipline = complaintView.Discipline != null && complaintView.Discipline.Length > 0
                     ? complaintView.Discipline : "--";
             this.disciplineLabelValue.Text = discipline;
+            if (complaintView.Status == "Closed")
+            {
+                saveButton.Enabled = false;
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
