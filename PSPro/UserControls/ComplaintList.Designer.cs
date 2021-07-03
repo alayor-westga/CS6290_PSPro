@@ -176,6 +176,7 @@ namespace PSPro.UserControls
             this.statusComboBox.Name = "statusComboBox";
             this.statusComboBox.Size = new System.Drawing.Size(307, 58);
             this.statusComboBox.TabIndex = 6;
+            this.statusComboBox.SelectedIndexChanged += new System.EventHandler(this.statusComboBox_SelectedIndexChanged);
             // 
             // ComplaintList
             // 

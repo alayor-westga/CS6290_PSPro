@@ -29,9 +29,9 @@ namespace PSPro.UserControls
             complaintSelectionListeners.Remove(listener);
         }
 
-        private void ShowActiveComplaints()
+        private void ShowComplaints()
         {
-            StatusFilter statusFilter = statusComboBox.SelectedIndex == 0 ? StatusFilter.Open : StatusFilter.Closed;
+            StatusFilter statusFilter = statusComboBox.SelectedIndex == 0 || statusComboBox.SelectedIndex == -1 ? StatusFilter.Open : StatusFilter.Closed;
             try
             {
                 if (this.officerComboBox.SelectedValue == null)
@@ -61,7 +61,7 @@ namespace PSPro.UserControls
         {
             if (!this.DesignMode)
             {
-                ShowActiveComplaints();
+                ShowComplaints();
                 PopulateOfficerComboBox();
                 statusComboBox.SelectedIndex = 0;
             }
@@ -69,7 +69,7 @@ namespace PSPro.UserControls
 
         override public void Refresh()
         {
-            ShowActiveComplaints();
+            ShowComplaints();
         }
 
         private void PopulateOfficerComboBox()
@@ -94,7 +94,7 @@ namespace PSPro.UserControls
 
         private void officerComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ShowActiveComplaints();
+            ShowComplaints();
         }
 
         private void manageComplaintButton_Click(object sender, EventArgs e)
@@ -120,6 +120,11 @@ namespace PSPro.UserControls
         {
             ComplaintView complaintView = (ComplaintView)complaintsDataGridView.SelectedRows[0].DataBoundItem;
             return complaintView.ComplaintID;
+        }
+
+        private void statusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShowComplaints();
         }
     }
 }
