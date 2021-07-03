@@ -6,6 +6,7 @@ Background:
 	|type|username|password|first_name|last_name|gender|hiredate|birthdate|assignment|
 	|supervisor|s-001|4567|Super|Visor|M|2000-01-01|1970-01-01|assigment1|
 	|investigator|i-001|4567|Investi|Gator|M|2000-01-01|1970-01-01|assigment1|
+	|administrator|a-001|4567|Adminis|Traitor|F|2000-01-01|1970-01-01|assigment1|
 	|officer|||Offi|Cer|F|2010-01-01|1990-01-01|assigment2|
 	|officer|||Another|OffiCer|M|2009-10-01|1970-01-12|assigment3|
     And supervisor "s-001" logs in with password "4567"
@@ -54,3 +55,21 @@ Scenario: Append comments to complaint
 	When investigator adds the comment "my comment"
 	And investigator saves the comment
 	Then the complaint notes should contain "my comment" in the DB
+
+Scenario: See closed complaint
+	Given investigator "i-001" logs in with password "4567"
+    And investigator clicks on Manage Complaint
+	And investigator selects the disposition "Unfounded"
+	And investigator saves the complaint changes
+	And the user logs out
+	And administrator "a-001" logs in with password "4567"
+	And administrator clicks on Manage Complaint
+	And administrator selects the discipline "None"
+	When administrator saves the complaint changes
+	And the user logs out
+	When investigator "i-001" logs in with password "4567"
+	Then investigator should see 0 complaints
+	When investigator selects closed complaints
+	Then investigator should see 1 complaints
+	When investigator clicks on Manage Complaint
+	Then the complaint status should be "Closed"

@@ -3,6 +3,7 @@ using TechTalk.SpecFlow;
 using NUnit.Framework;
 using System.Data.SqlClient;
 using E2ETests.Drivers;
+using E2ETests.Windows;
 
 namespace E2ETests.Steps
 {
@@ -48,6 +49,12 @@ namespace E2ETests.Steps
 
         [When(@"investigator saves the complaint changes")]
         public void WhenInvestigatorSavesTheComplaintChanges()
+        {
+            context.investigatorDashboardWindow.ClickOnSave();
+        }
+
+        [Given(@"investigator saves the complaint changes")]
+        public void GivenInvestigatorSavesTheComplaintChanges()
         {
             context.investigatorDashboardWindow.ClickOnSave();
         }
@@ -137,5 +144,12 @@ namespace E2ETests.Steps
             Assert.AreEqual(expectedComplaint[0], actualComplaint.GetValueOrDefault("Officer"));
             Assert.AreEqual(expectedComplaint[1], actualComplaint.GetValueOrDefault("Allegation"));
         }
+
+        [When(@"investigator selects closed complaints")]
+        public void WhenInvestigatorSelectsClosedComplaints()
+        {
+            context.investigatorDashboardWindow.SelectStatus(StatusFilter.Closed);
+        }
+
     }
 }

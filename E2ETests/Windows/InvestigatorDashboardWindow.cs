@@ -6,6 +6,10 @@ using System.Threading;
 
 namespace E2ETests.Windows
 {
+    public enum StatusFilter
+    {
+        Open, Closed
+    }
     public class InvestigatorDashboardWindow
     {
         private readonly Context context;
@@ -93,6 +97,16 @@ namespace E2ETests.Windows
                 .FindFirstDescendant(cf => cf.ByAutomationId("officerComboBox"))
                 .AsComboBox()
                 .Select(officer);
+            Thread.Sleep(2000);
+        }
+
+        public void SelectStatus(StatusFilter statusFilter)
+        {
+            string status = statusFilter == StatusFilter.Open ? "Open" : "Closed";
+            context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("statusComboBox"))
+                .AsComboBox()
+                .Select(status);
             Thread.Sleep(2000);
         }
     }

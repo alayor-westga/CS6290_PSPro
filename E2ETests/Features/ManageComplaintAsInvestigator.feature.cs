@@ -108,6 +108,16 @@ namespace E2ETests.Features
                         "1970-01-01",
                         "assigment1"});
             table16.AddRow(new string[] {
+                        "administrator",
+                        "a-001",
+                        "4567",
+                        "Adminis",
+                        "Traitor",
+                        "F",
+                        "2000-01-01",
+                        "1970-01-01",
+                        "assigment1"});
+            table16.AddRow(new string[] {
                         "officer",
                         "",
                         "",
@@ -130,7 +140,7 @@ namespace E2ETests.Features
 #line 5
     testRunner.Given("personnel exists on the DB with this info", ((string)(null)), table16, "Given ");
 #line hidden
-#line 11
+#line 12
     testRunner.And("supervisor \"s-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -159,10 +169,10 @@ namespace E2ETests.Features
                         "Offi Cer",
                         "Ethics Violation",
                         "Complaint summary example"});
-#line 12
+#line 13
  testRunner.And("a complaint with this info is created", ((string)(null)), table17, "And ");
 #line hidden
-#line 15
+#line 16
  testRunner.And("the user logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
@@ -174,7 +184,7 @@ namespace E2ETests.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("See active complaint", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 17
+#line 18
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -197,7 +207,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 18
+#line 19
  testRunner.Given("investigator \"i-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -208,13 +218,13 @@ this.FeatureBackground();
                             "Offi Cer",
                             "Citi Zen",
                             "Ethics Violation"});
-#line 19
+#line 20
  testRunner.Then("investigator should see a complaint with this info", ((string)(null)), table18, "Then ");
 #line hidden
-#line 22
+#line 23
  testRunner.When("investigator clicks on Manage Complaint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 23
+#line 24
  testRunner.Then("the complaint status should be \"Open\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -228,7 +238,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("See active complaints by officer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 25
+#line 26
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -251,7 +261,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 26
+#line 27
     testRunner.Given("supervisor \"s-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
                 TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -280,19 +290,19 @@ this.FeatureBackground();
                             "Another OffiCer",
                             "Excessive Force",
                             "Complaint notes example"});
-#line 27
+#line 28
  testRunner.And("a complaint with this info is created", ((string)(null)), table19, "And ");
 #line hidden
-#line 30
+#line 31
  testRunner.And("the user logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 31
+#line 32
  testRunner.And("investigator \"i-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 32
+#line 33
  testRunner.Then("investigator should see 2 complaints", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 33
+#line 34
  testRunner.When("selects officer \"Offi Cer\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -301,10 +311,10 @@ this.FeatureBackground();
                 table20.AddRow(new string[] {
                             "Offi Cer",
                             "Ethics Violation"});
-#line 34
+#line 35
  testRunner.Then("investigator should see one complaint with this info", ((string)(null)), table20, "Then ");
 #line hidden
-#line 37
+#line 38
  testRunner.When("selects officer \"Another OffiCer\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -313,7 +323,7 @@ this.FeatureBackground();
                 table21.AddRow(new string[] {
                             "Another OffiCer",
                             "Excessive Force"});
-#line 38
+#line 39
  testRunner.Then("investigator should see one complaint with this info", ((string)(null)), table21, "Then ");
 #line hidden
             }
@@ -327,7 +337,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Set complaint disposition", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 42
+#line 43
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -350,19 +360,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 43
+#line 44
  testRunner.Given("investigator \"i-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 44
+#line 45
  testRunner.And("investigator clicks on Manage Complaint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 45
+#line 46
  testRunner.And("investigator selects the disposition \"Unfounded\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 46
+#line 47
  testRunner.When("investigator saves the complaint changes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 47
+#line 48
  testRunner.Then("the complaint disposition should be updated to \"Unfounded\" in the DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -376,7 +386,7 @@ this.FeatureBackground();
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Append comments to complaint", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 49
+#line 50
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -399,26 +409,108 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
-#line 50
+#line 51
  testRunner.Given("investigator \"i-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 51
+#line 52
  testRunner.And("investigator clicks on Manage Complaint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 52
+#line 53
  testRunner.And("investigator clicks the See Notes button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 53
+#line 54
  testRunner.Then("the current notes should contain \"Complaint summary example\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 54
+#line 55
  testRunner.When("investigator adds the comment \"my comment\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 55
+#line 56
  testRunner.And("investigator saves the comment", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 56
+#line 57
  testRunner.Then("the complaint notes should contain \"my comment\" in the DB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("See closed complaint")]
+        public virtual void SeeClosedComplaint()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("See closed complaint", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 59
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 60
+ testRunner.Given("investigator \"i-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 61
+    testRunner.And("investigator clicks on Manage Complaint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 62
+ testRunner.And("investigator selects the disposition \"Unfounded\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 63
+ testRunner.And("investigator saves the complaint changes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 64
+ testRunner.And("the user logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 65
+ testRunner.And("administrator \"a-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 66
+ testRunner.And("administrator clicks on Manage Complaint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 67
+ testRunner.And("administrator selects the discipline \"None\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 68
+ testRunner.When("administrator saves the complaint changes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 69
+ testRunner.And("the user logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 70
+ testRunner.When("investigator \"i-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 71
+ testRunner.Then("investigator should see 0 complaints", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 72
+ testRunner.When("investigator selects closed complaints", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 73
+ testRunner.Then("investigator should see 1 complaints", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 74
+ testRunner.When("investigator clicks on Manage Complaint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 75
+ testRunner.Then("the complaint status should be \"Closed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

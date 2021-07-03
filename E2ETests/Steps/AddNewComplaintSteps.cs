@@ -90,7 +90,7 @@ namespace E2ETests.Steps
         public void ThenTheComplaintShouldBeSavedWithThisContent(Table table)
         {
             this.SaveComplaint(table);
-           
+
         }
 
         private void SaveComplaint(Table table)
@@ -159,7 +159,7 @@ namespace E2ETests.Steps
         public void ThenTheCitizenShouldBeSavedWithThisContent(Table table)
         {
             this.SaveCitizen(table);
-           
+
         }
 
         private Dictionary<string, string> GetCitizen()
@@ -220,11 +220,11 @@ namespace E2ETests.Steps
         /// <param name="table"></param>
         [Given(@"a citizen exists on the DB with this info")]
         public void GivenACitizenExistsOnTheDbWithThisInfo(Table table)
-        {          
+        {
             var citizen = table.Rows[0];
             var citizen2 = table.Rows[1];
             this.AddCitizen(citizen);
-            this.AddCitizen(citizen2);           
+            this.AddCitizen(citizen2);
         }
 
         private void AddCitizen(TableRow citizen)
@@ -294,7 +294,7 @@ namespace E2ETests.Steps
             var result = this.ClickSearchCitizenButtonAndReturnContentsOfDataGridView(2);
             Assert.AreEqual("Zen", result);
         }
-   
+
         [When(@"""(.*)"" is entered in the email text box")]
         public void WhenIsEnteredInTheEmailTextBox(string email)
         {
@@ -302,7 +302,7 @@ namespace E2ETests.Steps
             var result = this.ClickSearchCitizenButtonAndReturnContentsOfDataGridView(3);
             Assert.AreEqual("citizen@example.com", result);
         }
-     
+
         [When(@"""(.*)""  is entered in the phone text box")]
         public void WhenIsEnteredInThePhoneTextBox(string phone)
         {
@@ -319,7 +319,7 @@ namespace E2ETests.Steps
 
         [Then(@"NewComplaintForm is shown")]
         public void ThenNewComplaintFormIsShown()
-        {      
+        {
         }
 
         [Then(@"'(.*)' information populates NewComplaintForm")]
@@ -351,6 +351,12 @@ namespace E2ETests.Steps
             context.newComplaintWindow.ClickOnLogout();
         }
 
+        [When(@"the user logs out")]
+        public void WhenTheUserLogsOut()
+        {
+            context.newComplaintWindow.ClickOnLogout();
+        }
+
         private object ClickSearchCitizenButtonAndReturnContentsOfDataGridView(int columnIndex)
         {
             context.citizenWindow.ClickSearchCitizen();
@@ -367,7 +373,7 @@ namespace E2ETests.Steps
         public void ThenIsEnteredInTheCityTextBox(string city)
         {
             context.newComplaintWindow.EnterCitizenCity(city);
-            
+
         }
 
         [Then(@"the user logs out")]
