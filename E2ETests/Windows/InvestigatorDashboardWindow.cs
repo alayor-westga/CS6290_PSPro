@@ -109,5 +109,13 @@ namespace E2ETests.Windows
                 .Select(status);
             Thread.Sleep(2000);
         }
+
+        public bool SaveIsEnabled()
+        {
+            return context.GetWindow()
+                .FindFirstDescendant(cf => cf.ByAutomationId("saveButton"))
+                .AsButton()
+                .IsEnabled;
+        }
     }
 }

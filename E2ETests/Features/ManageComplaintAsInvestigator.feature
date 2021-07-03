@@ -73,3 +73,4 @@ Scenario: See closed complaint
 	Then investigator should see 1 complaints
 	When investigator clicks on Manage Complaint
 	Then the complaint status should be "Closed"
+	And the save button should be disabled

@@ -151,5 +151,13 @@ namespace E2ETests.Steps
             context.investigatorDashboardWindow.SelectStatus(StatusFilter.Closed);
         }
 
+        [Then(@"the save button should be disabled")]
+        public void ThenTheSaveButtonShouldBeDisabled()
+        {
+            bool saveIsEnabled = context.investigatorDashboardWindow.SaveIsEnabled();
+            Assert.IsFalse(saveIsEnabled);
+        }
+
+
     }
 }

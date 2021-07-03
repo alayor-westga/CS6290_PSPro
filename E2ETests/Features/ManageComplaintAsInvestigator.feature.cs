@@ -512,6 +512,9 @@ this.FeatureBackground();
 #line 75
  testRunner.Then("the complaint status should be \"Closed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+#line 76
+ testRunner.And("the save button should be disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }
