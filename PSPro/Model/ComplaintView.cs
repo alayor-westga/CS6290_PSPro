@@ -65,7 +65,7 @@ namespace PSPro.Model
         {
             get
             {
-                return Discipline == null ? "Closed" : "Open";
+                return Discipline == null || Discipline.Length == 0 ? "Open" : "Closed";
             }
         }
     }
