@@ -629,3 +629,49 @@ GRANT EXECUTE ON
 AppendComplaintNotes
 TO winforms;
 GO
+
+--------------- REPORT -------------------
+--GetMostCommonAllegationTypeByYear
+DROP FUNCTION IF EXISTS GetMostCommonAllegationTypeByYear;
+GO
+CREATE FUNCTION GetMostCommonAllegationTypeByYear(@year int)
+RETURNS varchar(45)
+AS
+BEGIN
+	DECLARE @result varchar(45); 
+
+	SELECT TOP 1 @result = allegation_type
+	FROM Complaints
+	WHERE YEAR(date_created) = @year
+	GROUP BY allegation_type
+	ORDER BY COUNT(allegation_type) DESC
+
+	RETURN @result;
+END;
+GO
+GRANT EXECUTE ON
+GetMostCommonAllegationTypeByYear
+TO winforms;
+GO
+
+--ComplaintsStatisticsByYearReport
+DROP PROCEDURE IF EXISTS ComplaintsStatisticsByYearReport;
+GO
+CREATE PROCEDURE ComplaintsStatisticsByYearReport
+AS
+SET NOCOUNT ON;
+
+ 	SELECT 
+		YEAR(date_created) AS "Year",
+		COUNT(complaint_id) AS TotalNumberOfComplaints,
+		dbo.GetMostCommonAllegationTypeByYear(YEAR(date_created)) AS MostCommonAllegationType
+	FROM Complaints
+	GROUP BY YEAR(date_created)
+	HAVING YEAR(date_created) > YEAR(CURRENT_TIMESTAMP) - 5
+	ORDER BY YEAR(date_created) DESC
+
+GO
+GRANT EXECUTE ON
+ComplaintsStatisticsByYearReport
+TO winforms;
+GO

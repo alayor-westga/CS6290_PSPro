@@ -127,7 +127,7 @@ namespace PSPro.View
             // 
             this.versionLabel.Name = "versionLabel";
             this.versionLabel.Size = new System.Drawing.Size(117, 32);
-            this.versionLabel.Text = "Iteration2";
+            this.versionLabel.Text = "Iteration3";
             // 
             // LoginForm
             // 
