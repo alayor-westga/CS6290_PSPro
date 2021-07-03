@@ -43,6 +43,12 @@ namespace PSPro.UserControls
             if (complaintView.Status == "Closed")
             {
                 saveButton.Enabled = false;
+                dispositionComboBox.Enabled = false;
+            }
+            else
+            {
+                saveButton.Enabled = true;
+                dispositionComboBox.Enabled = true;
             }
         }
 

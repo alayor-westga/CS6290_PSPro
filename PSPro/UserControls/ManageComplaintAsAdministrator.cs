@@ -48,6 +48,14 @@ namespace PSPro.UserControls
             {
                 this.disciplineComboBox.Enabled = true;
             }
+            if (complaintView.Status == "Closed")
+            {
+                saveButton.Enabled = false;
+            }
+            else
+            {
+                saveButton.Enabled = true;
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
