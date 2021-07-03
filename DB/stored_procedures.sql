@@ -383,6 +383,34 @@ GetAllActiveComplaints
 TO winforms;
 GO
 
+--GetAllClosedComplaints
+DROP PROCEDURE IF EXISTS GetAllClosedComplaints;
+GO
+CREATE PROCEDURE GetAllClosedComplaints
+AS
+SET NOCOUNT ON;
+
+    SELECT 
+		co.complaint_id,
+		co.date_created,
+		CONCAT(o.first_name, ' ', o.last_name) AS officer_full_name,
+		CONCAT(ci.first_name, ' ', ci.last_name) AS citizen_full_name,
+		CONCAT(ci.address1, ' ', ci.address2, ' ', ci.city, ' ', ci.state, ' ', ci.zipcode) AS citizen_full_address,
+		ci.phone AS citizen_phone,
+		co.disposition,
+		co.discipline,
+		co.allegation_type,
+		co.complaint_notes
+	FROM Complaints co
+		INNER JOIN Personnel o ON (o.personnel_id = co.officers_personnel_id)
+		INNER JOIN Citizens ci ON (ci.citizen_id = co.citizen_id)
+	WHERE co.discipline IS NOT NULL
+GO
+GRANT EXECUTE ON
+GetAllClosedComplaints
+TO winforms;
+GO
+
 --GetActiveComplaintsByOfficer
 DROP PROCEDURE IF EXISTS GetActiveComplaintsByOfficer;
 GO
@@ -410,6 +438,36 @@ SET NOCOUNT ON;
 GO
 GRANT EXECUTE ON
 GetActiveComplaintsByOfficer
+TO winforms;
+GO
+
+--GetClosedComplaintsByOfficer
+DROP PROCEDURE IF EXISTS GetClosedComplaintsByOfficer;
+GO
+CREATE PROCEDURE GetClosedComplaintsByOfficer
+	@officers_personnel_id int
+AS
+SET NOCOUNT ON;
+
+    SELECT 
+		co.complaint_id,
+		co.date_created,
+		CONCAT(o.first_name, ' ', o.last_name) AS officer_full_name,
+		CONCAT(ci.first_name, ' ', ci.last_name) AS citizen_full_name,
+		CONCAT(ci.address1, ' ', ci.address2, ' ', ci.city, ' ', ci.state, ' ', ci.zipcode) AS citizen_full_address,
+		ci.phone AS citizen_phone,
+		co.disposition,
+		co.discipline,
+		co.allegation_type,
+		co.complaint_notes
+	FROM Complaints co
+		INNER JOIN Personnel o ON (o.personnel_id = co.officers_personnel_id)
+		INNER JOIN Citizens ci ON (ci.citizen_id = co.citizen_id)
+	WHERE co.discipline IS NOT NULL
+	AND o.personnel_id = @officers_personnel_id
+GO
+GRANT EXECUTE ON
+GetClosedComplaintsByOfficer
 TO winforms;
 GO
 

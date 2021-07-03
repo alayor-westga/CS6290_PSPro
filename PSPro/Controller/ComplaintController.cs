@@ -31,10 +31,17 @@ namespace PSPro.Controller
         /// <summary>
         /// Gets all active complaints
         /// </summary>
-        /// <returns>a List of active complaints</returns>
+        /// <returns>a list of open or closed complaints</returns>
         public List<ComplaintView> GetAllComplaints(StatusFilter statusFilter)
         {
-            return this.complaintSource.GetAllActiveComplaints();
+            if (statusFilter == StatusFilter.Open)
+            {
+                return this.complaintSource.GetAllActiveComplaints();
+            }
+            else
+            {
+                return this.complaintSource.GetAllClosedComplaints();
+            }
         }
 
         /// <summary>
@@ -44,7 +51,15 @@ namespace PSPro.Controller
         /// <returns>a List of active complaints by officer</returns>
         public List<ComplaintView> GetComplaintsByOfficer(int officerPersonelId, StatusFilter statusFilter)
         {
-            return this.complaintSource.GetActiveComplaintsByOfficer(officerPersonelId);
+            if (statusFilter == StatusFilter.Open)
+            {
+                return this.complaintSource.GetActiveComplaintsByOfficer(officerPersonelId);
+            }
+            else
+            {
+                return this.complaintSource.GetClosedComplaintsByOfficer(officerPersonelId);
+            }
+
         }
 
         /// <summary>

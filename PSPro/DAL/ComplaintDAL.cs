@@ -33,6 +33,27 @@ namespace PSPro.DAL
         }
 
         /// <summary>
+        /// Gets all closed complaints for display in view
+        /// </summary>
+        /// <returns>a LIst of all closed complaints</returns>
+        virtual public List<ComplaintView> GetAllClosedComplaints()
+        {
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "GetAllClosedComplaints";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        return BuildComplaintViewList(reader);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
         /// Gets all active complaints by officer
         /// </summary>
         /// <param name="officerPersonelId"></param>
@@ -43,6 +64,29 @@ namespace PSPro.DAL
             {
                 connection.Open();
                 string storedProcedure = "GetActiveComplaintsByOfficer";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@officers_personnel_id", officerPersonelId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        return BuildComplaintViewList(reader);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets all closed complaints by officer
+        /// </summary>
+        /// <param name="officerPersonelId"></param>
+        /// <returns>a List of a single officer's closed complaints</returns>
+        virtual public List<ComplaintView> GetClosedComplaintsByOfficer(int officerPersonelId)
+        {
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "GetClosedComplaintsByOfficer";
                 using (SqlCommand command = new SqlCommand(storedProcedure, connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;

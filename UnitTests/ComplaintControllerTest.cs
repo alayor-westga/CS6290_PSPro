@@ -29,10 +29,24 @@ namespace UnitTests
         }
 
         [TestMethod]
+        public void TestGetAllClosedComplaints()
+        {
+            complaintController.GetAllComplaints(StatusFilter.Closed);
+            complaintDAL.Verify(v => v.GetAllClosedComplaints());
+        }
+
+        [TestMethod]
         public void TestGetActiveComplaintsByOfficerId()
         {
             complaintController.GetComplaintsByOfficer(1, StatusFilter.Open);
             complaintDAL.Verify(v => v.GetActiveComplaintsByOfficer(1));
+        }
+
+        [TestMethod]
+        public void TestGetClosedComplaintsByOfficerId()
+        {
+            complaintController.GetComplaintsByOfficer(1, StatusFilter.Closed);
+            complaintDAL.Verify(v => v.GetClosedComplaintsByOfficer(1));
         }
 
         [TestMethod]
