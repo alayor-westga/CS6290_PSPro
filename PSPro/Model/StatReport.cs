@@ -8,6 +8,7 @@ namespace PSPro.Model
 {
     class StatReport
     {
+        public DateTime Year { get; set; }
         public int TotalComplaints { get; set; }
         public string MostCommonComplaint { get; set; }
         public int PercentOfSustainedComplaints { get; set; }
