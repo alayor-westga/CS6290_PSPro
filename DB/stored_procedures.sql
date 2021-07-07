@@ -714,7 +714,7 @@ SET NOCOUNT ON;
 		COUNT(complaint_id) AS TotalNumberOfComplaints,
 		dbo.GetMostCommonAllegationTypeByYear(YEAR(date_created)) AS MostCommonAllegationType,
 		dbo.GetMostComplainedAboutOfficerByYear(YEAR(date_created)) AS MostComplainedAboutOfficer,
-		dbo.GetLeastComplainedAboutOfficerByYear(YEAR(date_created)) AS MostComplainedAboutOfficer
+		dbo.GetLeastComplainedAboutOfficerByYear(YEAR(date_created)) AS LeastComplainedAboutOfficer
 	FROM Complaints
 	GROUP BY YEAR(date_created)
 	HAVING YEAR(date_created) > YEAR(CURRENT_TIMESTAMP) - 5
