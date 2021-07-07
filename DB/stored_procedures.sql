@@ -654,6 +654,37 @@ GetMostCommonAllegationTypeByYear
 TO winforms;
 GO
 
+--GetPercentageOfSustainedComplaintsByYear
+DROP FUNCTION IF EXISTS GetPercentageOfSustainedComplaintsByYear;
+GO
+CREATE FUNCTION GetPercentageOfSustainedComplaintsByYear(@year int)
+RETURNS varchar(45)
+AS
+BEGIN
+	DECLARE @all_count int; 
+	DECLARE @sustained_count int; 
+	DECLARE @result int; 
+	DECLARE @formatted_result varchar(7); 
+
+	SELECT @all_count = COUNT(complaint_id)
+	FROM Complaints
+	WHERE YEAR(date_created) = @year
+
+	SELECT @sustained_count = COUNT(complaint_id)
+	FROM Complaints
+	WHERE YEAR(date_created) = @year
+	AND disposition = 'Sustained';
+
+	SET @result = (100 * @sustained_count) / @all_count;
+	SET @formatted_result = CONCAT(FORMAT(@result, 'N'), '%');
+	RETURN @formatted_result;
+END;
+GO
+GRANT EXECUTE ON
+GetPercentageOfSustainedComplaintsByYear
+TO winforms;
+GO
+
 --GetMostComplainedAboutOfficerByYear
 DROP FUNCTION IF EXISTS GetMostComplainedAboutOfficerByYear;
 GO
@@ -713,6 +744,7 @@ SET NOCOUNT ON;
 		YEAR(date_created) AS "Year",
 		COUNT(complaint_id) AS TotalNumberOfComplaints,
 		dbo.GetMostCommonAllegationTypeByYear(YEAR(date_created)) AS MostCommonAllegationType,
+		dbo.GetPercentageOfSustainedComplaintsByYear(YEAR(date_created)) AS PercentageOfSustainedComplaints,
 		dbo.GetMostComplainedAboutOfficerByYear(YEAR(date_created)) AS MostComplainedAboutOfficer,
 		dbo.GetLeastComplainedAboutOfficerByYear(YEAR(date_created)) AS LeastComplainedAboutOfficer
 	FROM Complaints
