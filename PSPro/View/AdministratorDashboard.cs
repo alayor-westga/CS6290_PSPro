@@ -78,5 +78,13 @@ namespace PSPro.View
                 this.manageComplaintAsAdministrator1.SetComplaintInfo(complaintId);
             }
         }
+
+        private void AdministratorDashboard_Load(object sender, System.EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'psproDataSet.ComplaintsStatisticsByYearReport' table. You can move, or remove it, as needed.
+            this.complaintsStatisticsByYearReportTableAdapter.Fill(this.psproDataSet.ComplaintsStatisticsByYearReport);
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

@@ -29,6 +29,8 @@ namespace PSPro.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministratorDashboard));
             this.userFullNameLabel = new System.Windows.Forms.Label();
             this.WelcomeLabel = new System.Windows.Forms.Label();
@@ -37,13 +39,18 @@ namespace PSPro.View
             this.complaintListTabPage = new System.Windows.Forms.TabPage();
             this.manageComplaintTabPage = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.psproDataSet = new PSPro.psproDataSet();
+            this.complaintsStatisticsByYearReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.complaintsStatisticsByYearReportTableAdapter = new PSPro.psproDataSetTableAdapters.ComplaintsStatisticsByYearReportTableAdapter();
             this.complaintList = new PSPro.UserControls.ComplaintList();
             this.manageComplaintAsAdministrator1 = new PSPro.UserControls.ManageComplaintAsAdministrator();
-            this.statisticalReportUserControl1 = new PSPro.UserControls.StatisticalReportUserControl();
             this.complaintListTabControl.SuspendLayout();
             this.complaintListTabPage.SuspendLayout();
             this.manageComplaintTabPage.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.psproDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.complaintsStatisticsByYearReportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // userFullNameLabel
@@ -115,7 +122,7 @@ namespace PSPro.View
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.statisticalReportUserControl1);
+            this.tabPage1.Controls.Add(this.reportViewer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 40);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -123,6 +130,32 @@ namespace PSPro.View
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Complaints Summary";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer1
+            // 
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.complaintsStatisticsByYearReportBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "PSPro.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(169, 32);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(972, 287);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // psproDataSet
+            // 
+            this.psproDataSet.DataSetName = "psproDataSet";
+            this.psproDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // complaintsStatisticsByYearReportBindingSource
+            // 
+            this.complaintsStatisticsByYearReportBindingSource.DataMember = "ComplaintsStatisticsByYearReport";
+            this.complaintsStatisticsByYearReportBindingSource.DataSource = this.psproDataSet;
+            // 
+            // complaintsStatisticsByYearReportTableAdapter
+            // 
+            this.complaintsStatisticsByYearReportTableAdapter.ClearBeforeFill = true;
             // 
             // complaintList
             // 
@@ -144,15 +177,6 @@ namespace PSPro.View
             this.manageComplaintAsAdministrator1.Size = new System.Drawing.Size(1310, 755);
             this.manageComplaintAsAdministrator1.TabIndex = 0;
             // 
-            // statisticalReportUserControl1
-            // 
-            this.statisticalReportUserControl1.Font = new System.Drawing.Font("Segoe UI", 10.125F);
-            this.statisticalReportUserControl1.Location = new System.Drawing.Point(1, 4);
-            this.statisticalReportUserControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.statisticalReportUserControl1.Name = "statisticalReportUserControl1";
-            this.statisticalReportUserControl1.Size = new System.Drawing.Size(1308, 620);
-            this.statisticalReportUserControl1.TabIndex = 0;
-            // 
             // AdministratorDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 31F);
@@ -172,10 +196,13 @@ namespace PSPro.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PsPro - Administrator - Complaints";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InvestigatorDashboard_FormClosed);
+            this.Load += new System.EventHandler(this.AdministratorDashboard_Load);
             this.complaintListTabControl.ResumeLayout(false);
             this.complaintListTabPage.ResumeLayout(false);
             this.manageComplaintTabPage.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.psproDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.complaintsStatisticsByYearReportBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,6 +219,9 @@ namespace PSPro.View
         private UserControls.ComplaintList complaintList;
         private UserControls.ManageComplaintAsAdministrator manageComplaintAsAdministrator1;
         private System.Windows.Forms.TabPage tabPage1;
-        private UserControls.StatisticalReportUserControl statisticalReportUserControl1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private psproDataSet psproDataSet;
+        private System.Windows.Forms.BindingSource complaintsStatisticsByYearReportBindingSource;
+        private psproDataSetTableAdapters.ComplaintsStatisticsByYearReportTableAdapter complaintsStatisticsByYearReportTableAdapter;
     }
 }

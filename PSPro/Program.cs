@@ -50,6 +50,7 @@ namespace PSPro
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new View.LoginForm());
+            //Application.Run(new TestReportForm());
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
