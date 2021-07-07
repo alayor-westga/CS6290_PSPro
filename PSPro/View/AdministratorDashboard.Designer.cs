@@ -133,14 +133,15 @@ namespace PSPro.View
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.complaintsStatisticsByYearReportBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PSPro.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(169, 32);
+            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(972, 287);
+            this.reportViewer1.Size = new System.Drawing.Size(1310, 740);
             this.reportViewer1.TabIndex = 0;
             // 
             // psproDataSet
