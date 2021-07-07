@@ -654,6 +654,54 @@ GetMostCommonAllegationTypeByYear
 TO winforms;
 GO
 
+--GetMostComplainedAboutOfficerByYear
+DROP FUNCTION IF EXISTS GetMostComplainedAboutOfficerByYear;
+GO
+CREATE FUNCTION GetMostComplainedAboutOfficerByYear(@year int)
+RETURNS varchar(45)
+AS
+BEGIN
+	DECLARE @result varchar(45); 
+
+	SELECT TOP 1 @result = CONCAT(first_name, ' ', last_name)         
+    	FROM Complaints c, Officers o, Personnel p
+	WHERE c.officers_personnel_id = o.personnel_id 
+	AND o.personnel_id = p.personnel_id and YEAR(date_created) = @year
+    	GROUP BY CONCAT (first_name, ' ', last_name)
+    	ORDER BY COUNT(CONCAT(first_name, ' ', last_name)) DESC
+
+	RETURN @result;
+END;
+GO
+GRANT EXECUTE ON
+GetMostComplainedAboutOfficerByYear
+TO winforms;
+GO
+
+--GetLeastComplainedAboutOfficerByYear
+DROP FUNCTION IF EXISTS GetLeastComplainedAboutOfficerByYear;
+GO
+CREATE FUNCTION GetLeastComplainedAboutOfficerByYear(@year int)
+RETURNS varchar(45)
+AS
+BEGIN
+	DECLARE @result varchar(45); 
+
+	SELECT TOP 1 @result = CONCAT(first_name, ' ', last_name)         
+    	FROM Complaints c, Officers o, Personnel p
+	WHERE c.officers_personnel_id = o.personnel_id 
+	AND o.personnel_id = p.personnel_id and YEAR(date_created) = @year
+    	GROUP BY CONCAT (first_name, ' ', last_name)
+    	ORDER BY COUNT(CONCAT(first_name, ' ', last_name))
+
+	RETURN @result;
+END;
+GO
+GRANT EXECUTE ON
+GetLeastComplainedAboutOfficerByYear
+TO winforms;
+GO
+
 --ComplaintsStatisticsByYearReport
 DROP PROCEDURE IF EXISTS ComplaintsStatisticsByYearReport;
 GO
@@ -664,7 +712,9 @@ SET NOCOUNT ON;
  	SELECT 
 		YEAR(date_created) AS "Year",
 		COUNT(complaint_id) AS TotalNumberOfComplaints,
-		dbo.GetMostCommonAllegationTypeByYear(YEAR(date_created)) AS MostCommonAllegationType
+		dbo.GetMostCommonAllegationTypeByYear(YEAR(date_created)) AS MostCommonAllegationType,
+		dbo.GetMostComplainedAboutOfficerByYear(YEAR(date_created)) AS MostComplainedAboutOfficer,
+		dbo.GetLeastComplainedAboutOfficerByYear(YEAR(date_created)) AS MostComplainedAboutOfficer
 	FROM Complaints
 	GROUP BY YEAR(date_created)
 	HAVING YEAR(date_created) > YEAR(CURRENT_TIMESTAMP) - 5
