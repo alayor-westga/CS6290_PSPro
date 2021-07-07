@@ -35,13 +35,15 @@ namespace PSPro.View
             this.LogoutLinkLabel = new System.Windows.Forms.LinkLabel();
             this.complaintListTabControl = new System.Windows.Forms.TabControl();
             this.complaintListTabPage = new System.Windows.Forms.TabPage();
-            this.complaintList = new PSPro.UserControls.ComplaintList();
             this.manageComplaintTabPage = new System.Windows.Forms.TabPage();
-            this.manageComplaintAsAdministrator1 = new PSPro.UserControls.ManageComplaintAsAdministrator();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.complaintList = new PSPro.UserControls.ComplaintList();
+            this.manageComplaintAsAdministrator1 = new PSPro.UserControls.ManageComplaintAsAdministrator();
+            this.statisticalReportUserControl1 = new PSPro.UserControls.StatisticalReportUserControl();
             this.complaintListTabControl.SuspendLayout();
             this.complaintListTabPage.SuspendLayout();
             this.manageComplaintTabPage.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // userFullNameLabel
@@ -100,16 +102,6 @@ namespace PSPro.View
             this.complaintListTabPage.Text = "Complaint List";
             this.complaintListTabPage.UseVisualStyleBackColor = true;
             // 
-            // complaintList
-            // 
-            this.complaintList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.complaintList.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.complaintList.Location = new System.Drawing.Point(3, 3);
-            this.complaintList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.complaintList.Name = "complaintList";
-            this.complaintList.Size = new System.Drawing.Size(1310, 740);
-            this.complaintList.TabIndex = 0;
-            // 
             // manageComplaintTabPage
             // 
             this.manageComplaintTabPage.Controls.Add(this.manageComplaintAsAdministrator1);
@@ -121,18 +113,9 @@ namespace PSPro.View
             this.manageComplaintTabPage.Text = "Manage Complaint";
             this.manageComplaintTabPage.UseVisualStyleBackColor = true;
             // 
-            // manageComplaintAsAdministrator1
-            // 
-            this.manageComplaintAsAdministrator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manageComplaintAsAdministrator1.Font = new System.Drawing.Font("Segoe UI", 10.125F);
-            this.manageComplaintAsAdministrator1.Location = new System.Drawing.Point(3, 3);
-            this.manageComplaintAsAdministrator1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.manageComplaintAsAdministrator1.Name = "manageComplaintAsAdministrator1";
-            this.manageComplaintAsAdministrator1.Size = new System.Drawing.Size(1310, 740);
-            this.manageComplaintAsAdministrator1.TabIndex = 0;
-            // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.statisticalReportUserControl1);
             this.tabPage1.Location = new System.Drawing.Point(4, 40);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -140,6 +123,35 @@ namespace PSPro.View
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Complaints Summary";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // complaintList
+            // 
+            this.complaintList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.complaintList.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.complaintList.Location = new System.Drawing.Point(3, 3);
+            this.complaintList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.complaintList.Name = "complaintList";
+            this.complaintList.Size = new System.Drawing.Size(1310, 740);
+            this.complaintList.TabIndex = 0;
+            // 
+            // manageComplaintAsAdministrator1
+            // 
+            this.manageComplaintAsAdministrator1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageComplaintAsAdministrator1.Font = new System.Drawing.Font("Segoe UI", 10.125F);
+            this.manageComplaintAsAdministrator1.Location = new System.Drawing.Point(3, 3);
+            this.manageComplaintAsAdministrator1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.manageComplaintAsAdministrator1.Name = "manageComplaintAsAdministrator1";
+            this.manageComplaintAsAdministrator1.Size = new System.Drawing.Size(1310, 755);
+            this.manageComplaintAsAdministrator1.TabIndex = 0;
+            // 
+            // statisticalReportUserControl1
+            // 
+            this.statisticalReportUserControl1.Font = new System.Drawing.Font("Segoe UI", 10.125F);
+            this.statisticalReportUserControl1.Location = new System.Drawing.Point(1, 4);
+            this.statisticalReportUserControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.statisticalReportUserControl1.Name = "statisticalReportUserControl1";
+            this.statisticalReportUserControl1.Size = new System.Drawing.Size(1308, 620);
+            this.statisticalReportUserControl1.TabIndex = 0;
             // 
             // AdministratorDashboard
             // 
@@ -163,6 +175,7 @@ namespace PSPro.View
             this.complaintListTabControl.ResumeLayout(false);
             this.complaintListTabPage.ResumeLayout(false);
             this.manageComplaintTabPage.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +192,6 @@ namespace PSPro.View
         private UserControls.ComplaintList complaintList;
         private UserControls.ManageComplaintAsAdministrator manageComplaintAsAdministrator1;
         private System.Windows.Forms.TabPage tabPage1;
+        private UserControls.StatisticalReportUserControl statisticalReportUserControl1;
     }
 }
