@@ -122,7 +122,7 @@ namespace PSPro.View
                 catch (Exception exception)
                 {
                     Console.WriteLine(exception.Message);
-                    MessageBox.Show("The complaint could not get saved.",
+                    MessageBox.Show("The complaint could not be saved.",
                             "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -149,7 +149,7 @@ namespace PSPro.View
                 catch (Exception exception)
                 {
                     Console.WriteLine(exception.Message);
-                    MessageBox.Show("The complaint could not get saved.",
+                    MessageBox.Show("The complaint could not be saved.",
                             "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

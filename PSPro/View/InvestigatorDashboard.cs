@@ -49,6 +49,10 @@ namespace PSPro.View
             Application.Exit();
         }
 
+        /// <summary>
+        /// Get complaint information for given complaintID
+        /// </summary>
+        /// <param name="complaintId"></param>
         public void OnComplaintSelected(int complaintId)
         {
             this.manageComplaintAsInvestigator.SetComplaintInfo(complaintId);
