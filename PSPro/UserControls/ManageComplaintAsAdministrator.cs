@@ -37,10 +37,11 @@ namespace PSPro.UserControls
                 this.disciplineComboBox.SelectedIndex = -1;
             }
 
+            var status = complaintView.Status;
             var disposition = complaintView.Disposition != null && complaintView.Disposition.Length > 0
                     ? complaintView.Disposition : "--";
             this.dispositionLabelValue.Text = disposition;
-            if (disposition == "--")
+            if (disposition == "--" || status == "Closed")
             {
                 this.disciplineComboBox.Enabled = false;
             }
@@ -48,7 +49,7 @@ namespace PSPro.UserControls
             {
                 this.disciplineComboBox.Enabled = true;
             }
-            if (complaintView.Status == "Closed")
+            if (complaintView.Status == "Closed" || string.IsNullOrEmpty(this.disciplineComboBox.Text))
             {
                 saveButton.Enabled = false;
             }
@@ -82,6 +83,18 @@ namespace PSPro.UserControls
                 Hide();
                 form.ShowDialog();
                 SetComplaintInfo(complaintView.ComplaintID);
+            }
+        }
+
+        private void DisciplineComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.disciplineComboBox.Text))
+            {
+                saveButton.Enabled = false;
+            } 
+            else
+            {
+                saveButton.Enabled = true;
             }
         }
     }
