@@ -91,10 +91,12 @@ namespace PSPro.View
             if (this.citizens.Count > 0)
             {
                 this.SelectCitizenButton.Enabled = true;
+                this.noResultsLabel.Text = "";
             } 
             else
             {
                 this.SelectCitizenButton.Enabled = false;
+                this.noResultsLabel.Text = "No results";
             }
         }
 

@@ -60,6 +60,7 @@ namespace PSPro.View
             this.citizenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SelectCitizenButton = new System.Windows.Forms.Button();
             this.searchResultsLabel = new System.Windows.Forms.Label();
+            this.noResultsLabel = new System.Windows.Forms.Label();
             this.searchGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.citizenResultDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.citizenBindingSource)).BeginInit();
@@ -85,11 +86,9 @@ namespace PSPro.View
             this.searchGroupBox.Controls.Add(this.EmailRadioButton);
             this.searchGroupBox.Controls.Add(this.FirstAndLastNameRadioButton);
             this.searchGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchGroupBox.Location = new System.Drawing.Point(18, 19);
-            this.searchGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchGroupBox.Location = new System.Drawing.Point(12, 12);
             this.searchGroupBox.Name = "searchGroupBox";
-            this.searchGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.searchGroupBox.Size = new System.Drawing.Size(1386, 381);
+            this.searchGroupBox.Size = new System.Drawing.Size(924, 244);
             this.searchGroupBox.TabIndex = 0;
             this.searchGroupBox.TabStop = false;
             this.searchGroupBox.Text = "Select a Search Option";
@@ -98,10 +97,9 @@ namespace PSPro.View
             // 
             this.phoneFormatLabel.AutoSize = true;
             this.phoneFormatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneFormatLabel.Location = new System.Drawing.Point(1062, 125);
-            this.phoneFormatLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.phoneFormatLabel.Location = new System.Drawing.Point(708, 80);
             this.phoneFormatLabel.Name = "phoneFormatLabel";
-            this.phoneFormatLabel.Size = new System.Drawing.Size(182, 31);
+            this.phoneFormatLabel.Size = new System.Drawing.Size(111, 20);
             this.phoneFormatLabel.TabIndex = 17;
             this.phoneFormatLabel.Text = "###-###-####";
             // 
@@ -109,38 +107,34 @@ namespace PSPro.View
             // 
             this.firstNameErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstNameErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.firstNameErrorLabel.Location = new System.Drawing.Point(48, 222);
-            this.firstNameErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.firstNameErrorLabel.Location = new System.Drawing.Point(32, 142);
             this.firstNameErrorLabel.Name = "firstNameErrorLabel";
-            this.firstNameErrorLabel.Size = new System.Drawing.Size(414, 38);
+            this.firstNameErrorLabel.Size = new System.Drawing.Size(276, 24);
             this.firstNameErrorLabel.TabIndex = 15;
             // 
             // phoneErrorLabel
             // 
             this.phoneErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.phoneErrorLabel.Location = new System.Drawing.Point(932, 222);
-            this.phoneErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.phoneErrorLabel.Location = new System.Drawing.Point(621, 142);
             this.phoneErrorLabel.Name = "phoneErrorLabel";
-            this.phoneErrorLabel.Size = new System.Drawing.Size(454, 38);
+            this.phoneErrorLabel.Size = new System.Drawing.Size(303, 24);
             this.phoneErrorLabel.TabIndex = 14;
             // 
             // emailErrorLabel
             // 
             this.emailErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.emailErrorLabel.Location = new System.Drawing.Point(490, 222);
-            this.emailErrorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.emailErrorLabel.Location = new System.Drawing.Point(327, 142);
             this.emailErrorLabel.Name = "emailErrorLabel";
-            this.emailErrorLabel.Size = new System.Drawing.Size(414, 38);
+            this.emailErrorLabel.Size = new System.Drawing.Size(276, 24);
             this.emailErrorLabel.TabIndex = 13;
             // 
             // CancelActionButton
             // 
-            this.CancelActionButton.Location = new System.Drawing.Point(936, 306);
-            this.CancelActionButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CancelActionButton.Location = new System.Drawing.Point(624, 196);
             this.CancelActionButton.Name = "CancelActionButton";
-            this.CancelActionButton.Size = new System.Drawing.Size(414, 53);
+            this.CancelActionButton.Size = new System.Drawing.Size(276, 34);
             this.CancelActionButton.TabIndex = 12;
             this.CancelActionButton.Text = "Cancel";
             this.CancelActionButton.UseVisualStyleBackColor = true;
@@ -148,10 +142,9 @@ namespace PSPro.View
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(490, 306);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SearchButton.Location = new System.Drawing.Point(327, 196);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(414, 53);
+            this.SearchButton.Size = new System.Drawing.Size(276, 34);
             this.SearchButton.TabIndex = 11;
             this.SearchButton.Text = "Search for Citizen";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -160,83 +153,74 @@ namespace PSPro.View
             // phoneLabel
             // 
             this.phoneLabel.AutoSize = true;
-            this.phoneLabel.Location = new System.Drawing.Point(928, 116);
-            this.phoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.phoneLabel.Location = new System.Drawing.Point(619, 74);
             this.phoneLabel.Name = "phoneLabel";
-            this.phoneLabel.Size = new System.Drawing.Size(129, 44);
+            this.phoneLabel.Size = new System.Drawing.Size(83, 29);
             this.phoneLabel.TabIndex = 10;
             this.phoneLabel.Text = "Phone";
             // 
             // phoneTextBox
             // 
-            this.phoneTextBox.Location = new System.Drawing.Point(936, 166);
-            this.phoneTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.phoneTextBox.Location = new System.Drawing.Point(624, 106);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(412, 50);
+            this.phoneTextBox.Size = new System.Drawing.Size(276, 34);
             this.phoneTextBox.TabIndex = 9;
             // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(483, 116);
-            this.emailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.emailLabel.Location = new System.Drawing.Point(322, 74);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(117, 44);
+            this.emailLabel.Size = new System.Drawing.Size(74, 29);
             this.emailLabel.TabIndex = 8;
             this.emailLabel.Text = "Email";
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(490, 166);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.emailTextBox.Location = new System.Drawing.Point(327, 106);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(412, 50);
+            this.emailTextBox.Size = new System.Drawing.Size(276, 34);
             this.emailTextBox.TabIndex = 7;
             // 
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(40, 256);
-            this.lastNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lastNameLabel.Location = new System.Drawing.Point(27, 164);
             this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(204, 44);
+            this.lastNameLabel.Size = new System.Drawing.Size(128, 29);
             this.lastNameLabel.TabIndex = 6;
             this.lastNameLabel.Text = "Last Name";
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(48, 306);
-            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lastNameTextBox.Location = new System.Drawing.Point(32, 196);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(412, 50);
+            this.lastNameTextBox.Size = new System.Drawing.Size(276, 34);
             this.lastNameTextBox.TabIndex = 5;
             // 
             // firstNameLabel
             // 
             this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Location = new System.Drawing.Point(40, 116);
-            this.firstNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.firstNameLabel.Location = new System.Drawing.Point(27, 74);
             this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(207, 44);
+            this.firstNameLabel.Size = new System.Drawing.Size(131, 29);
             this.firstNameLabel.TabIndex = 4;
             this.firstNameLabel.Text = "First Name";
             // 
             // firstNameTextBox
             // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(48, 166);
-            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.firstNameTextBox.Location = new System.Drawing.Point(32, 106);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(412, 50);
+            this.firstNameTextBox.Size = new System.Drawing.Size(276, 34);
             this.firstNameTextBox.TabIndex = 3;
             // 
             // PhoneRadioButton
             // 
             this.PhoneRadioButton.AutoSize = true;
             this.PhoneRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhoneRadioButton.Location = new System.Drawing.Point(936, 59);
-            this.PhoneRadioButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PhoneRadioButton.Location = new System.Drawing.Point(624, 38);
             this.PhoneRadioButton.Name = "PhoneRadioButton";
-            this.PhoneRadioButton.Size = new System.Drawing.Size(214, 48);
+            this.PhoneRadioButton.Size = new System.Drawing.Size(137, 33);
             this.PhoneRadioButton.TabIndex = 2;
             this.PhoneRadioButton.TabStop = true;
             this.PhoneRadioButton.Text = "By Phone";
@@ -247,10 +231,9 @@ namespace PSPro.View
             // 
             this.EmailRadioButton.AutoSize = true;
             this.EmailRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailRadioButton.Location = new System.Drawing.Point(490, 59);
-            this.EmailRadioButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.EmailRadioButton.Location = new System.Drawing.Point(327, 38);
             this.EmailRadioButton.Name = "EmailRadioButton";
-            this.EmailRadioButton.Size = new System.Drawing.Size(202, 48);
+            this.EmailRadioButton.Size = new System.Drawing.Size(128, 33);
             this.EmailRadioButton.TabIndex = 1;
             this.EmailRadioButton.TabStop = true;
             this.EmailRadioButton.Text = "By Email";
@@ -261,10 +244,9 @@ namespace PSPro.View
             // 
             this.FirstAndLastNameRadioButton.AutoSize = true;
             this.FirstAndLastNameRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstAndLastNameRadioButton.Location = new System.Drawing.Point(48, 59);
-            this.FirstAndLastNameRadioButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FirstAndLastNameRadioButton.Location = new System.Drawing.Point(32, 38);
             this.FirstAndLastNameRadioButton.Name = "FirstAndLastNameRadioButton";
-            this.FirstAndLastNameRadioButton.Size = new System.Drawing.Size(207, 48);
+            this.FirstAndLastNameRadioButton.Size = new System.Drawing.Size(132, 33);
             this.FirstAndLastNameRadioButton.TabIndex = 0;
             this.FirstAndLastNameRadioButton.TabStop = true;
             this.FirstAndLastNameRadioButton.Text = "By Name";
@@ -301,15 +283,14 @@ namespace PSPro.View
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.citizenResultDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.citizenResultDataGridView.Location = new System.Drawing.Point(18, 455);
-            this.citizenResultDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.citizenResultDataGridView.Location = new System.Drawing.Point(12, 291);
             this.citizenResultDataGridView.MultiSelect = false;
             this.citizenResultDataGridView.Name = "citizenResultDataGridView";
             this.citizenResultDataGridView.ReadOnly = true;
             this.citizenResultDataGridView.RowHeadersWidth = 51;
             this.citizenResultDataGridView.RowTemplate.Height = 24;
             this.citizenResultDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.citizenResultDataGridView.Size = new System.Drawing.Size(1386, 370);
+            this.citizenResultDataGridView.Size = new System.Drawing.Size(924, 237);
             this.citizenResultDataGridView.TabIndex = 1;
             this.citizenResultDataGridView.TabStop = false;
             this.citizenResultDataGridView.DoubleClick += new System.EventHandler(this.SelectCitizenButton_Click);
@@ -362,10 +343,9 @@ namespace PSPro.View
             // SelectCitizenButton
             // 
             this.SelectCitizenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectCitizenButton.Location = new System.Drawing.Point(1126, 834);
-            this.SelectCitizenButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SelectCitizenButton.Location = new System.Drawing.Point(751, 534);
             this.SelectCitizenButton.Name = "SelectCitizenButton";
-            this.SelectCitizenButton.Size = new System.Drawing.Size(278, 58);
+            this.SelectCitizenButton.Size = new System.Drawing.Size(185, 37);
             this.SelectCitizenButton.TabIndex = 2;
             this.SelectCitizenButton.Text = "Select Citizen";
             this.SelectCitizenButton.UseVisualStyleBackColor = true;
@@ -375,25 +355,34 @@ namespace PSPro.View
             // 
             this.searchResultsLabel.AutoSize = true;
             this.searchResultsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchResultsLabel.Location = new System.Drawing.Point(10, 405);
-            this.searchResultsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.searchResultsLabel.Location = new System.Drawing.Point(7, 259);
             this.searchResultsLabel.Name = "searchResultsLabel";
-            this.searchResultsLabel.Size = new System.Drawing.Size(404, 44);
+            this.searchResultsLabel.Size = new System.Drawing.Size(254, 29);
             this.searchResultsLabel.TabIndex = 3;
             this.searchResultsLabel.Text = "Citizen Search Results";
             // 
+            // noResultsLabel
+            // 
+            this.noResultsLabel.AutoSize = true;
+            this.noResultsLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noResultsLabel.ForeColor = System.Drawing.Color.Red;
+            this.noResultsLabel.Location = new System.Drawing.Point(265, 264);
+            this.noResultsLabel.Name = "noResultsLabel";
+            this.noResultsLabel.Size = new System.Drawing.Size(0, 23);
+            this.noResultsLabel.TabIndex = 4;
+            // 
             // SearchCitizenForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1422, 911);
+            this.ClientSize = new System.Drawing.Size(948, 583);
+            this.Controls.Add(this.noResultsLabel);
             this.Controls.Add(this.searchResultsLabel);
             this.Controls.Add(this.SelectCitizenButton);
             this.Controls.Add(this.citizenResultDataGridView);
             this.Controls.Add(this.searchGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SearchCitizenForm";
@@ -438,5 +427,6 @@ namespace PSPro.View
         private System.Windows.Forms.Label firstNameErrorLabel;
         private System.Windows.Forms.Label phoneErrorLabel;
         private System.Windows.Forms.Label phoneFormatLabel;
+        private System.Windows.Forms.Label noResultsLabel;
     }
 }
