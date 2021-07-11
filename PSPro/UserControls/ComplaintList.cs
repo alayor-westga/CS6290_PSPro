@@ -93,7 +93,6 @@ namespace PSPro.UserControls
 
         private void ShowComplaints()
         {
-
             StatusFilter statusFilter = statusComboBox.SelectedIndex == 0 || statusComboBox.SelectedIndex == -1 ? StatusFilter.Open : StatusFilter.Closed;
             try
             {
@@ -103,21 +102,23 @@ namespace PSPro.UserControls
                     complaintsDataGridView.DataSource = list;
                     return;
                 }
-                if(this.officerComboBox.Text == "Complaints for officers having > 3 complaints in past year")
-                {
-                    list = complaintController.GetComplaintsForOfficersWithGreaterThanThreeComplaints(statusFilter);
-                    complaintsDataGridView.DataSource = list;
-                }
                 int officerId = (int)this.officerComboBox.SelectedValue;
                 if (officerId > -1)
                 {
                     list = complaintController.GetComplaintsByOfficer(officerId, statusFilter);
                     complaintsDataGridView.DataSource = list;
                 }
-                else
+                else if (this.officerComboBox.Text.Contains("Complaints for officers having > 3 complaints in past year"))
+                {
+                    Console.WriteLine("here");
+                    list = complaintController.GetComplaintsForOfficersWithGreaterThanThreeComplaints(statusFilter);
+                    complaintsDataGridView.DataSource = list;
+                } 
+                else 
                 {
                     list = complaintController.GetAllComplaints(statusFilter);
                     complaintsDataGridView.DataSource = list;
+                    Console.WriteLine(" no here");
                 }
             }
             catch (Exception exception)
