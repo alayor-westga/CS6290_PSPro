@@ -131,7 +131,7 @@ namespace PSPro.UserControls
             this.officerComboBox.FormattingEnabled = true;
             this.officerComboBox.Location = new System.Drawing.Point(176, 49);
             this.officerComboBox.Name = "officerComboBox";
-            this.officerComboBox.Size = new System.Drawing.Size(365, 48);
+            this.officerComboBox.Size = new System.Drawing.Size(365, 33);
             this.officerComboBox.TabIndex = 1;
             this.officerComboBox.ValueMember = "PersonnelID";
             this.officerComboBox.SelectedIndexChanged += new System.EventHandler(this.officerComboBox_SelectedIndexChanged);
@@ -145,7 +145,7 @@ namespace PSPro.UserControls
             this.officerLabel.AutoSize = true;
             this.officerLabel.Location = new System.Drawing.Point(45, 52);
             this.officerLabel.Name = "officerLabel";
-            this.officerLabel.Size = new System.Drawing.Size(102, 40);
+            this.officerLabel.Size = new System.Drawing.Size(69, 25);
             this.officerLabel.TabIndex = 2;
             this.officerLabel.Text = "Officer";
             // 
@@ -166,7 +166,7 @@ namespace PSPro.UserControls
             this.statusLabel.AutoSize = true;
             this.statusLabel.Location = new System.Drawing.Point(673, 52);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(94, 40);
+            this.statusLabel.Size = new System.Drawing.Size(62, 25);
             this.statusLabel.TabIndex = 5;
             this.statusLabel.Text = "Status";
             // 
@@ -180,13 +180,13 @@ namespace PSPro.UserControls
             "Closed"});
             this.statusComboBox.Location = new System.Drawing.Point(788, 49);
             this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(307, 48);
+            this.statusComboBox.Size = new System.Drawing.Size(307, 33);
             this.statusComboBox.TabIndex = 6;
             this.statusComboBox.SelectedIndexChanged += new System.EventHandler(this.statusComboBox_SelectedIndexChanged);
             // 
             // ComplaintList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 40F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.statusComboBox);
             this.Controls.Add(this.statusLabel);
