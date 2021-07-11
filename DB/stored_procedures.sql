@@ -471,6 +471,36 @@ GetClosedComplaintsByOfficer
 TO winforms;
 GO
 
+--GetActiveComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear
+DROP PROCEDURE IF EXISTS GetActiveComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear;
+GO
+CREATE PROCEDURE GetActiveComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear
+AS
+SET NOCOUNT ON;
+
+    SELECT co.complaint_id,
+		co.date_created,
+		CONCAT(o.first_name, ' ', o.last_name) AS officer_full_name,
+		CONCAT(ci.first_name, ' ', ci.last_name) AS citizen_full_name,
+		CONCAT(ci.address1, ' ', ci.address2, ' ', ci.city, ' ', ci.state, ' ', ci.zipcode) AS citizen_full_address,
+		ci.phone AS citizen_phone,
+		co.disposition,
+		co.discipline,
+		co.allegation_type,
+		co.complaint_notes
+  FROM Complaints  co
+	INNER JOIN Personnel o ON (o.personnel_id = co.officers_personnel_id)
+	INNER JOIN Citizens ci ON (ci.citizen_id = co.citizen_id)
+    	INNER JOIN 
+		(SELECT officers_personnel_id, count(officers_personnel_id) as cnt FROM Complaints GROUP BY officers_personnel_id) n 
+		ON co.officers_personnel_id = n.officers_personnel_id
+		WHERE cnt > 2 and date_created >= DATEADD(M, -12, GETDATE()) and discipline IS NULL
+		ORDER BY cnt DESC
+GO
+GRANT EXECUTE ON
+GetActiveComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear
+TO winforms;
+GO
 
 --GetCitizensByEmail
 DROP PROCEDURE IF EXISTS GetCitizensByEmail;
@@ -491,6 +521,36 @@ GetCitizensByEmail
 TO winforms;
 GO
 
+--GetClosedComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear
+DROP PROCEDURE IF EXISTS GetClosedComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear;
+GO
+CREATE PROCEDURE GetClosedComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear
+AS
+SET NOCOUNT ON;
+
+    SELECT co.complaint_id,
+		co.date_created,
+		CONCAT(o.first_name, ' ', o.last_name) AS officer_full_name,
+		CONCAT(ci.first_name, ' ', ci.last_name) AS citizen_full_name,
+		CONCAT(ci.address1, ' ', ci.address2, ' ', ci.city, ' ', ci.state, ' ', ci.zipcode) AS citizen_full_address,
+		ci.phone AS citizen_phone,
+		co.disposition,
+		co.discipline,
+		co.allegation_type,
+		co.complaint_notes
+  FROM Complaints  co
+	INNER JOIN Personnel o ON (o.personnel_id = co.officers_personnel_id)
+	INNER JOIN Citizens ci ON (ci.citizen_id = co.citizen_id)
+    	INNER JOIN 
+		(SELECT officers_personnel_id, count(officers_personnel_id) as cnt FROM Complaints GROUP BY officers_personnel_id) n 
+		ON co.officers_personnel_id = n.officers_personnel_id
+		WHERE cnt > 2 and date_created >= DATEADD(M, -12, GETDATE()) and discipline IS NOT NULL
+		ORDER BY cnt DESC
+GO
+GRANT EXECUTE ON
+GetClosedComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear
+TO winforms;
+GO
 
 --GetCitizensByPhone
 DROP PROCEDURE IF EXISTS GetCitizensByPhoneNumber;
