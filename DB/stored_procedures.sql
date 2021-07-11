@@ -494,7 +494,7 @@ SET NOCOUNT ON;
     	INNER JOIN 
 		(SELECT officers_personnel_id, count(officers_personnel_id) as cnt FROM Complaints GROUP BY officers_personnel_id) n 
 		ON co.officers_personnel_id = n.officers_personnel_id
-		WHERE cnt > 2 and date_created >= DATEADD(M, -12, GETDATE()) and discipline IS NULL
+		WHERE cnt > 3 and date_created >= DATEADD(M, -12, GETDATE()) and discipline IS NULL
 		ORDER BY cnt DESC
 GO
 GRANT EXECUTE ON
@@ -525,7 +525,7 @@ SET NOCOUNT ON;
     	INNER JOIN 
 		(SELECT officers_personnel_id, count(officers_personnel_id) as cnt FROM Complaints GROUP BY officers_personnel_id) n 
 		ON co.officers_personnel_id = n.officers_personnel_id
-		WHERE cnt > 2 and date_created >= DATEADD(M, -12, GETDATE()) and discipline IS NOT NULL
+		WHERE cnt > 3 and date_created >= DATEADD(M, -12, GETDATE()) and discipline IS NOT NULL
 		ORDER BY cnt DESC
 GO
 GRANT EXECUTE ON
