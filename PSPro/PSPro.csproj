@@ -141,12 +141,6 @@
     <Compile Include="View\ComplaintNotesForm.Designer.cs">
       <DependentUpon>ComplaintNotesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ComplaintsSummaryDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ComplaintsSummaryDialog.Designer.cs">
-      <DependentUpon>ComplaintsSummaryDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\InvestigatorDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,9 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ComplaintNotesForm.resx">
       <DependentUpon>ComplaintNotesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ComplaintsSummaryDialog.resx">
-      <DependentUpon>ComplaintsSummaryDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\InvestigatorDashboard.resx">
       <DependentUpon>InvestigatorDashboard.cs</DependentUpon>
