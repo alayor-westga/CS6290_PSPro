@@ -71,7 +71,8 @@ namespace PSPro.UserControls
             this.complaintsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.complaintsDataGridView.Size = new System.Drawing.Size(1258, 480);
             this.complaintsDataGridView.TabIndex = 0;
-            this.complaintsDataGridView.DoubleClick += new System.EventHandler(this.complaintsDataGridView_DoubleClick);
+            this.complaintsDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.complaintsDataGridView_CellContentDoubleClick);
+            this.complaintsDataGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.complaintsDataGridView_ColumnHeaderMouseClick);
             // 
             // complaintIDDataGridViewTextBoxColumn
             // 
@@ -80,6 +81,7 @@ namespace PSPro.UserControls
             this.complaintIDDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.complaintIDDataGridViewTextBoxColumn.Name = "complaintIDDataGridViewTextBoxColumn";
             this.complaintIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.complaintIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // dateCreatedDataGridViewTextBoxColumn
             // 
@@ -88,6 +90,7 @@ namespace PSPro.UserControls
             this.dateCreatedDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
             this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateCreatedDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // officerFullNameDataGridViewTextBoxColumn
             // 
@@ -96,6 +99,7 @@ namespace PSPro.UserControls
             this.officerFullNameDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.officerFullNameDataGridViewTextBoxColumn.Name = "officerFullNameDataGridViewTextBoxColumn";
             this.officerFullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.officerFullNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // citizenFullNameDataGridViewTextBoxColumn
             // 
@@ -104,6 +108,7 @@ namespace PSPro.UserControls
             this.citizenFullNameDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.citizenFullNameDataGridViewTextBoxColumn.Name = "citizenFullNameDataGridViewTextBoxColumn";
             this.citizenFullNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.citizenFullNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // allegationDataGridViewTextBoxColumn
             // 
@@ -112,6 +117,7 @@ namespace PSPro.UserControls
             this.allegationDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.allegationDataGridViewTextBoxColumn.Name = "allegationDataGridViewTextBoxColumn";
             this.allegationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.allegationDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // complaintViewBindingSource
             // 
@@ -125,7 +131,7 @@ namespace PSPro.UserControls
             this.officerComboBox.FormattingEnabled = true;
             this.officerComboBox.Location = new System.Drawing.Point(176, 49);
             this.officerComboBox.Name = "officerComboBox";
-            this.officerComboBox.Size = new System.Drawing.Size(365, 33);
+            this.officerComboBox.Size = new System.Drawing.Size(365, 48);
             this.officerComboBox.TabIndex = 1;
             this.officerComboBox.ValueMember = "PersonnelID";
             this.officerComboBox.SelectedIndexChanged += new System.EventHandler(this.officerComboBox_SelectedIndexChanged);
@@ -139,7 +145,7 @@ namespace PSPro.UserControls
             this.officerLabel.AutoSize = true;
             this.officerLabel.Location = new System.Drawing.Point(45, 52);
             this.officerLabel.Name = "officerLabel";
-            this.officerLabel.Size = new System.Drawing.Size(69, 25);
+            this.officerLabel.Size = new System.Drawing.Size(102, 40);
             this.officerLabel.TabIndex = 2;
             this.officerLabel.Text = "Officer";
             // 
@@ -160,7 +166,7 @@ namespace PSPro.UserControls
             this.statusLabel.AutoSize = true;
             this.statusLabel.Location = new System.Drawing.Point(673, 52);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(62, 25);
+            this.statusLabel.Size = new System.Drawing.Size(94, 40);
             this.statusLabel.TabIndex = 5;
             this.statusLabel.Text = "Status";
             // 
@@ -174,13 +180,13 @@ namespace PSPro.UserControls
             "Closed"});
             this.statusComboBox.Location = new System.Drawing.Point(788, 49);
             this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(307, 33);
+            this.statusComboBox.Size = new System.Drawing.Size(307, 48);
             this.statusComboBox.TabIndex = 6;
             this.statusComboBox.SelectedIndexChanged += new System.EventHandler(this.statusComboBox_SelectedIndexChanged);
             // 
             // ComplaintList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 40F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.statusComboBox);
             this.Controls.Add(this.statusLabel);
@@ -209,12 +215,12 @@ namespace PSPro.UserControls
         private System.Windows.Forms.BindingSource officerComboBoxBindingSource;
         private System.Windows.Forms.Button manageComplaintButton;
         private System.Windows.Forms.BindingSource complaintViewBindingSource;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.ComboBox statusComboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn complaintIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateCreatedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn officerFullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn citizenFullNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn allegationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label statusLabel;
-        private System.Windows.Forms.ComboBox statusComboBox;
     }
 }
