@@ -103,6 +103,11 @@ namespace PSPro.UserControls
                     complaintsDataGridView.DataSource = list;
                     return;
                 }
+                if(this.officerComboBox.Text == "Complaints for officers having > 3 complaints in past year")
+                {
+                    list = complaintController.GetComplaintsForOfficersWithGreaterThanThreeComplaints(statusFilter);
+                    complaintsDataGridView.DataSource = list;
+                }
                 int officerId = (int)this.officerComboBox.SelectedValue;
                 if (officerId > -1)
                 {
@@ -147,6 +152,12 @@ namespace PSPro.UserControls
                 {
                     PersonnelID = -1,
                     FirstName = "All"
+                });
+
+                officers.Insert(1, new OfficerComboBox()
+                {
+                    PersonnelID = -1,
+                    FirstName = "Complaints for officers having > 3 complaints in past year"
                 });
                 this.officerComboBox.DataSource = officers;
             }

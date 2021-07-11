@@ -115,5 +115,17 @@ namespace PSPro.Controller
         {
             this.complaintSource.AppendNotes(complaintId, notesToAppend);
         }
+
+        internal List<ComplaintView> GetComplaintsForOfficersWithGreaterThanThreeComplaints(StatusFilter statusFilter)
+        {
+            if (statusFilter == StatusFilter.Open)
+            {
+                return this.complaintSource.GetOpenComplaintsForOfficersWithGreaterThanThreeComplaints();
+            }
+            else
+            {
+                return this.complaintSource.GetClosedComplaintsForOfficersWithGreaterThanThreeComplaints();
+            }
+        }
     }
 }

@@ -122,6 +122,40 @@ namespace PSPro.DAL
             return complaintViewList;
         }
 
+        internal List<ComplaintView> GetClosedComplaintsForOfficersWithGreaterThanThreeComplaints()
+        {
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "GetClosedComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        return BuildComplaintViewList(reader);
+                    }
+                }
+            }
+        }
+
+        internal List<ComplaintView> GetOpenComplaintsForOfficersWithGreaterThanThreeComplaints()
+        {
+            using (SqlConnection connection = PsProDBConnection.GetConnection())
+            {
+                connection.Open();
+                string storedProcedure = "GetActiveComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear";
+                using (SqlCommand command = new SqlCommand(storedProcedure, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        return BuildComplaintViewList(reader);
+                    }
+                }
+            }
+        }
+
         internal void UpdateDiscipline(int complaintId, string discipline, int userId)
         {
             using (SqlConnection connection = PsProDBConnection.GetConnection())

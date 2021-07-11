@@ -129,9 +129,9 @@ namespace PSPro.UserControls
             this.officerComboBox.DisplayMember = "DisplayName";
             this.officerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.officerComboBox.FormattingEnabled = true;
-            this.officerComboBox.Location = new System.Drawing.Point(176, 49);
+            this.officerComboBox.Location = new System.Drawing.Point(130, 49);
             this.officerComboBox.Name = "officerComboBox";
-            this.officerComboBox.Size = new System.Drawing.Size(365, 33);
+            this.officerComboBox.Size = new System.Drawing.Size(497, 33);
             this.officerComboBox.TabIndex = 1;
             this.officerComboBox.ValueMember = "PersonnelID";
             this.officerComboBox.SelectedIndexChanged += new System.EventHandler(this.officerComboBox_SelectedIndexChanged);
@@ -178,9 +178,9 @@ namespace PSPro.UserControls
             this.statusComboBox.Items.AddRange(new object[] {
             "Open",
             "Closed"});
-            this.statusComboBox.Location = new System.Drawing.Point(788, 49);
+            this.statusComboBox.Location = new System.Drawing.Point(742, 49);
             this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(307, 33);
+            this.statusComboBox.Size = new System.Drawing.Size(439, 33);
             this.statusComboBox.TabIndex = 6;
             this.statusComboBox.SelectedIndexChanged += new System.EventHandler(this.statusComboBox_SelectedIndexChanged);
             // 
