@@ -502,25 +502,6 @@ GetActiveComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear
 TO winforms;
 GO
 
---GetCitizensByEmail
-DROP PROCEDURE IF EXISTS GetCitizensByEmail;
-GO
-CREATE PROCEDURE GetCitizensByEmail
-	@email varchar(45)
-AS
-SET NOCOUNT ON;
-
-    SELECT 
-		citizen_id, first_name, last_name, address1, address2, city, state, zipcode, phone, email
-	FROM Citizens		
-	WHERE email = @email
-	ORDER BY email 
-GO
-GRANT EXECUTE ON
-GetCitizensByEmail
-TO winforms;
-GO
-
 --GetClosedComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear
 DROP PROCEDURE IF EXISTS GetClosedComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear;
 GO
@@ -551,6 +532,26 @@ GRANT EXECUTE ON
 GetClosedComplaintsForOfficersReceivingMoreThanThreeComplaintsInPastYear
 TO winforms;
 GO
+
+--GetCitizensByEmail
+DROP PROCEDURE IF EXISTS GetCitizensByEmail;
+GO
+CREATE PROCEDURE GetCitizensByEmail
+	@email varchar(45)
+AS
+SET NOCOUNT ON;
+
+    SELECT 
+		citizen_id, first_name, last_name, address1, address2, city, state, zipcode, phone, email
+	FROM Citizens		
+	WHERE email = @email
+	ORDER BY email 
+GO
+GRANT EXECUTE ON
+GetCitizensByEmail
+TO winforms;
+GO
+
 
 --GetCitizensByPhone
 DROP PROCEDURE IF EXISTS GetCitizensByPhoneNumber;
