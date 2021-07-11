@@ -16,5 +16,13 @@ namespace PSPro.View
         {
             InitializeComponent();
         }
+
+        private void ComplaintsSummaryDialog_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'psproDataSet.ComplaintsStatisticsByYearReport' table. You can move, or remove it, as needed.
+            this.complaintsStatisticsByYearReportTableAdapter.Fill(this.psproDataSet.ComplaintsStatisticsByYearReport);
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
