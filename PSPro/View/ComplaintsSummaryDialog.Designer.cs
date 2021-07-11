@@ -41,6 +41,8 @@ namespace PSPro.View
             // 
             // reportViewer1
             // 
+            this.reportViewer1.AutoSize = true;
+            this.reportViewer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.complaintsStatisticsByYearReportBindingSource;
@@ -49,8 +51,20 @@ namespace PSPro.View
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.ShowBackButton = false;
+            this.reportViewer1.ShowContextMenu = false;
+            this.reportViewer1.ShowCredentialPrompts = false;
+            this.reportViewer1.ShowDocumentMapButton = false;
+            this.reportViewer1.ShowExportButton = false;
+            this.reportViewer1.ShowPageNavigationControls = false;
+            this.reportViewer1.ShowParameterPrompts = false;
+            this.reportViewer1.ShowProgress = false;
+            this.reportViewer1.ShowPromptAreaButton = false;
+            this.reportViewer1.ShowStopButton = false;
+            this.reportViewer1.ShowZoomControl = false;
             this.reportViewer1.Size = new System.Drawing.Size(1306, 384);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // psproDataSet
             // 
@@ -78,6 +92,7 @@ namespace PSPro.View
             ((System.ComponentModel.ISupportInitialize)(this.psproDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.complaintsStatisticsByYearReportBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

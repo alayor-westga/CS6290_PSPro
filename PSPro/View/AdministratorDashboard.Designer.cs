@@ -39,12 +39,12 @@ namespace PSPro.View
             this.LogoutLinkLabel = new System.Windows.Forms.LinkLabel();
             this.complaintListTabControl = new System.Windows.Forms.TabControl();
             this.complaintListTabPage = new System.Windows.Forms.TabPage();
-            this.complaintList = new PSPro.UserControls.ComplaintList();
             this.manageComplaintTabPage = new System.Windows.Forms.TabPage();
-            this.manageComplaintAsAdministrator1 = new PSPro.UserControls.ManageComplaintAsAdministrator();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.complaintsStatisticsByYearReportTableAdapter = new PSPro.psproDataSetTableAdapters.ComplaintsStatisticsByYearReportTableAdapter();
+            this.complaintList = new PSPro.UserControls.ComplaintList();
+            this.manageComplaintAsAdministrator1 = new PSPro.UserControls.ManageComplaintAsAdministrator();
             ((System.ComponentModel.ISupportInitialize)(this.complaintsStatisticsByYearReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.psproDataSet)).BeginInit();
             this.complaintListTabControl.SuspendLayout();
@@ -119,16 +119,6 @@ namespace PSPro.View
             this.complaintListTabPage.Text = "Complaint List";
             this.complaintListTabPage.UseVisualStyleBackColor = true;
             // 
-            // complaintList
-            // 
-            this.complaintList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.complaintList.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.complaintList.Location = new System.Drawing.Point(3, 3);
-            this.complaintList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.complaintList.Name = "complaintList";
-            this.complaintList.Size = new System.Drawing.Size(1310, 740);
-            this.complaintList.TabIndex = 0;
-            // 
             // manageComplaintTabPage
             // 
             this.manageComplaintTabPage.Controls.Add(this.manageComplaintAsAdministrator1);
@@ -139,16 +129,6 @@ namespace PSPro.View
             this.manageComplaintTabPage.TabIndex = 1;
             this.manageComplaintTabPage.Text = "Manage Complaint";
             this.manageComplaintTabPage.UseVisualStyleBackColor = true;
-            // 
-            // manageComplaintAsAdministrator1
-            // 
-            this.manageComplaintAsAdministrator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.manageComplaintAsAdministrator1.Font = new System.Drawing.Font("Segoe UI", 10.125F);
-            this.manageComplaintAsAdministrator1.Location = new System.Drawing.Point(3, 3);
-            this.manageComplaintAsAdministrator1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.manageComplaintAsAdministrator1.Name = "manageComplaintAsAdministrator1";
-            this.manageComplaintAsAdministrator1.Size = new System.Drawing.Size(1310, 740);
-            this.manageComplaintAsAdministrator1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -173,10 +153,31 @@ namespace PSPro.View
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1310, 740);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // complaintsStatisticsByYearReportTableAdapter
             // 
             this.complaintsStatisticsByYearReportTableAdapter.ClearBeforeFill = true;
+            // 
+            // complaintList
+            // 
+            this.complaintList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.complaintList.Font = new System.Drawing.Font("Segoe UI", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.complaintList.Location = new System.Drawing.Point(3, 3);
+            this.complaintList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.complaintList.Name = "complaintList";
+            this.complaintList.Size = new System.Drawing.Size(1310, 740);
+            this.complaintList.TabIndex = 0;
+            // 
+            // manageComplaintAsAdministrator1
+            // 
+            this.manageComplaintAsAdministrator1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageComplaintAsAdministrator1.Font = new System.Drawing.Font("Segoe UI", 10.125F);
+            this.manageComplaintAsAdministrator1.Location = new System.Drawing.Point(3, 3);
+            this.manageComplaintAsAdministrator1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.manageComplaintAsAdministrator1.Name = "manageComplaintAsAdministrator1";
+            this.manageComplaintAsAdministrator1.Size = new System.Drawing.Size(1310, 755);
+            this.manageComplaintAsAdministrator1.TabIndex = 0;
             // 
             // AdministratorDashboard
             // 
