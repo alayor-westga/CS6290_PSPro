@@ -109,8 +109,7 @@ namespace PSPro.UserControls
                     complaintsDataGridView.DataSource = list;
                 }
                 else if (this.officerComboBox.Text.Contains("Complaints for officers having > 3 complaints in past year"))
-                {
-                    Console.WriteLine("here");
+                {                    
                     list = complaintController.GetComplaintsForOfficersWithGreaterThanThreeComplaints(statusFilter);
                     complaintsDataGridView.DataSource = list;
                 } 
@@ -118,7 +117,6 @@ namespace PSPro.UserControls
                 {
                     list = complaintController.GetAllComplaints(statusFilter);
                     complaintsDataGridView.DataSource = list;
-                    Console.WriteLine(" no here");
                 }
             }
             catch (Exception exception)
