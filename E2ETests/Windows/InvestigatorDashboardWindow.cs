@@ -3,6 +3,7 @@ using FlaUI.Core.AutomationElements;
 using FlaUI.Core.Input;
 using FlaUI.Core.WindowsAPI;
 using System.Threading;
+using System;
 
 namespace E2ETests.Windows
 {
@@ -116,6 +117,18 @@ namespace E2ETests.Windows
                 .FindFirstDescendant(cf => cf.ByAutomationId("saveButton"))
                 .AsButton()
                 .IsEnabled;
+        }
+
+        internal void SelectComplaintsForOfficersWithMoreThanThreeComplaints()
+        {
+            string text = "Complaints for officers having > 3 complaints in past year";
+            context.GetWindow()
+               
+                .FindFirstDescendant(cf => cf.ByAutomationId("officerComboBox"))
+                .AsComboBox()
+                .Select(text);
+            Console.WriteLine("Processed Code");
+            Thread.Sleep(4000);
         }
     }
 }

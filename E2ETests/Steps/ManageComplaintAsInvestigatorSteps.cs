@@ -4,6 +4,7 @@ using NUnit.Framework;
 using System.Data.SqlClient;
 using E2ETests.Drivers;
 using E2ETests.Windows;
+using System;
 
 namespace E2ETests.Steps
 {
@@ -156,6 +157,13 @@ namespace E2ETests.Steps
         {
             bool saveIsEnabled = context.investigatorDashboardWindow.SaveIsEnabled();
             Assert.IsFalse(saveIsEnabled);
+        }
+
+        [When(@"investigator selects view complaints for officers with more than three complaints")]
+        public void WhenInvestigatorSelectsViewComplaintsForOfficersWithMoreThanThreeComplaints()
+        {
+  
+            context.investigatorDashboardWindow.SelectComplaintsForOfficersWithMoreThanThreeComplaints();
         }
 
 

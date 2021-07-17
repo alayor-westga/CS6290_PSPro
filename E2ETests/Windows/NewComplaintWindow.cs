@@ -94,6 +94,7 @@ namespace E2ETests.Windows
 
         private void setCitizenField(string fieldName, string value)
         {
+            Thread.Sleep(1000);
             context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId(fieldName))
                 .AsTextBox()
@@ -122,6 +123,7 @@ namespace E2ETests.Windows
 
         public void ClickOnLogout()
         {
+            Thread.Sleep(2000);
             context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("LogoutLinkLabel"))
                 .AsButton()

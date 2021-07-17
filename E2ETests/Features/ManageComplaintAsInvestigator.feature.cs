@@ -518,6 +518,175 @@ this.FeatureBackground();
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Complaints for officers having greater than three complaints in past year")]
+        public virtual void ComplaintsForOfficersHavingGreaterThanThreeComplaintsInPastYear()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Complaints for officers having greater than three complaints in past year", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 78
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 79
+ testRunner.And("supervisor \"s-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                            "first_name",
+                            "last_name",
+                            "address1",
+                            "address2",
+                            "city",
+                            "state",
+                            "zip_code",
+                            "phone_number",
+                            "email_address",
+                            "officer",
+                            "allegation",
+                            "summary"});
+                table22.AddRow(new string[] {
+                            "Citi",
+                            "Zen",
+                            "123 Main St.",
+                            "",
+                            "San Jose",
+                            "California",
+                            "89900",
+                            "555-555-5575",
+                            "citizen@example.com",
+                            "Offi Cer",
+                            "Ethics Violation",
+                            "Complaint summary example"});
+#line 80
+ testRunner.And("a complaint with this info is created", ((string)(null)), table22, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                            "first_name",
+                            "last_name",
+                            "address1",
+                            "address2",
+                            "city",
+                            "state",
+                            "zip_code",
+                            "phone_number",
+                            "email_address",
+                            "officer",
+                            "allegation",
+                            "summary"});
+                table23.AddRow(new string[] {
+                            "Citi",
+                            "Zen",
+                            "123 Main St.",
+                            "",
+                            "San Jose",
+                            "California",
+                            "89900",
+                            "555-555-5535",
+                            "citizen@example.com",
+                            "Offi Cer",
+                            "Ethics Violation",
+                            "Complaint summary example"});
+#line 83
+ testRunner.And("a complaint with this info is created", ((string)(null)), table23, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                            "first_name",
+                            "last_name",
+                            "address1",
+                            "address2",
+                            "city",
+                            "state",
+                            "zip_code",
+                            "phone_number",
+                            "email_address",
+                            "officer",
+                            "allegation",
+                            "summary"});
+                table24.AddRow(new string[] {
+                            "Citi",
+                            "Zen",
+                            "123 Main St.",
+                            "",
+                            "San Jose",
+                            "California",
+                            "89900",
+                            "555-555-5955",
+                            "citizen@example.com",
+                            "Offi Cer",
+                            "Ethics Violation",
+                            "Complaint summary example"});
+#line 86
+ testRunner.And("a complaint with this info is created", ((string)(null)), table24, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                            "first_name",
+                            "last_name",
+                            "address1",
+                            "address2",
+                            "city",
+                            "state",
+                            "zip_code",
+                            "phone_number",
+                            "email_address",
+                            "officer",
+                            "allegation",
+                            "summary"});
+                table25.AddRow(new string[] {
+                            "Another",
+                            "CitiZen",
+                            "123 Linconln Blvd.",
+                            "",
+                            "Grapevine",
+                            "Texas",
+                            "68821",
+                            "555-444-5532",
+                            "citizen2@example.com",
+                            "Another OffiCer",
+                            "Excessive Force",
+                            "Complaint notes example"});
+#line 89
+ testRunner.And("a complaint with this info is created", ((string)(null)), table25, "And ");
+#line hidden
+#line 92
+ testRunner.And("the user logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 93
+ testRunner.And("investigator \"i-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 94
+ testRunner.Then("investigator should see 5 complaints", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 95
+ testRunner.When("investigator selects view complaints for officers with more than three complaints" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 96
+ testRunner.Then("investigator should see 4 complaints", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
