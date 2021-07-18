@@ -66,3 +66,23 @@ Scenario: Append comments to complaint
 	And administrator saves the comment
 	Then the complaint notes should contain "my comment" in the DB
 	And the user logs out
+
+Scenario: Complaints for officers having greater than three complaints in past year
+	And supervisor "s-001" logs in with password "4567"
+	And a complaint with this info is created
+    |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|officer|allegation|summary|
+	|Citi|Zen|123 Main St.||San Jose|California|89900|555-555-5575|citizen@example.com|Offi Cer|Ethics Violation|Complaint summary example|
+	And a complaint with this info is created
+    |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|officer|allegation|summary|
+	|Citi|Zen|123 Main St.||San Jose|California|89900|555-555-5535|citizen@example.com|Offi Cer|Ethics Violation|Complaint summary example|
+	And a complaint with this info is created
+    |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|officer|allegation|summary|
+	|Citi|Zen|123 Main St.||San Jose|California|89900|555-555-5955|citizen@example.com|Offi Cer|Ethics Violation|Complaint summary example|
+	And a complaint with this info is created
+    |first_name|last_name|address1|address2|city|state|zip_code|phone_number|email_address|officer|allegation|summary|
+	|Another|CitiZen|123 Linconln Blvd.||Grapevine|Texas|68821|555-444-5532|citizen2@example.com|Another OffiCer|Excessive Force|Complaint notes example|
+	And the user logs out
+	And administrator "a-001" logs in with password "4567"
+	Then administrator should see 5 complaints
+	When administrator selects view complaints for officers with more than three complaints
+	Then administrator should see 4 complaints

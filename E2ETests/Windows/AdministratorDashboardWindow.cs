@@ -95,5 +95,16 @@ namespace E2ETests.Windows
                 .Select(officer);
             Thread.Sleep(2000);
         }
+
+        internal void SelectComplaintsForOfficersWithMoreThanThreeComplaints()
+        {
+            context.GetWindow()
+
+               .FindFirstDescendant(cf => cf.ByAutomationId("officerComboBox"))
+               .AsComboBox()
+               .Select(1);
+            
+            Thread.Sleep(4000);
+        }
     }
 }

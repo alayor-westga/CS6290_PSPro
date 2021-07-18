@@ -121,12 +121,12 @@ namespace E2ETests.Windows
 
         internal void SelectComplaintsForOfficersWithMoreThanThreeComplaints()
         {
-            string text = "Complaints for officers having > 3 complaints in past year";
+           
             context.GetWindow()
                
                 .FindFirstDescendant(cf => cf.ByAutomationId("officerComboBox"))
                 .AsComboBox()
-                .Select(text);
+                .Select(1);
             Console.WriteLine("Processed Code");
             Thread.Sleep(4000);
         }

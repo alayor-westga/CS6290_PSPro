@@ -77,7 +77,7 @@ namespace E2ETests.Features
         {
 #line 4
 #line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "type",
                         "username",
                         "password",
@@ -87,7 +87,7 @@ namespace E2ETests.Features
                         "hiredate",
                         "birthdate",
                         "assignment"});
-            table16.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "supervisor",
                         "s-001",
                         "4567",
@@ -97,7 +97,7 @@ namespace E2ETests.Features
                         "2000-01-01",
                         "1970-01-01",
                         "assigment1"});
-            table16.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "investigator",
                         "i-001",
                         "4567",
@@ -107,7 +107,7 @@ namespace E2ETests.Features
                         "2000-01-01",
                         "1970-01-01",
                         "assigment1"});
-            table16.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "administrator",
                         "a-001",
                         "4567",
@@ -117,7 +117,7 @@ namespace E2ETests.Features
                         "2000-01-01",
                         "1970-01-01",
                         "assigment1"});
-            table16.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "officer",
                         "",
                         "",
@@ -127,7 +127,7 @@ namespace E2ETests.Features
                         "2010-01-01",
                         "1990-01-01",
                         "assigment2"});
-            table16.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "officer",
                         "",
                         "",
@@ -138,12 +138,12 @@ namespace E2ETests.Features
                         "1970-01-12",
                         "assigment3"});
 #line 5
-    testRunner.Given("personnel exists on the DB with this info", ((string)(null)), table16, "Given ");
+    testRunner.Given("personnel exists on the DB with this info", ((string)(null)), table20, "Given ");
 #line hidden
 #line 12
     testRunner.And("supervisor \"s-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "first_name",
                         "last_name",
                         "address1",
@@ -156,7 +156,7 @@ namespace E2ETests.Features
                         "officer",
                         "allegation",
                         "summary"});
-            table17.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Citi",
                         "Zen",
                         "123 Main St.",
@@ -170,7 +170,7 @@ namespace E2ETests.Features
                         "Ethics Violation",
                         "Complaint summary example"});
 #line 13
- testRunner.And("a complaint with this info is created", ((string)(null)), table17, "And ");
+ testRunner.And("a complaint with this info is created", ((string)(null)), table21, "And ");
 #line hidden
 #line 16
  testRunner.And("the user logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -210,16 +210,16 @@ this.FeatureBackground();
 #line 19
  testRunner.Given("investigator \"i-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                             "officer",
                             "citizen",
                             "allegation"});
-                table18.AddRow(new string[] {
+                table22.AddRow(new string[] {
                             "Offi Cer",
                             "Citi Zen",
                             "Ethics Violation"});
 #line 20
- testRunner.Then("investigator should see a complaint with this info", ((string)(null)), table18, "Then ");
+ testRunner.Then("investigator should see a complaint with this info", ((string)(null)), table22, "Then ");
 #line hidden
 #line 23
  testRunner.When("investigator clicks on Manage Complaint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -264,7 +264,7 @@ this.FeatureBackground();
 #line 27
     testRunner.Given("supervisor \"s-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                             "first_name",
                             "last_name",
                             "address1",
@@ -277,7 +277,7 @@ this.FeatureBackground();
                             "officer",
                             "allegation",
                             "summary"});
-                table19.AddRow(new string[] {
+                table23.AddRow(new string[] {
                             "Another",
                             "CitiZen",
                             "123 Linconln Blvd.",
@@ -291,7 +291,7 @@ this.FeatureBackground();
                             "Excessive Force",
                             "Complaint notes example"});
 #line 28
- testRunner.And("a complaint with this info is created", ((string)(null)), table19, "And ");
+ testRunner.And("a complaint with this info is created", ((string)(null)), table23, "And ");
 #line hidden
 #line 31
  testRunner.And("the user logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -305,26 +305,26 @@ this.FeatureBackground();
 #line 34
  testRunner.When("selects officer \"Offi Cer\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                             "officer",
                             "allegation"});
-                table20.AddRow(new string[] {
+                table24.AddRow(new string[] {
                             "Offi Cer",
                             "Ethics Violation"});
 #line 35
- testRunner.Then("investigator should see one complaint with this info", ((string)(null)), table20, "Then ");
+ testRunner.Then("investigator should see one complaint with this info", ((string)(null)), table24, "Then ");
 #line hidden
 #line 38
  testRunner.When("selects officer \"Another OffiCer\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                             "officer",
                             "allegation"});
-                table21.AddRow(new string[] {
+                table25.AddRow(new string[] {
                             "Another OffiCer",
                             "Excessive Force"});
 #line 39
- testRunner.Then("investigator should see one complaint with this info", ((string)(null)), table21, "Then ");
+ testRunner.Then("investigator should see one complaint with this info", ((string)(null)), table25, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -552,7 +552,7 @@ this.FeatureBackground();
 #line 79
  testRunner.And("supervisor \"s-001\" logs in with password \"4567\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                             "first_name",
                             "last_name",
                             "address1",
@@ -565,7 +565,7 @@ this.FeatureBackground();
                             "officer",
                             "allegation",
                             "summary"});
-                table22.AddRow(new string[] {
+                table26.AddRow(new string[] {
                             "Citi",
                             "Zen",
                             "123 Main St.",
@@ -579,9 +579,9 @@ this.FeatureBackground();
                             "Ethics Violation",
                             "Complaint summary example"});
 #line 80
- testRunner.And("a complaint with this info is created", ((string)(null)), table22, "And ");
+ testRunner.And("a complaint with this info is created", ((string)(null)), table26, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                             "first_name",
                             "last_name",
                             "address1",
@@ -594,7 +594,7 @@ this.FeatureBackground();
                             "officer",
                             "allegation",
                             "summary"});
-                table23.AddRow(new string[] {
+                table27.AddRow(new string[] {
                             "Citi",
                             "Zen",
                             "123 Main St.",
@@ -608,9 +608,9 @@ this.FeatureBackground();
                             "Ethics Violation",
                             "Complaint summary example"});
 #line 83
- testRunner.And("a complaint with this info is created", ((string)(null)), table23, "And ");
+ testRunner.And("a complaint with this info is created", ((string)(null)), table27, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                             "first_name",
                             "last_name",
                             "address1",
@@ -623,7 +623,7 @@ this.FeatureBackground();
                             "officer",
                             "allegation",
                             "summary"});
-                table24.AddRow(new string[] {
+                table28.AddRow(new string[] {
                             "Citi",
                             "Zen",
                             "123 Main St.",
@@ -637,9 +637,9 @@ this.FeatureBackground();
                             "Ethics Violation",
                             "Complaint summary example"});
 #line 86
- testRunner.And("a complaint with this info is created", ((string)(null)), table24, "And ");
+ testRunner.And("a complaint with this info is created", ((string)(null)), table28, "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                             "first_name",
                             "last_name",
                             "address1",
@@ -652,7 +652,7 @@ this.FeatureBackground();
                             "officer",
                             "allegation",
                             "summary"});
-                table25.AddRow(new string[] {
+                table29.AddRow(new string[] {
                             "Another",
                             "CitiZen",
                             "123 Linconln Blvd.",
@@ -666,7 +666,7 @@ this.FeatureBackground();
                             "Excessive Force",
                             "Complaint notes example"});
 #line 89
- testRunner.And("a complaint with this info is created", ((string)(null)), table25, "And ");
+ testRunner.And("a complaint with this info is created", ((string)(null)), table29, "And ");
 #line hidden
 #line 92
  testRunner.And("the user logs out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

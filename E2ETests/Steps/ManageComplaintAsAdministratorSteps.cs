@@ -129,5 +129,12 @@ namespace E2ETests.Steps
             Assert.AreEqual(expectedComplaint[0], actualComplaint.GetValueOrDefault("Officer"));
             Assert.AreEqual(expectedComplaint[1], actualComplaint.GetValueOrDefault("Allegation"));
         }
+
+        [When(@"administrator selects view complaints for officers with more than three complaints")]
+        public void WhenAdministratorSelectsViewComplaintsForOfficersWithMoreThanThreeComplaints()
+        {
+
+            context.administratorDashboardWindow.SelectComplaintsForOfficersWithMoreThanThreeComplaints();
+        }
     }
 }
