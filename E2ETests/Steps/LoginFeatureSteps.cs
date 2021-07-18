@@ -1,5 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 using NUnit.Framework;
+using System.Threading;
 
 namespace E2ETests.Steps
 {
@@ -101,6 +102,7 @@ namespace E2ETests.Steps
         {
             context.loginWindow.EnterUserName(username);
             context.loginWindow.EnterPassword(password);
+            Thread.Sleep(2000);
             context.loginWindow.Login();
         }
 

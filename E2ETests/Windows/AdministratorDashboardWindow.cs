@@ -16,6 +16,7 @@ namespace E2ETests.Windows
 
         public string GetUserFullName()
         {
+            Thread.Sleep(2000);
             return context.GetWindow()
                 .FindFirstDescendant(cf => cf.ByAutomationId("userFullNameLabel"))
                 .AsLabel()
